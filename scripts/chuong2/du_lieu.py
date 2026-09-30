@@ -178,8 +178,8 @@ TIEU_CHI = [
     ("Đầu vào", "Cơ sở dữ liệu tra cứu, hạ tầng kỹ thuật", "M", "Có quyền truy cập qua Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi mới sáng tạo, chưa có số liệu sử dụng"),
     ("Quá trình", "Mức độ tương thích của quy chế nội bộ với pháp luật", "T", "Đối chiếu văn bản tại Mục 2.2.1"),
     ("Quá trình", "Thời gian xử lý một hồ sơ đề xuất bảo hộ", "C", "Không lưu ngày tiếp nhận, ngày nộp đơn"),
-    ("Quá trình", "Mức độ chuẩn hóa biểu mẫu và quy trình phối hợp", "M", "Có quy trình tại Điều 35, chưa có biểu mẫu nhận diện"),
-    ("Quá trình", "Số lớp tập huấn sở hữu trí tuệ", "C", "Không có thống kê"),
+    ("Quá trình", "Mức độ chuẩn hóa biểu mẫu và quy trình phối hợp", "M", "Có quy trình tại Điều 35 Quyết định 213 và phân công tại Điều 11 Quy chế 2024, chưa có biểu mẫu khai báo"),
+    ("Quá trình", "Số lớp tập huấn sở hữu trí tuệ", "C", "Kế hoạch 07/KH-ĐHTĐ chỉ thống kê lượt tập huấn chung, không tách riêng sở hữu trí tuệ"),
     ("Đầu ra", "Số đơn đăng ký sở hữu công nghiệp", "T", "Danh mục theo dõi đơn"),
     ("Đầu ra", "Số văn bằng bảo hộ được cấp", "T", "Danh mục theo dõi đơn"),
     ("Đầu ra", "Số giấy chứng nhận quyền tác giả cho giáo trình, phần mềm", "T", "Danh mục theo dõi đơn"),
@@ -189,4 +189,24 @@ TIEU_CHI = [
     ("Kết quả", "Tỷ trọng nguồn thu khoa học công nghệ trên tổng thu", "C", "Không có số liệu tài chính tách riêng"),
     ("Kết quả", "Tác động đến kiểm định và xếp hạng", "C", "Chưa có đối sánh chính thức"),
     ("Kết quả", "Mức độ hài lòng và động lực của giảng viên", "C", "Chưa có khảo sát"),
+]
+
+# ---------------------------------------------------------------------------
+# 9. Kế hoạch và thực hiện 2024 - 2025 - nguồn chỉ tiêu: Kế hoạch số 07/KH-ĐHTĐ
+#    ngày 01/7/2024, mục 2.2.4 (bản quét, đã nhận dạng chữ và đối chiếu ảnh gốc).
+#    Thực hiện: các danh mục PDF của Phòng KHCN và danh mục tài sản trí tuệ.
+#    Tham luận hội thảo quốc gia không đưa vào vì danh mục không có năm.
+# ---------------------------------------------------------------------------
+KE_HOACH = [
+    # chỉ tiêu, nhóm, kế hoạch 2024, kế hoạch 2025, thực hiện 2024, thực hiện 2025
+    ("Bài báo tạp chí quốc tế", "Công bố", 15, 15, 33, 52),
+    ("Sách có chỉ số ISBN", "Công bố", 1, 2, 2, 6),
+    ("Tham luận hội thảo cấp trường", "Công bố", 30, 30, 60, 74),
+    ("Bài báo tạp chí trong nước, gồm tạp chí của Trường", "Công bố", 55, 55, 72, 109),
+    ("Đề tài cấp Bộ, Nhà nước", "Đề tài và học liệu", 1, 1, 1, 2),
+    ("Đề tài cấp cơ sở", "Đề tài và học liệu", 7, 7, 8, 7),
+    ("Tham luận hội thảo quốc tế", "Công bố", 5, 6, 5, 5),
+    ("Giáo trình, tài liệu tham khảo", "Đề tài và học liệu", 10, 10, 7, 11),
+    ("Công nhận sáng chế, kiểu dáng, quyền tác giả", "Tài sản trí tuệ", 2, 2, 5, 1),
+    ("Chuyển giao công nghệ", "Tài sản trí tuệ", 0, 1, 0, 0),
 ]

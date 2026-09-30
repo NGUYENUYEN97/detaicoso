@@ -8,7 +8,7 @@ Mỗi hình là một dict:
 """
 from du_lieu import (NAM, NHAN_LUC, SAN_PHAM, THAM_LUAN_QUOC_GIA, BAI_BAO_GAN_DE_TAI,
                      PHAN_HANG_QT, DON_VI_SAN_LUONG, NHAN_SU_CO_TEN, NHAN_SU_CO_BAI,
-                     DE_TAI, KHUYEN_KHICH, KENH_TAI_TRO, TSTT, TIEU_CHI)
+                     DE_TAI, KHUYEN_KHICH, KENH_TAI_TRO, TSTT, TIEU_CHI, KE_HOACH)
 
 # Bảng màu phân loại cố định (đã kiểm tra phân biệt được với người mù màu).
 XANH, CAM, NGOC, VANG, HONG, LUC, TIM = ("#2A78D6", "#EB6834", "#1BAF7A", "#EDA100",
@@ -298,14 +298,15 @@ HINH.append(dict(
                         dict(cot=3, mau=CAM, dam=2.25), dict(cot=4, mau=TIM, dam=2.25, gach=True),
                         dict(cot=5, mau="#3B3A36", dam=1.5, cham=True)],
                  truc_y="Phần của tác giả (triệu đồng)", truc_x="Khoản thu từ một hợp đồng chuyển giao (triệu đồng)"),
-    sau_doan="Bốn quy định này chưa được rà soát",
+    sau_doan="Năm quy định này chưa được rà soát",
     binh_luan=[
         "Hình 2.8 mô phỏng hệ quả của sự thiếu thống nhất nói trên đối với một hợp đồng chuyển giao cụ thể. Với cùng "
         "khoản thu 500 triệu đồng, phần của tác giả dao động từ 100 triệu đồng theo điểm a Điều 36 Quyết định 213 hoặc "
         "theo Quỹ từ năm thứ hai, lên 150 triệu đồng theo điểm b, và tới 250 triệu đồng theo Quỹ trong năm đầu; chênh "
         "lệch giữa mức cao nhất và thấp nhất là 2,5 lần. Đường điểm a bị bẻ gãy tại mức thu khoảng 333 triệu đồng do "
         "trần 100 triệu đồng, nghĩa là từ ngưỡng này mọi khoản thu tăng thêm không còn tạo thêm lợi ích cho tác giả.",
-        "Với khoản thu dưới khoảng 667 triệu đồng, cả bốn đường của quy chế nội bộ đều nằm trên đường mặc định 15% của "
+        "Quy định thứ năm, tại Điều 13 Quy chế quản trị tài sản trí tuệ năm 2024, không nêu tỷ lệ mà giao Hiệu trưởng "
+        "quyết định nên không thể mô phỏng. Với khoản thu dưới khoảng 667 triệu đồng, cả bốn đường của quy chế nội bộ đều nằm trên đường mặc định 15% của "
         "Luật, cho thấy về mặt tỷ lệ, Nhà trường không kém hào phóng so với chuẩn pháp luật; vượt ngưỡng này, đường điểm "
         "a nằm dưới đường của Luật do tác động của mức trần, như thể hiện tại mức thu 700 triệu đồng. Vấn đề nằm ở chỗ tác giả không biết trước mình thuộc "
         "đường nào. Khi phần thưởng kỳ vọng không xác định được, quyết định đầu tư công sức cho việc đăng ký và chuyển "
@@ -464,9 +465,10 @@ HINH.append(dict(
     sau_doan="Nguồn: Tổng hợp của nhóm nghiên cứu từ danh mục đề tài khoa học công nghệ cấp cơ sở",
     binh_luan=[
         f"Hình 2.14 cho thấy {shcn} trên 11 sản phẩm thuộc nhóm sở hữu công nghiệp, trong đó giải pháp hữu ích là "
-        f"hình thức phù hợp với {dem_q[0] + dem_q[1] + dem_q[4]} sản phẩm. Đây là kết quả có ý nghĩa đối với thiết kế "
-        f"quy chế: giải pháp hữu ích không đòi hỏi trình độ sáng tạo cao như sáng chế, thời gian bảo hộ ngắn hơn và phù "
-        f"hợp với quy mô kinh phí của đề tài cấp cơ sở, nhưng lại không được nêu riêng tại Điều 34 Quyết định 213. Về "
+        f"hình thức phù hợp với {dem_q[0] + dem_q[1] + dem_q[4]} sản phẩm. Giải pháp hữu ích không đòi hỏi trình độ "
+        f"sáng tạo như sáng chế, thời gian bảo hộ ngắn hơn và phù hợp với quy mô kinh phí của đề tài cấp cơ sở. Loại hình "
+        f"này đã được liệt kê tại Điều 34 Quyết định 213 và Điều 3 Quy chế quản trị tài sản trí tuệ năm 2024, song chưa "
+        f"sản phẩm nào được nhận diện và nộp đơn theo hình thức này. Về "
         f"nguồn gốc, {len(dt_duoc)} trên 11 sản phẩm liên quan đến lĩnh vực dược, cho thấy tiềm năng "
         f"sở hữu công nghiệp của Nhà trường tập trung ở một lĩnh vực và có thể được quản lý có trọng tâm.",
     ],
@@ -494,6 +496,48 @@ HINH.append(dict(
         "Hình dạng của chuỗi cho thấy vấn đề của Nhà trường không nằm ở đầu vào mà ở khâu nối giữa nghiệm thu và đăng "
         "ký. Sản phẩm được tạo ra nhưng không được chuyển sang bước tiếp theo. Đây là căn cứ để xác định khâu rà soát "
         "khả năng bảo hộ tại thời điểm nghiệm thu là điểm can thiệp ưu tiên của hệ thống giải pháp tại Chương 3.",
+    ],
+))
+
+# H2.16 ---------------------------------------------------------------------
+kh_rows = []
+for ten, nhom, k1, k2, t1, t2 in KE_HOACH:
+    kh_rows.append([ten, nhom, k1 + k2, t1 + t2, (t1 + t2) / (k1 + k2)])
+kh = {r[0]: r for r in kh_rows}
+mau_nhom = {"Công bố": XANH, "Đề tài và học liệu": NGOC, "Tài sản trí tuệ": CAM}
+HINH.append(dict(
+    tieu_de="Tỷ lệ thực hiện so với chỉ tiêu Kế hoạch 07/KH-ĐHTĐ, cộng dồn hai năm 2024 - 2025",
+    nguon="Nguồn: Nhóm nghiên cứu tính toán từ mục 2.2.4 Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024 và các danh mục "
+          "thống kê của Phòng Khoa học Công nghệ. Chỉ tiêu bài báo trong nước gồm bài đăng tạp chí trong nước và tạp chí "
+          "của Trường; tài sản trí tuệ tính số văn bằng được cấp; không gồm tham luận hội thảo quốc gia do danh mục không "
+          "có năm.",
+    cot=["Chỉ tiêu", "Nhóm", "Kế hoạch 2024 - 2025", "Thực hiện 2024 - 2025", "Tỷ lệ thực hiện"],
+    dong=kh_rows,
+    dinh_dang=[None, None, "0", "0", "0%"],
+    bieu_do=dict(loai="bar", khoang_cach=45, dao_truc=True,
+                 chuoi=[dict(cot=4, mau=XANH, nhan=True, mau_diem=[mau_nhom[r[1]] for r in kh_rows])],
+                 truc_y="Tỷ lệ thực hiện so với kế hoạch", dd_y="0%", an_chu_giai=True),
+    sau_doan="Trước khi đi vào từng nhóm kết quả và hạn chế",
+    binh_luan=[
+        f"Hình 2.16 cho thấy kết quả hai năm đầu của kế hoạch phân hóa rõ theo ba nhóm, được thể hiện bằng ba màu. Nhóm "
+        f"công bố, màu xanh dương, vượt xa chỉ tiêu: bài báo quốc tế đạt {kh['Bài báo tạp chí quốc tế'][3]} bài so với "
+        f"chỉ tiêu {kh['Bài báo tạp chí quốc tế'][2]} bài, tương đương {pt(kh['Bài báo tạp chí quốc tế'][4], 0)}; sách "
+        f"đạt {pt(kh['Sách có chỉ số ISBN'][4], 0)}; tham luận cấp trường đạt "
+        f"{pt(kh['Tham luận hội thảo cấp trường'][4], 0)}; bài báo trong nước đạt "
+        f"{pt(kh['Bài báo tạp chí trong nước, gồm tạp chí của Trường'][4], 0)}. Nhóm đề tài và học liệu, màu xanh lục, dao "
+        f"động quanh mức kế hoạch, từ {pt(kh['Giáo trình, tài liệu tham khảo'][4], 0)} với giáo trình đến "
+        f"{pt(kh['Đề tài cấp Bộ, Nhà nước'][4], 0)} với đề tài cấp Bộ, Nhà nước.",
+        f"Nhóm tài sản trí tuệ, màu cam, cần được đọc thận trọng. Chỉ tiêu công nhận sáng chế, kiểu dáng công nghiệp và "
+        f"quyền tác giả đạt {pt(kh['Công nhận sáng chế, kiểu dáng, quyền tác giả'][4], 0)} với "
+        f"{kh['Công nhận sáng chế, kiểu dáng, quyền tác giả'][3]} văn bằng, nhưng đó là 5 kiểu dáng công nghiệp đồng sở "
+        f"hữu với doanh nghiệp và 1 nhãn hiệu Thado Edupark; không văn bằng nào hình thành từ đề tài nghiên cứu. Chỉ tiêu "
+        f"chuyển giao công nghệ năm 2025 không đạt. Nguyên nhân một phần nằm ở cách thiết kế chỉ tiêu: Kế hoạch gộp sáng "
+        f"chế với kiểu dáng công nghiệp và quyền tác giả, nên chỉ tiêu có thể hoàn thành mà không cần kết quả nghiên cứu "
+        f"nào được bảo hộ.",
+        "Bản thân Kế hoạch 07/KH-ĐHTĐ đã tự đánh giá giai đoạn 2019 - 2023 là chưa có công trình nghiên cứu khoa học được "
+        "chuyển giao công nghệ và tài sản trí tuệ còn hạn chế. Sau hai năm thực hiện, trong khi công bố tăng vượt bậc, hai "
+        "nhận định này về cơ bản vẫn giữ nguyên. Đây là bằng chứng khái quát nhất cho các kết quả và hạn chế được phân "
+        "tích dưới đây.",
     ],
 ))
 

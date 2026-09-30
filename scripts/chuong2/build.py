@@ -54,7 +54,7 @@ def dinh_dang(wb):
         "thuong": wb.add_format({**base, "text_wrap": True}),
     }
     f["so"] = {k: wb.add_format({**base, "border": 1, "border_color": "#C9C8C3", "num_format": k})
-               for k in ("0", "0.0", "0.00", "0.0%", "#,##0")}
+               for k in ("0", "0.0", "0.00", "0.0%", "0%", "#,##0")}
     return f
 
 
@@ -116,6 +116,37 @@ NHAT_KY = [
      "Thống kê báo cáo, tham luận Hội thảo cấp trường 2021-2025.pdf"),
     ("Mục 2.5.3", "Ghi sáu nguyên nhân nhưng liệt kê bảy; chưa tách khách quan và chủ quan",
      "Tách hai nhóm nguyên nhân; nhóm chủ quan gồm bảy nguyên nhân", "Quy tắc tại GEMINI.md"),
+    ("Quy chế quản trị tài sản trí tuệ năm 2024", "Chưa được khai thác trong Chương 2",
+     "Bổ sung vào Mục 2.2.1, 2.2.2, 2.3.1, 2.5.1, 2.5.3, Bảng 2.4 và Bảng 2.6",
+     "Tai lieu thanh do/QC SHTT ĐHTĐ.docx; bản được cung cấp chưa ghi số và ngày ban hành"),
+    ("Điều 34 Quyết định 213 và giải pháp hữu ích", "Khẳng định Điều 34 không liệt kê giải pháp hữu ích và dùng làm "
+     "một nguyên nhân", "Điều 34 có liệt kê bằng độc quyền giải pháp hữu ích; sửa Bảng 2.6, Mục 2.3.1, 2.5.3 và lời bình "
+     "Hình 2.14", "02. QĐ 213_QĐ-ĐHTĐ, Điều 34 khoản 2"),
+    ("Số hiệu văn bản 213", "Quyết định số 213/QĐ-ĐHTĐ năm 2021",
+     "Quy chế ban hành ngày 28/12/2021 kèm văn bản số 213/QĐ-ĐHTĐ; bản quy chế ghi là Nghị quyết, Kế hoạch 07 ghi Nghị "
+     "quyết số 213/NQ-HĐT-ĐHTĐ. Đề nghị thống nhất cách gọi", "Trang bìa Quy chế 213; Kế hoạch 07/KH-ĐHTĐ"),
+    ("Mục 2.1.5, độ phủ khai báo", "Hồ sơ khai 28 bài báo; 25 trên 28 tìm thấy; độ phủ 26,2%",
+     "26 đề tài khai 32 công bố; độ phủ khoảng 29,9%; bỏ tỷ lệ 89,3% vì không tái lập được từ tài liệu gốc",
+     "Cột sản phẩm nghiệm thu, danh mục đề tài cấp cơ sở"),
+    ("Mục 2.5.2, ý thứ sáu", "Ba đề tài ghi rõ không có bài báo như cam kết",
+     "Danh mục gốc không có ghi chú này; thay bằng: 7 đề tài chỉ có báo cáo tổng kết, 5 trong số đó xếp loại Tốt",
+     "Danh mục đề tài cấp cơ sở"),
+    ("Mục 2.2.3, lệ phí đăng ký", "Chỉ nêu không có dòng chi",
+     "Bổ sung: Điều 35 giao Phòng KHCN nộp lệ phí nhưng Điều 38 không có mục chi tương ứng", "Quyết định 213, Điều 35, 38"),
+    ("Kế hoạch 07/KH-ĐHTĐ ngày 01/7/2024", "Chưa sử dụng; tệp là bản quét",
+     "Nhận dạng chữ và đối chiếu ảnh gốc: số liệu 2021 - 2023 khớp; bổ sung Hình 2.16 so sánh kế hoạch và thực hiện",
+     "Tai lieu thanh do/KH hoạt động KHCN giai đoạn 2024-2028.pdf"),
+    ("Tham luận hội thảo quốc tế 2022 - 2023", "",
+     "Danh mục theo ngày tổ chức: 2 và 3; Kế hoạch 07 ghi 1 và 4. Chương 2 dùng số liệu danh mục",
+     "Danh mục tham luận quốc tế; Kế hoạch 07, Bảng 4"),
+    ("Kiểm chứng phép so khớp tác giả", "Chưa kiểm chứng",
+     "Tái lập độc lập: 256 trên 405 bài khớp; Viện Y - Dược 55, Viện QT và CN 57, Viện NCGD và CGTT 17 bài; 89 người có "
+     "bài, Gini 0,828; chênh 1 - 3 đơn vị do 5 họ tên trùng nhau. Giữ số liệu Chương 2",
+     "2026 DS.xlsx và hai danh mục bài báo"),
+    ("Nội dung chưa có tài liệu gốc trong thư mục", "",
+     "Điều lệ Quỹ Ngô Xuân Độ; hợp đồng của Viện NCGD và CGTT; tư cách thành viên Mạng lưới Trung tâm Hỗ trợ công nghệ "
+     "và đổi mới sáng tạo từ năm 2023; đăng ký hoạt động khoa học công nghệ của Viện; sơ đồ tổ chức ngày 16/6/2026. Giữ "
+     "nguyên, cần bổ sung minh chứng", ""),
     ("Tệp Du_lieu_thong_ke_KHCN_Thanh_Do_2021_2025.xlsx", "Bài báo trong nước theo năm: 54, 50, 33, 44, 109",
      "Danh mục gốc: 17, 42, 50, 72, 109. Không dùng tệp này để trích dẫn",
      "Thống kê bài báo đăng tạp chí khoa học trong nước 2021-2025.pdf"),
@@ -447,7 +478,9 @@ def sua_so_lieu(doc):
     o(b, 9, 6, str(B.tong_ban_ghi))
     thay(doc, "Danh mục không ghi nhận đề tài cấp cơ sở nào trong năm 2022.",
          "Đề tài cấp cơ sở được xếp theo năm ghi trong mã số đề tài; đề tài cấp quốc gia được xếp theo năm phê duyệt "
-         "kinh phí; tham luận hội thảo quốc tế được xếp theo ngày tổ chức.")
+         "kinh phí; tham luận hội thảo quốc tế được xếp theo ngày tổ chức. Số liệu bài báo, giáo trình và đề tài cấp cơ sở "
+         "giai đoạn 2021 - 2023 khớp với số liệu tổng kết tại Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024 của Nhà "
+         "trường.")
     thay(doc, "Con số 580 chỉ phản ánh", f"Con số {B.tong_ban_ghi} chỉ phản ánh")
     thay(doc, "quy mô thực tế là khoảng 470 sản phẩm độc lập", f"quy mô thực tế là khoảng {B.doc_lap} sản phẩm độc lập")
     # --- 2.1.4
@@ -465,7 +498,27 @@ def sua_so_lieu(doc):
          "Danh mục tham luận hội thảo cấp trường gồm 279 lượt báo cáo nhưng có bản ghi sai năm tổ chức, cụ thể một báo "
          "cáo được ghi ngày tổ chức vào năm 1905. Danh mục giáo trình năm 2021 dùng biểu mẫu khác với các năm sau và "
          "không có trường số tín chỉ.")
+    thay(doc, "theo dõi tài sản trí tuệ đã được đăng ký hoặc đã được cấp văn bằng bảo hộ.",
+         "theo dõi tài sản trí tuệ đã được đăng ký hoặc đã được cấp văn bằng bảo hộ, dù Điều 11 Quy chế quản trị tài sản "
+         "trí tuệ năm 2024 giao Phòng nhiệm vụ lập hồ sơ thống kê, theo dõi tài sản trí tuệ thuộc sở hữu của Nhà trường.")
+    p = tim(doc, "Thứ hai, mức độ khai báo sản phẩm")
+    dat_chu(p, "Thứ hai, mức độ khai báo sản phẩm trong hồ sơ nghiệm thu đề tài thấp. Hồ sơ nghiệm thu của 26 trên 38 đề "
+               "tài khai tổng cộng 32 công bố, trong khi phép đối chiếu tên chủ nhiệm đề tài với danh sách tác giả gắn được "
+               "107 bài báo với các đề tài, tức độ phủ khai báo chỉ khoảng 29,9%. Phần lớn công bố có liên quan đến đề tài "
+               "vì vậy không được phản ánh trong hồ sơ nghiệm thu. Nếu bài báo, là loại sản phẩm dễ nhận diện nhất, còn "
+               "không được khai đủ, thì các sản phẩm dạng công thức, quy trình hoặc sản phẩm vật chất càng ít khả năng được "
+               "ghi nhận đầy đủ.")
     # --- 2.2.1
+    thay(doc, "Văn bản nền tảng điều chỉnh hoạt động sở hữu trí tuệ trong Nhà trường là Quy chế hoạt động khoa học công "
+              "nghệ ban hành kèm Quyết định số 213/QĐ-ĐHTĐ năm 2021.",
+         "Văn bản đầu tiên điều chỉnh hoạt động sở hữu trí tuệ trong Nhà trường là Quy chế hoạt động khoa học công nghệ "
+         "ban hành ngày 28 tháng 12 năm 2021 kèm theo văn bản số 213/QĐ-ĐHTĐ, sau đây gọi là Quyết định 213.")
+    thay(doc, "liệt kê tương đối đầy đủ từ tên trường, logo, nhãn hiệu đến công trình khoa học, chương trình đào tạo, ngân "
+              "hàng đề thi, phần mềm, mô hình thực hành, sáng chế và quy trình công nghệ.",
+         "liệt kê tương đối đầy đủ từ tên trường, logo, nhãn hiệu, bằng độc quyền sáng chế, giải pháp hữu ích, kiểu dáng "
+         "công nghiệp đến công trình khoa học, chương trình đào tạo, ngân hàng đề thi, bản ghi âm, ghi hình, phần mềm, mô "
+         "hình thực hành và quy trình công nghệ.")
+    thay(doc, "Bên cạnh đó, Nhà trường còn có hai văn bản khác", "Bên cạnh hai quy chế trên, Nhà trường còn có hai văn bản khác")
     thay(doc, "Điều 36 quy định công thức phân chia lợi ích từ thương mại hóa.",
          "Điều 36 quy định hai công thức phân chia lợi ích từ thương mại hóa, tùy theo nguồn hình thành tài sản.")
     thay(doc, "quy định mức thưởng cho đề tài có đăng ký sở hữu trí tuệ, giải pháp hữu ích hoặc độc quyền sáng chế, kèm "
@@ -474,7 +527,8 @@ def sua_so_lieu(doc):
          "giao công nghệ về Trường và định mức quy đổi giờ nghiên cứu khoa học cho từng loại văn bằng.")
     thay(doc, "Ba văn bản này quy định ba công thức chia lợi ích khác nhau cho cùng một loại tài sản, như trình bày tại "
               "Bảng 2.4.",
-         "Ba văn bản này chứa bốn quy định khác nhau về phân chia lợi ích từ tài sản trí tuệ, như trình bày tại Bảng 2.4.")
+         "Bốn văn bản này chứa năm quy định khác nhau về phân chia lợi ích từ tài sản trí tuệ, như trình bày tại Bảng "
+         "2.4.")
     thay(doc, "Bảng 2.4. Ba công thức chia lợi ích từ tài sản trí tuệ trong nội bộ Trường Đại học Thành Đô",
          "Bảng 2.4. Các quy định về phân chia lợi ích từ tài sản trí tuệ trong nội bộ Trường Đại học Thành Đô")
     b = T[3]
@@ -483,15 +537,23 @@ def sua_so_lieu(doc):
                      "Tài sản trí tuệ thuộc sở hữu của Trường được chuyển giao",
                      "30% tác giả, 20% khoa hoặc đơn vị có tác giả, 50% Quỹ nghiên cứu khoa học của Trường",
                      "Không đặt trần"])
-    o(b, 3, 3, "Kinh phí xét duyệt cho đề tài, với điều kiện có chứng nhận đăng ký thành công; trích 50% kinh phí "
+    them_hang(b, 2, ["Quy chế quản trị tài sản trí tuệ, Điều 13", "2024",
+                     "Tài sản trí tuệ của Trường khi các bên không có thỏa thuận",
+                     "Sau khi trừ chi phí, Hiệu trưởng quyết định tỷ lệ theo tham mưu của Phòng Khoa học Công nghệ, Bộ "
+                     "phận Pháp chế và Phòng Tài chính - Kế toán",
+                     "Không quy định"])
+    o(b, 4, 3, "Kinh phí xét duyệt cho đề tài, với điều kiện có chứng nhận đăng ký thành công; trích 50% kinh phí "
                "chuyển giao công nghệ về Trường, không nêu phần của tác giả")
-    o(b, 3, 4, "50 triệu đồng kinh phí đề tài")
+    o(b, 4, 4, "50 triệu đồng kinh phí đề tài")
+    thay(doc, "Tổng hợp của nhóm nghiên cứu từ ba văn bản nội bộ",
+         "Tổng hợp của nhóm nghiên cứu từ bốn văn bản nội bộ")
     thay(doc, "Ba công thức này chưa được rà soát để bảo đảm tính thống nhất. Một giảng viên có sản phẩm đủ điều kiện "
               "bảo hộ không thể xác định phần lợi ích của mình theo văn bản nào: 30% theo Quyết định 213, một khoản "
               "thưởng tối đa 50 triệu đồng theo Quy chế chi tiêu nội bộ, hay 50% giảm dần xuống 20% theo Điều lệ Quỹ.",
-         "Bốn quy định này chưa được rà soát để bảo đảm tính thống nhất. Một giảng viên có sản phẩm đủ điều kiện bảo hộ "
+         "Năm quy định này chưa được rà soát để bảo đảm tính thống nhất. Một giảng viên có sản phẩm đủ điều kiện bảo hộ "
          "không thể xác định phần lợi ích của mình theo quy định nào: 30% có trần 100 triệu đồng theo điểm a hay 30% "
-         "không đặt trần theo điểm b của cùng khoản 4 Điều 36 Quyết định 213, phần còn lại sau khi trích 50% về Trường "
+         "không đặt trần theo điểm b của cùng khoản 4 Điều 36 Quyết định 213, một tỷ lệ do Hiệu trưởng quyết định theo "
+         "Điều 13 Quy chế quản trị tài sản trí tuệ năm 2024, phần còn lại sau khi trích 50% về Trường "
          "theo Quy chế chi tiêu nội bộ vốn không nêu rõ phần của tác giả, hay 50% giảm dần xuống 20% theo Điều lệ Quỹ.")
     thay(doc, "Thứ hai, trong ba văn bản, Điều lệ Quỹ", "Thứ hai, trong các văn bản trên, Điều lệ Quỹ")
     thay(doc, "hiện hành: không đặt trần và cho phép", "hiện hành: vừa không đặt trần, vừa cho phép")
@@ -500,7 +562,23 @@ def sua_so_lieu(doc):
          "có 2 nhân sự theo danh sách năm 2026, đều có trình độ thạc sĩ với chuyên ngành thông tin - thư viện và khoa "
          "học môi trường; chức danh trưởng phòng do Hiệu trưởng kiêm nhiệm. Không có nhân sự nào được ghi nhận là chuyên "
          "trách hoặc có chuyên ngành đào tạo về sở hữu trí tuệ.")
+    p = tim(doc, "Như vậy, vấn đề của Nhà trường không phải là thiếu đầu mối")
+    dat_chu(p, "Như vậy, vấn đề của Nhà trường không phải là thiếu đầu mối hay thiếu phân công. Điều 11 Quy chế quản trị "
+               "tài sản trí tuệ năm 2024 đã giao Phòng Khoa học Công nghệ nhiệm vụ nhận diện, ghi nhận tài sản trí tuệ, xây "
+               "dựng quy trình và biểu mẫu khai báo, lập hồ sơ theo dõi và xúc tiến thương mại hóa, đồng thời giao Bộ phận "
+               "Pháp chế thực hiện thủ tục xác lập quyền. Khoảng cách nằm ở khâu thực thi: bộ hồ sơ thu thập được không có "
+               "biểu mẫu khai báo hay hồ sơ theo dõi tài sản trí tuệ do Phòng lập, và trên thực tế không đơn vị nào trong "
+               "bốn đơn vị nêu trên bao quát trọn vẹn chu trình từ nhận diện kết quả nghiên cứu, đánh giá khả năng bảo hộ, "
+               "xác lập quyền đến khai thác và duy trì hiệu lực. Mỗi đơn vị nắm một đoạn, và giữa các đoạn không có cơ chế "
+               "chuyển giao hồ sơ. Đây là đặc điểm tổ chức được trở lại tại Mục 2.5.3.")
     # --- 2.2.3
+    thay(doc, "không có dòng chi nào cho phí nộp đơn và duy trì hiệu lực.",
+         "không có dòng chi nào cho phí nộp đơn và duy trì hiệu lực. Điều 35 Quyết định 213 giao Phòng Khoa học Công nghệ "
+         "nộp đơn và lệ phí, nhưng Điều 38 về các khoản chi không có mục riêng cho lệ phí đăng ký và phí duy trì hiệu lực; "
+         "Điều 13 Quy chế quản trị tài sản trí tuệ năm 2024 chỉ đề cập lệ phí xác lập quyền như một khoản được trừ khi "
+         "phân chia lợi ích, tức sau khi đã có doanh thu.")
+    thay(doc, "Nhà trường không thiếu quy định, mà có ba văn bản quy định chồng lấn",
+         "Nhà trường không thiếu quy định, mà có bốn văn bản quy định chồng lấn")
     o(T[4], 1, 2, "38 đề tài; 19 đề tài được Trường cấp kinh phí với tổng 424,75 triệu đồng; 16 đề tài chỉ quy đổi giờ "
                   "nghiên cứu; 3 đề tài tự tìm tài trợ")
     thay(doc, "Tổng kinh phí của kênh này trong năm năm là 374,25 triệu đồng, mức cao nhất cho một đề tài là 80 triệu "
@@ -518,6 +596,21 @@ def sua_so_lieu(doc):
     thay(doc, "Nhà trường phát sinh tài sản ở tám nhóm đối tượng quyền nhưng mới xác lập quyền ở bốn nhóm.",
          "Nhà trường phát sinh tài sản ở chín nhóm đối tượng quyền nhưng mới có hoạt động xác lập quyền ở bốn nhóm, "
          "trong đó chỉ ba nhóm đã được cấp văn bằng.")
+    thay(doc, "Thứ hai, Điều 34 Quyết định 213 không liệt kê giải pháp hữu ích và sưu tập dữ liệu, trong khi đây lại là hai "
+              "nhóm mà sản phẩm đề tài cấp cơ sở rơi vào nhiều nhất.",
+         "Thứ hai, giải pháp hữu ích và sưu tập dữ liệu, hai nhóm mà sản phẩm đề tài cấp cơ sở rơi vào nhiều nhất, đều đã "
+         "có trong phạm vi tài sản của quy chế nội bộ: giải pháp hữu ích được liệt kê tại Điều 34 Quyết định 213, sưu tập "
+         "dữ liệu được bổ sung dưới dạng cơ sở dữ liệu tại Điều 3 Quy chế quản trị tài sản trí tuệ năm 2024. Khoảng trống "
+         "vì vậy không nằm ở phạm vi văn bản mà ở khâu nhận diện: chưa sản phẩm nào thuộc hai nhóm này được xác lập quyền.")
+    thay(doc, "các loại tài sản được liệt kê tại Điều 34 Quyết định số 213/QĐ-ĐHTĐ,",
+         "các loại tài sản được liệt kê tại Điều 34 Quyết định 213 và Điều 3 Quy chế quản trị tài sản trí tuệ năm 2024,")
+    thay(doc, "Luật Sở hữu trí tuệ, Quyết định số 213/QĐ-ĐHTĐ và các danh mục",
+         "Luật Sở hữu trí tuệ, Quyết định số 213/QĐ-ĐHTĐ, Quy chế quản trị tài sản trí tuệ năm 2024 và các danh mục")
+    b = T[5]
+    o(b, 0, 2, "Quyết định 213 hoặc Quy chế 2024 có liệt kê")
+    for h, v in ((5, "Có, tại Quy chế 2024"), (9, "Có"), (12, "Có, tại Quy chế 2024")):
+        assert b.rows[h].cells[2].text.startswith("Không"), b.rows[h].cells[1].text
+        o(b, h, 2, v)
     # --- 2.3.2
     b = T[6]
     assert "thương hiệu" in b.rows[13].cells[6].text
@@ -556,24 +649,46 @@ def sua_so_lieu(doc):
                "không có thông tin này do biểu mẫu danh mục năm 2021 chưa có trường số tín chỉ, chứ không có nghĩa là "
                "không được sử dụng. Đây là bằng chứng cho thấy tài liệu biên soạn được đưa vào sử dụng thực tế chứ không "
                "dừng ở sản phẩm nghiệm thu.")
+    # --- 2.5.1
+    thay(doc, "việc ban hành quy định từ năm 2021 là sớm.",
+         "việc ban hành quy định từ năm 2021 là sớm. Năm 2024, Nhà trường tiếp tục ban hành Quy chế quản trị tài sản trí "
+         "tuệ riêng, với phạm vi tài sản rộng, nguyên tắc công bố và bảo mật, cùng sự phân công đầu mối rõ ràng.")
     # --- 2.5.2
+    thay(doc, "Độ phủ khai báo sản phẩm trong hồ sơ nghiệm thu chỉ đạt 26,2%.",
+         "Độ phủ khai báo sản phẩm trong hồ sơ nghiệm thu chỉ khoảng 29,9%.")
     thay(doc, "Trong 37 đề tài cấp cơ sở, 11 đề tài", "Trong 38 đề tài cấp cơ sở, 11 đề tài")
     thay(doc, "Hoạt động nghiên cứu với khoảng 470 sản phẩm độc lập",
          f"Hoạt động nghiên cứu với khoảng {B.doc_lap} sản phẩm độc lập")
     thay(doc, "cho thấy hai danh mục không có điểm giao nhau, ngoại trừ một trường hợp duy nhất của năm 2025.",
          "cho thấy hai danh mục gần như không có điểm giao nhau: ngoài trường hợp lá Quế hoa năm 2025, chỉ có một liên "
          "hệ chưa được xác nhận bằng hồ sơ giữa đề tài tinh dầu bưởi và một kiểu dáng công nghiệp.")
-    thay(doc, "Trong 37 đề tài, có 19 đề tài xếp loại Tốt, 16 đề tài xếp loại Đạt, 1 đề tài xếp loại Khá và 1 đề tài "
-              "xếp loại xuất sắc",
-         "Trong 38 đề tài, có 1 đề tài xếp loại Xuất sắc, 19 đề tài xếp loại Tốt, 1 đề tài xếp loại Khá và 17 đề tài "
-         "xếp loại Đạt")
+    p = tim(doc, "Thứ sáu, khâu kiểm tra và giám sát")
+    dat_chu(p, "Thứ sáu, khâu kiểm tra và giám sát chưa gắn với sản phẩm. Trong 38 đề tài, có 1 đề tài xếp loại Xuất sắc, "
+               "19 đề tài xếp loại Tốt, 1 đề tài xếp loại Khá và 17 đề tài xếp loại Đạt. Bảy đề tài chỉ có sản phẩm là báo "
+               "cáo tổng kết, nhưng 5 trong số đó vẫn được xếp loại Tốt, cho thấy kết quả đánh giá chưa phân biệt rõ mức độ "
+               "tạo ra sản phẩm có thể ứng dụng hoặc bảo hộ.")
     # --- 2.5.3
     thay(doc, "Các hạn chế nêu trên bắt nguồn từ sáu nguyên nhân,",
          "Các hạn chế nêu trên bắt nguồn từ hai nhóm nguyên nhân khách quan và chủ quan,")
     thay(doc, "Về thể chế, ba văn bản nội bộ quy định ba công thức chia lợi ích khác nhau cho cùng một loại tài sản, với "
               "ba mức trần khác nhau và ba phạm vi áp dụng không rõ ranh giới.",
-         "Về thể chế, ba văn bản nội bộ chứa bốn quy định chia lợi ích khác nhau cho cùng một loại tài sản, với các mức "
+         "Về thể chế, bốn văn bản nội bộ chứa năm quy định chia lợi ích khác nhau cho cùng một loại tài sản, với các mức "
          "trần khác nhau và phạm vi áp dụng không rõ ranh giới.")
+    thay(doc, "Bên cạnh đó, Điều 34 Quyết định 213 không liệt kê giải pháp hữu ích và sưu tập dữ liệu, trong khi đây lại là "
+              "hai nhóm mà sản phẩm đề tài rơi vào nhiều nhất, dẫn đến các sản phẩm này không được nhận diện là đối tượng "
+              "cần xác lập quyền.",
+         "Bên cạnh đó, Quy chế quản trị tài sản trí tuệ năm 2024 không dẫn chiếu và không thay thế Chương VI Quyết định "
+         "213, nên hai văn bản cùng tồn tại với phạm vi tài sản, phân công đầu mối và cơ chế phân chia lợi ích khác nhau.")
+    thay(doc, "quy trình tồn tại trên văn bản nhưng không được kích hoạt.",
+         "quy trình tồn tại trên văn bản nhưng không được kích hoạt. Điều 10 Quy chế quản trị tài sản trí tuệ năm 2024 tiếp "
+         "tục đặt trách nhiệm này lên tác giả khi yêu cầu tác giả tự xác định tài sản có thể bảo hộ và xin ý kiến Phòng "
+         "Khoa học Công nghệ trước khi bộc lộ công khai.")
+    thay(doc, "Về tổ chức, chức năng quản lý quyền sở hữu trí tuệ bị chia cho bốn đơn vị mà không đơn vị nào bao quát trọn "
+              "chu trình.",
+         "Về tổ chức, Điều 11 Quy chế quản trị tài sản trí tuệ năm 2024 giao Phòng Khoa học Công nghệ vai trò bao quát chu "
+         "trình, nhưng trên thực tế chức năng quản lý quyền sở hữu trí tuệ bị chia cho bốn đơn vị mà không đơn vị nào thực "
+         "hiện trọn chu trình.")
+    thay(doc, "chỉ đạt 26,2% càng thu hẹp", "chỉ khoảng 29,9% càng thu hẹp")
     p = tim(doc, "Về động lực, cơ chế khuyến khích")
     dat_chu(p, "Về động lực, cơ chế khuyến khích tồn tại trên văn bản với định mức quy đổi từ 180 đến 600 giờ nghiên cứu "
                "cho mỗi văn bằng, nhưng văn bằng không có khoản thưởng bằng tiền như bài báo quốc tế, vốn được thưởng từ "
@@ -582,6 +697,35 @@ def sua_so_lieu(doc):
                "thời gian giữa nỗ lực và phần thưởng lớn hơn nhiều so với công bố khoa học, vốn được ghi nhận ngay khi "
                "bài được đăng, như phân tích tại Hình 2.11.")
     thay(doc, "Sáu nguyên nhân trên không độc lập với nhau.", "Bảy nguyên nhân chủ quan trên không độc lập với nhau.")
+
+
+def them_quy_che_2024(doc):
+    neo = tim(doc, "Văn bản đầu tiên điều chỉnh hoạt động sở hữu trí tuệ")
+    p = doan_moi(neo._p, neo,
+                 "Năm 2024, Nhà trường ban hành Quy chế quản trị tài sản trí tuệ, văn bản chuyên biệt đầu tiên về lĩnh vực "
+                 "này. Bản quy chế được cung cấp cho đề tài do Phó Hiệu trưởng ký nhưng chưa ghi số và ngày ban hành; theo "
+                 "Điều 17, quy chế có hiệu lực kể từ ngày ký. Quy chế có bốn nội dung chính. Điều 3 xác định phạm vi tài "
+                 "sản rất rộng, bao gồm cả thông tin kỹ thuật có thể được cấp bằng độc quyền sáng chế hoặc giải pháp hữu "
+                 "ích, cơ sở dữ liệu, phần mềm, giáo trình điện tử, bí quyết và tên miền, đồng thời quy định Nhà trường sở "
+                 "hữu tài sản được tạo ra chủ yếu từ nguồn lực của Trường. Điều 10 quy định nguyên tắc công bố và bảo mật, "
+                 "yêu cầu tác giả xin ý kiến Phòng Khoa học Công nghệ trước khi bộc lộ công khai tài sản có thể bảo hộ. Điều "
+                 "11 giao Phòng Khoa học Công nghệ quản lý, nhận diện, lập hồ sơ theo dõi và xúc tiến thương mại hóa tài sản "
+                 "trí tuệ, giao Bộ phận Pháp chế thực hiện thủ tục xác lập quyền. Điều 13 quy định lợi ích được phân chia "
+                 "theo thỏa thuận; nếu không có thỏa thuận, Hiệu trưởng quyết định tỷ lệ sau khi trừ các chi phí. Quy chế "
+                 "năm 2024 không dẫn chiếu và không thay thế Chương VI Quyết định 213, nên hai văn bản cùng tồn tại.")
+    for r in p.runs:
+        r.bold = False
+
+
+def them_dan_nhap_25(doc):
+    neo = tim(doc, "2.5. Đánh giá chung về công tác quản lý quyền sở hữu trí tuệ")
+    mau = tim(doc, "Văn bản đầu tiên điều chỉnh hoạt động sở hữu trí tuệ")
+    p = doan_moi(neo._p, mau,
+                 "Trước khi đi vào từng nhóm kết quả và hạn chế, đề tài đối chiếu kết quả thực hiện với Kế hoạch hoạt động "
+                 "khoa học công nghệ giai đoạn 2024 - 2028, tầm nhìn 2035, ban hành kèm Kế hoạch số 07/KH-ĐHTĐ ngày 01 "
+                 "tháng 7 năm 2024. Đây là thước đo khách quan vì do chính Nhà trường đặt ra, và 2024 - 2025 là hai năm đầu "
+                 "của kế hoạch.")
+    p.paragraph_format.keep_with_next = False
 
 
 def them_nguyen_nhan(doc):
@@ -684,6 +828,8 @@ def main():
     va_workbook(RA_XLSX)
     doc = docx.Document(VAO)
     sua_so_lieu(doc)
+    them_quy_che_2024(doc)
+    them_dan_nhap_25(doc)
     them_nguyen_nhan(doc)
     chen_hinh(doc)
     dat_cap_de_muc(doc)

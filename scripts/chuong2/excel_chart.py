@@ -122,6 +122,8 @@ def ve(wb, sheet, hinh, hang_tieu_de, cot0, r1, r2, tieu_de=None):
         "major_gridlines": {"visible": True, "line": {"color": MAU_LUOI, "width": 0.5}},
         "major_tick_mark": "none", "minor_tick_mark": "none",
     }
+    if cfg.get("dd_y"):
+        truc_gia_tri["num_format"] = cfg["dd_y"]
     if cfg.get("max_y"):
         truc_gia_tri["max"] = cfg["max_y"]
     if cfg.get("buoc_y"):
