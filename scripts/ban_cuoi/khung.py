@@ -130,10 +130,11 @@ class VanBanChung(BG.VanBan):
         return self.so_bang
 
 
-def dat_cap_de_muc(doc, so_chuong):
-    """Gắn cấp đề mục cho mục lục tự động: tên chương cấp 0, x.y cấp 1, x.y.z cấp 2, tiểu kết cấp 1."""
+def dat_cap_de_muc(doc, so_chuong, tu=0):
+    """Gắn cấp đề mục cho mục lục tự động: tên chương cấp 0, x.y cấp 1, x.y.z cấp 2, tiểu kết cấp 1.
+    tu: chỉ số đoạn bắt đầu xét (bỏ qua phần mục lục ở đầu báo cáo gộp)."""
     c = str(so_chuong)
-    for p in doc.paragraphs:
+    for p in doc.paragraphs[tu:]:
         t = p.text.strip()
         lvl = None
         if t == f"CHƯƠNG {c}":

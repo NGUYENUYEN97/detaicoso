@@ -311,7 +311,7 @@ APA = [
     ("(Fisher, năm 2001; Guan, năm 2014)", "(Fisher, 2001; Guan, 2014)"),
     ("(Fisher, năm 2001)", "(Fisher, 2001)"),
     ("(Nguyễn Minh Huyền Trang, năm 2025)", "(Nguyễn, 2025)"),
-    ("(Rialti và cộng sự, năm 2022)", "(Rialti et al., 2022)"),
+    ("(Rialti và cộng sự, năm 2022)", "(O’Dwyer et al., 2023)"),  # Zotero ghi sai tác giả; đã đối chiếu DOI 10.1007/s10961-022-09932-2
     ("(Shane, năm 2004; Mowery và cộng sự, năm 2004)", "(Shane, 2004)"),
     ("(Shane, năm 2004; Võ Nguyên Hoàng Phúc, năm 2025)", "(Shane, 2004; Võ, 2025)"),
     ("(Siegel và cộng sự, năm 2007; Thursby và Thursby, năm 2002)", "(Siegel et al., 2007; Thursby & Kemp, 2002)"),
@@ -321,7 +321,8 @@ APA = [
     ("(Tổ chức Sở hữu trí tuệ thế giới, năm 2020)", "(Tổ chức Sở hữu trí tuệ thế giới, 2020)"),
     ("(Văn phòng Quốc hội, năm 2026)", "(Văn phòng Quốc hội, 2026)"),
     ("Tổ chức Sở hữu trí tuệ thế giới (năm 2020)", "Tổ chức Sở hữu trí tuệ thế giới (2020)"),
-    ("Milliken và Allen (năm 2013)", "Milliken và Allen (2013)"),
+    ("Bổ sung cho góc nhìn này, Milliken và Allen (năm 2013) nhấn mạnh đây là",
+     "Điểm chung của các sản phẩm này là"),  # nguồn Milliken và Allen không truy xuất được
     ("Fisher (năm 2001)", "Fisher (2001)"),
     ("Guan (năm 2014)", "Guan (2014)"),
     ("Cục Sở hữu trí tuệ (năm 2020) đã phân nhánh", "tài liệu tập huấn của Cục Sở hữu trí tuệ (n.d.) dành cho cán bộ "

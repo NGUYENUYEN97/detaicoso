@@ -434,8 +434,9 @@ def noi_dung(v, so_hinh_kh=10):
             continue
         if t == "CHƯƠNG 3":
             v.doan("chuong1", "CHƯƠNG 3")
-            v.doan("chuong2", "HỆ THỐNG GIẢI PHÁP NÂNG CAO HIỆU QUẢ QUẢN LÝ QUYỀN SỞ HỮU TRÍ TUỆ")
-            v.doan("chuong3", "TẠI TRƯỜNG ĐẠI HỌC THÀNH ĐÔ ĐÁP ỨNG KHUNG PHÁP LÝ MỚI")
+            v.doan("chuong2", "HỆ THỐNG GIẢI PHÁP NÂNG CAO HIỆU QUẢ")
+            v.doan("chuong3", "QUẢN LÝ QUYỀN SỞ HỮU TRÍ TUỆ TẠI TRƯỜNG ĐẠI HỌC THÀNH ĐÔ")
+            v.doan("chuong3", "ĐÁP ỨNG KHUNG PHÁP LÝ MỚI")
             continue
         if t.startswith("HỆ THỐNG GIẢI PHÁP NÂNG CAO"):
             continue
