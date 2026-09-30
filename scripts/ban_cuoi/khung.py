@@ -72,7 +72,7 @@ class VanBanChung(BG.VanBan):
         """Như VanBan.bang nhưng ô có thể nhiều đoạn (ngăn bằng \\n), có markup **đậm**,
         và các hàng trong hang_dam được tô như hàng tiêu đề."""
         self.so_bang += 1
-        self.doan("tieu_de", f"Bảng {tien_to}.{self.so_bang}. {tieu_de}", bold=True, giu=True)
+        self.doan("tieu_de", f"Bảng {tien_to + '.' if tien_to else ''}{self.so_bang}. {tieu_de}", bold=True, giu=True)
         tbl = etree.SubElement(etree.Element("x"), qn("w:tbl"))
         tbl.append(copy.deepcopy(self.tblPr))
         grid = etree.SubElement(tbl, qn("w:tblGrid"))

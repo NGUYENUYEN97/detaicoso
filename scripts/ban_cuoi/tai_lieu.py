@@ -11,6 +11,8 @@ Ghi chú kiểm chứng:
   sự, 2022"; đã sửa theo DOI 10.1007/s10961-022-09932-2.
 - Siegel và cộng sự (2007): DOI đúng là 10.1093/oxrep/grm036.
 - Milliken và Allen (2013): không truy xuất được nhà xuất bản, đã lược trích dẫn.
+- Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ: tệp gốc không có trong kho; nội dung Điều 9
+  lấy từ bản thảo của nhóm, cần bổ sung số hiệu, ngày ban hành khi có tệp.
 - Nguyễn (2025), Võ (2025): lấy từ tệp Zotero của nhóm, có DOI nhưng chưa mở được
   trang tạp chí để đối chiếu số tập, trang của Võ (2025); cần xác minh trước khi nộp.
 """
@@ -68,6 +70,8 @@ TAI_LIEU = [
     ("Quyết định số 217/QĐ-ĐHTĐ", "vb",
      "Trường Đại học Thành Đô. (2024b). *Quyết định số 217/QĐ-ĐHTĐ ngày 21 tháng 11 năm 2024 ban hành Quy chế quản "
      "trị tài sản trí tuệ tại Trường Đại học Thành Đô*."),
+    ("Điều lệ Quỹ", "vb",
+     "Trường Đại học Thành Đô. (2025). *Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ*."),
     ("Quy chế chi tiêu nội bộ", "vb",
      "Trường Đại học Thành Đô. (2026). *Quy chế chi tiêu nội bộ Trường Đại học Thành Đô* (Ban hành theo Nghị quyết số "
      "02/NQ-HĐT-ĐHTĐ ngày 01 tháng 6 năm 2026)."),
@@ -151,9 +155,23 @@ NHOM = [("vb", "A. Văn bản pháp luật, văn bản chỉ đạo và văn b�
         ("nn", "C. Tài liệu tiếng nước ngoài")]
 
 
+def _mau(muc):
+    """Mẫu nhận diện trích dẫn: văn bản pháp luật theo số hiệu; tài liệu khác theo họ tác giả và năm,
+    chấp nhận cả dạng (Tác giả, năm), Tác giả (năm), Tác giả và cộng sự (năm)."""
+    khoa, nhom, apa = muc
+    nam = re.search(r"\((\d{4}[a-z]?|n\.d\.)\)", apa).group(1)
+    if nhom == "vb":
+        so = re.search(r"\d+[-/][\w/\-]+", khoa)
+        tac_gia = apa.split(". (")[0]
+        return (re.escape(so.group(0)) if so else re.escape(khoa)) + "|" + re.escape(tac_gia) + r",\s*" + \
+            re.escape(nam[:4])
+    ho = re.split(r",| et al\.| &| \(", khoa)[0].strip()
+    return re.escape(ho) + r"[^()]{0,40}?[(,]\s*" + re.escape(nam)
+
+
 def duoc_trich(van_ban):
     """Trả về các mục được trích trong văn bản, giữ thứ tự danh mục."""
-    return [m for m in TAI_LIEU if m[0] in van_ban]
+    return [m for m in TAI_LIEU if re.search(_mau(m), van_ban)]
 
 
 def trich_dan_mo_coi(van_ban):

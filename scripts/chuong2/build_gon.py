@@ -531,7 +531,7 @@ def noi_dung(v):
         f"Bảng 2.{b_ts} và Hình 2.{h_ts} cho thấy danh mục hình thành từ ba luồng. Luồng thương hiệu gồm 4 tài sản, đều "
         "do Nhà trường đơn sở hữu và đều đã có văn bằng. Luồng hợp tác doanh nghiệp gồm 5 kiểu dáng công nghiệp và 1 "
         "nhãn hiệu đồng sở hữu với một doanh nghiệp đối tác; đây là thành công nổi bật của chiến lược hợp tác đại học "
-        "với doanh nghiệp mà Ban Giám hiệu đã chủ động kết nối, riêng năm 2024 có 5 kiểu dáng được cấp, nâng số lũy kế "
+        "với doanh nghiệp mà Ban Giám hiệu đã dày công kết nối, riêng năm 2024 có 5 kiểu dáng được cấp, nâng số lũy kế "
         "từ 4 lên 9 tài sản. Luồng nghiên cứu đã có 2 đơn sáng chế nộp năm 2025 và 2026. Giai đoạn tới, Nhà trường có thể "
         "tận dụng đà hợp tác này để phát triển thêm các tài sản do chính Nhà trường đơn sở hữu từ kết quả nghiên cứu, "
         "nhất là công thức và quy trình, những đối tượng mà kiểu dáng công nghiệp chưa bảo hộ. Giải pháp hữu ích, loại "
@@ -655,9 +655,9 @@ def noi_dung(v):
         "ban hành quy chế chuyên biệt, mở rộng phạm vi tài sản, bổ sung nguyên tắc công bố và bảo mật, phân công đầu "
         "mối. Cả hai văn bản đều ra đời trước khi Luật số 93/2025/QH15 và Luật số 131/2025/QH15 được ban hành.",
         "Thứ hai, Nhà trường đã xác lập 12 tài sản trí tuệ, trong đó 9 tài sản có văn bằng. Nhóm thương hiệu gồm tên "
-        "trường, bộ nhận diện và thương hiệu hệ sinh thái được bảo hộ liên tục từ năm 2021. Chiến lược hợp tác với doanh "
-        "nghiệp do Ban Giám hiệu chủ động kết nối đã tạo ra 5 kiểu dáng công nghiệp và 1 nhãn hiệu đồng sở hữu, minh "
-        "chứng cho năng lực hợp tác đại học với doanh nghiệp hiệu quả của Nhà trường.",
+        "trường, bộ nhận diện và thương hiệu hệ sinh thái được bảo hộ liên tục từ năm 2021. 5 kiểu dáng công nghiệp và 1 "
+        "nhãn hiệu đồng sở hữu là thành công nổi bật trong chiến lược hợp tác đại học với doanh nghiệp mà Ban Giám hiệu "
+        "đã dày công kết nối.",
         f"Thứ ba, năng lực nghiên cứu tăng nhanh: số bài báo tăng bình quân {pt(B.cagr(B.bb[0], B.bb[4], 4))} một năm, "
         f"đạt {so(B.bb[4] / tong_gv, 2)} bài trên một giảng viên năm 2025; {kh_dat} trên 10 chỉ tiêu khoa học công "
         "nghệ của Kế hoạch 07/KH-ĐHTĐ đạt hoặc vượt; ba đề tài cấp quốc gia với tổng kinh phí 4,67 tỷ đồng được giao.",

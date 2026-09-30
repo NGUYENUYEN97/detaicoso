@@ -13,6 +13,34 @@ Ngày rà soát: 30/9/2026. Căn cứ đối chiếu là các tệp trong thư m
 
 Các tệp gốc không bị sửa.
 
+## Cập nhật lượt 5: bản cuối gộp và bài báo (thư mục `Ban_cuoi`)
+
+**Tệp kết quả**
+- `Bao_cao_tong_ket_de_tai.docx`: báo cáo tổng kết gộp một bản gồm trang bìa, mục lục, danh mục bảng, danh mục hình, Mở đầu, ba chương, Kết luận và kiến nghị, Tài liệu tham khảo (38 mục, APA 7). Mục lục và danh mục là trường tự động của Word, đã có sẵn số trang; Word hỏi cập nhật trường khi mở tệp, chọn Yes để số trang khớp máy in.
+- `Du_lieu_bieu_do.xlsx`: số liệu và biểu đồ gốc của 11 biểu đồ Chương 2.
+- `Bai_bao_Tap_chi_NCKH_PT.docx`: bài báo đầu ra theo chuẩn JSRD, kèm Tờ khai minh bạch sử dụng AI và cam kết dữ liệu gốc (nhóm tác giả tự điền Phần I).
+- `so_do/`: 8 sơ đồ dùng trong báo cáo và bài báo.
+- Các tệp chương rời đã gỡ; có thể dựng lại riêng bằng `scripts/ban_cuoi/chuong1.py`, `scripts/chuong2/build_gon.py`, `scripts/ban_cuoi/chuong3.py`. Dựng toàn bộ: `python3 scripts/ban_cuoi/dung_tat_ca.py`.
+
+**Nội dung đã cập nhật**
+- Quyết định số 217/QĐ-ĐHTĐ ghi thống nhất ngày 21 tháng 11 năm 2024.
+- Luật số 93/2025/QH15 (tệp `VBPL/93_2025_QH15_581164.docx`) được đối chiếu và đưa vào Mục 1.3.2, Chương 2, Chương 3: khoản 2 Điều 25 (tự động giao quyền), Điều 27 (tự quyết thương mại hóa), khoản 2 và điểm a khoản 3 Điều 28 (thưởng tác giả tối thiểu 30% lợi nhuận đối với kết quả sử dụng ngân sách nhà nước), Điều 37, điểm b khoản 2 Điều 66, Điều 71, hiệu lực từ 01/10/2025.
+- Bốn điểm diễn đạt theo góp ý: độ trễ thể chế trước sự thay đổi dồn dập của pháp luật giai đoạn 2025 - 2026 và tầm nhìn sớm của Nhà trường; tiềm năng rất lớn của khối Y - Dược với khoảng trống kỹ thuật là thiếu biểu mẫu rà soát tại thời điểm nghiệm thu; 6 tài sản đồng sở hữu là thành công nổi bật của chiến lược hợp tác doanh nghiệp mà Ban Giám hiệu đã dày công kết nối; câu về quy trình nghiệm thu tại Mục 2.5.2 thay bằng câu được đề nghị.
+- Bổ sung Mở đầu (7 mục) và Kết luận, kiến nghị (3 mục) theo đề cương báo cáo tổng kết.
+- Sơ đồ thay cho mô tả dài: chu trình bốn giai đoạn, sáu nhóm yếu tố, khung phân tích (Chương 1); phân công bốn đầu mối, chuỗi nguyên nhân (Chương 2); phối hợp liên phòng ban, quy trình 8 khâu, lộ trình 2026 - 2030 (Chương 3).
+
+**Trích dẫn và tài liệu tham khảo**
+- Toàn bộ trích dẫn chuyển sang APA 7: (Tác giả, năm), "&" với hai tác giả, "et al." từ ba tác giả; tài liệu tiếng Việt ghi họ tác giả. Danh mục chia ba nhóm: văn bản pháp luật và văn bản Nhà trường; tài liệu tiếng Việt; tài liệu tiếng nước ngoài. Danh mục được sinh tự động từ `scripts/ban_cuoi/tai_lieu.py` và chỉ gồm tài liệu có trích dẫn trong bài.
+- Sửa sai lệch: "Rialti và cộng sự, 2022" trong tệp Zotero là sai tác giả; bài có DOI 10.1007/s10961-022-09932-2 là của O'Dwyer, Filieri và O'Malley (2023), The Journal of Technology Transfer, 48(3), 900-931. DOI của Siegel và cộng sự (2007) là 10.1093/oxrep/grm036. Guan (2014) đã xác định đủ thông tin chương sách của Springer.
+- Lược bỏ trích dẫn không truy xuất được: Milliken và Allen (2013).
+- Bổ sung tài liệu quốc tế gần đây đã kiểm chứng: Holgersson và Aaboen (2019), Maresova và cộng sự (2019), Rocha và cộng sự (2023).
+- **Cần nhóm xác minh trước khi nộp:** Võ (2025) chưa có số tập, trang; Nguyễn (2025) và Võ (2025) lấy từ tệp Zotero, có DOI nhưng chưa mở được trang tạp chí để đối chiếu; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ chưa có tệp gốc trong kho nên danh mục chưa ghi số hiệu, ngày ban hành; Cục Sở hữu trí tuệ (n.d.) là tài liệu không ghi năm.
+
+**Bài báo**
+- Tiêu đề: "Từ đề tài đến văn bằng: Chuỗi chuyển hóa tài sản trí tuệ tại Trường Đại học Thành Đô" (19 âm tiết). Tóm tắt 242 âm tiết, Abstract 238 từ, 5 từ khóa.
+- Dung lượng thân bài 4.755 âm tiết: Đặt vấn đề 6,9%; Tổng quan 16,9%; Phương pháp 8,9%; Kết quả 45,0%; Bàn luận 16,6%; Kết luận 5,7%, đều trong khung JSRD.
+- 4 hình, 1 bảng, 24 tài liệu tham khảo; tiểu mục Kết quả đặt tên theo phát hiện; mỗi khuyến nghị neo vào một phát hiện.
+
 ## Cập nhật lượt 4: bản cuối ba chương (thư mục `Ban_cuoi`)
 
 | Tệp | Nội dung |

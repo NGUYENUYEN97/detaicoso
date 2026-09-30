@@ -205,7 +205,7 @@ MANH = [
     "**3. Đã có sản phẩm đủ điều kiện bảo hộ:** 11 trên 38 đề tài cấp cơ sở, trong đó 8 sản phẩm phù hợp với giải pháp hữu "
     "ích, tập trung ở lĩnh vực dược với 42 người trình độ tiến sĩ và tương đương tại Viện Y - Dược.",
     "**4. Kênh chuyển hóa và hợp tác doanh nghiệp đã vận hành:** 2 đơn sáng chế năm 2025 và 2026; 9 văn bằng, trong đó "
-    "5 kiểu dáng công nghiệp và nhãn hiệu từ chiến lược hợp tác doanh nghiệp do Ban Giám hiệu chủ động kết nối.",
+    "5 kiểu dáng công nghiệp và nhãn hiệu từ chiến lược hợp tác doanh nghiệp mà Ban Giám hiệu đã dày công kết nối.",
     "**5. Có nguồn lực gắn cơ chế sở hữu trí tuệ:** Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ ngân sách 5 tỷ đồng; 3 đề tài cấp "
     "quốc gia tổng 4,67 tỷ đồng; Viện Nghiên cứu giáo dục và Chuyển giao tri thức có tư cách tổ chức khoa học và công nghệ, "
     "đã ký hợp đồng chuyển giao quyền sử dụng tác phẩm.",
