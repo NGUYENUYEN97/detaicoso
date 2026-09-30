@@ -2,7 +2,7 @@
 
 Bộ công cụ này tạo lại hai tệp ở thư mục gốc:
 
-- `Chuong_2_Thuc_trang_rut_gon.docx`: Chương 2 bản rút gọn, 8 bảng, 9 biểu đồ Excel nhúng. Đây là biểu đồ thật, không phải ảnh: nhấp chuột phải vào biểu đồ trong Word và chọn Chỉnh sửa dữ liệu để mở bảng số liệu.
+- `Chuong_2_Thuc_trang_rut_gon.docx`: Chương 2 bản rút gọn, 7 bảng, 9 biểu đồ Excel nhúng. Đây là biểu đồ thật, không phải ảnh: nhấp chuột phải vào biểu đồ trong Word và chọn Chỉnh sửa dữ liệu để mở bảng số liệu.
 - `Du_lieu_bieu_do_Chuong_2.xlsx`: mỗi hình một sheet gồm bảng dữ liệu và biểu đồ; kèm sheet `Nhat_ky_chuan_hoa` ghi các chỉnh sửa số liệu và căn cứ đối chiếu.
 
 ## Cách chạy

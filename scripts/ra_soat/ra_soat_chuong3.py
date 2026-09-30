@@ -18,6 +18,7 @@ VAO = os.path.join(GOC, "Chuong_3_He_thong_giai_phap.docx")
 RA = os.path.join(GOC, "Chuong_3_He_thong_giai_phap_ra_soat.docx")
 MERGE = "/root/.claude/skills/synced/511a21b4-da62-4b21-9cb6-da109b6fbd84_b74c1dbc-fffb-4c9d-9a90-c57409abedcc/docx/scripts/merge_runs.py"
 
+MAU_THAN = "hoạt động theo định hướng ứng dụng. Trong giai đoạn phát triển mới"
 QD1068 = "Mục III Điều 1 Quyết định số 1068/QĐ-TTg đã được sửa đổi tại Quyết định số 1624/QĐ-TTg"
 
 SUA = [
@@ -88,17 +89,43 @@ SUA = [
      "giao Bộ Khoa học và Công nghệ xây dựng cơ sở dữ liệu quốc gia về thực thi quyền sở hữu trí tuệ, đưa vào vận hành "
      "trong năm 2026, tăng cường ứng dụng trí tuệ nhân tạo và công nghệ chuỗi khối trong bảo vệ quyền, đồng thời giao Bộ "
      "Giáo dục và Đào tạo nghiên cứu đưa chương trình giáo dục về sở hữu trí tuệ vào các hệ, cấp học phù hợp"),
-    # --- 3.1.1, bổ sung căn cứ mới: Thông tư 83/2026/TT-BGDĐT (Điều 6, Phụ lục II)
-    ("tạo thêm căn cứ cho việc xây dựng hạ tầng số hóa dữ liệu tài sản trí tuệ tại Nhà trường.",
-     "Thứ bảy, Thông tư số 83/2026/TT-BGDĐT ngày 30 tháng 9 năm 2026 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định Chuẩn "
-     "cơ sở giáo dục đại học, có hiệu lực từ ngày 15 tháng 11 năm 2026 và thay thế Thông tư số 01/2024/TT-BGDĐT, lần đầu "
-     "đưa quy định về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật vào danh mục 21 nội dung quản trị nội bộ "
-     "bắt buộc tại tiêu chí 1.1. Tiêu chí 6.2 chuyển sang tính sản phẩm khoa học, công nghệ và đổi mới sáng tạo quy đổi "
-     "trên giảng viên quy đổi, trong đó một bằng độc quyền giải pháp hữu ích được tính 3 sản phẩm thay cho 1 sản phẩm như "
-     "trước và một bằng độc quyền sáng chế được tính 5 sản phẩm; Bảng 6B Phụ lục II tách riêng khoản thu từ thương mại "
-     "hóa kết quả nghiên cứu, sở hữu trí tuệ, spin-off, start-up. Dữ liệu về các kết quả này phải được cập nhật nhất "
-     "quán trên HEMIS theo tiêu chí 1.3. Đây là căn cứ để hoàn thiện quy chế theo hướng bổ sung nội dung liêm chính và để "
-     "Bộ chỉ số tại Mục 3.4.2 dùng chung định nghĩa sản phẩm với Chuẩn.", "doan_moi_sau"),
+    # --- Mục 3.1.2 mới: Thời cơ và thách thức. Thông tư 83/2026/TT-BGDĐT có hiệu lực từ 15/11/2026, chưa áp dụng
+    #     cho giai đoạn thực trạng nên chỉ đưa vào đây (Điều 6, Phụ lục I Bảng 1, Phụ lục II mục 6.2 và Bảng 6B).
+    ("tạo thêm căn cứ cho việc xây dựng hạ tầng số hóa dữ liệu tài sản trí tuệ tại Nhà trường.", [
+        ("3.1.1. Căn cứ quy phạm pháp luật", "3.1.2. Thời cơ và thách thức"),
+        (MAU_THAN,
+         "Bên cạnh các căn cứ pháp lý nêu trên, hệ thống giải pháp cần tính đến những thay đổi sắp có hiệu lực. Quan "
+         "trọng nhất là Thông tư số 83/2026/TT-BGDĐT ngày 30 tháng 9 năm 2026 của Bộ trưởng Bộ Giáo dục và Đào tạo quy "
+         "định Chuẩn cơ sở giáo dục đại học, có hiệu lực từ ngày 15 tháng 11 năm 2026 và thay thế Thông tư số "
+         "01/2024/TT-BGDĐT. Thông tư này chưa áp dụng cho giai đoạn đánh giá tại Chương 2, nhưng sẽ là thước đo bắt buộc "
+         "đối với Nhà trường trong thời gian triển khai giải pháp, qua đó tạo ra cả thời cơ lẫn thách thức."),
+        (MAU_THAN,
+         "Về thời cơ, văn bằng sở hữu công nghiệp được định giá cao hơn trong Chuẩn mới. Theo công thức tại mục 6.2.1 "
+         "Phụ lục II, một bằng độc quyền giải pháp hữu ích được tính 3 sản phẩm khoa học, công nghệ và đổi mới sáng tạo "
+         "quy đổi thay cho 1 sản phẩm như trước, một bằng độc quyền sáng chế được tính 5 sản phẩm; bảng tổng hợp cuối "
+         "Phụ lục II chưa nêu giải pháp hữu ích nên cần theo dõi hướng dẫn thực hiện. Với 8 sản phẩm đề tài cấp cơ sở "
+         "phù hợp với giải pháp hữu ích đã nhận diện tại Chương 2, việc xác lập quyền vừa tạo ra tài sản, vừa nâng kết "
+         "quả đánh giá theo Chuẩn. Bảng 6B Phụ lục II tách riêng khoản thu từ thương mại hóa kết quả nghiên cứu, sở hữu "
+         "trí tuệ, spin-off, start-up, nên hoạt động khai thác tài sản trí tuệ sẽ được ghi nhận như một đóng góp riêng "
+         "vào tỷ trọng thu khoa học, công nghệ. Cùng với đó, ba đề tài cấp quốc gia sẽ lần lượt nghiệm thu và Quỹ Học "
+         "bổng sau tiến sĩ Ngô Xuân Độ với ngân sách 5 tỷ đồng bắt đầu cho kết quả, là hai nguồn hình thành tài sản trí "
+         "tuệ lớn trong những năm tới."),
+        (MAU_THAN,
+         "Về thách thức, thứ nhất, tiêu chí 1.1 yêu cầu văn bản quản trị nội bộ ban hành đúng thẩm quyền và còn hiệu "
+         "lực đối với 21 nội dung bắt buộc, trong đó lần đầu có quy định về sở hữu trí tuệ, liêm chính khoa học, liêm "
+         "chính học thuật. Quyết định 213 và Quyết định 217 chưa có nội dung liêm chính và còn chồng lấn về phân chia "
+         "lợi ích, nên việc hợp nhất quy chế tại Giải pháp 1 trở thành yêu cầu có thời hạn. Thứ hai, tiêu chí 1.3 yêu "
+         "cầu dữ liệu kết quả hoạt động được cập nhật đầy đủ, đúng định dạng và nhất quán trên HEMIS, trong khi hệ thống "
+         "thống kê của Nhà trường chưa có danh mục tài sản trí tuệ. Thứ ba, Chuẩn vẫn đặt trọng số lớn vào công bố quốc "
+         "tế. Nhà trường có đào tạo trình độ tiến sĩ nên áp dụng ngưỡng 0,6 sản phẩm quy đổi trên một giảng viên quy "
+         "đổi, trong đó công bố WoS, Scopus không thấp hơn 0,3. Ước tính theo số liệu năm 2025, Nhà trường đạt khoảng "
+         "0,63 đến 1,6 sản phẩm quy đổi, vượt ngưỡng mà không cần văn bằng nào, nhưng chỉ số công bố WoS, Scopus chỉ "
+         "khoảng 0,31 và văn bằng không được tính vào chỉ số này. Ước tính tạm lấy 145 giảng viên theo danh sách năm "
+         "2026, quy đổi được 128,0 giảng viên, coi 40 bài báo có phân hạng Q là bài thuộc WoS hoặc Scopus và chưa áp "
+         "dụng hệ số lĩnh vực. Sức ép giữ ngưỡng công bố có thể tiếp tục kéo giảng viên về phía công bố trước, làm tăng "
+         "nguy cơ kết quả nghiên cứu mất tính mới nếu không có khâu rà soát trước khi công bố như Nguyên tắc 4 đặt ra."),
+    ], "cac_doan_sau"),
+    ("3.1.2. Các nguyên tắc xây dựng giải pháp", "3.1.3. Các nguyên tắc xây dựng giải pháp"),
     # --- 3.1.2
     ("khoảng trống lớn về nhận thức và động lực", "khoảng trống lớn về quy trình và động lực"),
     # --- 3.2.1 (đối chiếu Quy chế quản trị tài sản trí tuệ 2024, Điều 3, 9, 11, 13)

@@ -45,23 +45,6 @@ hoc_ham = sum(r[3] + r[4] for r in NL)
 assert (tong_nl, tong_gv, ts_tong, ths_tong, hoc_ham) == (252, 145, 94, 94, 25)
 assert (B.nl_ba_vien, B.ts_ba_vien, B.hoc_ham_ba_vien, B.nl_khoi_qt, B.dh_khac_khoi_qt) == (146, 81, 22, 29, 23)
 
-# Giảng viên quy đổi theo Bảng 1 Phụ lục I Thông tư 83/2026/TT-BGDĐT, đếm từ 2026 DS.xlsx
-# (chỉ số lượng tổng hợp): 83 tiến sĩ và tương đương, 58 thạc sĩ và tương đương, 3 đại học, 1 trung cấp.
-GV_TS, GV_THS, GV_DH = 83, 58, 3
-GQD = GV_TS * 1.0 + GV_THS * 0.75 + GV_DH * 0.5
-assert GQD == 128.0
-sp = B.sp
-bb_tn, bb_qt = sp["Bài báo đăng tạp chí trong nước"], sp["Bài báo đăng tạp chí quốc tế"]
-sach = sp["Sách xuất bản"]
-q_nam = B.co_hang  # bài quốc tế có phân hạng Q theo năm
-assert q_nam[3:] == [28, 40]
-P_2025_toi_da = bb_tn[4] + 2 * q_nam[4] + 3 * sach[4]
-T_toi_da = P_2025_toi_da / GQD
-T_chi_q = 2 * q_nam[4] / GQD
-WOS_2025, WOS_2024 = q_nam[4] / GQD, q_nam[3] / GQD
-T_chi_q += 1e-9  # làm tròn nửa lên khi hiển thị 0,625
-assert (P_2025_toi_da, so(T_toi_da, 1), so(T_chi_q, 2), so(WOS_2025, 2), so(WOS_2024, 2)) == \
-    (207, "1,6", "0,63", "0,31", "0,22")
 ghph = B.dem_q[0] + B.dem_q[1] + B.dem_q[4]
 assert ghph == 8
 
@@ -335,68 +318,6 @@ def noi_dung(v):
         "phần lớn sản phẩm đề tài đủ điều kiện xác lập quyền và cả hai đơn sáng chế. Số lượng công bố và khả năng hình "
         "thành tài sản trí tuệ vì vậy là hai đại lượng khác nhau, cần được theo dõi bằng hai thước đo riêng.")
 
-    # ---------------------------------------------------------------- 2.1.3
-    v.doan("h2", "2.1.3. Yêu cầu của Chuẩn cơ sở giáo dục đại học mới đối với hoạt động sở hữu trí tuệ")
-    v.than(
-        "Ngày 30 tháng 9 năm 2026, Bộ trưởng Bộ Giáo dục và Đào tạo ban hành Thông tư số 83/2026/TT-BGDĐT quy định "
-        "Chuẩn cơ sở giáo dục đại học, có hiệu lực từ ngày 15 tháng 11 năm 2026 và thay thế Thông tư số "
-        "01/2024/TT-BGDĐT. Đây là thước đo bắt buộc mà Nhà trường được đánh giá hằng năm qua dữ liệu trên HEMIS. Những "
-        "thay đổi liên quan đến sở hữu trí tuệ và vị trí hiện tại của Nhà trường được trình bày tại Bảng 2.3.")
-    b_tt = v.bang(
-        "Thay đổi của Chuẩn cơ sở giáo dục đại học liên quan đến sở hữu trí tuệ và vị trí của Nhà trường",
-        ["Nội dung", "Thông tư 01/2024/TT-BGDĐT", "Thông tư 83/2026/TT-BGDĐT", "Trường Đại học Thành Đô"],
-        [["Văn bản quản trị nội bộ bắt buộc",
-          "7 văn bản, không có quy định về sở hữu trí tuệ",
-          "21 nội dung, trong đó nội dung 14 về hoạt động khoa học, công nghệ và đổi mới sáng tạo, nội dung 15 về sở "
-          "hữu trí tuệ, liêm chính khoa học, liêm chính học thuật; phải đúng thẩm quyền và còn hiệu lực",
-          "Có Quyết định 213 năm 2021 và Quyết định 217 năm 2024, hai văn bản chồng lấn về phân chia lợi ích; chưa có "
-          "quy định về liêm chính khoa học, liêm chính học thuật"],
-         ["Chỉ số hoạt động chính",
-          "Ít nhất 50% chỉ số được cải thiện",
-          "Ít nhất 50% chỉ số đạt hoặc vượt mục tiêu kế hoạch năm",
-          f"{kh_dat} trên 10 chỉ tiêu khoa học công nghệ của Kế hoạch 07/KH-ĐHTĐ đạt trong hai năm 2024 - 2025; "
-          "chỉ tiêu chuyển giao công nghệ không đạt"],
-         ["Dữ liệu trên HEMIS",
-          "Dữ liệu kết quả hoạt động cập nhật trên HEMIS",
-          "Giữ yêu cầu, bổ sung yêu cầu đúng định dạng, đúng thời hạn",
-          "Hệ thống thống kê khoa học công nghệ chưa có danh mục tài sản trí tuệ"],
-         ["Kết quả khoa học trên giảng viên",
-          "P = P1 + 3P2 + 5P3, giải pháp hữu ích hệ số 1, sáng chế hệ số 5; chia cho giảng viên toàn thời gian",
-          "P = P1 + 2P2 + 3P3 + 5P4, bài WoS, Scopus hệ số 2, sách chuyên khảo và giải pháp hữu ích hệ số 3, sáng "
-          "chế hệ số 5; chia cho giảng viên quy đổi; ngưỡng 0,6 với cơ sở có đào tạo tiến sĩ",
-          f"Ước tính năm 2025 từ {so(T_chi_q, 2)} đến {so(T_toi_da, 1)}, vượt ngưỡng mà không cần văn bằng nào"],
-         ["Công bố WoS, Scopus trên giảng viên",
-          "Ít nhất 0,3 bài với cơ sở có đào tạo tiến sĩ",
-          "Ít nhất 0,3 trên giảng viên quy đổi, có trọng số lĩnh vực",
-          f"Khoảng {so(WOS_2025, 2)} năm 2025 và {so(WOS_2024, 2)} năm 2024, sát hoặc dưới ngưỡng; văn bằng không "
-          "được tính"],
-         ["Thu khoa học, công nghệ",
-          "Ít nhất 5% tổng thu với cơ sở có đào tạo tiến sĩ",
-          "Giữ ngưỡng 5%; tách riêng khoản thu từ thương mại hóa kết quả nghiên cứu, sở hữu trí tuệ, spin-off, "
-          "start-up",
-          "Chưa có số liệu tách bạch; thu từ khai thác quyền mới ghi nhận ở 2 hợp đồng bản quyền theo doanh số"]],
-        "Nguồn: Nhóm nghiên cứu đối chiếu Thông tư số 01/2024/TT-BGDĐT và Thông tư số 83/2026/TT-BGDĐT; ước tính từ "
-        f"Bảng 2.1, Bảng 2.2 và danh mục bài báo quốc tế. Giảng viên quy đổi tạm tính theo danh sách năm 2026: {GV_TS} "
-        f"giảng viên tiến sĩ và tương đương hệ số 1,0, {GV_THS} thạc sĩ và tương đương hệ số 0,75, {GV_DH} đại học "
-        f"hệ số 0,5, tổng {so(GQD, 1)}. Bài báo có phân hạng Q được coi là thuộc WoS hoặc Scopus; chưa áp dụng hệ số "
-        "lĩnh vực. Công thức tại mục 6.2.1 Phụ lục II xếp bằng độc quyền giải pháp hữu ích vào nhóm hệ số 3, nhưng bảng "
-        "tổng hợp cuối Phụ lục II chưa nêu loại này.",
-        [2.6, 3.4, 4.6, 4.2], can=["left", "left", "left", "left"])
-    v.than(
-        f"Bảng 2.{b_tt} cho thấy Chuẩn mới tác động đến quản lý quyền sở hữu trí tuệ theo hai chiều. Ở chiều thể chế và "
-        "dữ liệu, yêu cầu chặt hơn: lần đầu tiên quy định về sở hữu trí tuệ nằm trong danh mục văn bản quản trị bắt "
-        "buộc, gắn với liêm chính khoa học và liêm chính học thuật, trong khi Quyết định 213 và Quyết định 217 chưa có "
-        "nội dung về liêm chính và còn chồng lấn nhau. Dữ liệu kết quả hoạt động phải nhất quán trên HEMIS, trong khi "
-        "hệ thống thống kê hiện hành chưa theo dõi tài sản trí tuệ.",
-        f"Ở chiều kết quả, Chuẩn mới nâng giá trị của văn bằng nhưng chưa tạo sức ép buộc Nhà trường đăng ký. Một bằng "
-        f"độc quyền giải pháp hữu ích được tính 3 sản phẩm quy đổi thay cho 1 như trước; nếu {ghph} sản phẩm đề tài phù "
-        f"hợp với giải pháp hữu ích được cấp văn bằng, Nhà trường có thêm {3 * ghph} sản phẩm quy đổi. Tuy nhiên, chỉ "
-        f"riêng {q_nam[4]} bài báo có phân hạng Q năm 2025 đã cho khoảng {so(T_chi_q, 2)} sản phẩm quy đổi trên một "
-        f"giảng viên quy đổi, vượt ngưỡng 0,6. Ràng buộc thực sự là chỉ số công bố WoS, Scopus, khoảng "
-        f"{so(WOS_2025, 2)} năm 2025 so với ngưỡng 0,3, và văn bằng không được tính vào chỉ số này. Chuẩn mới vì vậy "
-        "tiếp tục kéo nguồn lực về công bố quốc tế; nếu không có bước rà soát trước khi công bố, sức ép này làm tăng "
-        "nguy cơ kết quả nghiên cứu mất tính mới trước khi kịp nộp đơn.")
-
     # ===================================================================== 2.2
     v.doan("h1", "2.2. Thực trạng thể chế, tổ chức và nguồn lực quản lý quyền sở hữu trí tuệ")
     v.doan("h2", "2.2.1. Hệ thống quy định nội bộ")
@@ -413,7 +334,7 @@ def noi_dung(v):
         "chế thực hiện thủ tục xác lập quyền. Hai văn bản còn lại là Quy chế chi tiêu nội bộ ban hành ngày 01 tháng 8 "
         "năm 2026 và Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ năm 2025.",
         "Quyết định 217 không dẫn chiếu và không thay thế Chương VI Quyết định 213, nên hai văn bản cùng hiệu lực. Bốn "
-        "văn bản chứa năm quy định khác nhau về phân chia lợi ích, được trình bày tại Bảng 2.4.")
+        f"văn bản chứa năm quy định khác nhau về phân chia lợi ích, được trình bày tại Bảng 2.{v.so_bang + 1}.")
     b_ll = v.bang(
         "Các quy định về phân chia lợi ích từ tài sản trí tuệ trong nội bộ Trường Đại học Thành Đô",
         ["Văn bản", "Năm", "Phạm vi áp dụng", "Công thức chia lợi ích", "Mức trần"],
@@ -464,7 +385,7 @@ def noi_dung(v):
         "lập; mỗi đơn vị nắm một đoạn của chu trình và giữa các đoạn không có cơ chế chuyển hồ sơ.")
 
     v.doan("h2", "2.2.3. Nguồn lực tài chính và cơ chế khuyến khích")
-    v.than("Nhà trường có ba kênh tài trợ nghiên cứu với chế độ sở hữu trí tuệ khác nhau, được trình bày tại Bảng 2.5.")
+    v.than(f"Nhà trường có ba kênh tài trợ nghiên cứu với chế độ sở hữu trí tuệ khác nhau, được trình bày tại Bảng 2.{v.so_bang + 1}.")
     b_kenh = v.bang(
         "Ba kênh tài trợ nghiên cứu và chế độ sở hữu trí tuệ tương ứng",
         ["Kênh tài trợ", "Quy mô", "Dòng chi cho phí nộp đơn", "Kết quả tài sản trí tuệ"],
@@ -527,13 +448,12 @@ def noi_dung(v):
         f"tại Mục 1.4.2, chỉ {B.tong_T} tiêu chí tính được đầy đủ, {B.tong_M} tiêu chí tính được một phần và "
         f"{B.tong_C} tiêu chí chưa tính được; nhóm kết quả không có tiêu chí nào tính được đầy đủ. Nhà trường đo được "
         "đã xác lập bao nhiêu quyền nhưng chưa đo được quyền mang lại giá trị gì. Đây lại là nhóm thông tin phải công "
-        "khai theo điểm đ khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15 và phải nhất quán trên HEMIS theo "
-        "tiêu chí 1.3 của Chuẩn cơ sở giáo dục đại học mới.")
+        "khai theo điểm đ khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15.")
 
     # ===================================================================== 2.3
     v.doan("h1", "2.3. Thực trạng tạo lập, xác lập và bảo vệ quyền sở hữu trí tuệ")
     v.doan("h2", "2.3.1. Đối sánh giữa quy định pháp luật, quy chế nội bộ và thực tế phát sinh")
-    v.than("Bảng 2.6 đối sánh ba lớp: đối tượng quyền theo Luật Sở hữu trí tuệ, tài sản được liệt kê tại Điều 34 Quyết "
+    v.than(f"Bảng 2.{v.so_bang + 1} đối sánh ba lớp: đối tượng quyền theo Luật Sở hữu trí tuệ, tài sản được liệt kê tại Điều 34 Quyết "
            "định 213 và Điều 3 Quyết định 217, và thực tế phát sinh giai đoạn 2021 - 2025.")
     b_ds = v.bang(
         "Đối sánh đối tượng quyền theo Luật, theo quy chế nội bộ và theo thực tế phát sinh",
@@ -562,7 +482,7 @@ def noi_dung(v):
 
     v.doan("h2", "2.3.2. Tài sản trí tuệ đã được xác lập quyền")
     v.than("Đến thời điểm nghiên cứu, Nhà trường sở hữu 12 tài sản trí tuệ đã được xác lập quyền hoặc đang xử lý đơn, "
-           "được liệt kê tại Bảng 2.7.")
+           f"được liệt kê tại Bảng 2.{v.so_bang + 1}.")
     dong = [[i + 1, t[0], t[1], t[2], t[3], t[4], t[5]] for i, t in enumerate(D.TSTT)]
     b_ts = v.bang(
         "Tài sản trí tuệ thuộc sở hữu của Trường Đại học Thành Đô",
@@ -588,7 +508,7 @@ def noi_dung(v):
 
     v.doan("h2", "2.3.3. Sản phẩm đề tài đủ điều kiện xác lập quyền")
     v.than("Rà soát cột sản phẩm nghiệm thu của 38 đề tài cấp cơ sở cho thấy 11 đề tài có sản phẩm cụ thể đủ điều kiện "
-           "xác lập quyền ngoài báo cáo và bài báo, được liệt kê tại Bảng 2.8.")
+           f"xác lập quyền ngoài báo cáo và bài báo, được liệt kê tại Bảng 2.{v.so_bang + 1}.")
     b_dt = v.bang(
         "Đề tài cấp cơ sở có sản phẩm đủ điều kiện xác lập quyền, giai đoạn 2021 - 2025",
         ["Năm", "Đơn vị chủ trì", "Sản phẩm nghiệm thu", "Nhóm quyền có thể xác lập", "Tình trạng"],
@@ -619,8 +539,8 @@ def noi_dung(v):
     h_nq = v.hinh_bd("H2.14", nguon=f"Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.{b_dt}.")
     v.than(
         f"Hình 2.{h_nq} cho thấy {B.shcn} trên 11 sản phẩm thuộc nhóm sở hữu công nghiệp và giải pháp hữu ích phù hợp "
-        f"với {ghph} sản phẩm. Loại hình này không đòi hỏi trình độ sáng tạo như sáng chế, phù hợp với quy mô đề tài "
-        "cấp cơ sở và theo Chuẩn cơ sở giáo dục đại học mới được tính 3 sản phẩm quy đổi mỗi văn bằng, nhưng chưa sản "
+        f"với {ghph} sản phẩm. Loại hình này không đòi hỏi trình độ sáng tạo như sáng chế, có thời hạn bảo hộ ngắn hơn "
+        "và phù hợp với quy mô đề tài cấp cơ sở, nhưng chưa sản "
         f"phẩm nào được nộp đơn theo hình thức này. Mười trên 11 sản phẩm thuộc lĩnh vực dược, nên tiềm năng sở hữu "
         "công nghiệp của Nhà trường có thể được quản lý có trọng tâm.")
     assert len(B.dt_duoc) == 10
@@ -663,16 +583,14 @@ def noi_dung(v):
         "được cấp chưa phát sinh giao dịch chuyển giao quyền nào. Năng lực khai thác gắn với tư cách pháp lý và chức "
         "năng được giao của Viện Nghiên cứu giáo dục và Chuyển giao tri thức, không phân bố theo năng lực chuyên môn. "
         "Đây cũng là nội dung có dữ liệu mỏng nhất, vì hệ thống thống kê không theo dõi việc sử dụng và khai thác tài "
-        "sản trí tuệ, trong khi Bảng 6B của Chuẩn cơ sở giáo dục đại học mới yêu cầu tách riêng khoản thu từ thương mại "
-        "hóa kết quả nghiên cứu và sở hữu trí tuệ.")
+        "sản trí tuệ; bản thân việc thiếu dữ liệu này là một phát hiện về thực trạng quản lý.")
 
     # ===================================================================== 2.5
     v.doan("h1", "2.5. Đánh giá chung về công tác quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô")
     v.than(
         "Kết quả hai năm 2024 - 2025 được đối chiếu trước hết với Kế hoạch hoạt động khoa học công nghệ giai đoạn 2024 - "
-        "2028 ban hành kèm Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024. Đây là thước đo do chính Nhà trường đặt ra "
-        "và là loại chỉ số hoạt động chính mà tiêu chí 1.2 của Chuẩn cơ sở giáo dục đại học mới yêu cầu đạt tối thiểu "
-        "50%.")
+        "2028 ban hành kèm Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024. Đây là thước đo khách quan vì do chính Nhà "
+        "trường đặt ra, và 2024 - 2025 là hai năm đầu của kế hoạch.")
     h_kh = v.hinh_bd("H2.16")
     k = kh
     v.than(
@@ -696,8 +614,7 @@ def noi_dung(v):
     v.than(
         "Thứ nhất, Nhà trường có hệ thống quy định về sở hữu trí tuệ từ sớm. Quyết định 213 năm 2021 đã có một chương "
         "riêng với phạm vi tài sản khá đầy đủ và quy trình đăng ký một cửa; Quyết định 217 năm 2024 mở rộng phạm vi tài "
-        "sản, bổ sung nguyên tắc công bố và bảo mật, phân công đầu mối. Đây là nền để đáp ứng nội dung quản trị bắt buộc "
-        "về sở hữu trí tuệ của Chuẩn cơ sở giáo dục đại học mới.",
+        "sản, bổ sung nguyên tắc công bố và bảo mật, phân công đầu mối.",
         "Thứ hai, Nhà trường đã xác lập 12 tài sản trí tuệ, trong đó 9 tài sản có văn bằng; nhóm thương hiệu gồm tên "
         "trường, bộ nhận diện và thương hiệu hệ sinh thái được bảo hộ liên tục từ năm 2021, có ý nghĩa trong cạnh tranh "
         "tuyển sinh.",
@@ -716,13 +633,12 @@ def noi_dung(v):
         f"sản phẩm đủ điều kiện nhưng chỉ {len(B.nop_don)} đề tài nộp đơn; {len(B.du_dk_den_2024)} đề tài đủ điều kiện "
         "giai đoạn 2021 - 2024 đều không nộp đơn; hoạt động nghiên cứu chỉ đóng góp 2 trên 12 tài sản trí tuệ.",
         "Thứ hai, hệ thống quy định chồng lấn và chưa theo kịp pháp luật: bốn văn bản chứa năm quy định chia lợi ích, "
-        "mức trần 100 triệu đồng không còn tương thích với Điều 135 Luật Sở hữu trí tuệ hiện hành, và chưa có quy định "
-        "về liêm chính khoa học, liêm chính học thuật đi kèm như nội dung bắt buộc của Chuẩn cơ sở giáo dục đại học mới.",
+        "và mức trần 100 triệu đồng không còn tương thích với Điều 135 Luật Sở hữu trí tuệ hiện hành.",
         "Thứ ba, quản lý quyền diễn ra theo hai luồng tách rời: luồng thương hiệu vận hành đều và có kết quả, luồng "
         "nghiên cứu gần như không; danh mục tài sản và danh mục sản phẩm đề tài gần như không có điểm giao.",
         "Thứ tư, năng lực xác lập quyền sở hữu công nghiệp phụ thuộc đối tác: 6 trên 12 tài sản, gồm toàn bộ kiểu dáng "
         "công nghiệp, đồng sở hữu với một doanh nghiệp.",
-        f"Thứ năm, hệ thống dữ liệu chưa đáp ứng yêu cầu quản lý và yêu cầu dữ liệu trên HEMIS: không có danh mục tài "
+        f"Thứ năm, hệ thống dữ liệu chưa đáp ứng yêu cầu quản lý và nghĩa vụ công khai: không có danh mục tài "
         f"sản trí tuệ trong hệ thống thống kê, độ phủ khai báo khoảng 29,9%, {B.tong_C} trên 16 tiêu chí đánh giá chưa "
         "tính được.",
         "Thứ sáu, khai thác có thu phí rất hẹp: hai hợp đồng chuyển giao quyền sử dụng tác phẩm trong năm năm, chín văn "
@@ -737,16 +653,12 @@ def noi_dung(v):
         "Thứ nhất, khung pháp luật thay đổi dồn dập trong giai đoạn 2025 - 2026, gồm Luật Khoa học, công nghệ và đổi mới "
         "sáng tạo số 93/2025/QH15 có hiệu lực từ ngày 01 tháng 10 năm 2025, Luật Giáo dục đại học số 125/2025/QH15, Luật "
         "số 131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ có hiệu lực từ ngày 01 tháng 4 năm 2026, Kết luận số 51-KL/TW "
-        "ngày 17 tháng 6 năm 2026, Quyết định số 1624/QĐ-TTg ngày 21 tháng 8 năm 2026 và Thông tư số 83/2026/TT-BGDĐT "
-        "ngày 30 tháng 9 năm 2026. Quy chế ban hành năm 2021 được xây dựng trên khung cũ nên một số quy định như mức "
+        "ngày 17 tháng 6 năm 2026 và Quyết định số 1624/QĐ-TTg ngày 21 tháng 8 năm 2026. Quy chế ban hành năm 2021 được xây dựng trên khung cũ nên một số quy định như mức "
         "trần thù lao không còn tương thích.",
         "Thứ hai, thủ tục xác lập quyền sở hữu công nghiệp kéo dài và phát sinh chi phí tra cứu, soạn đơn, lệ phí, phí "
         "duy trì; là trường tư thục, Nhà trường phải tự cân đối các khoản này từ nguồn thu của mình.",
         "Thứ ba, cơ cấu ngành chủ yếu thuộc kinh tế, quản lý, ngôn ngữ, giáo dục và pháp luật, vốn chủ yếu tạo ra tác "
         "phẩm thuộc quyền tác giả; tiềm năng sở hữu công nghiệp tập trung ở lĩnh vực dược.",
-        "Thứ tư, các thước đo đánh giá bên ngoài vẫn đặt trọng số lớn vào công bố quốc tế. Theo Chuẩn cơ sở giáo dục "
-        "đại học mới, Nhà trường vượt ngưỡng kết quả khoa học công nghệ mà không cần văn bằng, còn ngưỡng công bố WoS, "
-        "Scopus là ràng buộc thực sự và không tính văn bằng; sức ép từ bên ngoài vì vậy tiếp tục hướng về công bố.",
         f"Các nguyên nhân khách quan giải thích vì sao quy mô tài sản trí tuệ còn nhỏ, nhưng không giải thích được vì sao "
         f"{len(B.du_dk_den_2024)} đề tài đủ điều kiện giai đoạn 2021 - 2024 đều không được nộp đơn.")
     v.doan("h3", "b) Nguyên nhân chủ quan", bold=True)
@@ -787,11 +699,10 @@ NHAT_KY_GON = [
      "Số liệu chính giữ trong lời văn; dữ liệu vẫn có trong các sheet DL_ và tệp du_lieu.py", "Rút gọn"),
     ("Quy chế quản trị tài sản trí tuệ năm 2024", "Chưa rõ số hiệu",
      "Ban hành kèm Quyết định số 217/QĐ-ĐHTĐ, gọi tắt là Quyết định 217", "Xác nhận của chủ nhiệm đề tài"),
-    ("Mục 2.1.3 mới", "Chưa có",
-     "Đối chiếu Thông tư 83/2026/TT-BGDĐT với Thông tư 01/2024/TT-BGDĐT; ước tính chỉ số 6.2 năm 2025",
-     "VBPL/01_2024_TT-BGDDT; 83_2026_TT-BGDDT_727285.docx, Điều 6, Phụ lục I Bảng 1, Phụ lục II mục 6.2"),
-    ("Giảng viên quy đổi", "Chưa có", "83 x 1,0 + 58 x 0,75 + 3 x 0,5 = 128,0",
-     "2026 DS.xlsx, cột học hàm, học vị của 145 giảng viên; 1 giảng viên trình độ trung cấp không tính"),
+    ("Thông tư 83/2026/TT-BGDĐT về Chuẩn cơ sở giáo dục đại học", "Chưa có",
+     "Không đưa vào Chương 2 vì Thông tư có hiệu lực từ ngày 15 tháng 11 năm 2026, chưa áp dụng cho giai đoạn đánh giá; "
+     "được đưa vào Mục 3.1.2 Thời cơ và thách thức của Chương 3",
+     "Ý kiến của chủ nhiệm đề tài"),
     ("Ngân sách Quỹ Ngô Xuân Độ", "5 tỷ đồng", "5 tỷ đồng giai đoạn 2025 - 2029", "Xác nhận của chủ nhiệm đề tài"),
     ("Biểu đồ", "Chú giải đặt dưới, bố cục tự động; nhãn trắng trên mọi nền",
      "Bố cục cố định: chú giải phía trên, vùng vẽ tách riêng; màu chữ nhãn chọn theo độ tương phản với nền",

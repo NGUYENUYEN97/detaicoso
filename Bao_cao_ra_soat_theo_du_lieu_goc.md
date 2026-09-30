@@ -6,25 +6,23 @@ Ngày rà soát: 30/9/2026. Căn cứ đối chiếu là các tệp trong thư m
 
 | Tệp | Nội dung | Cách dùng |
 |---|---|---|
-| `Chuong_2_Thuc_trang_rut_gon.docx` | Chương 2 bản rút gọn, khoảng 23 trang, 8 bảng, 9 biểu đồ Excel nhúng | Bản sạch, thay cho bản 43 trang trước; nhật ký sửa nằm trong sheet `Nhat_ky_chuan_hoa` của tệp Excel |
+| `Chuong_2_Thuc_trang_rut_gon.docx` | Chương 2 bản rút gọn, khoảng 21 trang, 7 bảng, 9 biểu đồ Excel nhúng | Bản sạch, thay cho bản 43 trang trước; nhật ký sửa nằm trong sheet `Nhat_ky_chuan_hoa` của tệp Excel |
 | `Du_lieu_bieu_do_Chuong_2.xlsx` | Dữ liệu, biểu đồ, nhật ký chuẩn hóa, danh mục đề tài và tài sản trí tuệ | Sửa số liệu tại đây hoặc trong `scripts/chuong2/du_lieu.py` |
-| `Chuong_3_He_thong_giai_phap_ra_soat.docx` | Chương 3 có 46 chỉnh sửa ở chế độ theo dõi thay đổi | Mở bằng Word, thẻ Review, chấp nhận hoặc từ chối từng chỗ |
+| `Chuong_3_He_thong_giai_phap_ra_soat.docx` | Chương 3 có 47 chỉnh sửa ở chế độ theo dõi thay đổi | Mở bằng Word, thẻ Review, chấp nhận hoặc từ chối từng chỗ |
 | `Bai_bao_khoa_hoc_Tap_chi_DHTD_ra_soat.docx` | Bài báo có 24 chỉnh sửa ở chế độ theo dõi thay đổi | Như trên |
 
 Các tệp gốc không bị sửa.
 
 ## Cập nhật lượt 3: rút gọn Chương 2, Thông tư 83/2026, Quyết định 217
 
-- **Chương 2 rút gọn** từ 43 trang xuống khoảng 23 trang (khoảng 7.800 từ ngoài bảng). Bỏ phần năng suất theo đơn vị, phân hạng tạp chí, tương quan bài báo và giáo trình, cơ cấu nhân sự có công bố, quy mô ba kênh tài trợ, tài sản theo năm; số liệu cốt lõi của các phần này được giữ trong lời văn. Gộp hoạt động bảo vệ quyền vào Mục 2.3.2, bỏ phân mục của Mục 2.4, chuyển hạn chế dữ liệu thành Mục 2.2.4. Bảng hợp đồng của Viện Nghiên cứu giáo dục và Chuyển giao tri thức chuyển thành lời văn.
-- **Mục 2.1.3 mới** đối chiếu Thông tư số 83/2026/TT-BGDĐT (ngày 30/9/2026, hiệu lực 15/11/2026, thay Thông tư 01/2024/TT-BGDĐT) với thực trạng của Nhà trường:
-  - tiêu chí 1.1: lần đầu có nội dung quản trị bắt buộc về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật; Quyết định 213 và Quyết định 217 chưa có nội dung liêm chính;
-  - tiêu chí 1.2: ít nhất 50% chỉ số hoạt động chính đạt mục tiêu; Kế hoạch 07 đạt 7 trên 10 chỉ tiêu khoa học công nghệ trong 2024 - 2025;
-  - tiêu chí 6.2: P = P1 + 2P2 + 3P3 + 5P4 trên giảng viên quy đổi; giải pháp hữu ích tăng từ hệ số 1 lên 3. Ước tính năm 2025: 0,63 đến 1,6 sản phẩm quy đổi trên giảng viên quy đổi, vượt ngưỡng 0,6 mà không cần văn bằng; chỉ số WoS, Scopus khoảng 0,31, sát ngưỡng 0,3 và không tính văn bằng;
-  - tiêu chí 6.1 và Bảng 6B: tách riêng thu từ thương mại hóa, sở hữu trí tuệ.
+- **Chương 2 rút gọn** từ 43 trang xuống khoảng 21 trang (khoảng 7.000 từ ngoài bảng). Bỏ phần năng suất theo đơn vị, phân hạng tạp chí, tương quan bài báo và giáo trình, cơ cấu nhân sự có công bố, quy mô ba kênh tài trợ, tài sản theo năm; số liệu cốt lõi của các phần này được giữ trong lời văn. Gộp hoạt động bảo vệ quyền vào Mục 2.3.2, bỏ phân mục của Mục 2.4, chuyển hạn chế dữ liệu thành Mục 2.2.4. Bảng hợp đồng của Viện Nghiên cứu giáo dục và Chuyển giao tri thức chuyển thành lời văn.
+- **Thông tư số 83/2026/TT-BGDĐT** (Chuẩn cơ sở giáo dục đại học, ngày 30/9/2026, hiệu lực 15/11/2026, thay Thông tư 01/2024/TT-BGDĐT) chưa áp dụng cho giai đoạn đánh giá nên **không đưa vào Chương 2**. Nội dung được đặt tại **Mục 3.1.2 mới "Thời cơ và thách thức" của Chương 3** (Mục 3.1.2 cũ thành 3.1.3):
+  - thời cơ: bằng giải pháp hữu ích tăng từ hệ số 1 lên 3, sáng chế hệ số 5 trong chỉ số sản phẩm quy đổi trên giảng viên quy đổi; Bảng 6B tách riêng thu từ thương mại hóa, sở hữu trí tuệ; ba đề tài cấp quốc gia và Quỹ 5 tỷ đồng;
+  - thách thức: tiêu chí 1.1 có nội dung bắt buộc về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật mà Quyết định 213 và 217 chưa có phần liêm chính; tiêu chí 1.3 về dữ liệu trên HEMIS; ngưỡng công bố WoS, Scopus 0,3 trong khi ước tính năm 2025 khoảng 0,31 và văn bằng không được tính.
   - Lưu ý: công thức mục 6.2.1 Phụ lục II xếp giải pháp hữu ích vào nhóm hệ số 3, nhưng bảng tổng hợp cuối Phụ lục II không nêu loại này.
 - **Quyết định 217/QĐ-ĐHTĐ** được xác nhận là văn bản ban hành Quy chế quản trị tài sản trí tuệ năm 2024. Chương 2, Chương 3 và bài báo đã dùng số hiệu này.
 - **Ngân sách Quỹ Ngô Xuân Độ 5 tỷ đồng** được xác nhận; số liệu trong các tài liệu vẫn giữ 5 tỷ đồng giai đoạn 2025 - 2029.
-- **Chương 3:** thêm đoạn "Thứ bảy" tại Mục 3.1.1 về Thông tư 83/2026; Mục 3.2.1 nêu thiếu nội dung liêm chính; tham chiếu Hình 2.16 đổi thành Hình 2.9. **Bài báo:** thêm Thông tư 83/2026 vào giải pháp và tài liệu tham khảo.
+- **Chương 3:** thêm Mục 3.1.2 "Thời cơ và thách thức"; Mục 3.2.1 nêu thiếu nội dung liêm chính; tham chiếu Hình 2.16 đổi thành Hình 2.9. **Bài báo:** thêm Thông tư 83/2026 vào giải pháp và tài liệu tham khảo.
 - **Biểu đồ:** chú giải đặt phía trên, vùng vẽ có bố cục cố định nên không còn bị đè; màu chữ nhãn chọn tự động trắng hoặc sẫm theo độ tương phản với màu nền; nhãn danh mục hiện đầy đủ; tiêu đề hình đặt ở dòng chú thích Word thay vì trong biểu đồ.
 
 ## 2. Tài liệu gốc mới được khai thác

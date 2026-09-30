@@ -121,14 +121,21 @@ class TrackEditor:
             d.addnext(ins)
 
 
-    def them_doan_sau(self, neo, text):
-        """Chèn một đoạn mới ngay sau đoạn duy nhất chứa chuỗi neo, đánh dấu là nội dung chèn."""
+    def _doan_duy_nhat(self, neo):
         hits = [p for p in self.root.iter(q("p")) if neo in self._para_text(p)]
         if len(hits) != 1:
             raise ValueError(f"Tìm thấy {len(hits)} đoạn chứa: {neo[:90]}")
-        p = hits[0]
+        return hits[0]
+
+    def them_doan_sau(self, neo, text, mau=None):
+        """Chèn một đoạn mới ngay sau đoạn neo, đánh dấu là nội dung chèn.
+
+        neo: chuỗi nằm trong đúng một đoạn, hoặc chính phần tử đoạn. mau: chuỗi xác định đoạn lấy định dạng
+        (mặc định lấy định dạng của đoạn neo). Trả về phần tử đoạn mới để chèn nối tiếp."""
+        p = neo if not isinstance(neo, str) else self._doan_duy_nhat(neo)
+        mau_p = self._doan_duy_nhat(mau) if mau else p
         moi = etree.Element(q("p"))
-        ppr = p.find(q("pPr"))
+        ppr = mau_p.find(q("pPr"))
         if ppr is not None:
             ppr = copy.deepcopy(ppr)
             moi.append(ppr)
@@ -137,7 +144,8 @@ class TrackEditor:
         rpr_p = ppr.find(q("rPr"))
         if rpr_p is None:
             rpr_p = etree.SubElement(ppr, q("rPr"))
-        dau = etree.SubElement(rpr_p, q("ins"))
+        dau = etree.Element(q("ins"))
+        rpr_p.insert(0, dau)  # w:ins phải đứng đầu rPr của dấu đoạn
         dau.set(q("id"), self._id())
         dau.set(q("author"), self.author)
         dau.set(q("date"), self.date)
@@ -146,13 +154,14 @@ class TrackEditor:
         ins.set(q("author"), self.author)
         ins.set(q("date"), self.date)
         nr = etree.SubElement(ins, q("r"))
-        runs = self._runs(p)
+        runs = self._runs(mau_p) or [r for r in mau_p.iter(q("r"))]
         if runs and runs[0].find(q("rPr")) is not None:
             nr.append(copy.deepcopy(runs[0].find(q("rPr"))))
         t = etree.SubElement(nr, q("t"))
         t.text = text
         t.set(f"{{{XML_NS}}}space", "preserve")
         p.addnext(moi)
+        return moi
 
 
 def ap_dung(vao, ra, sua, author, merge_runs=None):
@@ -170,6 +179,12 @@ def ap_dung(vao, ra, sua, author, merge_runs=None):
         cu, moi = muc[0], muc[1]
         if len(muc) > 2 and muc[2] == "doan_moi_sau":
             ed.them_doan_sau(cu, moi)
+            continue
+        if len(muc) > 2 and muc[2] == "cac_doan_sau":
+            # moi là danh sách (chuỗi xác định đoạn mẫu định dạng hoặc None, nội dung)
+            el = cu
+            for mau, text in moi:
+                el = ed.them_doan_sau(el, text, mau=mau)
             continue
         ed.replace(cu, moi, tat_ca=len(muc) > 2 and muc[2] == "tat_ca")
     moi_xml = etree.tostring(root, xml_declaration=True, encoding="UTF-8", standalone=True)
