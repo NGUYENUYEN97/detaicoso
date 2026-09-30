@@ -51,6 +51,51 @@ def doc_khoi():
 
 
 SUA = [
+    # Luật 93/2025/QH15 (toàn văn), Quyết định 217 ngày 21/11/2024, văn phong xây dựng
+    ("là quy định nội bộ tự đặt ra của Nhà trường, cần được bãi bỏ để bảo đảm tương thích với pháp luật hiện hành và tạo "
+     "động lực thực sự cho hoạt động sáng tạo.",
+     "được xây dựng năm 2021 theo khung pháp luật khi đó, nay cần được cập nhật để tương thích với pháp luật hiện hành và "
+     "tạo động lực thực sự cho hoạt động sáng tạo. Bên cạnh đó, khoản 2 Điều 25 Luật này quy định tổ chức chủ trì nhiệm vụ "
+     "sử dụng ngân sách nhà nước được Nhà nước tự động giao quyền quản lý, sử dụng, quyền sở hữu phần kết quả tương ứng, "
+     "không phải bồi hoàn chi phí; Điều 27 cho phép tổ chức được giao quyền tự quyết định hình thức, giá và phân chia lợi "
+     "nhuận khi thương mại hóa; điểm a khoản 3 Điều 28 quy định thưởng cho tác giả tối thiểu 30% lợi nhuận thu được từ "
+     "thương mại hóa phần kết quả sử dụng ngân sách nhà nước; điểm b khoản 2 Điều 66 cho phép quỹ phát triển khoa học và "
+     "công nghệ của tổ chức chi cho đăng ký, bảo hộ, quản lý, khai thác quyền sở hữu trí tuệ."),
+    ("Quyết định số 217/QĐ-ĐHTĐ ban hành Quy chế quản trị tài sản trí tuệ năm 2024, Quy chế chi tiêu nội bộ",
+     "Quyết định số 217/QĐ-ĐHTĐ ngày 21 tháng 11 năm 2024 ban hành Quy chế quản trị tài sản trí tuệ, Quy chế chi tiêu nội "
+     "bộ"),
+    ("với năm quy định khác nhau về phân chia lợi ích, dẫn đến sự chồng chéo trong áp dụng thực tế.",
+     "với năm quy định khác nhau về phân chia lợi ích. Các văn bản này được ban hành ở những thời điểm và cho những kênh "
+     "tài trợ khác nhau, trước khi Luật số 93/2025/QH15 và Luật số 131/2025/QH15 có hiệu lực, nay cần được hợp nhất để "
+     "thống nhất cách áp dụng."),
+    ("15% số tiền nhận được mỗi lần khi chuyển giao quyền sử dụng.",
+     "15% số tiền nhận được mỗi lần khi chuyển giao quyền sử dụng; đối với kết quả sử dụng ngân sách nhà nước như ba đề "
+     "tài cấp quốc gia, bảo đảm mức thưởng cho tác giả không thấp hơn 30% lợi nhuận theo điểm a khoản 3 Điều 28 Luật số "
+     "93/2025/QH15."),
+    ("điểm d khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15. Nguồn kinh phí này",
+     "điểm d khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15, phù hợp với điểm b khoản 2 Điều 66 Luật số "
+     "93/2025/QH15 cho phép quỹ phát triển khoa học và công nghệ của tổ chức chi cho đăng ký, bảo hộ, quản lý, khai thác "
+     "quyền sở hữu trí tuệ. Nguồn kinh phí này"),
+    ("Thực trạng cho thấy việc đăng ký bảo hộ sở hữu trí tuệ tại Nhà trường hiện nay mang tính tự phát, phụ thuộc vào sự "
+     "chủ động của từng cá nhân giảng viên. Quy trình tiếp nhận - xử lý - nộp đơn chưa được chuẩn hóa,",
+     "Thực trạng tại Chương 2 cho thấy tiềm năng tài sản trí tuệ của đội ngũ là rất lớn, đặc biệt ở khối ngành Y - Dược, "
+     "nhưng quy trình hiện hành còn một khoảng trống kỹ thuật: chưa có biểu mẫu rà soát khả năng bảo hộ tại thời điểm "
+     "nghiệm thu, nên việc đăng ký phụ thuộc vào sự chủ động của từng tác giả. Quy trình tiếp nhận, xử lý, nộp đơn vì vậy "
+     "cần được chuẩn hóa để tránh"),
+    ("dẫn đến nguy cơ bỏ sót các kết quả nghiên cứu có khả năng bảo hộ,", "nguy cơ bỏ sót các kết quả nghiên cứu có khả "
+     "năng bảo hộ,"),
+    ("cho thấy năng lực nhận diện tài sản trí tuệ trong đội ngũ còn hạn chế:",
+     "cho thấy đội ngũ cần được hỗ trợ thêm về kỹ năng nhận diện và bảo hộ tài sản trí tuệ:"),
+    ("Thiết lập Cơ chế phối hợp liên phòng ban theo mô hình tam giác vận hành. Trong mô hình này, ba trục chức năng phối hợp "
+     "chặt chẽ theo quy chế liên thông:",
+     "Thiết lập Cơ chế phối hợp liên phòng ban theo mô hình tam giác vận hành. Trong mô hình này, ba trục chức năng phối hợp "
+     "chặt chẽ theo quy chế liên thông, với hai đơn vị phối hợp, như thể hiện tại hình dưới đây.\n[[HINH_PHOI_HOP]]"),
+    ("áp dụng cho tất cả các đề tài cấp cơ sở và các nhiệm vụ khoa học công nghệ sử dụng ngân sách:",
+     "áp dụng cho tất cả các đề tài cấp cơ sở và các nhiệm vụ khoa học công nghệ sử dụng ngân sách, được tóm tắt tại hình "
+     "dưới đây và mô tả cụ thể sau đó.\n[[HINH_TAM_KHAU]]"),
+    ("và các mốc chiến lược quốc gia về sở hữu trí tuệ:",
+     "và các mốc chiến lược quốc gia về sở hữu trí tuệ, được tóm tắt tại hình dưới đây.\n[[HINH_LO_TRINH]]"),
+    ("phân tích tại Hình 2.9 Chương 2.", "phân tích tại Hình 2.{SO_HINH_KH} Chương 2."),
     # 3.1.3
     ("Dữ liệu thực trạng tại Chương 2 phản ánh khoảng trống lớn về quy trình và động lực: hệ số Gini về phân bố công bố "
      "khoa học lên tới 0,829, cả giai đoạn năm năm mới phát sinh một đơn sáng chế từ đề tài cơ sở. Thực trạng này cho thấy "
@@ -132,7 +177,7 @@ SUA = [
     ("Giai đoạn 3 (Giai đoạn 2028 - 2030): Vận hành toàn diện và tích hợp hệ sinh thái",
      "Giai đoạn 3, giai đoạn 2029 - 2030: Vận hành toàn diện và tích hợp hệ sinh thái"),
     # 3.4.2
-    ("được tổng hợp tại Bảng 3.2 dưới đây.", "được tổng hợp tại Bảng 3.4."),
+    ("được tổng hợp tại Bảng 3.2 dưới đây.", "được tổng hợp tại Bảng 3.3."),
     ("Ban Giám hiệu giao Phòng Khoa học Công nghệ là đơn vị đầu mối tổng hợp, theo dõi và báo cáo kết quả thực hiện các chỉ "
      "số hằng năm trong Báo cáo tổng kết công tác khoa học công nghệ của Nhà trường.",
      "Ban Giám hiệu giao Phòng Khoa học Công nghệ là đơn vị đầu mối tổng hợp, theo dõi và báo cáo kết quả thực hiện các chỉ "
@@ -159,18 +204,18 @@ MANH = [
     "có phân hạng Q; 7 trên 10 chỉ tiêu Kế hoạch 07/KH-ĐHTĐ đạt hoặc vượt.",
     "**3. Đã có sản phẩm đủ điều kiện bảo hộ:** 11 trên 38 đề tài cấp cơ sở, trong đó 8 sản phẩm phù hợp với giải pháp hữu "
     "ích, tập trung ở lĩnh vực dược với 42 người trình độ tiến sĩ và tương đương tại Viện Y - Dược.",
-    "**4. Kênh chuyển hóa đã vận hành:** 2 đơn sáng chế năm 2025 và 2026; 9 văn bằng, nhóm thương hiệu được bảo hộ liên "
-    "tục từ năm 2021.",
+    "**4. Kênh chuyển hóa và hợp tác doanh nghiệp đã vận hành:** 2 đơn sáng chế năm 2025 và 2026; 9 văn bằng, trong đó "
+    "5 kiểu dáng công nghiệp và nhãn hiệu từ chiến lược hợp tác doanh nghiệp do Ban Giám hiệu chủ động kết nối.",
     "**5. Có nguồn lực gắn cơ chế sở hữu trí tuệ:** Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ ngân sách 5 tỷ đồng; 3 đề tài cấp "
     "quốc gia tổng 4,67 tỷ đồng; Viện Nghiên cứu giáo dục và Chuyển giao tri thức có tư cách tổ chức khoa học và công nghệ, "
     "đã ký hợp đồng chuyển giao quyền sử dụng tác phẩm.",
 ]
 YEU = [
-    "**1. Chuyển hóa thấp:** 1 trên 11 đề tài đủ điều kiện được nộp đơn; 8 đề tài đủ điều kiện giai đoạn 2021 - 2024 đều "
-    "không nộp đơn; nghiên cứu chỉ đóng góp 2 trên 12 tài sản.",
-    "**2. Quy định chồng lấn, thiếu khâu then chốt:** 4 văn bản với 5 quy định chia lợi ích; trần 100 triệu đồng không còn "
-    "tương thích với Điều 135 Luật Sở hữu trí tuệ; không có khâu rà soát khả năng bảo hộ khi nghiệm thu.",
-    "**3. Bộ máy phân tán và mỏng:** chức năng chia cho 4 đơn vị; Phòng Khoa học Công nghệ có 2 nhân sự, không có người "
+    "**1. Chuyển hóa chưa tương xứng tiềm năng:** 1 trên 11 đề tài đủ điều kiện được nộp đơn; 8 đề tài đủ điều kiện giai "
+    "đoạn 2021 - 2024 chưa được nộp đơn.",
+    "**2. Quy định chưa được hợp nhất sau thay đổi pháp luật:** 4 văn bản với 5 quy định chia lợi ích; trần 100 triệu "
+    "đồng chưa tương thích với Điều 28 Luật số 93/2025/QH15; chưa có biểu mẫu rà soát khả năng bảo hộ khi nghiệm thu.",
+    "**3. Phối hợp chưa liên thông:** chức năng phân công cho 4 đơn vị nhưng chưa có luồng hồ sơ chung; chưa có vị trí "
     "chuyên trách sở hữu trí tuệ.",
     "**4. Động lực và kinh phí lệch về công bố:** văn bằng không có tiền thưởng và chỉ được ghi nhận khi được cấp; đề tài cấp "
     "cơ sở không có dòng chi phí nộp đơn, kinh phí trung vị 8,5 triệu đồng.",
@@ -178,8 +223,8 @@ YEU = [
     "29,9%, 7 trên 16 tiêu chí chưa tính được; khai thác có thu phí mới có 2 hợp đồng.",
 ]
 THOI_CO = [
-    "**1. Khung pháp luật mới trao quyền:** Luật số 93/2025/QH15 đặt thù lao theo thỏa thuận và bãi bỏ quy định riêng về thù "
-    "lao đối với nhiệm vụ sử dụng ngân sách nhà nước; điểm c khoản 1 Điều 86 do Luật số 131/2025/QH15 bổ sung trao quyền "
+    "**1. Khung pháp luật mới trao quyền:** Luật số 93/2025/QH15 tự động giao quyền sở hữu kết quả cho tổ chức chủ trì, "
+    "kể cả tổ chức ngoài công lập, và cho phép quỹ phát triển khoa học và công nghệ chi cho bảo hộ sở hữu trí tuệ; điểm c khoản 1 Điều 86 do Luật số 131/2025/QH15 bổ sung trao quyền "
     "đăng ký cho tổ chức chủ trì; Điều 28 Luật Giáo dục đại học số 125/2025/QH15 cho phép thành lập doanh nghiệp, định giá, "
     "góp vốn bằng tài sản trí tuệ.",
     "**2. Chủ trương chiến lược thuận lợi:** Kết luận số 51-KL/TW; Quyết định số 1624/QĐ-TTg dùng chỉ số sở hữu trí tuệ để "
@@ -203,8 +248,9 @@ THACH_THUC = [
     "tra cứu, soạn đơn, lệ phí và duy trì; là trường tư thục, Nhà trường phải tự cân đối từ nguồn thu của mình.",
     "**4. Pháp luật thay đổi nhanh, hướng dẫn chưa đồng bộ:** sáu văn bản lớn trong giai đoạn 2025 - 2026; bảng tổng hợp "
     "cuối Phụ lục II Thông tư số 83/2026/TT-BGDĐT chưa nêu giải pháp hữu ích dù công thức đã tính.",
-    "**5. Rủi ro phụ thuộc và tranh chấp:** một nửa số tài sản đồng sở hữu với một doanh nghiệp; nguy cơ tranh chấp đối với "
-    "sản phẩm đồng sáng tạo giữa giảng viên, người học, doanh nghiệp và sản phẩm có sử dụng trí tuệ nhân tạo.",
+    "**5. Yêu cầu tự chủ năng lực và rủi ro tranh chấp:** cần năng lực tự tra cứu, soạn đơn để phát triển tài sản đơn sở "
+    "hữu; nguy cơ tranh chấp đối với sản phẩm đồng sáng tạo giữa giảng viên, người học, doanh nghiệp và sản phẩm có sử "
+    "dụng trí tuệ nhân tạo.",
 ]
 SWOT_NGUON = (
     "Nguồn: Nhóm nghiên cứu tổng hợp từ kết quả Chương 2 và các văn bản nêu tại Mục 3.1.1. Ước tính chỉ số công bố tạm lấy "
@@ -228,7 +274,7 @@ KET_HOP = [
      "tâm tư vấn, định giá để tham gia chương trình thí điểm xác định giá trị quyền sở hữu trí tuệ theo Quyết định số "
      "1624/QĐ-TTg.", "Giải pháp 2, 3, 4"],
     ["Khắc phục điểm yếu nhờ thời cơ",
-     "Dựa vào nguyên tắc thỏa thuận thù lao của Luật số 93/2025/QH15 để hợp nhất quy chế, bãi bỏ mức trần 100 triệu đồng; "
+     "Dựa vào Điều 28 Luật số 93/2025/QH15 và nguyên tắc thỏa thuận thù lao để hợp nhất quy chế, cập nhật mức trần 100 triệu đồng; "
      "dùng chỉ số văn bằng của Chuẩn mới và Quyết định số 1624/QĐ-TTg để đưa văn bằng vào đánh giá, khen thưởng ngang với "
      "công bố.", "Giải pháp 1, 4"],
     ["Phát huy điểm mạnh để vượt thách thức",
@@ -316,8 +362,10 @@ TIEU_KET = [
 ]
 
 
-def ap_sua(khoi):
+def ap_sua(khoi, so_hinh_kh):
     for cu, moi in SUA:
+        if moi is not None:
+            moi = moi.replace("{SO_HINH_KH}", str(so_hinh_kh))
         vt = [i for i, k in enumerate(khoi) if k[0] == "p" and cu in k[1]]
         assert len(vt) == 1, f"{len(vt)} khối chứa: {cu[:80]}"
         i = vt[0]
@@ -340,9 +388,22 @@ def ap_sua(khoi):
     return khoi
 
 
-def dung():
-    khoi = ap_sua(doc_khoi())
-    v = VanBanChung()
+SO_DO = {
+    "[[HINH_PHOI_HOP]]": ("Mô hình phối hợp liên phòng ban trong quản lý quyền sở hữu trí tuệ", "phoi_hop.png",
+                          "Nguồn: Nhóm nghiên cứu đề xuất trên cơ sở Điều 11 Quyết định 217 và thực trạng tại Mục 2.2.2."),
+    "[[HINH_TAM_KHAU]]": ("Quy trình 8 khâu quản lý tài sản trí tuệ từ ý tưởng đến thương mại hóa", "tam_khau.png",
+                          "Nguồn: Nhóm nghiên cứu đề xuất."),
+    "[[HINH_LO_TRINH]]": ("Lộ trình triển khai hệ thống giải pháp giai đoạn 2026 - 2030", "lo_trinh.png",
+                          "Nguồn: Nhóm nghiên cứu đề xuất."),
+}
+
+
+def noi_dung(v, so_hinh_kh=10):
+    import so_do
+    thu_muc = os.path.join(GOC, "Ban_cuoi", "so_do")
+    if not os.path.exists(os.path.join(thu_muc, "tam_khau.png")):
+        so_do.ve_tat_ca()
+    khoi = ap_sua(doc_khoi(), so_hinh_kh)
     so_bang_goc = 0
     for loai, t, dam in khoi:
         if loai == "swot":
@@ -362,8 +423,14 @@ def dung():
             continue
         if loai == "tbl":
             so_bang_goc += 1
-            b = BANG_PHOI_HOP if so_bang_goc == 1 else BANG_CHI_SO
+            if so_bang_goc == 1:
+                continue  # bảng phối hợp được thay bằng sơ đồ HINH_PHOI_HOP
+            b = BANG_CHI_SO
             v.bang(b["tieu_de"], b["cot"], b["dong"], b["nguon"], b["rong"], can=b["can"], tien_to="3")
+            continue
+        if t in SO_DO:
+            ten, anh, nguon = SO_DO[t]
+            v.so_do(ten, os.path.join(thu_muc, anh), nguon, tien_to="3")
             continue
         if t == "CHƯƠNG 3":
             v.doan("chuong1", "CHƯƠNG 3")
@@ -387,7 +454,12 @@ def dung():
             v.doan_md("than", t)
     v.doan("h1", "TIỂU KẾT CHƯƠNG 3")
     v.than_md(*TIEU_KET)
-    assert v.so_bang == 4
+    assert v.so_bang == 3, v.so_bang
+
+
+def dung():
+    v = VanBanChung()
+    noi_dung(v)
     return luu(v, "Chuong_3_He_thong_giai_phap.docx",
                "Chương 3. Hệ thống giải pháp nâng cao hiệu quả quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô", 3)
 

@@ -98,7 +98,9 @@ class VanBan:
         self.sect = body.find(qn("w:sectPr"))
         self.so_bang = 0
         self.so_hinh = 0
+        self.dem_bd = 0  # đếm biểu đồ nhúng trong toàn văn bản, dùng đặt tên phần chart
         self.hinh = []
+        self.ket_qua = {}
 
     def _them(self, el):
         self.sect.addprevious(el)
@@ -187,17 +189,21 @@ class VanBan:
         return self.so_bang
 
     # --- hình -------------------------------------------------------------
-    def hinh_bd(self, ma, nguon=None, tieu_de=None):
+    def _ten_hinh(self, tien_to, so):
+        return f"Hình {tien_to}.{so}" if tien_to else f"Hình {so}"
+
+    def hinh_bd(self, ma, nguon=None, tieu_de=None, tien_to="2"):
         h = next(x for x in B.HINH if x["id_cu"] == ma)
         self.so_hinh += 1
+        self.dem_bd += 1
         h["so"] = self.so_hinh
-        h["id"] = f"H2.{self.so_hinh}"
+        h["id"] = f"H{tien_to or 'BB'}.{self.so_hinh}"
         if nguon:
             h["nguon"] = nguon
         if tieu_de:
             h["tieu_de"] = tieu_de
         self.hinh.append(h)
-        self.doan("tieu_de", f"Hình 2.{h['so']}. {h['tieu_de']}", bold=True, giu=True)
+        self.doan("tieu_de", f"{self._ten_hinh(tien_to, h['so'])}. {h['tieu_de']}", bold=True, giu=True)
         p = self.doan("tieu_de", "", giu=True)
         for r in p._p.findall(qn("w:r")):
             p._p.remove(r)
@@ -205,8 +211,24 @@ class VanBan:
         pf.space_before = 0
         pf.space_after = 0
         pf.line_spacing = 1.0
-        p._p.append(BD.nhung_bieu_do(self.doc, h, self.so_hinh))
+        p._p.append(BD.nhung_bieu_do(self.doc, h, self.dem_bd))
         self.doan("nguon", h["nguon"], italic=True)
+        return self.so_hinh
+
+    def so_do(self, tieu_de, anh, nguon, tien_to="2", rong_cm=15.5):
+        """Chèn sơ đồ khái niệm dạng ảnh, đánh số chung với hình."""
+        from docx.shared import Cm
+        self.so_hinh += 1
+        self.doan("tieu_de", f"{self._ten_hinh(tien_to, self.so_hinh)}. {tieu_de}", bold=True, giu=True)
+        p = self.doan("tieu_de", "", giu=True)
+        for r in p._p.findall(qn("w:r")):
+            p._p.remove(r)
+        pf = p.paragraph_format
+        pf.space_before = 0
+        pf.space_after = 0
+        pf.line_spacing = 1.0
+        p.add_run().add_picture(anh, width=Cm(rong_cm))
+        self.doan("nguon", nguon, italic=True)
         return self.so_hinh
 
 
@@ -258,16 +280,14 @@ def noi_dung(v):
            "dược sĩ chuyên khoa I.",
            [5.2, 1.4, 1.6, 1.8, 1.5, 1.8, 1.6], dong_tong=True)
     v.than(
-        f"Bảng 2.1 cho thấy năng lực chuyên môn và thẩm quyền xử lý hồ sơ sở hữu trí tuệ nằm ở hai khối khác nhau. Ba "
-        f"viện đào tạo chiếm {pt(B.nl_ba_vien / tong_nl)} nhân sự nhưng có {B.ts_ba_vien} trên {ts_tong} người trình "
-        f"độ tiến sĩ, tức {pt(B.ts_ba_vien / ts_tong)}, và {B.hoc_ham_ba_vien} trên {hoc_ham} người có học hàm. Ngược "
-        f"lại, hai trung tâm thuộc khối Quản trị và Dịch vụ, nơi đang thực hiện việc xác lập quyền đối với nhãn hiệu và "
-        f"giữ đầu mối pháp chế, có {B.nl_khoi_qt} nhân sự, không có tiến sĩ và "
-        f"{pt(B.dh_khac_khoi_qt / B.nl_khoi_qt)} có trình độ đại học trở xuống. Phòng Khoa học Công nghệ, đơn vị đầu "
-        "mối theo quy chế, có 2 nhân sự trình độ thạc sĩ, chức danh trưởng phòng do Hiệu trưởng kiêm nhiệm và không có "
-        "người được đào tạo về sở hữu trí tuệ. Người có khả năng nhận diện kết quả có thể bảo hộ ở khối Đào tạo và "
-        "Nghiên cứu, còn người xử lý thủ tục ở khối có năng lực chuyên môn khoa học mỏng hơn; khoảng cách này là tiền "
-        "đề của các điểm nghẽn về tổ chức phân tích tại Mục 2.2.2.")
+        f"Bảng 2.1 cho thấy nguồn nhân lực trình độ cao tập trung ở các viện đào tạo: ba viện chiếm "
+        f"{pt(B.nl_ba_vien / tong_nl)} nhân sự nhưng có {B.ts_ba_vien} trên {ts_tong} người trình độ tiến sĩ, tức "
+        f"{pt(B.ts_ba_vien / ts_tong)}, và {B.hoc_ham_ba_vien} trên {hoc_ham} người có học hàm. Đây là lực lượng có khả "
+        "năng nhận diện kết quả nghiên cứu có thể bảo hộ. Các thủ tục xác lập quyền, quản trị thương hiệu và pháp chế "
+        "được giao cho các đơn vị thuộc khối Quản trị và Dịch vụ, nơi đội ngũ được bố trí theo yêu cầu nghiệp vụ hành "
+        "chính và dịch vụ. Phòng Khoa học Công nghệ, đơn vị đầu mối theo quy chế, có 2 nhân sự trình độ thạc sĩ đồng "
+        "thời đảm nhiệm nhiều mảng quản lý khoa học, nên chưa có vị trí chuyên trách về sở hữu trí tuệ. Cách phân công "
+        "này hợp lý về chức năng, song đòi hỏi một cơ chế phối hợp chặt chẽ giữa hai khối, như phân tích tại Mục 2.2.2.")
 
     # ---------------------------------------------------------------- 2.1.2
     v.doan("h2", "2.1.2. Sản phẩm khoa học giai đoạn 2021 - 2025")
@@ -310,13 +330,13 @@ def noi_dung(v):
         "nhiệm vụ sử dụng ngân sách nhà nước có quyền đăng ký sáng chế, kiểu dáng công nghiệp, thiết kế bố trí là kết "
         "quả của nhiệm vụ đó. Đây là nguồn tài sản trí tuệ tiềm năng lớn nhất của giai đoạn tới, với điều kiện quy "
         "trình rà soát được chuẩn bị trước thời điểm nghiệm thu.",
-        f"Năng lực công bố phân bố không đều. So khớp họ tên tác giả với danh sách nhân sự cho thấy chỉ "
-        f"{D.NHAN_SU_CO_BAI} trên {D.NHAN_SU_CO_TEN} nhân sự có họ tên đầy đủ, tức "
-        f"{pt(D.NHAN_SU_CO_BAI / D.NHAN_SU_CO_TEN)}, đứng tên ít nhất một bài báo trong năm năm; hệ số Gini về số bài "
-        "trên toàn bộ nhân sự là 0,829, và trong nhóm có công bố, 10% người dẫn đầu chiếm 39,3% số lượt đứng tên. "
-        "Viện Y - Dược có số bài bình quân thấp nhất trong ba viện, 0,79 bài một nhân sự, nhưng lại là nơi phát sinh "
-        "phần lớn sản phẩm đề tài đủ điều kiện xác lập quyền và cả hai đơn sáng chế. Số lượng công bố và khả năng hình "
-        "thành tài sản trí tuệ vì vậy là hai đại lượng khác nhau, cần được theo dõi bằng hai thước đo riêng.")
+        f"Tính trên toàn bộ nhân sự, gồm cả khối hành chính, {D.NHAN_SU_CO_BAI} trên {D.NHAN_SU_CO_TEN} người có họ "
+        f"tên đầy đủ, tức {pt(D.NHAN_SU_CO_BAI / D.NHAN_SU_CO_TEN)}, đứng tên ít nhất một bài báo trong năm năm; hệ số "
+        "Gini về số bài là 0,829, và trong nhóm có công bố, 10% người dẫn đầu chiếm 39,3% số lượt đứng tên. Lực lượng "
+        "nghiên cứu nòng cốt vì vậy còn tương đối mỏng so với quy mô Nhà trường. Đáng chú ý, Viện Y - Dược là nơi phát "
+        "sinh phần lớn sản phẩm đề tài đủ điều kiện xác lập quyền và cả hai đơn sáng chế, cho thấy tiềm năng tài sản trí "
+        "tuệ của khối ngành Y - Dược rất lớn; số lượng công bố và khả năng hình thành tài sản trí tuệ là hai thước đo "
+        "khác nhau, cần được theo dõi riêng.")
 
     # ===================================================================== 2.2
     v.doan("h1", "2.2. Thực trạng thể chế, tổ chức và nguồn lực quản lý quyền sở hữu trí tuệ")
@@ -327,14 +347,20 @@ def noi_dung(v):
         "hữu trí tuệ và chuyển giao công nghệ: Điều 34 liệt kê phạm vi tài sản khá đầy đủ, từ tên trường, nhãn hiệu, "
         "sáng chế, giải pháp hữu ích, kiểu dáng công nghiệp đến giáo trình, ngân hàng đề thi, phần mềm và quy trình công "
         "nghệ; Điều 35 quy định quy trình đăng ký một cửa tại Phòng Khoa học Công nghệ; Điều 36 quy định hai công thức "
-        "chia lợi ích. Năm 2024, Nhà trường ban hành Quy chế quản trị tài sản trí tuệ kèm Quyết định số 217/QĐ-ĐHTĐ, "
+        "chia lợi ích. Ngày 21 tháng 11 năm 2024, Nhà trường ban hành Quy chế quản trị tài sản trí tuệ kèm Quyết định số "
+        "217/QĐ-ĐHTĐ, "
         "sau đây gọi là Quyết định 217, mở rộng phạm vi tới cơ sở dữ liệu, giáo trình điện tử, bí quyết và tên miền. "
         "Điều 10 Quyết định 217 yêu cầu tác giả xin ý kiến Phòng Khoa học Công nghệ trước khi bộc lộ công khai tài sản "
         "có thể bảo hộ; Điều 11 giao Phòng nhận diện, lập hồ sơ theo dõi, xúc tiến thương mại hóa và giao bộ phận pháp "
         "chế thực hiện thủ tục xác lập quyền. Hai văn bản còn lại là Quy chế chi tiêu nội bộ ban hành ngày 01 tháng 8 "
         "năm 2026 và Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ năm 2025.",
-        "Quyết định 217 không dẫn chiếu và không thay thế Chương VI Quyết định 213, nên hai văn bản cùng hiệu lực. Bốn "
-        f"văn bản chứa năm quy định khác nhau về phân chia lợi ích, được trình bày tại Bảng 2.{v.so_bang + 1}.")
+        "Các văn bản này được ban hành ở những thời điểm khác nhau, cho những kênh tài trợ khác nhau và phù hợp với khung "
+        "pháp luật tại thời điểm ban hành. Việc Nhà trường ban hành quy chế về sở hữu trí tuệ từ năm 2021 và quy chế "
+        "chuyên biệt từ năm 2024, trước khi Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 và Luật số "
+        "131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ ra đời, cho thấy tầm nhìn sớm của Nhà trường. Do Quyết định 217 được "
+        "xây dựng như một quy chế chuyên biệt và chưa dẫn chiếu Chương VI Quyết định 213, hai văn bản cùng hiệu lực; "
+        "bốn văn bản hiện chứa năm quy định khác nhau về phân chia lợi ích, được trình bày tại "
+        f"Bảng 2.{v.so_bang + 1}.")
     b_ll = v.bang(
         "Các quy định về phân chia lợi ích từ tài sản trí tuệ trong nội bộ Trường Đại học Thành Đô",
         ["Văn bản", "Năm", "Phạm vi áp dụng", "Công thức chia lợi ích", "Mức trần"],
@@ -354,35 +380,44 @@ def noi_dung(v):
         [3.2, 1.4, 3.4, 4.6, 2.0], can=["left", "center", "left", "left", "left"])
     h_mp = v.hinh_bd("H2.8", nguon=(
         "Nguồn: Nhóm nghiên cứu mô phỏng từ Điều 36 Quyết định 213, Điều 9 Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân "
-        "Độ và điểm b khoản 1 Điều 135 Luật Sở hữu trí tuệ. Khoản thu là số tiền nhận được từ một hợp đồng chuyển giao "
-        "sau khi trừ chi phí hợp lệ; đơn vị: triệu đồng."))
+        "Độ, điểm b khoản 1 Điều 135 Luật Sở hữu trí tuệ và điểm a khoản 3 Điều 28 Luật số 93/2025/QH15. Khoản thu là "
+        "số tiền nhận được từ một hợp đồng chuyển giao sau khi trừ chi phí hợp lệ; đơn vị: triệu đồng."))
     v.than(
         f"Hình 2.{h_mp} mô phỏng phần của tác giả từ một hợp đồng chuyển giao theo từng quy định. Với khoản thu 500 "
         "triệu đồng, phần của tác giả dao động từ 100 triệu đồng theo điểm a Điều 36 Quyết định 213 hoặc theo Quỹ từ "
-        "năm thứ hai, 150 triệu đồng theo điểm b, đến 250 triệu đồng theo Quỹ trong năm đầu, chênh lệch 2,5 lần. Đường "
-        "điểm a gãy tại khoảng 333 triệu đồng do trần 100 triệu đồng; vượt khoảng 667 triệu đồng, đường này nằm dưới "
-        "mức mặc định 15% của Luật. Điều 13 Quyết định 217 giao Hiệu trưởng quyết định tỷ lệ nên không mô phỏng được.",
-        "Về tỷ lệ, quy chế nội bộ không kém hào phóng so với mức mặc định của Luật. Vấn đề là tác giả không biết trước "
-        "mình thuộc đường nào, trong khi mức thưởng cho công bố được niêm yết theo từng hạng tạp chí. Mức trần 100 triệu "
-        "đồng được xây dựng theo khung pháp luật trước đây; khoản 2 Điều 135 Luật Sở hữu trí tuệ về khung thù lao cho "
-        "nhiệm vụ sử dụng ngân sách nhà nước đã bị bãi bỏ, Điều 135 hiện hành chỉ quy định mức áp dụng khi không có "
-        "thỏa thuận, gồm 10% lợi nhuận trước thuế khi chủ sở hữu tự sử dụng và 15% số tiền nhận được mỗi lần chuyển "
-        "giao quyền sử dụng, và không đặt trần. Trong bốn văn bản, Điều lệ Quỹ là văn bản duy nhất vừa không đặt trần "
-        "vừa cho phép các bên thỏa thuận tỷ lệ khác.")
+        "năm thứ hai, 150 triệu đồng theo điểm b, đến 250 triệu đồng theo Quỹ trong năm đầu. Điều 13 Quyết định 217 giao "
+        "Hiệu trưởng quyết định tỷ lệ theo từng trường hợp nên không mô phỏng. Về tỷ lệ, các quy định nội bộ nhìn chung "
+        "cao hơn mức mặc định 15% tại Điều 135 Luật Sở hữu trí tuệ; điểm cần hoàn thiện là tác giả chưa biết trước quy "
+        "định nào áp dụng cho sản phẩm của mình.",
+        "Đối chiếu với Luật số 93/2025/QH15, có hiệu lực từ ngày 01 tháng 10 năm 2025, cho thấy một độ trễ thể chế tất "
+        "yếu. Điểm a khoản 4 Điều 36 Quyết định 213 được xây dựng năm 2021 theo cơ chế của Luật Khoa học và công nghệ năm "
+        "2013, với khoản nộp ngân sách nhà nước và mức trần 100 triệu đồng. Luật mới quy định tổ chức chủ trì được tự "
+        "động giao quyền sở hữu phần kết quả sử dụng ngân sách nhà nước theo khoản 2 Điều 25, được tự quyết định phương "
+        "án thương mại hóa theo Điều 27, và thưởng cho tác giả tối thiểu 30% lợi nhuận theo điểm a khoản 3 Điều 28; "
+        "đồng thời khoản 2 Điều 135 Luật Sở hữu trí tuệ về khung thù lao cũ đã được bãi bỏ. Trên hình, đường điểm b trùng "
+        "với mức tối thiểu 30% này, còn đường điểm a thấp hơn từ khoản thu khoảng 333 triệu đồng do mức trần. Quy định "
+        "này sẽ áp dụng trực tiếp cho kết quả của ba đề tài cấp quốc gia khi được thương mại hóa. Việc rà soát, hợp nhất "
+        "quy chế vì vậy là cơ hội để Nhà trường đi tiên phong đón đầu luật mới; trong bốn văn bản, Điều lệ Quỹ là văn bản "
+        "gần nhất với tinh thần này khi vừa không đặt trần vừa cho phép các bên thỏa thuận tỷ lệ khác.")
 
     v.doan("h2", "2.2.2. Tổ chức bộ máy và đầu mối quản lý")
     v.than(
         "Theo Điều 35 Quyết định 213 và Điều 11 Quyết định 217, Phòng Khoa học Công nghệ là đầu mối tiếp nhận hồ sơ, "
         "nhận diện và theo dõi tài sản trí tuệ; bộ phận pháp chế thực hiện thủ tục xác lập quyền. Trên thực tế, chức "
-        "năng này phân tán ở bốn điểm. Phòng Khoa học Công nghệ giữ khâu tiếp nhận hồ sơ nhưng chỉ có 2 nhân sự. Trung "
-        "tâm Tuyển sinh và Quản trị thương hiệu thực hiện xác lập quyền đối với nhãn hiệu và logo. Bộ phận pháp chế "
-        "thuộc Trung tâm Dịch vụ và Quản trị hành chính tổng hợp là đầu mối của Mạng lưới Trung tâm Hỗ trợ công nghệ và "
-        "đổi mới sáng tạo mà Nhà trường tham gia từ năm 2023. Viện Nghiên cứu giáo dục và Chuyển giao tri thức là đơn "
-        "vị duy nhất đã đăng ký hoạt động khoa học và công nghệ, có con dấu riêng và có hợp đồng khai thác quyền.",
-        "Ba trong bốn điểm thuộc khối Quản trị và Dịch vụ, còn kết quả nghiên cứu phát sinh ở khối Đào tạo và Nghiên "
-        "cứu. Vấn đề vì vậy không phải thiếu đầu mối hay thiếu phân công, vì Quyết định 217 đã phân công rõ, mà nằm ở "
-        "khâu thực thi: bộ hồ sơ thu thập được không có biểu mẫu khai báo hay hồ sơ theo dõi tài sản trí tuệ do Phòng "
-        "lập; mỗi đơn vị nắm một đoạn của chu trình và giữa các đoạn không có cơ chế chuyển hồ sơ.")
+        "năng này được phân công cho bốn đơn vị theo thế mạnh nghiệp vụ, như thể hiện tại hình dưới đây. Phòng Khoa học "
+        "Công nghệ, với 2 nhân sự, giữ khâu tiếp nhận hồ sơ. Trung tâm Tuyển sinh và Quản trị thương hiệu thực hiện xác "
+        "lập quyền đối với nhãn hiệu và logo. Bộ phận pháp chế thuộc Trung tâm Dịch vụ và Quản trị hành chính tổng hợp "
+        "là đầu mối của Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi mới sáng tạo mà Nhà trường tham gia từ năm 2023. Viện "
+        "Nghiên cứu giáo dục và Chuyển giao tri thức là đơn vị đã đăng ký hoạt động khoa học và công nghệ, có con dấu "
+        "riêng và có hợp đồng khai thác quyền.")
+    h_bdm = v.so_do("Phân công đầu mối quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô",
+                    os.path.join(GOC, "Ban_cuoi", "so_do", "bon_dau_moi.png"),
+                    "Nguồn: Nhóm nghiên cứu tổng hợp từ Quyết định 213, Quyết định 217 và danh sách nhân sự năm 2026.")
+    v.than(
+        f"Hình 2.{h_bdm} cho thấy ba trong bốn đầu mối thuộc khối Quản trị và Dịch vụ, còn kết quả nghiên cứu phát sinh "
+        "ở khối Đào tạo và Nghiên cứu. Quyết định 217 đã phân công rõ trách nhiệm; khoảng trống còn lại mang tính kỹ "
+        "thuật: chưa có biểu mẫu khai báo và hồ sơ theo dõi tài sản trí tuệ dùng chung giữa các đơn vị, nên mỗi đơn vị "
+        "nắm một đoạn của chu trình và giữa các đoạn chưa có luồng hồ sơ liên thông.")
 
     v.doan("h2", "2.2.3. Nguồn lực tài chính và cơ chế khuyến khích")
     v.than(f"Nhà trường có ba kênh tài trợ nghiên cứu với chế độ sở hữu trí tuệ khác nhau, được trình bày tại Bảng 2.{v.so_bang + 1}.")
@@ -493,14 +528,14 @@ def noi_dung(v):
         [1.0, 2.4, 4.2, 1.4, 2.1, 2.5, 2.4], can=["center", "left", "left", "center", "left", "left", "left"])
     h_ts = v.hinh_bd("H2.12", nguon=f"Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.{b_ts}.")
     v.than(
-        f"Bảng 2.{b_ts} và Hình 2.{h_ts} cho thấy danh mục hình thành từ ba luồng với kết quả rất khác nhau. Luồng "
-        "thương hiệu gồm 4 tài sản, đều do Nhà trường đơn sở hữu và đều đã có văn bằng. Luồng hợp tác doanh nghiệp gồm "
-        "5 kiểu dáng công nghiệp và 1 nhãn hiệu, đều đồng sở hữu với cùng một doanh nghiệp; riêng năm 2024 có 5 kiểu "
-        "dáng được cấp, nâng số lũy kế từ 4 lên 9 tài sản. Luồng nghiên cứu chỉ có 2 đơn sáng chế nộp năm 2025 và 2026, "
-        f"chưa có văn bằng. Như vậy, khoảng {B.doc_lap} sản phẩm khoa học chỉ đóng góp 2 trên 12 tài sản; năng lực xác "
-        "lập quyền sở hữu công nghiệp phụ thuộc đáng kể vào một đối tác; và kiểu dáng công nghiệp chỉ bảo hộ hình dáng "
-        "bên ngoài, không bảo hộ công thức hay quy trình. Giải pháp hữu ích, loại hình phù hợp nhất với sản phẩm đề tài "
-        "cấp cơ sở, vắng mặt hoàn toàn.",
+        f"Bảng 2.{b_ts} và Hình 2.{h_ts} cho thấy danh mục hình thành từ ba luồng. Luồng thương hiệu gồm 4 tài sản, đều "
+        "do Nhà trường đơn sở hữu và đều đã có văn bằng. Luồng hợp tác doanh nghiệp gồm 5 kiểu dáng công nghiệp và 1 "
+        "nhãn hiệu đồng sở hữu với một doanh nghiệp đối tác; đây là thành công nổi bật của chiến lược hợp tác đại học "
+        "với doanh nghiệp mà Ban Giám hiệu đã chủ động kết nối, riêng năm 2024 có 5 kiểu dáng được cấp, nâng số lũy kế "
+        "từ 4 lên 9 tài sản. Luồng nghiên cứu đã có 2 đơn sáng chế nộp năm 2025 và 2026. Giai đoạn tới, Nhà trường có thể "
+        "tận dụng đà hợp tác này để phát triển thêm các tài sản do chính Nhà trường đơn sở hữu từ kết quả nghiên cứu, "
+        "nhất là công thức và quy trình, những đối tượng mà kiểu dáng công nghiệp chưa bảo hộ. Giải pháp hữu ích, loại "
+        "hình phù hợp nhất với sản phẩm đề tài cấp cơ sở, là hướng phát triển còn bỏ ngỏ.",
         "Về bảo vệ quyền, giai đoạn nghiên cứu không ghi nhận tranh chấp, khiếu nại hay xử lý xâm phạm liên quan đến "
         "Nhà trường, phù hợp với quy mô tài sản nhỏ và mức khai thác hạn chế. Thời hạn văn bằng được theo dõi trong "
         "bảng do bộ phận quản trị thương hiệu lập; do 5 kiểu dáng được cấp cùng năm 2024, việc gia hạn sẽ dồn vào cùng "
@@ -550,7 +585,10 @@ def noi_dung(v):
         "số đề tài tạo ra sản phẩm có thể xác lập quyền, tỷ lệ đáng ghi nhận với một trường có phần lớn ngành thuộc "
         f"kinh tế, xã hội và ngôn ngữ; nhưng chỉ {pt(len(B.nop_don) / len(B.dt_du_dk))} số đề tài đủ điều kiện được "
         f"nộp đơn. Nếu chỉ xét đề tài giao đến năm 2024, đã đủ thời gian để nộp đơn, có {len(B.du_dk_den_2024)} đề tài "
-        "đủ điều kiện và không đề tài nào nộp đơn. Vấn đề không nằm ở đầu vào mà ở khâu nối giữa nghiệm thu và đăng ký.",
+        "đủ điều kiện nhưng chưa đề tài nào nộp đơn. Tiềm năng ở đầu vào là rõ ràng; điểm nghẽn nằm ở một khoảng trống kỹ "
+        "thuật tại khâu nối giữa nghiệm thu và đăng ký: quy trình chưa có biểu mẫu rà soát khả năng bảo hộ tại thời điểm "
+        "nghiệm thu. Với các sản phẩm đã bộc lộ công khai quá mười hai tháng, khả năng đăng ký sáng chế, giải pháp hữu ích "
+        "không còn, nên khâu rà soát này càng cần được thiết lập sớm.",
         "Đề tài chiết xuất lá Quế hoa năm 2025 là đề tài cấp cơ sở duy nhất trong năm năm chuyển thành đơn sáng chế, và "
         "đơn được nộp ngay trong năm nghiệm thu. Trường hợp này cho thấy kênh chuyển hóa vận hành được trong điều kiện "
         "hiện có, nhưng mới vận hành một lần, do một chủ nhiệm đồng thời chủ trì đề tài cấp quốc gia. Hai đề tài năm "
@@ -604,7 +642,7 @@ def noi_dung(v):
         f"bằng đạt {pt(k['Công nhận sáng chế, kiểu dáng, quyền tác giả'][4], 0)} với "
         f"{k['Công nhận sáng chế, kiểu dáng, quyền tác giả'][3]} văn bằng, nhưng đó là 5 kiểu dáng đồng sở hữu với "
         "doanh nghiệp và nhãn hiệu Thado Edupark, không văn bằng nào hình thành từ đề tài; chỉ tiêu chuyển giao công "
-        "nghệ năm 2025 không đạt.",
+        "nghệ năm 2025 chưa đạt.",
         "Do Kế hoạch gộp sáng chế với kiểu dáng công nghiệp và quyền tác giả trong một chỉ tiêu, chỉ tiêu này có thể "
         "hoàn thành mà không cần kết quả nghiên cứu nào được bảo hộ. Kế hoạch 07/KH-ĐHTĐ từng tự đánh giá giai đoạn "
         "2019 - 2023 là chưa có công trình được chuyển giao công nghệ và tài sản trí tuệ còn hạn chế; sau hai năm thực "
@@ -612,98 +650,110 @@ def noi_dung(v):
 
     v.doan("h2", "2.5.1. Kết quả đạt được")
     v.than(
-        "Thứ nhất, Nhà trường có hệ thống quy định về sở hữu trí tuệ từ sớm. Quyết định 213 năm 2021 đã có một chương "
-        "riêng với phạm vi tài sản khá đầy đủ và quy trình đăng ký một cửa; Quyết định 217 năm 2024 mở rộng phạm vi tài "
-        "sản, bổ sung nguyên tắc công bố và bảo mật, phân công đầu mối.",
-        "Thứ hai, Nhà trường đã xác lập 12 tài sản trí tuệ, trong đó 9 tài sản có văn bằng; nhóm thương hiệu gồm tên "
-        "trường, bộ nhận diện và thương hiệu hệ sinh thái được bảo hộ liên tục từ năm 2021, có ý nghĩa trong cạnh tranh "
-        "tuyển sinh.",
+        "Thứ nhất, Nhà trường có tầm nhìn sớm về thể chế sở hữu trí tuệ. Quyết định 213 năm 2021 đã dành một chương riêng "
+        "với phạm vi tài sản khá đầy đủ và quy trình đăng ký một cửa; Quyết định 217 ngày 21 tháng 11 năm 2024 tiếp tục "
+        "ban hành quy chế chuyên biệt, mở rộng phạm vi tài sản, bổ sung nguyên tắc công bố và bảo mật, phân công đầu "
+        "mối. Cả hai văn bản đều ra đời trước khi Luật số 93/2025/QH15 và Luật số 131/2025/QH15 được ban hành.",
+        "Thứ hai, Nhà trường đã xác lập 12 tài sản trí tuệ, trong đó 9 tài sản có văn bằng. Nhóm thương hiệu gồm tên "
+        "trường, bộ nhận diện và thương hiệu hệ sinh thái được bảo hộ liên tục từ năm 2021. Chiến lược hợp tác với doanh "
+        "nghiệp do Ban Giám hiệu chủ động kết nối đã tạo ra 5 kiểu dáng công nghiệp và 1 nhãn hiệu đồng sở hữu, minh "
+        "chứng cho năng lực hợp tác đại học với doanh nghiệp hiệu quả của Nhà trường.",
         f"Thứ ba, năng lực nghiên cứu tăng nhanh: số bài báo tăng bình quân {pt(B.cagr(B.bb[0], B.bb[4], 4))} một năm, "
         f"đạt {so(B.bb[4] / tong_gv, 2)} bài trên một giảng viên năm 2025; {kh_dat} trên 10 chỉ tiêu khoa học công "
         "nghệ của Kế hoạch 07/KH-ĐHTĐ đạt hoặc vượt; ba đề tài cấp quốc gia với tổng kinh phí 4,67 tỷ đồng được giao.",
-        "Thứ tư, kênh chuyển hóa từ đề tài sang quyền sở hữu công nghiệp đã vận hành được, với đơn sáng chế từ đề tài "
-        "chiết xuất lá Quế hoa năm 2025 và đơn sáng chế thứ hai năm 2026.",
+        "Thứ tư, tiềm năng tài sản trí tuệ của đội ngũ là rất lớn, đặc biệt ở khối ngành Y - Dược: 11 trên 38 đề tài cấp "
+        "cơ sở tạo ra sản phẩm đủ điều kiện xác lập quyền, và kênh chuyển hóa từ đề tài sang quyền sở hữu công nghiệp đã "
+        "vận hành với đơn sáng chế từ đề tài chiết xuất lá Quế hoa năm 2025 và đơn sáng chế thứ hai năm 2026.",
         "Thứ năm, Nhà trường đã có nguồn lực tài chính gắn cơ chế sở hữu trí tuệ tương đối hoàn chỉnh là Quỹ Học bổng "
         "sau tiến sĩ Ngô Xuân Độ với ngân sách 5 tỷ đồng, và có kết nối với Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi "
         "mới sáng tạo từ năm 2023.")
 
     v.doan("h2", "2.5.2. Hạn chế")
     v.than(
-        f"Thứ nhất, kết quả nghiên cứu hầu như không được chuyển hóa thành quyền: {len(B.dt_du_dk)} trên 38 đề tài có "
-        f"sản phẩm đủ điều kiện nhưng chỉ {len(B.nop_don)} đề tài nộp đơn; {len(B.du_dk_den_2024)} đề tài đủ điều kiện "
-        "giai đoạn 2021 - 2024 đều không nộp đơn; hoạt động nghiên cứu chỉ đóng góp 2 trên 12 tài sản trí tuệ.",
-        "Thứ hai, hệ thống quy định chồng lấn và chưa theo kịp pháp luật: bốn văn bản chứa năm quy định chia lợi ích, "
-        "và mức trần 100 triệu đồng không còn tương thích với Điều 135 Luật Sở hữu trí tuệ hiện hành.",
-        "Thứ ba, quản lý quyền diễn ra theo hai luồng tách rời: luồng thương hiệu vận hành đều và có kết quả, luồng "
-        "nghiên cứu gần như không; danh mục tài sản và danh mục sản phẩm đề tài gần như không có điểm giao.",
-        "Thứ tư, năng lực xác lập quyền sở hữu công nghiệp phụ thuộc đối tác: 6 trên 12 tài sản, gồm toàn bộ kiểu dáng "
-        "công nghiệp, đồng sở hữu với một doanh nghiệp.",
-        f"Thứ năm, hệ thống dữ liệu chưa đáp ứng yêu cầu quản lý và nghĩa vụ công khai: không có danh mục tài "
-        f"sản trí tuệ trong hệ thống thống kê, độ phủ khai báo khoảng 29,9%, {B.tong_C} trên 16 tiêu chí đánh giá chưa "
-        "tính được.",
-        "Thứ sáu, khai thác có thu phí rất hẹp: hai hợp đồng chuyển giao quyền sử dụng tác phẩm trong năm năm, chín văn "
-        "bằng chưa phát sinh giao dịch chuyển giao quyền.",
-        f"Thứ bảy, nghiệm thu chưa gắn với sản phẩm có thể bảo hộ: {xep_loai['Xuất sắc'] + xep_loai['Tốt']} trên 38 đề "
-        "tài xếp loại Tốt trở lên, 7 đề tài chỉ có báo cáo tổng kết nhưng 5 trong số đó vẫn xếp loại Tốt, và quy trình "
-        "nghiệm thu không có khâu đánh giá khả năng bảo hộ.")
+        f"Thứ nhất, kết quả nghiên cứu chưa được chuyển hóa thành quyền tương xứng với tiềm năng: {len(B.dt_du_dk)} trên "
+        f"38 đề tài có sản phẩm đủ điều kiện nhưng mới {len(B.nop_don)} đề tài nộp đơn; {len(B.du_dk_den_2024)} đề tài "
+        "đủ điều kiện giai đoạn 2021 - 2024 chưa được nộp đơn.",
+        "Thứ hai, hệ thống quy định nội bộ ban hành ở các thời điểm khác nhau chưa kịp cập nhật theo pháp luật mới: bốn "
+        "văn bản chứa năm quy định chia lợi ích; khoản nộp ngân sách và mức trần 100 triệu đồng tại điểm a khoản 4 Điều "
+        "36 Quyết định 213 được xây dựng theo khung pháp luật trước đây, nay chưa tương thích với Điều 28 Luật số "
+        "93/2025/QH15 và Điều 135 Luật Sở hữu trí tuệ hiện hành.",
+        "Thứ ba, luồng thương hiệu và luồng nghiên cứu vận hành tách biệt: danh mục tài sản và danh mục sản phẩm đề tài "
+        "do hai bộ phận lập, chưa có trường liên kết, nên sản phẩm nghiên cứu chưa được theo dõi liên tục đến khi xác lập "
+        "quyền.",
+        "Thứ tư, tài sản do Nhà trường đơn sở hữu hình thành từ kết quả nghiên cứu còn ít: ngoài 4 tài sản thương hiệu, "
+        "mới có 2 đơn sáng chế; các văn bằng sở hữu công nghiệp hiện có đều hình thành qua hợp tác doanh nghiệp.",
+        f"Thứ năm, hệ thống dữ liệu chưa đáp ứng đầy đủ yêu cầu quản lý và nghĩa vụ công khai: chưa có danh mục tài sản "
+        f"trí tuệ trong hệ thống thống kê, độ phủ khai báo khoảng 29,9%, {B.tong_C} trên 16 tiêu chí đánh giá chưa tính "
+        "được.",
+        "Thứ sáu, hoạt động khai thác có thu phí còn ở quy mô nhỏ: hai hợp đồng chuyển giao quyền sử dụng tác phẩm trong "
+        "năm năm; các văn bằng đã cấp chưa phát sinh giao dịch chuyển giao quyền.",
+        "Thứ bảy, quy trình nghiệm thu đề tài trước đây chủ yếu tập trung đánh giá mức độ hoàn thành nhiệm vụ chuyên môn "
+        "và bài báo công bố, chưa tích hợp tiêu chí sàng lọc và định hướng đăng ký bảo hộ quyền sở hữu trí tuệ.")
 
     v.doan("h2", "2.5.3. Nguyên nhân của hạn chế")
     v.doan("h3", "a) Nguyên nhân khách quan", bold=True)
     v.than(
-        "Thứ nhất, khung pháp luật thay đổi dồn dập trong giai đoạn 2025 - 2026, gồm Luật Khoa học, công nghệ và đổi mới "
-        "sáng tạo số 93/2025/QH15 có hiệu lực từ ngày 01 tháng 10 năm 2025, Luật Giáo dục đại học số 125/2025/QH15, Luật "
-        "số 131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ có hiệu lực từ ngày 01 tháng 4 năm 2026, Kết luận số 51-KL/TW "
-        "ngày 17 tháng 6 năm 2026 và Quyết định số 1624/QĐ-TTg ngày 21 tháng 8 năm 2026. Quy chế ban hành năm 2021 được xây dựng trên khung cũ nên một số quy định như mức "
-        "trần thù lao không còn tương thích.",
+        "Thứ nhất, độ trễ thể chế trước sự thay đổi dồn dập của pháp luật quốc gia giai đoạn 2025 - 2026. Chỉ trong khoảng "
+        "một năm, Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 có hiệu lực từ ngày 01 tháng 10 năm 2025 "
+        "thay thế Luật Khoa học và công nghệ năm 2013, với cơ chế tự động giao quyền sở hữu kết quả và thưởng tác giả tối "
+        "thiểu 30% lợi nhuận; Luật Giáo dục đại học số 125/2025/QH15 có hiệu lực từ ngày 01 tháng 01 năm 2026; Luật số "
+        "131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ có hiệu lực từ ngày 01 tháng 4 năm 2026; tiếp đó là Kết luận số "
+        "51-KL/TW ngày 17 tháng 6 năm 2026 và Quyết định số 1624/QĐ-TTg ngày 21 tháng 8 năm 2026. Các quy chế Nhà trường "
+        "ban hành năm 2021 và 2024 với tầm nhìn sớm vì vậy tất yếu cần được rà soát, và việc hợp nhất quy chế là cơ hội "
+        "để Nhà trường đi tiên phong đón đầu luật mới.",
         "Thứ hai, thủ tục xác lập quyền sở hữu công nghiệp kéo dài và phát sinh chi phí tra cứu, soạn đơn, lệ phí, phí "
         "duy trì; là trường tư thục, Nhà trường phải tự cân đối các khoản này từ nguồn thu của mình.",
         "Thứ ba, cơ cấu ngành chủ yếu thuộc kinh tế, quản lý, ngôn ngữ, giáo dục và pháp luật, vốn chủ yếu tạo ra tác "
         "phẩm thuộc quyền tác giả; tiềm năng sở hữu công nghiệp tập trung ở lĩnh vực dược.",
-        f"Các nguyên nhân khách quan giải thích vì sao quy mô tài sản trí tuệ còn nhỏ, nhưng không giải thích được vì sao "
-        f"{len(B.du_dk_den_2024)} đề tài đủ điều kiện giai đoạn 2021 - 2024 đều không được nộp đơn.")
+        f"Các nguyên nhân khách quan giải thích vì sao quy mô tài sản trí tuệ còn nhỏ, song chưa giải thích đầy đủ vì sao "
+        f"{len(B.du_dk_den_2024)} đề tài đủ điều kiện giai đoạn 2021 - 2024 chưa được nộp đơn.")
     v.doan("h3", "b) Nguyên nhân chủ quan", bold=True)
     v.than(
-        "Về thể chế, bốn văn bản chứa năm quy định chia lợi ích với phạm vi không rõ ranh giới; Quyết định 217 không "
-        "thay thế Chương VI Quyết định 213, nên người có sản phẩm không xác định được quy định nào áp dụng.",
-        "Về quy trình, Điều 35 Quyết định 213 thiết kế theo cơ chế tác giả chủ động nộp đơn, không có khâu rà soát bắt "
-        "buộc khả năng bảo hộ khi nghiệm thu; Điều 10 Quyết định 217 tiếp tục đặt trách nhiệm tự nhận diện lên tác giả. "
-        "Quy trình có trên văn bản nhưng không được kích hoạt.",
-        "Về nguồn lực, kênh sinh ra sản phẩm có thể bảo hộ không có dòng chi cho phí nộp đơn và duy trì hiệu lực; kênh "
-        "có đủ cơ chế là Quỹ Học bổng sau tiến sĩ chỉ dành cho đối tượng hẹp; đơn vị đầu mối chỉ có 2 nhân sự và không "
-        "có người chuyên trách về sở hữu trí tuệ.",
-        "Về động lực, văn bằng được quy đổi từ 180 đến 600 giờ nghiên cứu nhưng không có tiền thưởng và chỉ được ghi "
-        "nhận sau khi được cấp, trong khi bài báo quốc tế được thưởng từ 10 đến 20 triệu đồng ngay khi đăng.",
-        "Về tổ chức, chức năng quản lý bị chia cho bốn đơn vị, ba đơn vị thuộc khối Quản trị và Dịch vụ, và không đơn "
-        "vị nào thực hiện trọn chu trình từ nhận diện đến khai thác.",
-        "Về dữ liệu, không có danh mục tài sản trí tuệ và độ phủ khai báo thấp nên đơn vị đầu mối không có công cụ phát "
+        "Về quy trình, đây là khoảng trống kỹ thuật cốt lõi: quy trình nghiệm thu chưa có biểu mẫu rà soát khả năng bảo "
+        "hộ, nên việc nhận diện sản phẩm và khởi động thủ tục phụ thuộc vào sự chủ động của từng tác giả theo Điều 35 "
+        "Quyết định 213 và Điều 10 Quyết định 217.",
+        "Về thể chế, các văn bản được ban hành ở những thời điểm và cho những kênh tài trợ khác nhau, chưa được hợp nhất "
+        "thành một cơ chế phân chia lợi ích thống nhất.",
+        "Về nguồn lực, kênh đề tài cấp cơ sở, nơi tạo ra các sản phẩm có thể bảo hộ, chưa có dòng chi cho phí nộp đơn và "
+        "duy trì hiệu lực; Quỹ Học bổng sau tiến sĩ có cơ chế đầy đủ nhưng dành cho đối tượng hẹp; đơn vị đầu mối chưa có "
+        "vị trí chuyên trách về sở hữu trí tuệ.",
+        "Về động lực, chế độ khuyến khích hiện hành được thiết kế trước hết cho công bố: văn bằng được quy đổi từ 180 đến "
+        "600 giờ nghiên cứu nhưng chưa có tiền thưởng và chỉ được ghi nhận sau khi được cấp, trong khi bài báo quốc tế "
+        "được thưởng từ 10 đến 20 triệu đồng ngay khi đăng.",
+        "Về tổ chức, việc phân công theo chức năng cho bốn đơn vị là hợp lý nhưng chưa có luồng hồ sơ liên thông giữa các "
+        "đơn vị.",
+        "Về dữ liệu, chưa có danh mục tài sản trí tuệ và độ phủ khai báo còn thấp nên đơn vị đầu mối chưa có công cụ phát "
         "hiện sản phẩm cần rà soát.",
-        "Về con người, năng lực nghiên cứu tập trung ở khoảng một phần ba nhân sự, và trường hợp chuyển hóa thành công "
-        "duy nhất thuộc về một chủ nhiệm đồng thời chủ trì đề tài cấp quốc gia, nên hoạt động xác lập quyền mang tính "
-        "đơn lẻ.",
-        "Bảy nguyên nhân chủ quan liên kết thành một chuỗi: thiếu dữ liệu nên đầu mối không phát hiện sản phẩm; thiếu "
-        "khâu rà soát nên trách nhiệm dồn về tác giả; tác giả đối diện quy định không thống nhất, không có kinh phí nộp "
-        "đơn và phần thưởng đến chậm nên chọn công bố; sau mười hai tháng, sản phẩm mất khả năng xác lập quyền sáng chế "
-        "và giải pháp hữu ích. Việc Nhà trường tham gia Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi mới sáng tạo từ năm "
-        "2023 mà hai năm 2023 - 2024 không có đơn nào xuất phát từ đề tài cho thấy điểm nghẽn không nằm ở khả năng tiếp "
-        "cận thông tin mà ở khâu nhận diện và khởi động quy trình. Hệ thống giải pháp tại Chương 3 vì vậy cần tác động "
-        "đồng thời vào cả chuỗi, trong đó khâu rà soát khả năng bảo hộ tại thời điểm nghiệm thu là điểm can thiệp ưu "
-        "tiên.")
-
-
+        "Về con người, lực lượng nghiên cứu nòng cốt còn mỏng so với quy mô và chưa được bồi dưỡng chuyên sâu về nhận "
+        "diện, bảo hộ tài sản trí tuệ.")
+    h_cnn = v.so_do("Chuỗi nguyên nhân dẫn đến việc sản phẩm đủ điều kiện chưa được đăng ký bảo hộ",
+                    os.path.join(GOC, "Ban_cuoi", "so_do", "chuoi_nguyen_nhan.png"),
+                    "Nguồn: Nhóm nghiên cứu tổng hợp từ kết quả phân tích tại Mục 2.2 và Mục 2.3.")
+    v.than(
+        f"Hình 2.{h_cnn} cho thấy các nguyên nhân chủ quan liên kết thành một chuỗi. Điểm nghẽn không nằm ở chất lượng "
+        "đề tài hay năng lực đội ngũ mà ở khoảng trống kỹ thuật tại khâu nghiệm thu: khi chưa có biểu mẫu rà soát, trách "
+        "nhiệm nhận diện dồn về tác giả; tác giả chưa có kinh phí nộp đơn và phần thưởng cho văn bằng đến chậm nên ưu "
+        "tiên công bố; sau mười hai tháng kể từ ngày bộc lộ, sản phẩm không còn khả năng đăng ký sáng chế, giải pháp hữu "
+        "ích. Việc Nhà trường đã tham gia Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi mới sáng tạo từ năm 2023 cho thấy "
+        "nguồn lực hỗ trợ đã sẵn có; điều cần bổ sung là một bước rà soát bắt buộc để kích hoạt nguồn lực đó. Hệ thống "
+        "giải pháp tại Chương 3 vì vậy tác động đồng thời vào cả chuỗi, trong đó phiếu rà soát bắt buộc tại thời điểm "
+        "nghiệm thu là điểm can thiệp ưu tiên.")
+    v.ket_qua["h_kh"] = h_kh
     v.doan("h1", "TIỂU KẾT CHƯƠNG 2")
     v.than(
         "Chương 2 đã phân tích thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô giai đoạn 2021 - 2025 "
-        "trên cơ sở các danh mục thống kê, văn bản nội bộ và kế hoạch của Nhà trường. Kết quả cho thấy Nhà trường có nền "
-        "tảng thể chế từ sớm, năng lực công bố tăng nhanh, 12 tài sản trí tuệ đã được xác lập hoặc đang xử lý đơn và kênh "
-        "chuyển hóa từ đề tài sang đơn sáng chế đã vận hành. Tuy nhiên, điểm nghẽn cốt lõi nằm ở khâu nối giữa nghiệm thu và "
-        f"đăng ký: {len(B.dt_du_dk)} trên 38 đề tài có sản phẩm đủ điều kiện xác lập quyền nhưng chỉ {len(B.nop_don)} đề "
-        "tài được nộp đơn, hoạt động nghiên cứu chỉ đóng góp 2 trên 12 tài sản, và khai thác có thu phí mới dừng ở hai hợp "
-        "đồng chuyển giao quyền sử dụng tác phẩm.",
-        "Nguyên nhân chủ yếu thuộc về chủ quan: bốn văn bản với năm quy định chia lợi ích chưa thống nhất, quy trình thiếu "
-        "khâu rà soát bắt buộc, kênh đề tài cấp cơ sở không có kinh phí nộp đơn, cơ chế khuyến khích nghiêng về công bố, "
-        "chức năng quản lý phân tán ở bốn đơn vị và hệ thống dữ liệu chưa theo dõi tài sản trí tuệ. Các nguyên nhân này liên "
-        "kết thành một chuỗi, nên hệ thống giải pháp tại Chương 3 cần tác động đồng thời, trong đó khâu rà soát khả năng "
-        "bảo hộ tại thời điểm nghiệm thu là điểm can thiệp ưu tiên.")
+        "trên cơ sở các danh mục thống kê, văn bản nội bộ và kế hoạch của Nhà trường. Kết quả cho thấy Nhà trường có tầm "
+        "nhìn thể chế sớm, năng lực công bố tăng nhanh, 12 tài sản trí tuệ đã được xác lập hoặc đang xử lý đơn, hợp tác "
+        "doanh nghiệp hiệu quả và kênh chuyển hóa từ đề tài sang đơn sáng chế đã vận hành. Tiềm năng tài sản trí tuệ, "
+        f"nhất là ở khối ngành Y - Dược, là rất lớn: {len(B.dt_du_dk)} trên 38 đề tài có sản phẩm đủ điều kiện xác lập "
+        f"quyền, trong khi mới {len(B.nop_don)} đề tài được nộp đơn.",
+        "Khoảng cách giữa tiềm năng và kết quả chủ yếu đến từ hai nhóm yếu tố. Về khách quan, pháp luật thay đổi dồn dập "
+        "trong giai đoạn 2025 - 2026 tạo ra độ trễ thể chế tất yếu đối với các quy chế ban hành trước đó. Về chủ quan, "
+        "khoảng trống kỹ thuật cốt lõi là quy trình nghiệm thu chưa có biểu mẫu rà soát khả năng bảo hộ, kéo theo các "
+        "khoảng trống về kinh phí nộp đơn, cơ chế khuyến khích, luồng hồ sơ và dữ liệu. Đây là căn cứ để Chương 3 đề xuất "
+        "hệ thống giải pháp, trong đó phiếu rà soát bắt buộc tại nghiệm thu và việc hợp nhất quy chế theo luật mới là hai "
+        "điểm ưu tiên.")
+
 
 # ---------------------------------------------------------------------------
 NHAT_KY_GON = [

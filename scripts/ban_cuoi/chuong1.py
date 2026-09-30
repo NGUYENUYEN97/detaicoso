@@ -88,47 +88,61 @@ SUA = [
      "giáo dục đại học; Điều 28 quy định quyền thành lập doanh nghiệp quản lý tài sản trí tuệ, quyền định giá, xác lập "
      "quyền sở hữu, khai thác, góp vốn, phân chia lợi ích từ tài sản trí tuệ và nghĩa vụ công khai kết quả hoạt động khoa "
      "học, công nghệ và đổi mới sáng tạo trên Nền tảng số quốc gia."),
-    # 1.3.2: chỉ giữ các nội dung kiểm chứng được từ văn bản hợp nhất
+    # 1.3.2: đối chiếu toàn văn Luật 93/2025/QH15 (Điều 25, 27, 28, 37, 66, 71, 72)
     ("Thứ nhất, phân cấp toàn diện quyền định đoạt tài sản trí tuệ: Các Điều 27 và 28 Luật số 93/2025/QH15 quy định kết quả "
      "nghiên cứu hình thành từ nhiệm vụ khoa học và công nghệ có sử dụng ngân sách nhà nước được giao quyền sở hữu trực tiếp "
      "cho tổ chức chủ trì là cơ sở giáo dục đại học. Nhà trường được toàn quyền định giá, chuyển giao, góp vốn hoặc thành "
      "lập doanh nghiệp khởi nguồn tri thức mà không phải thực hiện các thủ tục phê duyệt xử lý tài sản công phức tạp như "
      "giai đoạn trước.",
-     "Thứ nhất, về quyền đối với kết quả nghiên cứu sử dụng ngân sách nhà nước: Luật số 93/2025/QH15 xác lập cơ chế giao "
-     "quyền quản lý, sử dụng, quyền sở hữu kết quả của nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo cho tổ chức chủ trì. "
-     "Luật Sở hữu trí tuệ dẫn chiếu trực tiếp cơ chế này tại điểm c khoản 1 Điều 86 để trao quyền đăng ký sáng chế, kiểu "
-     "dáng công nghiệp, thiết kế bố trí cho tổ chức được giao quyền. Với cơ sở giáo dục đại học chủ trì nhiệm vụ, đây là "
-     "căn cứ để chủ động xác lập quyền, định giá, chuyển giao, góp vốn hoặc thành lập doanh nghiệp theo Điều 28 Luật Giáo "
-     "dục đại học số 125/2025/QH15."),
+     "Thứ nhất, về quyền đối với kết quả nghiên cứu: khoản 2 Điều 25 Luật số 93/2025/QH15 quy định tổ chức chủ trì nhiệm vụ "
+     "khoa học, công nghệ và đổi mới sáng tạo được Nhà nước tự động giao quyền quản lý, sử dụng, quyền sở hữu phần kết quả "
+     "tương ứng với kinh phí từ ngân sách nhà nước, không phải thực hiện thủ tục giao quyền và không phải bồi hoàn chi phí; "
+     "khoản 1 Điều 25 xác định tổ chức, cá nhân đóng góp tài sản, tài chính là chủ sở hữu kết quả tương ứng với tỷ lệ đóng "
+     "góp. Điều 27 cho phép chủ sở hữu tự quyết định việc thương mại hóa, lựa chọn hình thức, giá, phương án góp vốn và "
+     "phân chia lợi nhuận mà không phải thực hiện thủ tục xử lý tài sản công như giai đoạn trước. Điểm b khoản 2 Điều 37 "
+     "khẳng định tổ chức ngoài công lập cũng được giao quyền sở hữu hoặc quyền sử dụng kết quả nghiên cứu từ nhiệm vụ sử "
+     "dụng ngân sách nhà nước do mình thực hiện, và điểm d khoản 2 cho hưởng ưu đãi như đối với tổ chức công lập, qua đó "
+     "mở ra cơ hội trực tiếp cho trường đại học tư thục. Luật Sở hữu trí tuệ dẫn chiếu cơ chế giao quyền này tại điểm c "
+     "khoản 1 Điều 86 để trao quyền đăng ký sáng chế, kiểu dáng công nghiệp, thiết kế bố trí cho tổ chức được giao quyền."),
     ("Thứ hai, đổi mới cơ chế phân chia lợi ích thương mại hóa: Luật quy định tỷ lệ chia sẻ lợi nhuận thu được từ thương mại "
      "hóa kết quả nghiên cứu cho nhóm tác giả và các nhà khoa học trực tiếp thực hiện đề tài đạt mức tối thiểu 30%, tạo hành "
      "lang pháp lý mở nhằm thúc đẩy tinh thần dấn thân nghiên cứu ứng dụng của đội ngũ cán bộ khoa học.",
-     "Thứ hai, về cơ chế thù lao: điểm b khoản 7 Điều 71 Luật số 93/2025/QH15 sửa đổi khoản 1 Điều 135 Luật Sở hữu trí tuệ "
-     "theo nguyên tắc thỏa thuận, chỉ áp dụng mức mặc định 10% và 15% khi các bên không có thỏa thuận; điểm a khoản 7 Điều 71 "
-     "sửa đổi điểm b khoản 1 Điều 86 về quyền đăng ký của tổ chức, cá nhân đầu tư kinh phí, phương tiện vật chất."),
+     "Thứ hai, về phân chia lợi nhuận: Điều 28 phân biệt hai trường hợp. Với phần lợi nhuận tương ứng kết quả không sử dụng "
+     "ngân sách nhà nước, chủ sở hữu tự quyết định việc xử lý lợi nhuận, bao gồm thưởng cho tác giả, theo khoản 2. Với phần "
+     "tương ứng kết quả sử dụng ngân sách nhà nước, điểm a khoản 3 quy định thưởng cho tác giả tối thiểu 30% lợi nhuận thu "
+     "được từ cho thuê, bán, chuyển nhượng, chuyển giao quyền sử dụng, tự khai thác kết quả, hoặc tối thiểu 30% giá trị kết "
+     "quả khi góp vốn, liên doanh, liên kết, thành lập doanh nghiệp; khoản 4 bổ sung rằng tác giả sáng chế, kiểu dáng công "
+     "nghiệp, thiết kế bố trí còn được hưởng quyền lợi theo Luật Sở hữu trí tuệ. Cùng với đó, điểm b khoản 2 Điều 66 cho "
+     "phép quỹ phát triển khoa học và công nghệ của tổ chức chi cho đăng ký, bảo hộ, quản lý, khai thác quyền sở hữu trí tuệ."),
     ("Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 đã tạo ra bước đột phá thể chế mang tính đồng bộ cao khi "
      "không chỉ quy định tỷ lệ phân chia tối thiểu 30% lợi nhuận thương mại hóa cho nhóm tác giả nghiên cứu, mà còn trực "
      "tiếp bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều 135 của Luật Sở hữu trí tuệ. Bằng việc bãi bỏ khoản 2 Điều 135, cơ chế "
      "quản lý nhà nước đã chính thức xóa bỏ mức trần khống chế thù lao (15% và 20%) đối với kết quả nghiên cứu sử dụng ngân "
      "sách nhà nước.",
-     "Điểm h khoản 7 Điều 71 Luật số 93/2025/QH15 trực tiếp bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều 135 của Luật Sở hữu "
-     "trí tuệ. Bằng việc bãi bỏ khoản 2 Điều 135, pháp luật không còn quy định riêng về thù lao đối với kết quả nghiên cứu "
-     "sử dụng ngân sách nhà nước."),
+     "Luật số 93/2025/QH15 đã tạo ra bước đột phá thể chế mang tính đồng bộ khi vừa quy định mức thưởng tối thiểu 30% cho "
+     "tác giả kết quả sử dụng ngân sách nhà nước, vừa sửa đổi Luật Sở hữu trí tuệ tại khoản 7 Điều 71: điểm b sửa khoản 1 "
+     "Điều 135 theo nguyên tắc thỏa thuận với mức mặc định 10% và 15%; điểm h bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều "
+     "135. Pháp luật vì vậy không còn quy định riêng về khung thù lao theo nguồn kinh phí như trước."),
+    ("Pháp luật hiện hành đã trao toàn quyền tự chủ thỏa thuận cho cơ sở giáo dục đại học và không hề khống chế mức trần thù "
+     "lao đối với bất kỳ nguồn kinh phí nào.",
+     "Pháp luật hiện hành trao quyền tự chủ thỏa thuận cho cơ sở giáo dục đại học, không đặt mức trần thù lao, đồng thời bảo "
+     "đảm mức sàn 30% cho tác giả đối với kết quả sử dụng ngân sách nhà nước."),
     ("Vì vậy, trên bình diện pháp lý quốc gia hoàn toàn không có bất kỳ rào cản nào ngăn cản Trường Đại học Thành Đô quy "
      "định tỷ lệ phân chia lợi nhuận thương mại hóa ở mức 30%, 50% hoặc cao hơn trong quy chế nội bộ.",
      "Vì vậy, pháp luật không ngăn cản Trường Đại học Thành Đô quy định tỷ lệ phân chia lợi nhuận thương mại hóa cho tác "
-     "giả ở mức cao hơn mức mặc định trong quy chế nội bộ."),
+     "giả ở mức cao hơn mức tối thiểu và mức mặc định trong quy chế nội bộ."),
     ("Rào cản duy nhất hiện nay kìm hãm động lực thương mại hóa của nhà khoa học là các rào cản do chính Nhà trường tự đặt "
      "ra trong các văn bản quản trị nội bộ: mức khống chế trần tiền thưởng tối đa 100 triệu đồng trong Quy chế hoạt động "
      "khoa học công nghệ (ban hành kèm theo Quyết định số 213/QĐ-ĐHTĐ ngày 27/5/2021) và mức trần 50 triệu đồng trong Quy "
      "chế chi tiêu nội bộ. Đây chính là điểm nghẽn thể chế cốt lõi tại chỗ, cung cấp căn cứ pháp lý và thực tiễn vững chắc "
      "để đề tài đề xuất bãi bỏ hoàn toàn các mức trần hành chính này, hoàn thiện Quy chế quản trị tài sản trí tuệ mới của "
      "Trường Đại học Thành Đô tại Chương 3.",
-     "Giới hạn về thù lao hiện nay vì vậy nằm ở văn bản nội bộ của Nhà trường: mức trần 100 triệu đồng tại điểm a khoản 4 "
-     "Điều 36 Quy chế hoạt động khoa học công nghệ ban hành kèm Quyết định số 213/QĐ-ĐHTĐ ngày 28 tháng 12 năm 2021, cùng "
-     "với năm quy định phân chia lợi ích chưa thống nhất trong bốn văn bản nội bộ, gồm cả Quy chế quản trị tài sản trí tuệ "
-     "ban hành kèm Quyết định số 217/QĐ-ĐHTĐ năm 2024. Đây là căn cứ để Chương 2 đánh giá tính tương thích của quy chế nội "
-     "bộ và Chương 3 đề xuất hợp nhất quy chế, bãi bỏ mức trần này."),
+     "Các quy chế nội bộ của Nhà trường, gồm Quy chế hoạt động khoa học công nghệ ban hành kèm Quyết định số 213/QĐ-ĐHTĐ "
+     "ngày 28 tháng 12 năm 2021 và Quy chế quản trị tài sản trí tuệ ban hành kèm Quyết định số 217/QĐ-ĐHTĐ ngày 21 tháng "
+     "11 năm 2024, đều được xây dựng trước khi các luật mới có hiệu lực. Một số quy định như khoản nộp ngân sách và mức trần "
+     "100 triệu đồng tại điểm a khoản 4 Điều 36 Quyết định 213 vì vậy cần được cập nhật theo Điều 28 Luật số 93/2025/QH15. "
+     "Đây là căn cứ để Chương 2 đánh giá tính tương thích của quy chế nội bộ và Chương 3 đề xuất hợp nhất quy chế theo hướng "
+     "đón đầu luật mới."),
     # 1.3.3: đối chiếu Kết luận 51-KL/TW và Quyết định 1624/QĐ-TTg
     ("coi quyền sở hữu trí tuệ là nguồn lực kinh tế đặc biệt;", "quán triệt quan điểm quyền sở hữu trí tuệ là nguồn lực quan "
      "trọng của quốc gia;"),
@@ -157,12 +171,12 @@ SUA = [
     # 1.4.1: chu trình trình bày bằng bảng thay cho sơ đồ ảnh không khớp nội dung
     ("Gắn với dòng đời của tài sản trí tuệ trong trường đại học, chu trình quản lý vận hành qua bốn giai đoạn kế tiếp nhau:",
      "Gắn với dòng đời của tài sản trí tuệ trong trường đại học, chu trình quản lý vận hành qua bốn giai đoạn kế tiếp nhau, "
-     "được tóm tắt tại Bảng 1.1. Hoạt động bảo vệ quyền đồng thời diễn ra xuyên suốt cả bốn giai đoạn như đã phân tích tại "
-     "Mục 1.1.3.\n[[BANG_1_1]]"),
+     "được tóm tắt tại Hình 1.1. Hoạt động bảo vệ quyền đồng thời diễn ra xuyên suốt cả bốn giai đoạn như đã phân tích tại "
+     "Mục 1.1.3.\n[[HINH_1_1]]"),
     # 1.4.2: bộ 16 tiêu chí trình bày bằng bảng
     ("Hiệu quả quản lý quyền sở hữu trí tuệ được lượng hóa và đánh giá khách quan thông qua chuỗi logic bốn mắt xích:",
      "Hiệu quả quản lý quyền sở hữu trí tuệ được lượng hóa và đánh giá khách quan thông qua chuỗi logic bốn mắt xích: đầu "
-     "vào, quá trình, đầu ra và kết quả. Mười sáu tiêu chí thuộc bốn nhóm được trình bày tại Bảng 1.2; đây cũng là bộ tiêu "
+     "vào, quá trình, đầu ra và kết quả. Mười sáu tiêu chí thuộc bốn nhóm được trình bày tại Bảng 1.1; đây cũng là bộ tiêu "
      "chí được dùng để đánh giá khả năng đo lường của hệ thống dữ liệu tại Chương 2.\n[[BANG_1_2]]\nChuỗi bốn nhóm tiêu chí "
      "cho phép phân biệt giữa việc nhà trường đã đầu tư và tổ chức bao nhiêu với việc các nỗ lực đó đã tạo ra bao nhiêu "
      "quyền được xác lập và mang lại giá trị gì. Một hệ thống quản lý chỉ đo được đầu vào và đầu ra mà không đo được kết quả "
@@ -182,17 +196,25 @@ SUA = [
      "cơ quan quản lý nhà nước công bố không phù hợp với quy định hoặc đơn do người không có quyền đăng ký nộp."),
     # 1.5.3: khung phân tích khớp với Chương 2, Chương 3 bản cuối
     ("đề tài xây dựng Khung phân tích logic xuyên suốt cho toàn bộ công trình nghiên cứu:",
-     "đề tài xây dựng Khung phân tích logic xuyên suốt cho toàn bộ công trình nghiên cứu, được trình bày tại Bảng 1.3.\n"
-     "[[BANG_1_3]]"),
+     "đề tài xây dựng Khung phân tích logic xuyên suốt cho toàn bộ công trình nghiên cứu, được trình bày tại Hình 1.3.\n"
+     "[[HINH_1_3]]"),
     (" (đặc biệt là Khoa Dược, khối kỹ thuật công nghệ và nhóm giáo trình, học liệu đào tạo)",
      ", đặc biệt là lĩnh vực dược của Viện Y - Dược, khối kỹ thuật công nghệ và nhóm giáo trình, học liệu đào tạo"),
+    ("văn hóa học thuật tôn trọng quyền sở hữu trí tuệ, liêm chính nghiên cứu trong toàn trường.",
+     "văn hóa học thuật tôn trọng quyền sở hữu trí tuệ, liêm chính nghiên cứu trong toàn trường.\n[[HINH_1_2]]"),
+    ("Các trường đại học hàng đầu thế giới thường duy trì tỷ lệ chia sẻ lợi nhuận cho nhà sáng chế từ 40% đến 60%, thậm chí "
+     "lên đến 70% đối với các công nghệ giai đoạn đầu, tạo động lực vật chất tối đa cho các nhà khoa học (Etzkowitz, năm 2003).",
+     "Tỷ lệ chia sẻ doanh thu dành cho nhà sáng chế là một yếu tố động lực quan trọng; các trường đại học thành công trong "
+     "chuyển giao thường dành cho nhà sáng chế một tỷ lệ đáng kể trong doanh thu cấp phép (Siegel et al., 2007)."),
     # tiểu kết
     ("tác động gián tiếp đến các tiêu chí đánh giá chuẩn cơ sở giáo dục đại học.",
      "tác động đến các tiêu chí của Chuẩn cơ sở giáo dục đại học."),
     ("làm rõ quy định về quyền đăng ký theo Điều 86 Luật Sở hữu trí tuệ dẫn chiếu sang Luật Khoa học, công nghệ và đổi mới "
      "sáng tạo số 93/2025/QH15; phân tích việc bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều 135 Luật Sở hữu trí tuệ đã xóa bỏ "
      "hoàn toàn mức trần khống chế thù lao,",
-     "làm rõ quyền đăng ký theo điểm c khoản 1 Điều 86 Luật Sở hữu trí tuệ do Luật số 131/2025/QH15 bổ sung; phân tích việc "
+     "làm rõ cơ chế tự động giao quyền sở hữu kết quả nghiên cứu tại Điều 25 và mức thưởng tối thiểu 30% cho tác giả kết "
+     "quả sử dụng ngân sách nhà nước tại Điều 28 Luật số 93/2025/QH15, quyền đăng ký theo điểm c khoản 1 Điều 86 Luật Sở "
+     "hữu trí tuệ do Luật số 131/2025/QH15 bổ sung; phân tích việc "
      "Luật số 93/2025/QH15 bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều 135 Luật Sở hữu trí tuệ, theo đó pháp luật không còn "
      "đặt trần thù lao,"),
     ("định vị mô hình Không gian sáng tạo mở thử nghiệm (Living Lab) như", "định vị mô hình Không gian sáng tạo mở thử "
@@ -279,6 +301,34 @@ BANG_1_3 = dict(
 )
 
 
+# Trích dẫn trong bài theo APA 7: (Tác giả, năm); hai tác giả dùng "&", từ ba tác giả dùng "et al.".
+# Tài liệu không kiểm chứng được trong thư mục Zotero và "Co so ly luan" bị lược trích dẫn.
+APA = [
+    ("(Bradley và cộng sự, năm 2013; Goldfarb và Henrekson, năm 2003)", "(Bradley et al., 2013; Goldfarb & Henrekson, 2003)"),
+    ("(Bradley và cộng sự, năm 2013)", "(Bradley et al., 2013)"),
+    ("(Etzkowitz, năm 2003; Shane, năm 2004; Perkmann và cộng sự, năm 2013)", "(Etzkowitz, 2003; Perkmann et al., 2013; "
+     "Shane, 2004)"),
+    ("(Fisher, năm 2001; Guan, năm 2014)", "(Fisher, 2001; Guan, 2014)"),
+    ("(Fisher, năm 2001)", "(Fisher, 2001)"),
+    ("(Nguyễn Minh Huyền Trang, năm 2025)", "(Nguyễn, 2025)"),
+    ("(Rialti và cộng sự, năm 2022)", "(Rialti et al., 2022)"),
+    ("(Shane, năm 2004; Mowery và cộng sự, năm 2004)", "(Shane, 2004)"),
+    ("(Shane, năm 2004; Võ Nguyên Hoàng Phúc, năm 2025)", "(Shane, 2004; Võ, 2025)"),
+    ("(Siegel và cộng sự, năm 2007; Thursby và Thursby, năm 2002)", "(Siegel et al., 2007; Thursby & Kemp, 2002)"),
+    ("(Teece, năm 2018)", "(Teece, 2018)"),
+    (" (Tewari và Bhardwaj, năm 2020)", ""),
+    ("(Thursby và Thursby, năm 2002)", "(Perkmann et al., 2013)"),
+    ("(Tổ chức Sở hữu trí tuệ thế giới, năm 2020)", "(Tổ chức Sở hữu trí tuệ thế giới, 2020)"),
+    ("(Văn phòng Quốc hội, năm 2026)", "(Văn phòng Quốc hội, 2026)"),
+    ("Tổ chức Sở hữu trí tuệ thế giới (năm 2020)", "Tổ chức Sở hữu trí tuệ thế giới (2020)"),
+    ("Milliken và Allen (năm 2013)", "Milliken và Allen (2013)"),
+    ("Fisher (năm 2001)", "Fisher (2001)"),
+    ("Guan (năm 2014)", "Guan (2014)"),
+    ("Cục Sở hữu trí tuệ (năm 2020) đã phân nhánh", "tài liệu tập huấn của Cục Sở hữu trí tuệ (n.d.) dành cho cán bộ "
+     "trường đại học, viện nghiên cứu đã phân nhánh"),
+]
+
+
 def chuan_bi():
     md = open(VAO, encoding="utf-8").read()
     for mau, moi in BO_KHOI:
@@ -287,13 +337,29 @@ def chuan_bi():
     for cu, moi in SUA:
         assert md.count(cu) == 1, f"{md.count(cu)} lần: {cu[:80]}"
         md = md.replace(cu, moi)
+    for cu, moi in APA:
+        assert md.count(cu) == 1, f"APA {md.count(cu)} lần: {cu[:80]}"
+        md = md.replace(cu, moi)
+    assert not re.search(r", năm \d{4}\)|\(năm \d{4}\)", md), re.findall(r".{40}(?:, năm \d{4}\)|\(năm \d{4}\))", md)
     return md
 
 
-def dung():
+SO_DO = {
+    "[[HINH_1_1]]": ("Chu trình bốn giai đoạn quản lý quyền sở hữu trí tuệ trong trường đại học", "chu_trinh.png",
+                     "Nguồn: Nhóm nghiên cứu xây dựng trên cơ sở Bradley et al., 2013 và Tổ chức Sở hữu trí tuệ thế giới, "
+                     "2020."),
+    "[[HINH_1_2]]": ("Sáu nhóm yếu tố ảnh hưởng đến hiệu quả quản lý quyền sở hữu trí tuệ", "yeu_to.png",
+                     "Nguồn: Nhóm nghiên cứu tổng hợp."),
+    "[[HINH_1_3]]": ("Khung phân tích của đề tài", "khung_phan_tich.png", "Nguồn: Nhóm nghiên cứu xây dựng."),
+}
+
+
+def noi_dung(v):
+    import so_do
     md = chuan_bi()
-    v = VanBanChung()
-    bang = {"[[BANG_1_1]]": BANG_1_1, "[[BANG_1_2]]": BANG_1_2, "[[BANG_1_3]]": BANG_1_3}
+    thu_muc = os.path.join(GOC, "Ban_cuoi", "so_do")
+    if not os.path.exists(os.path.join(thu_muc, "chu_trinh.png")):
+        so_do.ve_tat_ca()
     for dong in md.split("\n"):
         s = dong.strip()
         if not s or s == "---":
@@ -306,12 +372,20 @@ def dung():
             v.doan("h1", s[3:])
         elif s.startswith("### "):
             v.doan("h2", s[4:])
-        elif s in bang:
-            b = bang[s]
+        elif s == "[[BANG_1_2]]":
+            b = BANG_1_2
             v.bang(b["tieu_de"], b["cot"], b["dong"], b["nguon"], b["rong"], can=b["can"], tien_to="1")
+        elif s in SO_DO:
+            ten, anh, nguon = SO_DO[s]
+            v.so_do(ten, os.path.join(thu_muc, anh), nguon, tien_to="1")
         else:
-            assert not s.startswith("|") and not s.startswith("!["), s[:60]
+            assert not s.startswith("|") and not s.startswith("![") and not s.startswith("[["), s[:60]
             v.doan_md("than", s)
+
+
+def dung():
+    v = VanBanChung()
+    noi_dung(v)
     return luu(v, "Chuong_1_Co_so_ly_luan_va_phap_ly.docx",
                "Chương 1. Cơ sở lý luận và pháp lý về quản lý quyền sở hữu trí tuệ trong cơ sở giáo dục đại học", 1)
 
