@@ -6,7 +6,7 @@ Chạy từ thư mục gốc của kho:
 
 Đầu vào : Chuong_2_Thuc_trang_hoan_chinh mới.docx (chỉ lấy định dạng trang, kiểu chữ)
           scripts/chuong2/du_lieu.py, bieu_do.py (số liệu và cấu hình biểu đồ đã chuẩn hóa)
-Đầu ra  : Chuong_2_Thuc_trang_rut_gon.docx
+Đầu ra  : Ban_cuoi/Chuong_2_Thuc_trang_quan_ly_quyen_SHTT.docx
           Du_lieu_bieu_do_Chuong_2.xlsx
 
 Nội dung chương được viết trực tiếp trong tệp này (hàm noi_dung). Mọi con số
@@ -28,7 +28,7 @@ import du_lieu as D  # noqa: E402
 
 GOC = BD.GOC
 VAO = BD.VAO
-RA_DOCX = os.path.join(GOC, "Chuong_2_Thuc_trang_rut_gon.docx")
+RA_DOCX = os.path.join(GOC, "Ban_cuoi", "Chuong_2_Thuc_trang_quan_ly_quyen_SHTT.docx")
 W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 
 so, pt = B.so, B.pt
@@ -690,10 +690,25 @@ def noi_dung(v):
         "tiên.")
 
 
+    v.doan("h1", "TIỂU KẾT CHƯƠNG 2")
+    v.than(
+        "Chương 2 đã phân tích thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô giai đoạn 2021 - 2025 "
+        "trên cơ sở các danh mục thống kê, văn bản nội bộ và kế hoạch của Nhà trường. Kết quả cho thấy Nhà trường có nền "
+        "tảng thể chế từ sớm, năng lực công bố tăng nhanh, 12 tài sản trí tuệ đã được xác lập hoặc đang xử lý đơn và kênh "
+        "chuyển hóa từ đề tài sang đơn sáng chế đã vận hành. Tuy nhiên, điểm nghẽn cốt lõi nằm ở khâu nối giữa nghiệm thu và "
+        f"đăng ký: {len(B.dt_du_dk)} trên 38 đề tài có sản phẩm đủ điều kiện xác lập quyền nhưng chỉ {len(B.nop_don)} đề "
+        "tài được nộp đơn, hoạt động nghiên cứu chỉ đóng góp 2 trên 12 tài sản, và khai thác có thu phí mới dừng ở hai hợp "
+        "đồng chuyển giao quyền sử dụng tác phẩm.",
+        "Nguyên nhân chủ yếu thuộc về chủ quan: bốn văn bản với năm quy định chia lợi ích chưa thống nhất, quy trình thiếu "
+        "khâu rà soát bắt buộc, kênh đề tài cấp cơ sở không có kinh phí nộp đơn, cơ chế khuyến khích nghiêng về công bố, "
+        "chức năng quản lý phân tán ở bốn đơn vị và hệ thống dữ liệu chưa theo dõi tài sản trí tuệ. Các nguyên nhân này liên "
+        "kết thành một chuỗi, nên hệ thống giải pháp tại Chương 3 cần tác động đồng thời, trong đó khâu rà soát khả năng "
+        "bảo hộ tại thời điểm nghiệm thu là điểm can thiệp ưu tiên.")
+
 # ---------------------------------------------------------------------------
 NHAT_KY_GON = [
     ("Bản rút gọn, cấu trúc", "43 trang, 16 hình, 10 bảng",
-     "Khoảng 25 trang, 9 hình, 8 bảng; bỏ Mục 2.1.4 và 2.1.5 cũ, gộp Mục 2.3.4 vào 2.3.2, bỏ phân mục của 2.4; "
+     "Khoảng 22 trang, 9 hình, 7 bảng, có tiểu kết; bỏ Mục 2.1.4 và 2.1.5 cũ, gộp Mục 2.3.4 vào 2.3.2, bỏ phân mục của 2.4; "
      "đánh số hình, bảng theo bản rút gọn", "Yêu cầu của chủ nhiệm đề tài: chỉ giữ nội dung trực tiếp liên quan"),
     ("Hình bỏ khỏi bản rút gọn", "Hình 2.1, 2.3, 2.4, 2.5, 2.6, 2.9, 2.13 cũ",
      "Số liệu chính giữ trong lời văn; dữ liệu vẫn có trong các sheet DL_ và tệp du_lieu.py", "Rút gọn"),
@@ -728,14 +743,23 @@ def main():
     noi_dung(v)
     BD.dat_cap_de_muc(v.doc)
     for p in v.doc.paragraphs:
+        if p.text.startswith("TIỂU KẾT"):
+            ppr = p._p.get_or_add_pPr()
+            ol = etree.Element(qn("w:outlineLvl"))
+            ol.set(qn("w:val"), "1")
+            rpr = ppr.find(qn("w:rPr"))
+            rpr.addprevious(ol) if rpr is not None else ppr.append(ol)
+    for p in v.doc.paragraphs:
         if re.match(r"^[ab]\) Nguyên nhân", p.text):
             p.paragraph_format.keep_with_next = True
     # workbook chỉ gồm các hình có trong bản rút gọn, đánh số mới
     B.HINH[:] = v.hinh
+    BD.RA_XLSX = os.path.join(GOC, "Ban_cuoi", "Du_lieu_bieu_do_Chuong_2.xlsx")
     BD.NHAT_KY[:0] = NHAT_KY_GON
     BD.dung_workbook()
     BD.va_workbook(BD.RA_XLSX)
     v.doc.core_properties.title = "Chương 2. Thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô"
+    os.makedirs(os.path.dirname(RA_DOCX), exist_ok=True)
     v.doc.save(RA_DOCX)
     so_tu = sum(len(p.text.split()) for p in v.doc.paragraphs)
     print("Đã ghi:", RA_DOCX, f"({so_tu} từ ngoài bảng, {v.so_bang} bảng, {v.so_hinh} hình)")

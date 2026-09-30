@@ -13,6 +13,40 @@ Ngày rà soát: 30/9/2026. Căn cứ đối chiếu là các tệp trong thư m
 
 Các tệp gốc không bị sửa.
 
+## Cập nhật lượt 4: bản cuối ba chương (thư mục `Ban_cuoi`)
+
+| Tệp | Nội dung |
+|---|---|
+| `Ban_cuoi/Chuong_1_Co_so_ly_luan_va_phap_ly.docx` | Chương 1, khoảng 21 trang, 3 bảng |
+| `Ban_cuoi/Chuong_2_Thuc_trang_quan_ly_quyen_SHTT.docx` | Chương 2, khoảng 22 trang, 7 bảng, 9 biểu đồ Excel nhúng, có tiểu kết |
+| `Ban_cuoi/Chuong_3_He_thong_giai_phap.docx` | Chương 3, khoảng 21 trang, 4 bảng, có phân tích SWOT đầy đủ và tiểu kết |
+| `Ban_cuoi/Du_lieu_bieu_do_Chuong_2.xlsx` | Dữ liệu và biểu đồ Chương 2 |
+
+Ba tệp dùng chung khổ A4, lề, phông Times New Roman 13, giãn dòng và kiểu bảng; tiêu đề chương, mục có cấp đề mục để tạo mục lục tự động. Đây là bản sạch, không còn theo dõi thay đổi.
+
+**Chương 1, sửa theo văn bản gốc:**
+- Luật Giáo dục đại học năm 2012 được thay bằng Luật số 125/2025/QH15, có hiệu lực từ 01/01/2026 (Điều 45).
+- Nguồn gốc các thay đổi của Luật Sở hữu trí tuệ ghi đúng theo chú thích Văn bản hợp nhất 67/VBHN-VPQH: Điều 86a, Điều 133a, khoản 2 Điều 135 bãi bỏ theo điểm h khoản 7 Điều 71 Luật 93/2025/QH15; khoản 1 Điều 135 sửa theo điểm b; điểm c khoản 1 Điều 86 do khoản 22 Điều 1 Luật 131/2025/QH15 bổ sung.
+- Bỏ các khẳng định không đối chiếu được: Luật 93/2025/QH15 "quy định tối thiểu 30%" cho tác giả và "Điều 27, 28 Luật 93" về giao quyền sở hữu, vì thư mục VBPL không có toàn văn Luật 93. Nếu có điều khoản cụ thể, có thể bổ sung lại.
+- Thông tư 01/2024/TT-BGDĐT được mô tả đúng: công thức Tiêu chí 6.2 có tính bằng giải pháp hữu ích và sáng chế; giảng viên toàn thời gian thay vì cơ hữu.
+- Quyết định 1624/QĐ-TTg: bốn nhóm yêu cầu ghi đúng khoản, điểm; "đưa vào nội dung học bắt buộc" sửa thành "nghiên cứu đưa"; thí điểm định giá ít nhất 100 quyền sở hữu trí tuệ.
+- Quyết định 213 ghi ngày 28/12/2021 (bản cũ ghi 27/5/2021); mức 50 triệu đồng trong Quy chế chi tiêu nội bộ là kinh phí đề tài, không phải trần thù lao; bổ sung Quyết định 217.
+- Điều 60 khoản 4 mô tả đúng (bản cũ ghi thêm trường hợp triển lãm, không có trong điều luật hiện hành); Điều 39 được dẫn cho quyền tài sản của tổ chức giao nhiệm vụ.
+- Hai sơ đồ ảnh cũ không khớp nội dung chữ (sơ đồ tiêu chí chia định lượng, định tính) được thay bằng Bảng 1.1 chu trình bốn giai đoạn và Bảng 1.2 bộ 16 tiêu chí, khớp với Hình 2.5 Chương 2. Khung phân tích thành Bảng 1.3, khớp cấu trúc Chương 2 và Chương 3 bản cuối.
+- Bỏ ngoặc đơn giải thích "Living Lab".
+
+**Chương 3:**
+- Mục 3.1.2 mới "Phân tích điểm mạnh, điểm yếu, thời cơ và thách thức": Bảng 3.1 ma trận 5 điểm mạnh, 5 điểm yếu rút từ Chương 2; 5 thời cơ, 5 thách thức từ khung pháp lý và Thông tư 83/2026/TT-BGDĐT. Bảng 3.2 bốn nhóm phương án kết hợp, gắn với năm giải pháp và thứ tự ưu tiên.
+- Nguyên tắc 3 và Giải pháp 2 ghi đúng phân công tại Điều 11 Quyết định 217 và bốn đầu mối như Chương 2.
+- Giải pháp 1 bổ sung nội dung liêm chính khoa học, liêm chính học thuật; thời hạn ban hành quy chế trước 31/5/2027.
+- Giải pháp 4 bỏ số liệu chưa có nguồn (phí 3 đến 5 triệu đồng, 18 đến 36 tháng), thay bằng số liệu Chương 2; bổ sung cơ chế chuyển tiếp với Quỹ Ngô Xuân Độ 5 tỷ đồng và thưởng tiền cho văn bằng.
+- Lộ trình chia lại theo mốc: quý IV/2026 đến quý II/2027; quý III/2027 đến hết 2028; 2029 - 2030. Bộ chỉ số thêm chỉ tiêu danh mục số và tách văn bằng từ kết quả nghiên cứu. Bảng phối hợp bỏ chữ viết tắt.
+- Bảng đánh số 3.1 đến 3.4, tiêu đề bảng đặt phía trên; thêm tiểu kết.
+
+**Chương 2:** thêm tiểu kết; nội dung giữ như lượt 3.
+
+**Dựng lại:** `python3 scripts/ban_cuoi/dung_tat_ca.py`.
+
 ## Cập nhật lượt 3: rút gọn Chương 2, Thông tư 83/2026, Quyết định 217
 
 - **Chương 2 rút gọn** từ 43 trang xuống khoảng 21 trang (khoảng 7.000 từ ngoài bảng). Bỏ phần năng suất theo đơn vị, phân hạng tạp chí, tương quan bài báo và giáo trình, cơ cấu nhân sự có công bố, quy mô ba kênh tài trợ, tài sản theo năm; số liệu cốt lõi của các phần này được giữ trong lời văn. Gộp hoạt động bảo vệ quyền vào Mục 2.3.2, bỏ phân mục của Mục 2.4, chuyển hạn chế dữ liệu thành Mục 2.2.4. Bảng hợp đồng của Viện Nghiên cứu giáo dục và Chuyển giao tri thức chuyển thành lời văn.
@@ -104,7 +138,7 @@ Các sửa đổi của lượt trước vẫn giữ nguyên: 38 đề tài, 424
 ## 8. Dựng lại
 
 ```bash
-python3 scripts/chuong2/build_gon.py        # Chương 2 bản rút gọn và tệp Excel
+python3 scripts/ban_cuoi/dung_tat_ca.py     # ba chương bản cuối vào thư mục Ban_cuoi
 python3 scripts/ra_soat/ra_soat_chuong3.py  # Chương 3 có theo dõi thay đổi
 python3 scripts/ra_soat/ra_soat_bai_bao.py  # Bài báo có theo dõi thay đổi
 ```

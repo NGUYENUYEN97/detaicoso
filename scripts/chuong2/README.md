@@ -1,9 +1,9 @@
 # Dựng Chương 2 có biểu đồ Excel gốc
 
-Bộ công cụ này tạo lại hai tệp ở thư mục gốc:
+Bộ công cụ này tạo lại hai tệp trong thư mục `Ban_cuoi`. Chương 1 và Chương 3 được dựng bằng `scripts/ban_cuoi`; lệnh dựng cả ba chương: `python3 scripts/ban_cuoi/dung_tat_ca.py`.
 
-- `Chuong_2_Thuc_trang_rut_gon.docx`: Chương 2 bản rút gọn, 7 bảng, 9 biểu đồ Excel nhúng. Đây là biểu đồ thật, không phải ảnh: nhấp chuột phải vào biểu đồ trong Word và chọn Chỉnh sửa dữ liệu để mở bảng số liệu.
-- `Du_lieu_bieu_do_Chuong_2.xlsx`: mỗi hình một sheet gồm bảng dữ liệu và biểu đồ; kèm sheet `Nhat_ky_chuan_hoa` ghi các chỉnh sửa số liệu và căn cứ đối chiếu.
+- `Ban_cuoi/Chuong_2_Thuc_trang_quan_ly_quyen_SHTT.docx`: Chương 2 bản cuối, 7 bảng, 9 biểu đồ Excel nhúng. Đây là biểu đồ thật, không phải ảnh: nhấp chuột phải vào biểu đồ trong Word và chọn Chỉnh sửa dữ liệu để mở bảng số liệu.
+- `Ban_cuoi/Du_lieu_bieu_do_Chuong_2.xlsx`: mỗi hình một sheet gồm bảng dữ liệu và biểu đồ; kèm sheet `Nhat_ky_chuan_hoa` ghi các chỉnh sửa số liệu và căn cứ đối chiếu.
 
 ## Cách chạy
 
