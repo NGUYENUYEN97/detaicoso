@@ -59,14 +59,8 @@ def dinh_dang(wb):
 
 
 def cao_cm(h):
-    if h.get("cao"):
-        return h["cao"]
-    loai = h["bieu_do"]["loai"]
-    if loai == "doughnut":
-        return 7.0
-    if loai == "bar":
-        return 6.5 + 0.55 * len(h["dong"])
-    return 9.0
+    from excel_chart import bo_cuc
+    return bo_cuc(h, h.get("cao"))[0]
 
 
 # ---------------------------------------------------------------------------

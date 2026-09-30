@@ -349,7 +349,7 @@ HINH.append(dict(
     bieu_do=dict(loai="column", xep_chong=True, khoang_cach=60,
                  chuoi=[dict(cot=1, mau=XANH), dict(cot=2, mau=XAM), dict(cot=3, mau=VANG),
                         dict(cot=4, kieu="line", mau=CAM, truc_phu=True, nhan=True, vi_tri_nhan="above",
-                             dd_nhan="0")],
+                             dd_nhan="0", an_nhan_0=True)],
                  truc_y="Số đề tài", truc_y2="Kinh phí (triệu đồng)", dd_y2="0"),
     sau_doan="Ngược lại, kênh sinh ra nhiều sản phẩm có khả năng bảo hộ nhất",
     binh_luan=[
@@ -382,7 +382,8 @@ HINH.append(dict(
                  chuoi=[dict(cot=1, mau=XANH, nhan=True, mau_diem=[TIM, TIM, TIM, XANH, XANH, XANH, XANH, XANH]),
                         dict(cot=2, kieu="line", mau=CAM, truc_phu=True, nhan=True, duong=False,
                              vi_tri_nhan="above", an_nhan_0=True)],
-                 truc_y="Giờ nghiên cứu quy đổi", truc_y2="Thưởng bằng tiền (triệu đồng)", dd_y2="0", max_y2=25),
+                 truc_y="Giờ nghiên cứu quy đổi", truc_y2="Thưởng bằng tiền (triệu đồng)", dd_y2="0", max_y2=25,
+                 max_y=900),
     sau_doan="Tuy nhiên, quy chế đặt điều kiện phải có chứng nhận",
     binh_luan=[
         "Hình 2.11 đặt hai công cụ khuyến khích cạnh nhau. Xét riêng giờ quy đổi, văn bằng sáng chế được định giá cao: "
@@ -503,14 +504,29 @@ HINH.append(dict(
 kh_rows = []
 for ten, nhom, k1, k2, t1, t2 in KE_HOACH:
     kh_rows.append([ten, nhom, k1 + k2, t1 + t2, (t1 + t2) / (k1 + k2)])
-kh = {r[0]: r for r in kh_rows}
+kh = {r[0]: list(r) for r in kh_rows}
+TEN_NGAN_KH = {
+    "Bài báo tạp chí quốc tế": "Bài báo quốc tế",
+    "Sách có chỉ số ISBN": "Sách có ISBN",
+    "Tham luận hội thảo cấp trường": "Tham luận cấp trường",
+    "Bài báo tạp chí trong nước, gồm tạp chí của Trường": "Bài báo trong nước",
+    "Đề tài cấp Bộ, Nhà nước": "Đề tài cấp Bộ, Nhà nước",
+    "Đề tài cấp cơ sở": "Đề tài cấp cơ sở",
+    "Tham luận hội thảo quốc tế": "Tham luận quốc tế",
+    "Giáo trình, tài liệu tham khảo": "Giáo trình, tài liệu",
+    "Công nhận sáng chế, kiểu dáng, quyền tác giả": "Văn bằng sở hữu trí tuệ",
+    "Chuyển giao công nghệ": "Chuyển giao công nghệ",
+}
+for r in kh_rows:
+    r[0] = TEN_NGAN_KH[r[0]]
 mau_nhom = {"Công bố": XANH, "Đề tài và học liệu": NGOC, "Tài sản trí tuệ": CAM}
 HINH.append(dict(
     tieu_de="Tỷ lệ thực hiện so với chỉ tiêu Kế hoạch 07/KH-ĐHTĐ, cộng dồn hai năm 2024 - 2025",
     nguon="Nguồn: Nhóm nghiên cứu tính toán từ mục 2.2.4 Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024 và các danh mục "
           "thống kê của Phòng Khoa học Công nghệ. Chỉ tiêu bài báo trong nước gồm bài đăng tạp chí trong nước và tạp chí "
-          "của Trường; tài sản trí tuệ tính số văn bằng được cấp; không gồm tham luận hội thảo quốc gia do danh mục không "
-          "có năm.",
+          "của Trường; văn bằng sở hữu trí tuệ gồm sáng chế, kiểu dáng công nghiệp, quyền tác giả được cấp; không gồm "
+          "tham luận hội thảo quốc gia do danh mục không có năm. Màu xanh dương: công bố; xanh lục: đề tài và học liệu; "
+          "cam: tài sản trí tuệ.",
     cot=["Chỉ tiêu", "Nhóm", "Kế hoạch 2024 - 2025", "Thực hiện 2024 - 2025", "Tỷ lệ thực hiện"],
     dong=kh_rows,
     dinh_dang=[None, None, "0", "0", "0%"],

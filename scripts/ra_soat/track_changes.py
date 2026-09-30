@@ -121,6 +121,40 @@ class TrackEditor:
             d.addnext(ins)
 
 
+    def them_doan_sau(self, neo, text):
+        """Chèn một đoạn mới ngay sau đoạn duy nhất chứa chuỗi neo, đánh dấu là nội dung chèn."""
+        hits = [p for p in self.root.iter(q("p")) if neo in self._para_text(p)]
+        if len(hits) != 1:
+            raise ValueError(f"Tìm thấy {len(hits)} đoạn chứa: {neo[:90]}")
+        p = hits[0]
+        moi = etree.Element(q("p"))
+        ppr = p.find(q("pPr"))
+        if ppr is not None:
+            ppr = copy.deepcopy(ppr)
+            moi.append(ppr)
+        else:
+            ppr = etree.SubElement(moi, q("pPr"))
+        rpr_p = ppr.find(q("rPr"))
+        if rpr_p is None:
+            rpr_p = etree.SubElement(ppr, q("rPr"))
+        dau = etree.SubElement(rpr_p, q("ins"))
+        dau.set(q("id"), self._id())
+        dau.set(q("author"), self.author)
+        dau.set(q("date"), self.date)
+        ins = etree.SubElement(moi, q("ins"))
+        ins.set(q("id"), self._id())
+        ins.set(q("author"), self.author)
+        ins.set(q("date"), self.date)
+        nr = etree.SubElement(ins, q("r"))
+        runs = self._runs(p)
+        if runs and runs[0].find(q("rPr")) is not None:
+            nr.append(copy.deepcopy(runs[0].find(q("rPr"))))
+        t = etree.SubElement(nr, q("t"))
+        t.text = text
+        t.set(f"{{{XML_NS}}}space", "preserve")
+        p.addnext(moi)
+
+
 def ap_dung(vao, ra, sua, author, merge_runs=None):
     tmp = tempfile.mkdtemp()
     src = os.path.join(tmp, "src.docx")
@@ -134,6 +168,9 @@ def ap_dung(vao, ra, sua, author, merge_runs=None):
     ed = TrackEditor(root, author)
     for muc in sua:
         cu, moi = muc[0], muc[1]
+        if len(muc) > 2 and muc[2] == "doan_moi_sau":
+            ed.them_doan_sau(cu, moi)
+            continue
         ed.replace(cu, moi, tat_ca=len(muc) > 2 and muc[2] == "tat_ca")
     moi_xml = etree.tostring(root, xml_declaration=True, encoding="UTF-8", standalone=True)
     with zipfile.ZipFile(ra, "w", zipfile.ZIP_DEFLATED) as zout:

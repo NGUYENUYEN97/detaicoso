@@ -3,7 +3,8 @@
 
 Căn cứ đối chiếu: thư mục VBPL (Luật 125/2025/QH15, Văn bản hợp nhất 67/VBHN-VPQH,
 Quyết định 1624/QĐ-TTg, Chỉ thị 02/CT-TTg) và thư mục "Tai lieu thanh do"
-(Quyết định 213, Quy chế quản trị tài sản trí tuệ năm 2024, Kế hoạch 07/KH-ĐHTĐ,
+(Quyết định 213, Quyết định 217 ban hành Quy chế quản trị tài sản trí tuệ năm 2024,
+Kế hoạch 07/KH-ĐHTĐ, Thông tư 83/2026/TT-BGDĐT,
 danh sách nhân sự 2026, danh mục đề tài cấp cơ sở).
 """
 import os
@@ -87,6 +88,17 @@ SUA = [
      "giao Bộ Khoa học và Công nghệ xây dựng cơ sở dữ liệu quốc gia về thực thi quyền sở hữu trí tuệ, đưa vào vận hành "
      "trong năm 2026, tăng cường ứng dụng trí tuệ nhân tạo và công nghệ chuỗi khối trong bảo vệ quyền, đồng thời giao Bộ "
      "Giáo dục và Đào tạo nghiên cứu đưa chương trình giáo dục về sở hữu trí tuệ vào các hệ, cấp học phù hợp"),
+    # --- 3.1.1, bổ sung căn cứ mới: Thông tư 83/2026/TT-BGDĐT (Điều 6, Phụ lục II)
+    ("tạo thêm căn cứ cho việc xây dựng hạ tầng số hóa dữ liệu tài sản trí tuệ tại Nhà trường.",
+     "Thứ bảy, Thông tư số 83/2026/TT-BGDĐT ngày 30 tháng 9 năm 2026 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định Chuẩn "
+     "cơ sở giáo dục đại học, có hiệu lực từ ngày 15 tháng 11 năm 2026 và thay thế Thông tư số 01/2024/TT-BGDĐT, lần đầu "
+     "đưa quy định về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật vào danh mục 21 nội dung quản trị nội bộ "
+     "bắt buộc tại tiêu chí 1.1. Tiêu chí 6.2 chuyển sang tính sản phẩm khoa học, công nghệ và đổi mới sáng tạo quy đổi "
+     "trên giảng viên quy đổi, trong đó một bằng độc quyền giải pháp hữu ích được tính 3 sản phẩm thay cho 1 sản phẩm như "
+     "trước và một bằng độc quyền sáng chế được tính 5 sản phẩm; Bảng 6B Phụ lục II tách riêng khoản thu từ thương mại "
+     "hóa kết quả nghiên cứu, sở hữu trí tuệ, spin-off, start-up. Dữ liệu về các kết quả này phải được cập nhật nhất "
+     "quán trên HEMIS theo tiêu chí 1.3. Đây là căn cứ để hoàn thiện quy chế theo hướng bổ sung nội dung liêm chính và để "
+     "Bộ chỉ số tại Mục 3.4.2 dùng chung định nghĩa sản phẩm với Chuẩn.", "doan_moi_sau"),
     # --- 3.1.2
     ("khoảng trống lớn về nhận thức và động lực", "khoảng trống lớn về quy trình và động lực"),
     # --- 3.2.1 (đối chiếu Quy chế quản trị tài sản trí tuệ 2024, Điều 3, 9, 11, 13)
@@ -94,16 +106,17 @@ SUA = [
      "217/QĐ-ĐHTĐ và Quy chế chi tiêu nội bộ) với ba công thức chia lợi ích khác nhau, dẫn đến sự chồng chéo, mâu thuẫn "
      "trong áp dụng thực tế. Đồng thời, phạm vi các đối tượng được bảo hộ còn thiếu nhiều loại hình quan trọng như giải "
      "pháp hữu ích, sưu tập dữ liệu, bí mật kinh doanh, giáo trình số và nhãn hiệu các pháp nhân thành viên.",
-     "hiện nay Nhà trường đang vận hành đồng thời bốn văn bản nội bộ có quy định về sở hữu trí tuệ, gồm Quyết định 213, "
-     "Quy chế quản trị tài sản trí tuệ năm 2024, Quy chế chi tiêu nội bộ và Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân "
-     "Độ, với năm quy định khác nhau về phân chia lợi ích, dẫn đến sự chồng chéo trong áp dụng thực tế. Quy chế năm 2024 "
+     "hiện nay Nhà trường đang vận hành đồng thời bốn văn bản nội bộ có quy định về sở hữu trí tuệ, gồm Quyết định số "
+     "213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ ban hành Quy chế quản trị tài sản trí tuệ năm 2024, Quy chế chi tiêu nội bộ "
+     "và Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ, với năm quy định khác nhau về phân chia lợi ích, dẫn đến sự chồng "
+     "chéo trong áp dụng thực tế. Quy chế ban hành kèm Quyết định 217 "
      "đã mở rộng phạm vi tài sản tới giải pháp hữu ích, cơ sở dữ liệu, bí mật thương mại, giáo trình điện tử và nhãn hiệu "
-     "của các đơn vị thuộc Trường, nhưng không dẫn chiếu và không thay thế Chương VI Quyết định 213, đồng thời chưa có "
-     "biểu mẫu để nhận diện các tài sản này trong thực tế."),
-    ("sửa đổi, hợp nhất Quyết định số 213/QĐ-ĐHTĐ và Quyết định số 217/QĐ-ĐHTĐ.",
-     "hợp nhất Chương VI Quyết định 213 và Quy chế quản trị tài sản trí tuệ năm 2024."),
+     "của các đơn vị thuộc Trường, nhưng không dẫn chiếu và không thay thế Chương VI Quyết định 213, chưa có biểu mẫu "
+     "để nhận diện các tài sản này trong thực tế và chưa có nội dung về liêm chính khoa học, liêm chính học thuật mà "
+     "Thông tư số 83/2026/TT-BGDĐT xếp cùng nhóm nội dung quản trị bắt buộc về sở hữu trí tuệ."),
     ("Về phạm vi bảo hộ: Bổ sung đầy đủ các đối tượng bảo hộ vào phạm vi điều chỉnh, bao gồm:",
-     "Về phạm vi bảo hộ: Thống nhất một danh mục đối tượng duy nhất trên cơ sở Điều 3 Quy chế năm 2024, bao gồm:"),
+     "Về phạm vi bảo hộ: Thống nhất một danh mục đối tượng duy nhất trên cơ sở Điều 3 Quy chế ban hành kèm Quyết định "
+     "217, bao gồm:"),
     ("trường hợp không có thỏa thuận thì áp dụng mức thù lao tối thiểu 30% lợi nhuận thuần theo quy định tại khoản 7 Điều "
      "71 Luật Khoa học, Công nghệ và Đổi mới sáng tạo số 93/2025/QH15.",
      "trường hợp không có thỏa thuận thì mức thù lao không thấp hơn mức quy định tại khoản 1 Điều 135 Luật Sở hữu trí tuệ "
@@ -112,7 +125,7 @@ SUA = [
     ("Bãi bỏ mức trần thù lao 100 triệu đồng tại Điều 36 Quyết định số 213/QĐ-ĐHTĐ.",
      "Bãi bỏ mức trần thù lao 100 triệu đồng tại điểm a khoản 4 Điều 36 Quyết định số 213/QĐ-ĐHTĐ."),
     ("Điều lệ Quỹ Ngô Xuân Đỗ", "Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ"),
-    # --- tên đơn vị theo danh sách nhân sự 2026 và Quy chế 2024
+    # --- tên đơn vị theo danh sách nhân sự 2026 và Quyết định 217
     ("Phòng Quản lý Khoa học và Công nghệ", "Phòng Khoa học Công nghệ", "tat_ca"),
     ("Phòng Quản lýKhoa học và Công nghệ", "Phòng Khoa học\nCông nghệ"),
     ("Phòng Kế hoạch Tài chính", "Phòng Tài chính - Kế toán", "tat_ca"),
@@ -120,8 +133,8 @@ SUA = [
     ("Phòng Tổ chức Cán bộ", "Bộ phận Hành chính - Nhân sự"),
     # --- 3.2.2
     ("Sự phân tán này dẫn đến thiếu đầu mối điều phối thống nhất",
-     "Sự phân tán này, dù Điều 11 Quy chế quản trị tài sản trí tuệ năm 2024 đã giao Phòng Khoa học Công nghệ vai trò quản "
-     "lý chung, dẫn đến thiếu đầu mối điều phối thống nhất"),
+     "Sự phân tán này, dù Điều 11 Quy chế ban hành kèm Quyết định số 217/QĐ-ĐHTĐ đã giao Phòng Khoa học Công nghệ vai "
+     "trò quản lý chung, dẫn đến thiếu đầu mối điều phối thống nhất"),
     ("đáp ứng yêu cầu tại điểm d khoản 4 Quyết định số 1624/QĐ-TTg.",
      "đáp ứng định hướng tại điểm a khoản 6 " + QD1068 + "."),
     # --- 3.2.3
@@ -189,7 +202,7 @@ SUA = [
      "theo yêu cầu tại điểm b khoản 4 " + QD1068 + ". Chỉ tiêu văn bằng được đặt bằng hoặc cao hơn mức 3 văn bằng mỗi năm "
      "cho giai đoạn 2026 - 2028 tại Kế hoạch 07/KH-ĐHTĐ và cần được tính riêng cho văn bằng hình thành từ kết quả nghiên "
      "cứu, tránh lặp lại tình trạng chỉ tiêu gộp được hoàn thành bằng tài sản thương hiệu và hợp tác doanh nghiệp như "
-     "phân tích tại Hình 2.16."),
+     "phân tích tại Hình 2.9 Chương 2."),
     ("100% văn bản thống nhấtTối thiểu 30% lợi nhuậnthuần (theo Luật số93/2025/QH15)",
      "100% văn bản thống nhất\nKhông thấp hơn mức mặc định\ntại khoản 1 Điều 135\nLuật Sở hữu trí tuệ"),
 ]

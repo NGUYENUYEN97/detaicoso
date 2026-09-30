@@ -6,12 +6,26 @@ Ngày rà soát: 30/9/2026. Căn cứ đối chiếu là các tệp trong thư m
 
 | Tệp | Nội dung | Cách dùng |
 |---|---|---|
-| `Chuong_2_Thuc_trang_chuan_hoa_bieu_do.docx` | Chương 2 đã chuẩn hóa, 16 biểu đồ Excel nhúng | Bản sạch; nhật ký sửa nằm trong sheet `Nhat_ky_chuan_hoa` của tệp Excel |
+| `Chuong_2_Thuc_trang_rut_gon.docx` | Chương 2 bản rút gọn, khoảng 23 trang, 8 bảng, 9 biểu đồ Excel nhúng | Bản sạch, thay cho bản 43 trang trước; nhật ký sửa nằm trong sheet `Nhat_ky_chuan_hoa` của tệp Excel |
 | `Du_lieu_bieu_do_Chuong_2.xlsx` | Dữ liệu, biểu đồ, nhật ký chuẩn hóa, danh mục đề tài và tài sản trí tuệ | Sửa số liệu tại đây hoặc trong `scripts/chuong2/du_lieu.py` |
 | `Chuong_3_He_thong_giai_phap_ra_soat.docx` | Chương 3 có 46 chỉnh sửa ở chế độ theo dõi thay đổi | Mở bằng Word, thẻ Review, chấp nhận hoặc từ chối từng chỗ |
 | `Bai_bao_khoa_hoc_Tap_chi_DHTD_ra_soat.docx` | Bài báo có 24 chỉnh sửa ở chế độ theo dõi thay đổi | Như trên |
 
 Các tệp gốc không bị sửa.
+
+## Cập nhật lượt 3: rút gọn Chương 2, Thông tư 83/2026, Quyết định 217
+
+- **Chương 2 rút gọn** từ 43 trang xuống khoảng 23 trang (khoảng 7.800 từ ngoài bảng). Bỏ phần năng suất theo đơn vị, phân hạng tạp chí, tương quan bài báo và giáo trình, cơ cấu nhân sự có công bố, quy mô ba kênh tài trợ, tài sản theo năm; số liệu cốt lõi của các phần này được giữ trong lời văn. Gộp hoạt động bảo vệ quyền vào Mục 2.3.2, bỏ phân mục của Mục 2.4, chuyển hạn chế dữ liệu thành Mục 2.2.4. Bảng hợp đồng của Viện Nghiên cứu giáo dục và Chuyển giao tri thức chuyển thành lời văn.
+- **Mục 2.1.3 mới** đối chiếu Thông tư số 83/2026/TT-BGDĐT (ngày 30/9/2026, hiệu lực 15/11/2026, thay Thông tư 01/2024/TT-BGDĐT) với thực trạng của Nhà trường:
+  - tiêu chí 1.1: lần đầu có nội dung quản trị bắt buộc về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật; Quyết định 213 và Quyết định 217 chưa có nội dung liêm chính;
+  - tiêu chí 1.2: ít nhất 50% chỉ số hoạt động chính đạt mục tiêu; Kế hoạch 07 đạt 7 trên 10 chỉ tiêu khoa học công nghệ trong 2024 - 2025;
+  - tiêu chí 6.2: P = P1 + 2P2 + 3P3 + 5P4 trên giảng viên quy đổi; giải pháp hữu ích tăng từ hệ số 1 lên 3. Ước tính năm 2025: 0,63 đến 1,6 sản phẩm quy đổi trên giảng viên quy đổi, vượt ngưỡng 0,6 mà không cần văn bằng; chỉ số WoS, Scopus khoảng 0,31, sát ngưỡng 0,3 và không tính văn bằng;
+  - tiêu chí 6.1 và Bảng 6B: tách riêng thu từ thương mại hóa, sở hữu trí tuệ.
+  - Lưu ý: công thức mục 6.2.1 Phụ lục II xếp giải pháp hữu ích vào nhóm hệ số 3, nhưng bảng tổng hợp cuối Phụ lục II không nêu loại này.
+- **Quyết định 217/QĐ-ĐHTĐ** được xác nhận là văn bản ban hành Quy chế quản trị tài sản trí tuệ năm 2024. Chương 2, Chương 3 và bài báo đã dùng số hiệu này.
+- **Ngân sách Quỹ Ngô Xuân Độ 5 tỷ đồng** được xác nhận; số liệu trong các tài liệu vẫn giữ 5 tỷ đồng giai đoạn 2025 - 2029.
+- **Chương 3:** thêm đoạn "Thứ bảy" tại Mục 3.1.1 về Thông tư 83/2026; Mục 3.2.1 nêu thiếu nội dung liêm chính; tham chiếu Hình 2.16 đổi thành Hình 2.9. **Bài báo:** thêm Thông tư 83/2026 vào giải pháp và tài liệu tham khảo.
+- **Biểu đồ:** chú giải đặt phía trên, vùng vẽ có bố cục cố định nên không còn bị đè; màu chữ nhãn chọn tự động trắng hoặc sẫm theo độ tương phản với màu nền; nhãn danh mục hiện đầy đủ; tiêu đề hình đặt ở dòng chú thích Word thay vì trong biểu đồ.
 
 ## 2. Tài liệu gốc mới được khai thác
 
@@ -47,7 +61,7 @@ Các sửa đổi của lượt trước vẫn giữ nguyên: 38 đề tài, 424
 
 ### 3.3. Chương 3: nội dung khác
 
-- **Quyết định 217/QĐ-ĐHTĐ:** không có trong thư mục tài liệu gốc, nên đã thay bằng Quy chế quản trị tài sản trí tuệ năm 2024.
+- **Quyết định 217/QĐ-ĐHTĐ:** là văn bản ban hành Quy chế quản trị tài sản trí tuệ năm 2024 (xác nhận ở lượt 3). Nội dung mô tả trong tài liệu tham khảo bài báo được sửa từ "sửa đổi, bổ sung Quy chế hoạt động khoa học và công nghệ" thành "ban hành Quy chế quản trị tài sản trí tuệ".
 - **Mục 3.2.5 viện dẫn "kết quả khảo sát thực trạng tại Chương 2":** Chương 2 không có khảo sát. Đoạn này đã được thay bằng các dữ kiện hành vi kiểm chứng được.
 - **Mục 3.3.2:** trình bày "kết quả mô phỏng" và "bài học từ thí điểm" (15 - 20 phút mỗi phiên nghiệm thu) như kết quả đã có. Đã chuyển thành giả định cần kiểm chứng, và minh họa bằng hai đơn sáng chế thật (năm 2025 và 2026).
 - **Nơi thí điểm:** chuyển từ Viện Nghiên cứu giáo dục và Chuyển giao tri thức sang Viện Y - Dược. Lý do: Viện Nghiên cứu giáo dục và Chuyển giao tri thức không có đề tài cấp cơ sở nào năm 2025, còn 10 trên 11 sản phẩm đủ điều kiện liên quan đến lĩnh vực dược.
@@ -65,13 +79,13 @@ Các sửa đổi của lượt trước vẫn giữ nguyên: 38 đề tài, 424
 
 ## 5. Nội dung chưa có tài liệu gốc trong thư mục (cần bổ sung minh chứng)
 
-1. Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ: quy mô 5 tỷ đồng, Điều 9.
-2. Năm hợp đồng dịch vụ và chuyển giao của Viện Nghiên cứu giáo dục và Chuyển giao tri thức (Bảng 2.9).
+1. Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ, Điều 9 (tỷ lệ 50/50 năm đầu, 20/80 từ năm thứ hai; khoản chi phí khác tối đa 50%). Ngân sách 5 tỷ đồng đã được xác nhận. Chỉ cần tệp Điều lệ nếu hội đồng yêu cầu minh chứng cho các tỷ lệ được trích.
+2. Năm hợp đồng của Viện Nghiên cứu giáo dục và Chuyển giao tri thức (mức 10% doanh số; 100 triệu đồng dịch vụ). Chỉ cần khi hội đồng yêu cầu minh chứng.
 3. Tư cách thành viên Mạng lưới Trung tâm Hỗ trợ công nghệ và đổi mới sáng tạo từ năm 2023.
 4. Việc Viện Nghiên cứu giáo dục và Chuyển giao tri thức đã đăng ký hoạt động khoa học công nghệ và có con dấu riêng.
 5. Sơ đồ cơ cấu tổ chức ngày 16/6/2026.
 6. Chi phí nộp đơn sáng chế từ 3 đến 5 triệu đồng và thời gian xét duyệt từ 18 đến 36 tháng (Chương 3, Mục 3.2.4). Cần dẫn biểu phí hoặc văn bản quy định.
-7. Số và ngày ban hành của Quy chế quản trị tài sản trí tuệ năm 2024. Nếu đây chính là Quyết định 217/QĐ-ĐHTĐ, đề nghị bổ sung số hiệu vào Chương 2, Chương 3 và bài báo.
+7. Ngày ban hành của Quyết định 217/QĐ-ĐHTĐ (bản quy chế được cung cấp để trống ngày).
 
 ## 6. Điểm chưa thống nhất giữa các tài liệu gốc
 
@@ -92,7 +106,7 @@ Các sửa đổi của lượt trước vẫn giữ nguyên: 38 đề tài, 424
 ## 8. Dựng lại
 
 ```bash
-python3 scripts/chuong2/build.py            # Chương 2 và tệp Excel
+python3 scripts/chuong2/build_gon.py        # Chương 2 bản rút gọn và tệp Excel
 python3 scripts/ra_soat/ra_soat_chuong3.py  # Chương 3 có theo dõi thay đổi
 python3 scripts/ra_soat/ra_soat_bai_bao.py  # Bài báo có theo dõi thay đổi
 ```

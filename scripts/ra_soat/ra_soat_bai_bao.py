@@ -36,8 +36,7 @@ SUA = [
      "với 582 bản ghi sản phẩm khoa học. Nhóm nghiên cứu tiến hành khử trùng đếm để xác định quy mô thực tế khoảng 475 sản "
      "phẩm độc lập;"),
     ("(Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội bộ).",
-     "(Quy chế hoạt động khoa học công nghệ kèm văn bản số 213/QĐ-ĐHTĐ, Quy chế quản trị tài sản trí tuệ năm 2024, Quy chế "
-     "chi tiêu nội bộ năm 2026, Kế hoạch số 07/KH-ĐHTĐ)."),
+     "(Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội bộ năm 2026, Kế hoạch số 07/KH-ĐHTĐ)."),
     # --- Kết quả 3.1
     ("Tuy nhiên, mức độ chuyển hóa sang quyền sở hữu công nghiệp lại rất thấp (chỉ 2 đơn đăng ký sáng chế từ nghiên cứu "
      "trong 5 năm).",
@@ -55,13 +54,13 @@ SUA = [
     ("Ba văn bản nội bộ (Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội bộ và Điều lệ Quỹ Ngô "
      "Xuân Độ) quy định ba công thức chia lợi ích khác nhau và giữ trần thù lao 100 triệu đồng trái với tinh thần Luật "
      "93/2025/QH15.",
-     "Bốn văn bản nội bộ (Quyết định 213, Quy chế quản trị tài sản trí tuệ năm 2024, Quy chế chi tiêu nội bộ và Điều lệ "
+     "Bốn văn bản nội bộ (Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội bộ và Điều lệ "
      "Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ) chứa năm quy định khác nhau về phân chia lợi ích; điểm a khoản 4 Điều 36 Quyết "
      "định 213 vẫn giữ trần thù lao 100 triệu đồng, không còn tương thích với việc Luật 93/2025/QH15 bãi bỏ khung thù "
      "lao."),
     ("thiếu khâu rà soát bắt buộc tại biên bản nghiệm thu đề tài khiến nhiều sản phẩm bị bộc lộ quá 12 tháng và vĩnh viễn "
      "mất khả năng xác lập quyền.",
-     "thiếu khâu rà soát bắt buộc tại biên bản nghiệm thu đề tài; Điều 10 Quy chế quản trị tài sản trí tuệ năm 2024 vẫn đặt "
+     "thiếu khâu rà soát bắt buộc tại biên bản nghiệm thu đề tài; Điều 10 Quy chế ban hành kèm Quyết định 217 vẫn đặt "
      "trách nhiệm tự nhận diện tài sản có thể bảo hộ lên tác giả, trong khi các sản phẩm đã công bố quá 12 tháng sẽ mất "
      "khả năng xác lập quyền sáng chế và giải pháp hữu ích."),
     ("Đồng thời, nhóm giáo trình và nhãn hiệu các đơn vị thành viên hệ sinh thái chưa được đưa vào quy trình bảo hộ bài "
@@ -76,8 +75,9 @@ SUA = [
      "Quyết định 1624/QĐ-TTg;"),
     ("Ban hành Quy chế hợp nhất sửa đổi Quyết định 213 và Quyết định 217; bổ sung giải pháp hữu ích, sưu tập dữ liệu và "
      "giáo trình số vào phạm vi bảo hộ; bãi bỏ mức trần thù lao 100 triệu đồng theo Luật 93/2025/QH15;",
-     "Ban hành Quy chế hợp nhất Chương VI Quyết định 213 và Quy chế quản trị tài sản trí tuệ năm 2024, thống nhất một danh "
-     "mục tài sản và một cơ chế phân chia lợi ích; bãi bỏ mức trần thù lao 100 triệu đồng phù hợp với Luật 93/2025/QH15;"),
+     "Ban hành Quy chế hợp nhất sửa đổi Quyết định 213 và Quyết định 217, thống nhất một danh mục tài sản và một cơ chế "
+     "phân chia lợi ích, bổ sung nội dung liêm chính khoa học theo Thông tư số 83/2026/TT-BGDĐT; bãi bỏ mức trần thù lao "
+     "100 triệu đồng phù hợp với Luật 93/2025/QH15;"),
     ("theo Điều 28 Luật Giáo dục đại học 2025 để thực hiện định giá và góp vốn thương mại hóa.",
      "theo khoản 1 Điều 28 Luật Giáo dục đại học 2025 để thực hiện định giá và góp vốn thương mại hóa."),
     ("phối hợp với Viện Nghiên cứu thành lập Trung tâm tư vấn định giá tài sản trí tuệ (theo Quyết định 1624/QĐ-TTg);",
@@ -106,10 +106,13 @@ SUA = [
      "tháng 12 năm 2021."),
     ("Trường Đại học Thành Đô (2026), Quyết định số 217/QĐ-ĐHTĐ về việc sửa đổi, bổ sung Quy chế hoạt động khoa học và "
      "công nghệ.",
-     "Trường Đại học Thành Đô (2024), Quy chế quản trị tài sản trí tuệ tại Trường Đại học Thành Đô.\n"
+     "Trường Đại học Thành Đô (2024), Quyết định số 217/QĐ-ĐHTĐ ban hành Quy chế quản trị tài sản trí tuệ tại Trường Đại "
+     "học Thành Đô.\n"
      "10. Trường Đại học Thành Đô (2024), Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024 về hoạt động khoa học công nghệ "
      "giai đoạn 2024 - 2028, tầm nhìn 2035.\n"
-     "11. Trường Đại học Thành Đô (2026), Quy chế chi tiêu nội bộ ban hành ngày 01 tháng 8 năm 2026."),
+     "11. Trường Đại học Thành Đô (2026), Quy chế chi tiêu nội bộ ban hành ngày 01 tháng 8 năm 2026.\n"
+     "12. Bộ Giáo dục và Đào tạo (2026), Thông tư số 83/2026/TT-BGDĐT ngày 30 tháng 9 năm 2026 quy định Chuẩn cơ sở "
+     "giáo dục đại học."),
 ]
 
 if __name__ == "__main__":
