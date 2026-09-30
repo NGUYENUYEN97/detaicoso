@@ -1,0 +1,88 @@
+=== 00_README ===
+IP MASTER DATASET 2021–2025 – TRƯỜNG ĐẠI HỌC THÀNH ĐÔ |  |  |  |  |  |  | 
+Mục | Nội dung |  |  |  |  |  | 
+Mục đích | Khung dữ liệu phục vụ đề tài cấp cơ sở: kiểm kê kết quả KHCN → nhận diện TSTT → xác lập/bảo hộ → ứng dụng/chuyển giao → giá trị. |  |  |  |  |  | 
+Trạng thái | Bản v0.7: hoàn thiện blueprint Chương 2, kế hoạch bảng/biểu đồ và bản nháp các mục 2.1–2.4. Cấu trúc Chương 2 đi theo logic: thể chế → năng lực tạo đầu ra/TSTT → portfolio quyền → quy trình nhận diện/bảo hộ → ứng dụng/khai thác → case tracing → gap → đánh giá chung. |  |  |  |  |  | 
+Nguyên tắc đơn vị phân tích | PROJECT = 1 đề tài; OUTPUT = 1 đầu ra; IP_ASSET = 1 TSTT hoặc cụm TSTT; PROTECTION = 1 hồ sơ/quyền; UTILIZATION_VALUE = 1 lần/hình thức khai thác. |  |  |  |  |  | 
+Không đồng nhất | Không coi số văn bằng bảo hộ là tổng số TSTT. TSTT tiềm năng được nhận diện trước, sau đó mới xét hình thức quyền phù hợp. |  |  |  |  |  | 
+Mã thiếu dữ liệu | Để trống = chưa có bằng chứng; 'Chưa xác minh' = có dấu hiệu nhưng chưa đủ hồ sơ; không suy diễn từ tên đề tài. |  |  |  |  |  | 
+Nguồn chính | Tổng hợp đề tài KHCN cấp cơ sở của GV 2021–2025; Quy chế hoạt động KHCN 2021; Quy chế quản trị TSTT; các bảng công bố/sách/giáo trình. |  |  |  |  |  | 
+Chiến lược | Mã Strategic Cluster theo 4 trụ cột: Smart Mobility, Digital Services, Global Communication, Wellness & Care; có thể dùng 'Khác/Chưa phân loại'. |  |  |  |  |  | 
+Khuyến nghị sử dụng | Hoàn thiện dữ liệu thô trước khi tính tỷ lệ và kết luận. Mọi chỉ số KPI hiện tại chỉ phản ánh các dòng mẫu đã nhập. |  |  |  |  |  | 
+Phiên bản | v0.7 – Chapter 2 writing blueprint + table/figure plan + draft sections 2.1–2.4. |  |  |  |  |  | 
+v0.8 (Claude, 16/9/2026) | Dọn trùng lặp thế hệ bảng, chuẩn hóa từ điển loại đầu ra, tách mẫu số, thêm KPI bằng công thức và 8 phép kiểm tra tự động. Chi tiết ở 00_CHANGELOG_v08. Sheet có tiền tố ZZ_CU_ là bản cũ, không dùng để trích dẫn. |  |  |  |  |  | 
+
+=== 00_CHANGELOG_v08 ===
+NHẬT KÝ THAY ĐỔI – TỪ v0.7 SANG v0.8 |  |  | 
+Không xóa dữ liệu gốc. Mọi thay đổi đều cộng thêm hoặc đổi tên, có thể lần ngược. |  |  | 
+STT | Vấn đề ở v0.7 | Xử lý ở v0.8 | Sheet liên quan
+1 | Hai thế hệ bảng cùng tồn tại: 01_PROJECT 7 dòng và 01_PROJECT_ALL 38 dòng; 02_OUTPUT 19 dòng và 02_OUTPUT_ALL 90 dòng; 03_IP_ASSET 7 dòng; 08_KPI_DASHBOARD. Nguy cơ trích nhầm số. | Đổi tên thành ZZ_CU_… và dồn xuống cuối file. Dữ liệu vẫn giữ nguyên để đối chiếu, nhưng không dùng để trích dẫn. | ZZ_CU_01_PROJECT; ZZ_CU_02_OUTPUT; ZZ_CU_03_IP_ASSET; ZZ_CU_08_KPI_DASHBOARD
+2 | 02_OUTPUT dùng mã Output cũ dạng O2022-37-01, khác mã hiện hành O-2022-37-01. Ghép nhầm là chắc chắn nếu dùng lẫn. | Ghi nhận xung đột mã; bảng cũ chỉ để tham chiếu lịch sử. Mã chính thức là mã của 02_OUTPUT_ALL. | ZZ_CU_02_OUTPUT
+3 | 04_PROTECTION và 05_UTIL_VALUE trống, mỗi sheet 1000 dòng ràng buộc nhập liệu, nhưng đã bị 13B_PROTECTION_FULL thay thế. | Đổi tên thành TPL_… để chỉ rõ đây là biểu mẫu thu thập dữ liệu về sau, không phải dữ liệu thực. | TPL_04_PROTECTION; TPL_05_UTIL_VALUE
+4 | Từ điển loại đầu ra bị vỡ: 09_LOOKUPS có 11 giá trị, dữ liệu dùng 14 giá trị, 9 giá trị nằm ngoài từ điển; 'Sản phẩm/prototype' và 'Mô hình/prototype' trùng nghĩa. | Lập bảng ánh xạ 14 giá trị gốc sang 8 nhóm chuẩn. Giữ nguyên cột gốc, thêm cột P và Q tính bằng VLOOKUP nên sửa từ điển là dữ liệu tự cập nhật. | 09B_MAP_LOAI_DAURA; 02_OUTPUT_ALL cột P, Q
+5 | 34/90 dòng đầu ra là báo cáo tổng kết — sản phẩm hành chính bắt buộc. Để trong mẫu số làm loãng mọi tỷ lệ chuyển hóa. | Thêm cột Nhóm mẫu số với 4 giá trị: Bắt buộc hành chính, Công bố, Ứng viên TSTT, Khác/quản trị. Mọi tỷ lệ ở 08B đều loại nhóm bắt buộc khỏi mẫu số. | 02_OUTPUT_ALL cột Q; 08B_KPI_v08
+6 | 08_KPI_ALL gõ tay toàn bộ giá trị, tỷ lệ để dạng 0,4736 và không ghi mẫu số. | Lập 08B_KPI_v08 tính bằng công thức, mỗi chỉ số có cột tử số, mẫu số và ghi chú diễn giải. Ô tỷ lệ ở 08_KPI_ALL được định dạng lại thành phần trăm. | 08B_KPI_v08
+7 | Không có cơ chế phát hiện lỗi khi dữ liệu được bổ sung. | Lập 8 phép kiểm tra tự động: trùng mã, khóa mồ côi, giá trị ngoài từ điển, tổng nhóm mẫu số. Mọi dòng phải trả về OK. | 24_QC_CHECKS
+8 | Portfolio SHTT mới dựa vào danh sách nội bộ, chưa đối chiếu nguồn độc lập. | Chưa xử lý ở v0.8. Đề nghị tra ngược 9 đối tượng đã có số trên cơ sở dữ liệu công khai của Cục Sở hữu trí tuệ, ghi kết quả vào 13B thành cột xác minh độc lập. | 13B_PROTECTION_FULL
+9 | File chứa tên cá nhân, tên doanh nghiệp đối tác, số văn bằng, kèm nhận định về việc thiếu hồ sơ. | Chưa xử lý ở v0.8. Trước khi đưa vào luận án hoặc báo cáo, cân nhắc mã hóa tên cá nhân và tên doanh nghiệp. | Toàn file
+
+=== 08B_KPI_v08 ===
+KPI BẢN v0.8 – MỌI CHỈ SỐ GHI RÕ MẪU SỐ VÀ TÍNH BẰNG CÔNG THỨC |  |  |  |  | 
+Thay thế 08_KPI_ALL (giá trị gõ tay). Tỷ lệ chỉ tính trên mẫu số đã loại đầu ra hành chính bắt buộc. |  |  |  |  | 
+Mã | Chỉ số | Tử số | Mẫu số | Giá trị | Ghi chú diễn giải
+K01 | Tổng số đề tài cấp cơ sở đã kiểm kê |  |  | 38 | Đơn vị phân tích: 1 đề tài.
+K02 | Tổng số dòng đầu ra |  |  | 90 | Dòng đầu ra, không phải số sản phẩm.
+K03 | Trong đó: báo cáo tổng kết (bắt buộc hành chính) |  |  | 34 | Loại khỏi mọi mẫu số tính tỷ lệ.
+K04 | Trong đó: công bố khoa học |  |  | 30 | Bài báo, kỷ yếu; chưa đối chiếu DOI.
+K05 | Trong đó: ứng viên tài sản trí tuệ |  |  | 24 | Sản phẩm, quy trình, bộ mẫu, học liệu, SHCN dự kiến.
+K06 | Trong đó: sản phẩm tổ chức/quản trị |  |  | 2 | Không đưa vào phân tích TSTT.
+K07 | Mẫu số phân tích TSTT |  |  | 56 | K02 trừ K03.
+K08 | Tỷ lệ ứng viên TSTT trên mẫu số phân tích | 24 | 56 | 0.428571428571429 | Không gọi là tỷ lệ bảo hộ.
+K09 | Số đề tài có ít nhất 1 ứng viên TSTT |  |  | 17 | Tính trên 38 đề tài.
+K10 | Tỷ lệ đề tài có ít nhất 1 ứng viên TSTT | 17 | 38 | 0.447368421052632 | Mẫu số gồm cả đề tài thuần lý thuyết.
+K11 | Số đề tài hồ sơ ghi có đầu ra ứng dụng |  |  | 18 | 19 đề tài ghi 'Không ghi nhận' — không suy ra là không có.
+K12 | Tỷ lệ đề tài hồ sơ ghi có đầu ra ứng dụng | 18 | 38 | 0.473684210526316 | Là tỷ lệ ghi nhận trong hồ sơ, không phải tỷ lệ ứng dụng thực tế.
+K13 | Đối tượng SHTT ĐHTĐ sở hữu/đồng sở hữu, 2021–2025 |  |  | 11 | Loại tài sản của UNIGO và cá nhân.
+K14 | Trong đó đã có số văn bằng/số đăng ký |  |  | 9 | Loại Double2n (tiếp nhận đơn) và sáng chế chưa có số.
+K15 | Tỷ lệ đối tượng đã có số trên portfolio trực tiếp | 9 | 11 | 0.818181818181818 | Chỉ mô tả trạng thái hồ sơ, không phải hiệu quả bảo hộ.
+Lưu ý: K05 (ứng viên TSTT theo từ điển v0.8) khác K-cũ 'đầu ra ưu tiên IP' ở 03_IP_PRIORITY_ALL vì hai tiêu chí phân loại khác nhau. Khi viết luận án phải nêu rõ đang dùng định nghĩa nào. |  |  |  |  | 
+
+=== 21_CHAPTER2_BLUEPRINT ===
+CHƯƠNG 2 – THỰC TRẠNG QUẢN LÝ QUYỀN SHTT TẠI TRƯỜNG ĐẠI HỌC THÀNH ĐÔ |  |  |  |  |  |  | 
+Mục | Tên mục đề xuất | Câu hỏi phải trả lời | Dữ liệu sử dụng | Bảng/biểu đồ chính | Phát hiện dự kiến | Mức kết luận cho phép | Ghi chú viết
+2.1 | Khái quát bối cảnh quản lý KHCN và SHTT của Trường | Hệ thống văn bản, chủ thể và phạm vi quản lý TSTT của Trường được thiết kế như thế nào? | QĐ 213/QĐ-ĐHTĐ năm 2021; QĐ 217/QĐ-ĐHTĐ ngày 21/11/2024; hồ sơ đề tài | Bảng 2.1 – Hệ thống văn bản và chức năng quản trị SHTT | Từ 21/11/2024 Trường có Quy chế chuyên biệt về quản trị TSTT bên cạnh Quy chế KHCN 2021. | Mô tả thể chế; chưa đánh giá hiệu quả ở mục này. | Viết ngắn, làm nền cho các mục sau.
+2.2 | Năng lực tạo ra kết quả KHCN và TSTT tiềm năng | Giai đoạn 2021–2025 Trường tạo ra bao nhiêu đề tài, đầu ra và nhóm tài sản có tiềm năng quản trị IP? | 01_PROJECT_ALL; 02_OUTPUT_ALL; 03_IP_PRIORITY_ALL | Bảng 2.2 – Đề tài/đầu ra theo năm; Hình 2.1 – Output→IP priority funnel | 38 đề tài được kiểm kê, 90 dòng đầu ra; 26 đầu ra cần quản trị IP sâu hơn, trong đó 15 mức ưu tiên cao. | Chỉ gọi là 'đầu ra cần quản trị/sàng lọc IP', không gọi là 26 đối tượng đủ điều kiện bảo hộ. | Phân biệt rõ output và legally protectable IP.
+2.3 | Cơ cấu TSTT và văn bằng/đơn SHTT của Trường | Portfolio SHTT trực tiếp của ĐHTĐ có cơ cấu ra sao theo loại quyền và trạng thái? | 13B_PROTECTION_FULL; danh sách SHTT do Trường cung cấp | Bảng 2.3 – Cơ cấu portfolio; Hình 2.2 – Cơ cấu quyền theo loại hình | Có 12 đối tượng ĐHTĐ sở hữu/đồng sở hữu trong danh sách nguồn; 11 thuộc 2021–2025; 9 có số đăng ký/văn bằng/ký hiệu, 1 ở trạng thái tiếp nhận đơn, 1 sáng chế 2025 chưa có số trong danh sách. | Không gộp tài sản UNIGO/cá nhân vào portfolio trực tiếp ĐHTĐ; không mặc nhiên coi mục không có số là đã cấp. | Đây là phần thống kê quyền đã quan sát được.
+2.4 | Thực trạng nhận diện, xác lập và bảo vệ quyền SHTT | Quy trình chính thức yêu cầu gì và hồ sơ thực tế cho phép truy vết đến đâu? | 17_LEGAL_PRACTICE_MATRIX; 11_DATA_REQUEST; 16_VERIFICATION_FINDINGS | Bảng 2.4 – Normative requirement vs evidence; Hình 2.3 – Process traceability gap | Có quy định về nhận diện/kê khai, công bố trước bảo hộ và quy trình đăng ký; nhưng chưa có bằng chứng tài liệu hóa disclosure và screening trong bộ hồ sơ hiện có. | Kết luận về 'documentation gap'; chỉ nâng lên 'activity gap' nếu phỏng vấn xác nhận hoạt động thực tế không diễn ra. | Đây là mục trung tâm của chương.
+2.5 | Thực trạng ứng dụng, chuyển giao và thương mại hóa | Các kết quả/TSTT đã được sử dụng hay khai thác như thế nào và bằng chứng ở mức nào? | 02_OUTPUT_ALL; 05_UTIL_VALUE; hồ sơ nghiệm thu; 17_LEGAL_PRACTICE_MATRIX | Bảng 2.5 – Dấu hiệu ứng dụng; Hình 2.4 – Protection→Use evidence ladder | Hồ sơ có 25 dòng đầu ra ghi dấu hiệu ứng dụng và 18/38 đề tài có ít nhất một dấu hiệu ứng dụng; tuy nhiên chưa có hồ sơ hợp đồng chuyển giao/cấp phép/thương mại hóa trong bộ dữ liệu hiện có. | Không gọi dấu hiệu ứng dụng là commercialization; không tính doanh thu nếu không có chứng từ. | Tách application, internal use, transfer, commercialization.
+2.6 | Phân tích các trường hợp điển hình theo chuỗi hình thành–bảo hộ–khai thác | Tại sao có tài sản đi từ nghiên cứu tới bảo hộ, trong khi tài sản khác dừng ở prototype/quy trình? | 19_CASE_TRACE; 18_INTERVIEW_GUIDE; 14_PROJECT_PROTECTION_LINK | Bảng 2.6 – Timeline 6 case; Hình 2.5 – Case comparison matrix | Tinh dầu vỏ bưởi và Quế hoa là hai case có liên kết đề tài↔bảo hộ mạnh; xà phòng/cồn/viên ngậm/panel là case so sánh để nhận diện bottleneck. | Kết luận cơ chế chỉ sau khi có phỏng vấn xác minh. | Dùng process tracing, không đại diện thống kê.
+2.7 | Đối sánh pháp luật/quy chế với thực tiễn quản trị | Khoảng cách nào là thể chế, quy trình, dữ liệu hay thực thi? | 17_LEGAL_PRACTICE_MATRIX; QĐ 213; QĐ 217 | Bảng 2.7 – Gap matrix xếp hạng rủi ro | Ba gap nổi bật: disclosure/identification, screening/decision documentation, transfer/commercialization evidence; thêm gap về lifecycle database. | Phân biệt documentation gap và activity gap. | Nên xếp rủi ro Rất cao/Cao/Trung bình.
+2.8 | Đánh giá chung về hiệu quả quản lý quyền SHTT | Điểm mạnh, hạn chế và nguyên nhân cốt lõi là gì? | Tổng hợp 2.1–2.7 + phỏng vấn/chuyên gia | Bảng 2.8 – Strengths/weaknesses/causes; Hình 2.6 – Bottleneck map | Điểm mạnh: đã có khung thể chế và portfolio quyền; hạn chế chính dự kiến nằm ở khả năng truy vết quy trình và bằng chứng khai thác giá trị. | Nguyên nhân chỉ viết khi có dữ liệu phỏng vấn/chuyên gia; chưa suy đoán từ hồ sơ. | Là cầu nối sang Chương 3 giải pháp.
+
+=== 22_TABLE_FIGURE_PLAN ===
+ID | Loại | Tên đề xuất | Nguồn dữ liệu | Biến/công thức | Thông điệp chính | Mức ưu tiên
+B2.1 | Bảng | Hệ thống văn bản nội bộ điều chỉnh quản lý SHTT | QĐ 213; QĐ 217 | Văn bản – phạm vi – chủ thể – nội dung – hiệu lực | Khung thể chế đã chuyển từ quy định SHTT trong Quy chế KHCN sang Quy chế quản trị TSTT chuyên biệt từ 21/11/2024. | Bắt buộc
+B2.2 | Bảng | Số đề tài và đầu ra KHCN theo năm 2021–2025 | 01_PROJECT_ALL; 02_OUTPUT_ALL | COUNT theo năm | Cho thấy quy mô nguồn tạo tri thức trước khi nói về bảo hộ. | Bắt buộc
+H2.1 | Biểu đồ | Phễu kết quả KHCN → đầu ra ưu tiên IP | 02_OUTPUT_ALL | 90 output → 26 medium/high → 15 high | Minh họa chênh lệch giữa tổng output và nhóm cần quản trị IP sâu. | Bắt buộc
+B2.3 | Bảng | Danh mục và cơ cấu TSTT trực tiếp của ĐHTĐ | 13B_PROTECTION_FULL | Lọc Chủ sở hữu có ĐHTĐ | Phân biệt rõ quyền của Trường với tài sản hệ sinh thái/cá nhân. | Bắt buộc
+H2.2 | Biểu đồ | Cơ cấu portfolio SHTT theo loại hình | 13B_PROTECTION_FULL | COUNT QTG/Nhãn hiệu/KDCN/Sáng chế | Portfolio hiện quan sát được thiên về thương hiệu/KDCN bên cạnh tài sản công nghệ. | Nên có
+B2.4 | Bảng | Đối sánh yêu cầu quản trị với bằng chứng thực tế | 17_LEGAL_PRACTICE_MATRIX | Chuẩn – evidence – gap – risk | Bảng trung tâm chứng minh documentation/process gap. | Bắt buộc
+H2.3 | Sơ đồ | Chuỗi quản trị và điểm đứt gãy khả năng truy vết | 17_LEGAL_PRACTICE_MATRIX | Research output→identify→screen→file→protect→use→commercialize | Làm rõ 'có đầu ra và quyền nhưng thiếu hồ sơ trung gian'. | Bắt buộc
+B2.5 | Bảng | Dấu hiệu ứng dụng của kết quả nghiên cứu | 02_OUTPUT_ALL | COUNT cột dấu hiệu ứng dụng; phân loại loại đầu ra | Ứng dụng tồn tại ở mức dấu hiệu nhưng chưa tương đương chuyển giao/thương mại hóa. | Bắt buộc
+B2.6 | Bảng | So sánh 6 case process tracing | 19_CASE_TRACE | Timeline từng case | Giải thích cơ chế khác biệt giữa case bảo hộ và chưa nối được bảo hộ. | Bắt buộc
+H2.4 | Biểu đồ | Ma trận mức ưu tiên IP × bằng chứng ứng dụng | 03_IP_PRIORITY_ALL; 02_OUTPUT_ALL | Priority vs application evidence | Chọn tài sản ưu tiên cho giải pháp quản trị sau này. | Nên có
+B2.7 | Bảng | Tổng hợp khoảng cách và mức rủi ro | 17_LEGAL_PRACTICE_MATRIX | COUNT theo gap type/risk | Ưu tiên giải pháp theo mức độ rủi ro quản trị. | Bắt buộc
+
+=== 24_QC_CHECKS ===
+KIỂM TRA CHẤT LƯỢNG DỮ LIỆU – TỰ ĐỘNG |  |  |  | 
+Mọi dòng phải cho kết quả OK. Chạy lại sau mỗi lần sửa dữ liệu. |  |  |  | 
+Mã | Nội dung kiểm tra | Kỳ vọng | Kết quả | Kết luận
+QC01 | Số Project_ID bị trùng trong 01_PROJECT_ALL | 0 | 0 | OK
+QC02 | Số Output_ID bị trùng trong 02_OUTPUT_ALL | 0 | 0 | OK
+QC03 | Đầu ra trỏ tới đề tài không tồn tại | 0 | 0 | OK
+QC04 | Dòng ưu tiên IP trỏ tới đầu ra không tồn tại | 0 | 0 | OK
+QC05 | Loại đầu ra không có trong từ điển 09B | 0 | 0 | OK
+QC06 | Tổng 4 nhóm mẫu số phải bằng tổng dòng đầu ra | 0 | 0 | OK
+QC07 | Đề tài không có dòng đầu ra nào | 0 | 0 | OK
+QC08 | Đối tượng SHTT thiếu cả số văn bằng lẫn ghi chú trạng thái | 0 | 0 | OK
+
