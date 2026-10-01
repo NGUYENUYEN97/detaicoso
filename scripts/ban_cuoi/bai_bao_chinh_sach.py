@@ -3,7 +3,7 @@
 
     python3 scripts/ban_cuoi/bai_bao_chinh_sach.py
 
-Đầu ra: Ban_cuoi/Bai_bao_Tap_chi_NCKH_PT.docx
+Đầu ra: Ban_cuoi/Bai_bao_phuong_an_chinh_sach.docx (phương án dự phòng)
 
 Phương án này không công bố số liệu nội bộ của Trường Đại học Thành Đô. Dữ liệu là
 12 văn bản pháp luật, chỉ đạo và chuẩn chất lượng ban hành công khai; mọi điều, khoản
@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import khung  # noqa: E402
 import tai_lieu as TL  # noqa: E402
 
-RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_Tap_chi_NCKH_PT.docx")
+RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_phuong_an_chinh_sach.docx")
 SO_DO = os.path.join(khung.THU_MUC_RA, "so_do")
 
 TIEU_DE = ("Khoảng cách giữa sản phẩm khoa học và tài sản trí tuệ tại trường đại học tư thục: Phân tích chính sách "

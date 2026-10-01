@@ -359,10 +359,40 @@ def cong_ra_soat():
     s.nhan(3.9, 3.85, "thiếu cổng này, sản phẩm đi thẳng sang công bố", 9, mau=CAM)
     return s.luu("cong_ra_soat.png")
 
+def chuoi_ket_qua():
+    """Sơ đồ chuỗi kết quả và các chỉ số chuyển hóa cho bài báo về khung đánh giá."""
+    s = SoDo(15.5, 8.2)
+    w, h, y = 3.3, 2.7, 1.9
+    xs = [0.2, 4.2, 8.2, 12.0]
+    nhom = [("Đầu vào", "Kinh phí, nhân lực, hạ tầng tra cứu", XANH_NHAT, XANH),
+            ("Quá trình", "Quy chế, quy trình, rà soát, tập huấn", XANH_NHAT, XANH),
+            ("Đầu ra", "Sản phẩm có khả năng bảo hộ, đơn, văn bằng", NGOC_NHAT, NGOC),
+            ("Kết quả", "Hợp đồng, nguồn thu, chỉ số chuẩn, động lực", VANG_NHAT, VANG)]
+    for x, (ten, noi, nen, vien) in zip(xs, nhom):
+        s.hop(x, y, w, h, [T(ten, 11, True), T(noi, 9.5)], nen=nen, vien=vien)
+    ym = y + h / 2
+    for i in range(3):
+        s.mui_ten([(xs[i] + w, ym), (xs[i + 1] - 0.05, ym)], XAM, mui=0.24)
+
+    def ch(x, yy, ww, ten, cong_thuc):
+        s.hop(x, yy, ww, 1.4, [T(ten, 9, True), T(cong_thuc, 8.5)], nen=CAM_NHAT, vien=CAM, day=0.04)
+
+    ch(5.45, 0.15, 4.75, "CH1. Tỷ lệ nhận diện", "công trình có sản phẩm bảo hộ được / công trình nghiệm thu")
+    ch(10.4, 0.15, 4.9, "CH3. Tỷ lệ khai thác", "tài sản có giao dịch hoặc được sử dụng / tài sản đã xác lập")
+    ch(6.9, 5.0, 5.9, "CH2. Tỷ lệ xác lập kịp thời", "sản phẩm nộp đơn trong 12 tháng / sản phẩm bảo hộ được")
+    ch(0.2, 6.65, 15.1, "CH4. Tỷ suất khai thác trên chi phí",
+       "nguồn thu từ khai thác tài sản trí tuệ / chi phí xác lập và duy trì quyền")
+    s.mui_ten([(7.85, 1.55), (7.85, ym - 0.12)], CAM, mui=0.2, gach=True)
+    s.mui_ten([(11.75, 1.55), (11.75, ym - 0.12)], CAM, mui=0.2, gach=True)
+    s.mui_ten([(9.85, 5.0), (9.85, y + h + 0.05)], CAM, mui=0.2, gach=True)
+    s.mui_ten([(1.85, 6.65), (1.85, y + h + 0.05)], CAM, mui=0.2, gach=True)
+    s.mui_ten([(13.65, 6.65), (13.65, y + h + 0.05)], CAM, mui=0.2, gach=True)
+    return s.luu("chuoi_ket_qua.png")
+
 TAT_CA = {
     "chu_trinh": chu_trinh, "yeu_to": yeu_to, "khung_phan_tich": khung_phan_tich, "bon_dau_moi": bon_dau_moi,
     "chuoi_nguyen_nhan": chuoi_nguyen_nhan, "phoi_hop": phoi_hop, "tam_khau": tam_khau, "lo_trinh": lo_trinh,
-    "cong_ra_soat": cong_ra_soat,
+    "cong_ra_soat": cong_ra_soat, "chuoi_ket_qua": chuoi_ket_qua,
 }
 
 

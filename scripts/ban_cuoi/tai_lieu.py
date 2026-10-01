@@ -104,6 +104,14 @@ TAI_LIEU = [
     ("Fisher", "nn",
      "Fisher, W. (2001). Theories of intellectual property. In S. R. Munzer (Ed.), *New essays in the legal and "
      "political theory of property* (pp. 168-199). Cambridge University Press."),
+    ("Campbell et al., 2020", "nn",
+     "Campbell, A., Cavalade, C., Haunold, C., Karanikic, P., & Piccaluga, A. (2020). *Knowledge transfer metrics: "
+     "Towards a European-wide set of harmonised indicators* (EUR 30218 EN). Publications Office of the European Union. "
+     "https://doi.org/10.2760/907762"),
+    ("Finne et al., 2009", "nn",
+     "Finne, H., Arundel, A., Balling, G., Brisson, P., & Erselius, J. (2009). *Metrics for knowledge transfer from "
+     "public research organisations in Europe: Report from the European Commission's Expert Group on Knowledge Transfer "
+     "Metrics*. Publications Office of the European Union. https://doi.org/10.2777/49910"),
     ("Goldfarb & Henrekson, 2003", "nn",
      "Goldfarb, B., & Henrekson, M. (2003). Bottom-up versus top-down policies towards the commercialization of "
      "university intellectual property. *Research Policy, 32*(4), 639-658. "
@@ -148,6 +156,8 @@ TAI_LIEU = [
     ("Thursby & Kemp, 2002", "nn",
      "Thursby, J. G., & Kemp, S. (2002). Growth and productive efficiency of university intellectual property "
      "licensing. *Research Policy, 31*(1), 109-124. https://doi.org/10.1016/S0048-7333(00)00160-8"),
+    ("W. K. Kellogg Foundation", "nn",
+     "W. K. Kellogg Foundation. (2004). *Logic model development guide*. W. K. Kellogg Foundation."),
 ]
 
 NHOM = [("vb", "A. Văn bản pháp luật, văn bản chỉ đạo và văn bản của Trường Đại học Thành Đô"),
