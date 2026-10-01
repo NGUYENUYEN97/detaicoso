@@ -326,9 +326,43 @@ def lo_trinh():
     return s.luu("lo_trinh.png")
 
 
+def cong_ra_soat():
+    """Sơ đồ chung cho bài báo phân tích chính sách: vị trí cổng rà soát tại nghiệm thu."""
+    s = SoDo(15.5, 8.6)
+    w, h1, h2, y2 = 3.55, 2.9, 3.3, 5.0
+    xs = [0.2, 4.05, 7.9, 11.75]
+    td, nd, cc = 9.5, 9, 8
+
+    def o(x, y, h, ten, noi, can_cu, **kw):
+        s.hop(x, y, w, h, [T(ten, td, True), T(noi, nd)] + ([T(can_cu, cc, nghieng=True)] if can_cu else []), **kw)
+
+    o(xs[0], 0.3, h1, "Nhiệm vụ nghiên cứu", "Tổ chức chủ trì được giao quyền", "khoản 2 Điều 25 Luật số 93/2025/QH15")
+    o(xs[1], 0.3, h1, "Sản phẩm nghiệm thu", "Công thức, quy trình, mẫu, dữ liệu, phần mềm", "hồ sơ nghiệm thu")
+    o(xs[2], 0.3, h1, "Cổng rà soát khả năng bảo hộ", "Phiếu rà soát bắt buộc tại hội đồng nghiệm thu", "quy chế nội bộ",
+      nen=CAM_NHAT, vien=CAM, day=0.05)
+    o(xs[3], 0.3, h1, "Không đủ điều kiện bảo hộ", "Công bố, dùng trong đào tạo, đăng ký quyền tác giả", None,
+      nen=XAM_NHAT, vien=XAM, gach=True)
+    o(xs[2], y2, h2, "Xác lập quyền", "Tra cứu, nộp đơn trong 12 tháng kể từ ngày bộc lộ",
+      "khoản 3 Điều 60 Luật Sở hữu trí tuệ; điểm b khoản 2 Điều 66 Luật số 93/2025/QH15", nen=NGOC_NHAT, vien=NGOC)
+    o(xs[1], y2, h2, "Văn bằng bảo hộ", "Được tính vào chỉ số sản phẩm khoa học quy đổi",
+      "Thông tư số 83/2026/TT-BGDĐT", nen=NGOC_NHAT, vien=NGOC)
+    o(xs[0], y2, h2, "Khai thác và chia lợi ích", "Tự quyết thương mại hóa; tác giả tối thiểu 30%",
+      "Điều 27, Điều 28 Luật số 93/2025/QH15", nen=NGOC_NHAT, vien=NGOC)
+    ym, yd = 0.3 + h1 / 2, y2 + h2 / 2
+    s.mui_ten([(xs[0] + w, ym), (xs[1] - 0.05, ym)], XAM, mui=0.22)
+    s.mui_ten([(xs[1] + w, ym), (xs[2] - 0.05, ym)], XAM, mui=0.22)
+    s.mui_ten([(xs[2] + w, ym), (xs[3] - 0.05, ym)], XAM, mui=0.22, gach=True)
+    s.mui_ten([(xs[2] + w / 2, 0.3 + h1), (xs[2] + w / 2, y2 - 0.05)], NGOC, mui=0.24)
+    s.mui_ten([(xs[2], yd), (xs[1] + w + 0.05, yd)], NGOC, mui=0.22)
+    s.mui_ten([(xs[1], yd), (xs[0] + w + 0.05, yd)], NGOC, mui=0.22)
+    s.nhan(xs[2] + w / 2 + 1.1, 3.85, "đủ điều kiện", 9, dam=True, mau=NGOC)
+    s.nhan(3.9, 3.85, "thiếu cổng này, sản phẩm đi thẳng sang công bố", 9, mau=CAM)
+    return s.luu("cong_ra_soat.png")
+
 TAT_CA = {
     "chu_trinh": chu_trinh, "yeu_to": yeu_to, "khung_phan_tich": khung_phan_tich, "bon_dau_moi": bon_dau_moi,
     "chuoi_nguyen_nhan": chuoi_nguyen_nhan, "phoi_hop": phoi_hop, "tam_khau": tam_khau, "lo_trinh": lo_trinh,
+    "cong_ra_soat": cong_ra_soat,
 }
 
 

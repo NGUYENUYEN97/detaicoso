@@ -36,7 +36,12 @@ Các tệp gốc không bị sửa.
 - Bổ sung tài liệu quốc tế gần đây đã kiểm chứng: Holgersson và Aaboen (2019), Maresova và cộng sự (2019), Rocha và cộng sự (2023).
 - **Cần nhóm xác minh trước khi nộp:** Võ (2025) chưa có số tập, trang; Nguyễn (2025) và Võ (2025) lấy từ tệp Zotero, có DOI nhưng chưa mở được trang tạp chí để đối chiếu; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ chưa có tệp gốc trong kho nên danh mục chưa ghi số hiệu, ngày ban hành; Cục Sở hữu trí tuệ (n.d.) là tài liệu không ghi năm.
 
-**Bài báo**
+**Bài báo: hai phương án**
+- `Bai_bao_Tap_chi_NCKH_PT.docx` (phương án chính, phân tích chính sách): "Khoảng cách giữa sản phẩm khoa học và tài sản trí tuệ tại trường đại học tư thục: Phân tích chính sách trong bối cảnh pháp lý mới". Chỉ dùng 12 văn bản công khai (Luật Sở hữu trí tuệ hợp nhất, Luật 93, 131, 125, 07/2017; Nghị định 134; Quyết định 1068, 1624; Chỉ thị 02; Kết luận 51; Thông tư 01/2024, 83/2026), không công bố số liệu nội bộ của Nhà trường. Phát hiện mới có căn cứ văn bản: Thông tư 83/2026 nâng hệ số bằng độc quyền giải pháp hữu ích từ 1 lên 3 (cao hơn bài WoS, Scopus hệ số 2), xếp quy định về sở hữu trí tuệ, liêm chính vào nội dung quản trị bắt buộc chung. Đề xuất khung rà soát quy chế nội bộ 9 nội dung và mô hình cổng rà soát tại nghiệm thu (sơ đồ `so_do/cong_ra_soat.png`). Tóm tắt 248 âm tiết, Abstract 226 từ; Đặt vấn đề 6,9%, Tổng quan 16,2%, Phương pháp 8,9%, Kết quả 45,5%, Bàn luận 15,5%, Kết luận 7,0%; 3 bảng, 2 hình, 28 tài liệu.
+- `Bai_bao_phuong_an_du_lieu_noi_bo.docx` (phương án dự phòng): bài dùng số liệu của Nhà trường, chỉ nộp khi Ban Giám hiệu đồng ý công bố số liệu bằng văn bản.
+- Danh mục tài liệu của từng tệp sắp xếp theo chữ cái tiếng Việt, hậu tố năm (2025a, 2025b) đánh lại riêng cho từng danh mục.
+
+**Bài báo phương án dự phòng**
 - Tiêu đề: "Từ đề tài đến văn bằng: Chuỗi chuyển hóa tài sản trí tuệ tại Trường Đại học Thành Đô" (19 âm tiết). Tóm tắt 242 âm tiết, Abstract 238 từ, 5 từ khóa.
 - Dung lượng thân bài 4.755 âm tiết: Đặt vấn đề 6,9%; Tổng quan 16,9%; Phương pháp 8,9%; Kết quả 45,0%; Bàn luận 16,6%; Kết luận 5,7%, đều trong khung JSRD.
 - 4 hình, 1 bảng, 24 tài liệu tham khảo; tiểu mục Kết quả đặt tên theo phát hiện; mỗi khuyến nghị neo vào một phát hiện.

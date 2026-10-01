@@ -3,7 +3,7 @@
 
     python3 scripts/ban_cuoi/bai_bao.py
 
-Đầu ra: Ban_cuoi/Bai_bao_Tap_chi_NCKH_PT.docx
+Đầu ra: Ban_cuoi/Bai_bao_phuong_an_du_lieu_noi_bo.docx (chỉ dùng khi Nhà trường đồng ý công bố số liệu)
 
 Bài viết theo cấu trúc chuẩn JSRD: tiêu đề, tóm tắt tiếng Việt và tiếng Anh, từ khóa,
 Đặt vấn đề, Tổng quan nghiên cứu, Phương pháp nghiên cứu, Kết quả nghiên cứu, Bàn luận,
@@ -23,7 +23,7 @@ import tai_lieu as TL  # noqa: E402
 
 BG = khung.BG
 B = BG.B
-RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_Tap_chi_NCKH_PT.docx")
+RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_phuong_an_du_lieu_noi_bo.docx")
 SO_DO = os.path.join(khung.THU_MUC_RA, "so_do")
 
 # số liệu dùng trong bài, đối chiếu với dữ liệu Chương 2
@@ -421,7 +421,7 @@ def dung():
                         [c.text for t in v.doc.tables for r in t.rows for c in r.cells])
     tieu_de_muc(v, "TÀI LIỆU THAM KHẢO")
     dung_tl = TL.duoc_trich(van_ban)
-    for _, _, apa in sorted(dung_tl, key=lambda m: m[2]):
+    for apa in TL.danh_muc(dung_tl):
         p = v.doan_md("than", apa)
         pf = p.paragraph_format
         pf.left_indent, pf.first_line_indent, pf.space_after = Pt(28), Pt(-28), Pt(4)

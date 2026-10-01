@@ -199,7 +199,7 @@ def tai_lieu_tham_khao(v, van_ban):
         if not ds:
             continue
         v.doan("h2", ten, bold=True)
-        for _, _, apa in ds:
+        for apa in TL.danh_muc(ds):
             p = v.doan_md("than", apa)
             pf = p.paragraph_format
             pf.left_indent, pf.first_line_indent = Pt(28), Pt(-28)

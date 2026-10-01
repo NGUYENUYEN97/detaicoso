@@ -190,3 +190,33 @@ def trich_dan_mo_coi(van_ban):
             if not any(k.split(" (")[0].split(",")[0] in phan for k, _, _ in TAI_LIEU):
                 kq.append(phan)
     return kq
+
+
+BANG_CHU = ("aàảãáạăằẳẵắặâầẩẫấậbcdđeèẻẽéẹêềểễếệfghiìỉĩíịjklmnoòỏõóọôồổỗốộơờởỡớợpqrstuùủũúụưừửữứựvwxyỳỷỹýỵz")
+
+
+def _khoa_sap_xep(apa):
+    """Thứ tự chữ cái tiếng Việt: a ă â b c d đ e ê ... o ô ơ ... u ư ..."""
+    apa = re.sub(r"^(.*?\. \(\d{4})[a-z]\)", r"\1)", apa, count=1)  # bỏ hậu tố cũ trước khi so sánh
+    return [BANG_CHU.index(c) if c in BANG_CHU else 1000 + ord(c) for c in apa.lower().replace("*", "")]
+
+
+def danh_muc(dung):
+    """Sắp xếp các mục được trích theo chữ cái tiếng Việt và đánh lại hậu tố năm (2025a, 2025b...)
+    chỉ trong phạm vi danh mục của văn bản đang dựng."""
+    ds = sorted((m[2] for m in dung), key=_khoa_sap_xep)
+    nhom = {}
+    for apa in ds:
+        m = re.match(r"^(.*?)\. \((\d{4})[a-z]?\)", apa)
+        if m:
+            nhom.setdefault((m.group(1), m.group(2)), []).append(apa)
+    kq = []
+    for apa in ds:
+        m = re.match(r"^(.*?)\. \((\d{4})[a-z]?\)", apa)
+        if m and len(nhom[(m.group(1), m.group(2))]) > 1:
+            thu_tu = nhom[(m.group(1), m.group(2))].index(apa)
+            apa = re.sub(r"^(.*?\. \(\d{4})[a-z]?\)", lambda x: x.group(1) + "abcdefgh"[thu_tu] + ")", apa, count=1)
+        elif m:
+            apa = re.sub(r"^(.*?\. \(\d{4})[a-z]?\)", lambda x: x.group(1) + ")", apa, count=1)
+        kq.append(apa)
+    return kq
