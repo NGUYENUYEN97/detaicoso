@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Bài báo đầu ra (phương án chính): khung đánh giá hiệu quả quản lý quyền sở hữu trí tuệ.
+"""Bài báo đầu ra (phương án dự phòng): khung đánh giá hiệu quả quản lý quyền sở hữu trí tuệ.
 
     python3 scripts/ban_cuoi/bai_bao_khung.py
 
-Đầu ra: Ban_cuoi/Bai_bao_Tap_chi_NCKH_PT.docx
+Đầu ra: Ban_cuoi/Bai_bao_phuong_an_khung_danh_gia.docx (phương án dự phòng)
 
 Bài lý luận phát triển từ Mục 1.4 của báo cáo tổng kết: bộ chỉ số theo chuỗi đầu vào,
 quá trình, đầu ra, kết quả, bổ sung bốn chỉ số chuyển hóa và phân loại nguồn dữ liệu theo
@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import khung  # noqa: E402
 import tai_lieu as TL  # noqa: E402
 
-RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_Tap_chi_NCKH_PT.docx")
+RA_DOCX = os.path.join(khung.THU_MUC_RA, "Bai_bao_phuong_an_khung_danh_gia.docx")
 SO_DO = os.path.join(khung.THU_MUC_RA, "so_do")
 
 TIEU_DE = ("Khung đánh giá hiệu quả quản lý quyền sở hữu trí tuệ tại trường đại học định hướng ứng dụng: Tiếp cận "

@@ -12,7 +12,8 @@ import sys
 GOC = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 for s in ["scripts/ra_soat/ra_soat_chuong3.py",   # bản rà soát có theo dõi thay đổi, đầu vào của Chương 3
           "scripts/ban_cuoi/bao_cao.py",
-          "scripts/ban_cuoi/bai_bao_khung.py",       # bài báo chính: khung đánh giá hiệu quả
+          "scripts/ban_cuoi/bai_bao_tong_hop.py",    # bài báo chính: yêu cầu thể chế mới, giải pháp, chỉ số theo dõi
+          "scripts/ban_cuoi/bai_bao_khung.py",       # phương án dự phòng: khung đánh giá hiệu quả
           "scripts/ban_cuoi/bai_bao_chinh_sach.py",  # phương án dự phòng: phân tích chính sách
           "scripts/ban_cuoi/bai_bao.py"]:            # phương án dùng số liệu nội bộ, khi Nhà trường đồng ý
     if os.path.exists(os.path.join(GOC, s)):
