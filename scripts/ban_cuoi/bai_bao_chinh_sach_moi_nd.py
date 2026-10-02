@@ -371,7 +371,7 @@ TAI_LIEU = [
     "tuệ*.",
     "Võ, N. H. P. (2025). Quyền của chủ thể không giữ quyền tài sản đối với các tác phẩm hình thành trong nhà trường, kinh "
     "nghiệm quốc tế để hoàn thiện chính sách sở hữu trí tuệ của các trường đại học tại Việt Nam. *Tạp chí Khoa học Trường Đại "
-    "học Mở Hà Nội*, 75-86. https://doi.org/10.59266/houjs.2025.606",
+    "học Mở Hà Nội*, (129), 75-86. https://doi.org/10.59266/houjs.2025.606",
     "World Intellectual Property Organization. (2020). *Identifying inventions in the public domain: A guide for "
     "inventors and entrepreneurs*. World Intellectual Property Organization.",
 ]

@@ -14,7 +14,7 @@ Ghi chú kiểm chứng:
 - Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ: tệp gốc không có trong kho; nội dung Điều 9
   lấy từ bản thảo của nhóm, cần bổ sung số hiệu, ngày ban hành khi có tệp.
 - Nguyễn (2025), Võ (2025): lấy từ tệp Zotero của nhóm. Võ (2025): tên tạp chí theo trang bài báo,
-  trang 75-86 theo bản PDF; bản PDF không in số tạp chí, cần bổ sung số trước khi nộp.
+  số 129 tháng 7 năm 2025, trang 75-86.
 """
 import re
 
@@ -97,7 +97,7 @@ TAI_LIEU = [
     ("Võ, 2025", "vn",
      "Võ, N. H. P. (2025). Quyền của chủ thể không giữ quyền tài sản đối với các tác phẩm hình thành trong nhà trường, "
      "kinh nghiệm quốc tế để hoàn thiện chính sách sở hữu trí tuệ của các trường đại học tại Việt Nam. *Tạp chí Khoa "
-     "học Trường Đại học Mở Hà Nội*, 75-86. https://doi.org/10.59266/houjs.2025.606"),
+     "học Trường Đại học Mở Hà Nội*, (129), 75-86. https://doi.org/10.59266/houjs.2025.606"),
     # Cần bổ sung số tạp chí của bài Võ (2025) khi tra được trang DOI; tên tạp chí và số trang xác định từ bản PDF.
     # --- Tài liệu tiếng nước ngoài ------------------------------------------------------------
     ("Bradley et al., 2013", "nn",
