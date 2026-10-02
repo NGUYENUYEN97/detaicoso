@@ -323,40 +323,57 @@ def tam_khau():
 
 
 def quy_trinh_bai_bao():
-    """Hình 1 bài báo chính sách: quy trình phối hợp, chủ thể ghi theo chức năng, không gắn đơn vị của một trường."""
-    s = SoDo(15.5, 13.6)
-    k = [("Khai báo kết quả, đối tượng dự kiến, lịch công bố", "Người nghiên cứu"),
-         ("Sàng lọc sơ bộ, phân nhánh theo loại tài sản", "Đầu mối quản lý khoa học"),
-         ("Tra cứu, đánh giá khả năng bảo hộ, tự do hoạt động", "Bộ phận pháp lý hoặc đại diện sở hữu công nghiệp"),
-         ("Xem xét bảo mật trước khi công bố hoặc trình diễn", "Đầu mối quản lý khoa học"),
-         ("Xác nhận tại nghiệm thu", "Hội đồng nghiệm thu"),
-         ("Quyết định xác lập quyền, dự toán, người đề xuất chi", "Lãnh đạo trường, bộ phận tài chính"),
-         ("Nộp đơn hoặc áp dụng biện pháp bảo mật; theo dõi, duy trì", "Bộ phận pháp lý"),
-         ("Khai thác, phân chia lợi ích theo nguồn hình thành", "Bộ phận hỗ trợ khai thác")]
+    """Hình 1 bài báo: quy trình phối hợp, chủ thể ghi theo chức năng. Luồng chính đi từ khai báo đến quyết định,
+    nộp đơn rồi mới công bố, không chờ nghiệm thu; nghiệm thu là điểm kiểm tra đặt bên cạnh; bảo mật áp dụng từ khi
+    khai báo; thời hạn sau bộc lộ ghi kèm điều kiện."""
+    s = SoDo(15.5, 14.6)
     xs = [0.2, 4.05, 7.9, 11.75]
-    w, h = 3.55, 3.6
-    vt = [(xs[i], 0.9) for i in range(4)] + [(xs[3 - i], 6.1) for i in range(4)]
-    s.nhan(0.2, 0.2, "Đầu vào: phiếu khai báo của người nghiên cứu", 9.5, dam=True, mau=XAM, can="left")
-    for i, ((x, y), (ten, chu_tri)) in enumerate(zip(vt, k), 1):
-        noi = i in (4, 5)
-        s.hop(x, y, w, h, [T(f"Khâu {i}", 10.5, True), T(ten, 10, noi), T(chu_tri, 9, nghieng=True)],
-              nen=CAM_NHAT if noi else XANH_NHAT, vien=CAM if noi else XANH, day=0.05 if noi else 0.035)
-    for i in range(3):
-        s.mui_ten([(xs[i] + w, 2.7), (xs[i + 1] - 0.05, 2.7)], XAM, mui=0.24)
-        s.mui_ten([(xs[3 - i], 7.9), (xs[2 - i] + w + 0.05, 7.9)], XAM, mui=0.24)
-    s.mui_ten([(xs[3] + w / 2, 4.5), (xs[3] + w / 2, 6.05)], XAM, mui=0.24)
-    s.nhan(xs[3] + w / 2 - 1.3, 5.05, "điểm kiểm tra", 9, dam=True, mau=CAM)
-    s.nhan(0.2, 9.9, "Đầu ra: quyết định xử lý từng kết quả; danh mục số theo trạng thái pháp lý", 9.5, dam=True,
+    w, h = 3.55, 3.5
+    s.nhan(0.2, 0.15, "Đầu vào: phiếu khai báo của người nghiên cứu, lập từ khi đề xuất nhiệm vụ", 9.5, dam=True,
            mau=XAM, can="left")
-    s.nhan(0.2, 10.55, "Phân nhánh tại Khâu 2:", 9.5, dam=True, mau=XAM, can="left")
-    nhanh = [("Sáng chế, giải pháp hữu ích", "Giữ bí mật; ân hạn 12 tháng"),
-             ("Kiểu dáng công nghiệp", "Nộp đơn trước trưng bày; ân hạn 6 tháng"),
-             ("Nhãn hiệu", "Tra cứu trước khi sử dụng"),
-             ("Quyền tác giả", "Ghi nhận; đăng ký khi cần chứng cứ"),
-             ("Bí mật kinh doanh", "Biện pháp bảo mật, không nộp đơn")]
+    s.hop(0.2, 0.75, xs[3] + w - 0.2, 0.55, [T("Bảo mật thông tin từ khi khai báo đến khi có ngày nộp đơn hoặc "
+                                                "quyết định công bố", 9.5, True)],
+          nen=CAM_NHAT, vien=CAM, day=0.035, bo=0.1, mau_chu=CAM)
+    tren = [("Khai báo kết quả, lịch công bố dự kiến", "Người nghiên cứu"),
+            ("Sàng lọc, phân nhánh theo loại tài sản", "Đầu mối quản lý khoa học"),
+            ("Tra cứu, đánh giá khả năng bảo hộ", "Bộ phận pháp lý hoặc đại diện sở hữu công nghiệp"),
+            ("Quyết định xử lý; cấp kinh phí từ quỹ phát triển khoa học và công nghệ", "Lãnh đạo trường, bộ phận tài chính")]
+    y1, y2 = 1.55, 6.35
+    for i, (ten, ct) in enumerate(tren):
+        s.hop(xs[i], y1, w, h, [T(f"Khâu {i + 1}", 10.5, True), T(ten, 9.5), T(ct, 8.5, nghieng=True)])
+    for i in range(3):
+        s.mui_ten([(xs[i] + w, y1 + h / 2), (xs[i + 1] - 0.05, y1 + h / 2)], XAM, mui=0.24)
+    duoi = [(3, "Khâu 5", "Nộp đơn hoặc duy trì biện pháp bảo mật; theo dõi, duy trì", "Bộ phận pháp lý"),
+            (2, "Khâu 6", "Công bố, trình diễn sau khi có ngày nộp đơn hoặc quyết định không bảo hộ", "Người nghiên cứu"),
+            (1, "Khâu 7", "Khai thác, phân chia lợi ích theo nguồn hình thành", "Bộ phận hỗ trợ khai thác")]
+    for k, so, ten, ct in duoi:
+        s.hop(xs[k], y2, w, h, [T(so, 10.5, True), T(ten, 9.5), T(ct, 8.5, nghieng=True)])
+    s.mui_ten([(xs[3] + w / 2, y1 + h), (xs[3] + w / 2, y2 - 0.05)], XAM, mui=0.24)
+    for k in (3, 2):
+        s.mui_ten([(xs[k], y2 + h / 2), (xs[k - 1] + w + 0.05, y2 + h / 2)], XAM, mui=0.24)
+    # Điểm kiểm tra: nghiệm thu, đặt bên cạnh luồng chính
+    s.hop(xs[0], y2, w, h, [T("Điểm kiểm tra: nghiệm thu", 10, True),
+                            T("Đối chiếu khai báo, cập nhật tình trạng quyền", 9),
+                            T("Hội đồng nghiệm thu", 8.5, nghieng=True)],
+          nen="white", vien=CAM, gach=True)
+    s.mui_ten([(xs[0] + w / 2, y2 - 0.05), (xs[0] + w / 2, y1 + h + 0.6), (xs[1] + w / 2, y1 + h + 0.6),
+               (xs[1] + w / 2, y1 + h + 0.05)], CAM, day=0.045, mui=0.24, gach=True)
+    s.nhan(xs[0] + w / 2 + 0.15, y1 + h + 0.75, "kết quả chưa khai báo quay lại Khâu 2", 8.5, dam=True, mau=CAM,
+           can="left")
+    s.nhan(xs[3] + w / 2 + 0.1, y1 + h + 0.35, "không chờ", 8.5, dam=True, mau=XAM, can="left")
+    s.nhan(xs[3] + w / 2 + 0.1, y1 + h + 0.8, "nghiệm thu", 8.5, dam=True, mau=XAM, can="left")
+    s.nhan(0.2, 10.1, "Phân nhánh tại Khâu 2:", 9.5, dam=True, mau=XAM, can="left")
+    nhanh = [("Sáng chế, giải pháp hữu ích", "Nộp đơn trước công bố. Nếu người có quyền đăng ký đã bộc lộ: nộp tại "
+              "Việt Nam trong 12 tháng"),
+             ("Kiểu dáng công nghiệp", "Nộp đơn trước trưng bày. Nếu người có quyền đăng ký đã bộc lộ: nộp trong "
+              "6 tháng"),
+             ("Nhãn hiệu", "Tra cứu, nộp đơn trước khi sử dụng"),
+             ("Quyền tác giả", "Phát sinh tự động; đăng ký khi cần chứng cứ"),
+             ("Bí mật kinh doanh", "Duy trì biện pháp bảo mật, không nộp đơn")]
     wn = 2.95
     for i, (ten, cach) in enumerate(nhanh):
-        s.hop(0.2 + i * (wn + 0.1), 11.1, wn, 2.3, [T(ten, 9.5, True), T(cach, 9)], nen="white", vien=XAM, gach=True)
+        s.hop(0.2 + i * (wn + 0.1), 10.65, wn, 3.7, [T(ten, 9.5, True), T(cach, 8.5)], nen="white", vien=XAM,
+              gach=True)
     return s.luu("quy_trinh_bai_bao.png")
 
 
