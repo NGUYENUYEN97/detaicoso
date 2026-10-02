@@ -93,7 +93,8 @@ TAI_LIEU = [
     ("Võ, 2025", "vn",
      "Võ, N. H. P. (2025). Quyền của chủ thể không giữ quyền tài sản đối với các tác phẩm hình thành trong nhà trường, "
      "kinh nghiệm quốc tế để hoàn thiện chính sách sở hữu trí tuệ của các trường đại học tại Việt Nam. *Tạp chí Khoa "
-     "học Đại học Mở Thành phố Hồ Chí Minh*. https://doi.org/10.59266/houjs.2025.606"),
+     "học Đại học Mở Hà Nội*, 75-86. https://doi.org/10.59266/houjs.2025.606"),
+    # Cần bổ sung số tạp chí của bài Võ (2025) khi tra được trang DOI; tên tạp chí và số trang xác định từ bản PDF.
     # --- Tài liệu tiếng nước ngoài ------------------------------------------------------------
     ("Bradley et al., 2013", "nn",
      "Bradley, S. R., Hayter, C. S., & Link, A. N. (2013). Models and methods of university technology transfer. "

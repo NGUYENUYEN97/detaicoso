@@ -317,6 +317,44 @@ def tam_khau():
     return s.luu("tam_khau.png")
 
 
+def quy_trinh_bai_bao():
+    """Hình 1 bài báo chính sách: quy trình phối hợp, chủ thể ghi theo chức năng, không gắn đơn vị của một trường."""
+    s = SoDo(15.5, 13.6)
+    k = [("Khai báo kết quả, đối tượng dự kiến, lịch công bố", "Người nghiên cứu"),
+         ("Sàng lọc sơ bộ, phân nhánh theo loại tài sản", "Đầu mối quản lý khoa học"),
+         ("Tra cứu, đánh giá khả năng bảo hộ, tự do hoạt động", "Bộ phận pháp lý hoặc đại diện sở hữu công nghiệp"),
+         ("Xem xét bảo mật trước khi công bố hoặc trình diễn", "Đầu mối quản lý khoa học"),
+         ("Xác nhận tại nghiệm thu", "Hội đồng nghiệm thu"),
+         ("Quyết định xác lập quyền, dự toán, người đề xuất chi", "Lãnh đạo trường, bộ phận tài chính"),
+         ("Nộp đơn hoặc áp dụng biện pháp bảo mật; theo dõi, duy trì", "Bộ phận pháp lý"),
+         ("Khai thác, phân chia lợi ích theo nguồn hình thành", "Bộ phận hỗ trợ khai thác")]
+    xs = [0.2, 4.05, 7.9, 11.75]
+    w, h = 3.55, 3.6
+    vt = [(xs[i], 0.9) for i in range(4)] + [(xs[3 - i], 6.1) for i in range(4)]
+    s.nhan(0.2, 0.2, "Đầu vào: phiếu khai báo của người nghiên cứu", 9.5, dam=True, mau=XAM, can="left")
+    for i, ((x, y), (ten, chu_tri)) in enumerate(zip(vt, k), 1):
+        noi = i in (4, 5)
+        s.hop(x, y, w, h, [T(f"Khâu {i}", 10.5, True), T(ten, 10, noi), T(chu_tri, 9, nghieng=True)],
+              nen=CAM_NHAT if noi else XANH_NHAT, vien=CAM if noi else XANH, day=0.05 if noi else 0.035)
+    for i in range(3):
+        s.mui_ten([(xs[i] + w, 2.7), (xs[i + 1] - 0.05, 2.7)], XAM, mui=0.24)
+        s.mui_ten([(xs[3 - i], 7.9), (xs[2 - i] + w + 0.05, 7.9)], XAM, mui=0.24)
+    s.mui_ten([(xs[3] + w / 2, 4.5), (xs[3] + w / 2, 6.05)], XAM, mui=0.24)
+    s.nhan(xs[3] + w / 2 - 1.3, 5.05, "điểm kiểm tra", 9, dam=True, mau=CAM)
+    s.nhan(0.2, 9.9, "Đầu ra: quyết định xử lý từng kết quả; danh mục số theo trạng thái pháp lý", 9.5, dam=True,
+           mau=XAM, can="left")
+    s.nhan(0.2, 10.55, "Phân nhánh tại Khâu 2:", 9.5, dam=True, mau=XAM, can="left")
+    nhanh = [("Sáng chế, giải pháp hữu ích", "Giữ bí mật; ân hạn 12 tháng"),
+             ("Kiểu dáng công nghiệp", "Nộp đơn trước trưng bày; ân hạn 6 tháng"),
+             ("Nhãn hiệu", "Tra cứu trước khi sử dụng"),
+             ("Quyền tác giả", "Ghi nhận; đăng ký khi cần chứng cứ"),
+             ("Bí mật kinh doanh", "Biện pháp bảo mật, không nộp đơn")]
+    wn = 2.95
+    for i, (ten, cach) in enumerate(nhanh):
+        s.hop(0.2 + i * (wn + 0.1), 11.1, wn, 2.3, [T(ten, 9.5, True), T(cach, 9)], nen="white", vien=XAM, gach=True)
+    return s.luu("quy_trinh_bai_bao.png")
+
+
 def lo_trinh():
     s = SoDo(15.5, 7.4)
     gd = [("Giai đoạn 1", "Quý IV/2026 - quý II/2027", XANH, XANH_NHAT,

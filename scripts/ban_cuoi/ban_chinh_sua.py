@@ -390,6 +390,8 @@ def tai_lieu_ngang(tieu_de, mo_ta):
     st.font.name = "Times New Roman"
     st.element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
     st.font.size = Pt(11)
+    for z in d.settings.element.findall(qn("w:zoom")):
+        z.set(qn("w:percent"), "100")  # mẫu mặc định của python-docx thiếu thuộc tính bắt buộc này
     s = d.sections[0]
     s.orientation = WD_ORIENT.LANDSCAPE
     s.page_width, s.page_height = Cm(29.7), Cm(21.0)
