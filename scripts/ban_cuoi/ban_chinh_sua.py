@@ -165,9 +165,12 @@ GIAI_TRINH_HINH = [
     ("Chương 3, Hình 3.2",
      "Quy trình 8 khâu từ ý tưởng đến thương mại hóa, khâu 4 rà soát tại nghiệm thu là mắt xích quyết định",
      "Quy trình 8 khâu từ khai báo đến khai thác: khai báo; sàng lọc, phân nhánh; tra cứu; xem xét bảo mật trước khi công "
-     "bố hoặc trình diễn; xác nhận tại nghiệm thu; quyết định xác lập quyền và dự toán; nộp đơn hoặc bảo mật, theo dõi; "
-     "khai thác. Bổ sung 5 nhánh: sáng chế, giải pháp hữu ích; kiểu dáng; nhãn hiệu; quyền tác giả; bí mật kinh doanh",
-     "Góp ý mục 8: bước nhận diện, tra cứu, bảo mật trước công bố; phân nhánh theo đối tượng"),
+     "bố hoặc trình diễn; kiểm tra tại nghiệm thu, cập nhật tình trạng quyền; quyết định xác lập quyền và cấp kinh phí; "
+     "nộp đơn hoặc bảo mật, theo dõi; khai thác. Thêm luồng sớm từ Khâu 3 sang thẳng Khâu 6 cho kết quả cần nộp đơn "
+     "trước khi công bố, không chờ nghiệm thu. Bổ sung 5 nhánh: sáng chế, giải pháp hữu ích; kiểu dáng; nhãn hiệu; quyền "
+     "tác giả; bí mật kinh doanh",
+     "Góp ý mục 8: bước nhận diện, tra cứu, bảo mật trước công bố; phân nhánh theo đối tượng. Góp ý lần 2 mục 1: nộp đơn "
+     "sớm không chờ nghiệm thu"),
     ("Chương 3, Hình 3.3",
      "Lộ trình: quy chế hợp nhất, nhân sự chuyên trách, dòng kinh phí; doanh nghiệp quản lý tài sản trí tuệ vận hành từ "
      "2029",
@@ -294,11 +297,44 @@ CAN_CU_RIENG = [
 ]
 
 
+# Góp ý lần 2 (tháng 10 năm 2026): căn cứ được ghép thêm khi phần thay đổi chứa nội dung tương ứng.
+LAN2 = [
+    (r"luồng sớm|luồng thường|Kiểm tra tại nghiệm thu|không chờ đến nghiệm thu|trước hoặc sau nghiệm thu|"
+     r"không phân biệt đã nghiệm thu|trước nghiệm thu",
+     "Góp ý lần 2 mục 1: kết quả đã sàng lọc, đánh giá tại Khâu 2, Khâu 3 được quyết định đăng ký, cấp kinh phí, nộp đơn "
+     "trước công bố; nghiệm thu là bước kiểm tra; Điều 35 Quyết định 213 không đặt điều kiện đã nghiệm thu"),
+    (r"chưa xác định được trường hợp|tự nó chưa cho thấy|có thể là một yếu tố|chưa đủ để xác định|nêu giả thuyết|"
+     r"gợi ý điểm nghẽn|hồ sơ được tiếp cận|có thể đang cản trở|có thể liên quan",
+     "Góp ý lần 2 mục 2: phân biệt chưa tìm thấy với không có, yếu tố có thể cản trở với nguyên nhân cốt lõi, chưa xác "
+     "định được xung đột với không xung đột"),
+    (r"thăm dò|họ tên duy nhất|trùng họ tên|danh sách giảng viên năm|đơn vị đếm là người",
+     "Góp ý lần 2 mục 3: đơn vị đếm là người, người trùng họ tên không gán bài; phân tích thăm dò trên danh sách nhân "
+     "sự năm 2026, dùng danh sách năm 2026 làm mẫu số theo ý kiến chủ nhiệm đề tài"),
+    (r"phân nhóm|phân loại pháp lý|liệt kê các nhóm quyền|Điều 138|Điều 141|Điều 143|căn cứ xác lập|Điều 93|Điều 84|"
+     r"Điều 6 Luật|khoản 4 Điều 4|chuyển nhượng hoặc chuyển quyền sử dụng",
+     "Góp ý lần 2 mục 4: Điều 4, Điều 6, Điều 27, Điều 45, Điều 47, Điều 84, Điều 93, Điều 138, Điều 140, Điều 141, Điều "
+     "143, Điều 144 Luật Sở hữu trí tuệ, Văn bản hợp nhất số 67/VBHN-VPQH"),
+    (r"267/2025", "Góp ý lần 2 mục 5: Nghị định số 267/2025/NĐ-CP, Điều 17, Điều 32, Điều 33, Điều 34, Điều 55, Điều 56"),
+    (r"phân quyền|được phép công bố|quản lý nội bộ", "Góp ý lần 2 mục 6: số hóa để quản lý nội bộ, chỉ công khai dữ "
+                                                    "liệu được phép công bố, phân quyền hồ sơ chưa nộp đơn"),
+    (r"Trường Đại học Mở Hà Nội", "Góp ý lần 2 mục 7: trang bài báo gốc, DOI 10.59266/houjs.2025.606"),
+]
+
+
+def _can_cu_lan2(cu, moi):
+    goc = phan_thay_doi(cu, moi) if cu and moi else moi + " " + cu
+    return [cc for mau, cc in LAN2 if re.search(mau, goc)]
+
+
 def can_cu(cu, moi):
+    goc = None
     for dau, cc in CAN_CU_RIENG:
         if moi.startswith(dau):
-            return cc
-    return _can_cu_tu_khoa(cu, moi)
+            goc = cc
+            break
+    if goc is None:
+        goc = _can_cu_tu_khoa(cu, moi)
+    return "; ".join([goc] + _can_cu_lan2(cu, moi))
 
 
 def so_sanh_doan(cu, moi):
@@ -469,7 +505,8 @@ CHUA_DU = [
     ("Quy chế chi tiêu nội bộ áp dụng giai đoạn 2021 - 2025", "Chỉ có quy chế ban hành 01/8/2026",
      "Chưa đánh giá được vai trò của cơ chế khuyến khích đối với kết quả của kỳ", "Quy chế chi tiêu các năm 2021 - 2025"),
     ("Chế độ lợi ích của hai đề tài cấp quốc gia phê duyệt trước 01/10/2025", "Không có Luật Khoa học và công nghệ năm "
-     "2013, văn bản hướng dẫn và hợp đồng tài trợ", "Chỉ xác định được khung chuyển tiếp tại khoản 3, khoản 7 Điều 73",
+     "2013, văn bản hướng dẫn và hợp đồng tài trợ", "Chỉ xác định được khung chuyển tiếp tại khoản 3, khoản 7 Điều 73 Luật số 93/2025/QH15 và khoản 2, khoản 3 Điều 56 "
+     "Nghị định số 267/2025/NĐ-CP",
      "Hợp đồng tài trợ, quyết định phê duyệt, văn bản hướng dẫn có hiệu lực tại thời điểm phê duyệt"),
     ("Mức độ thực hiện Điều 10, Điều 11 Quyết định 217", "Chưa thấy biểu mẫu khai báo, hồ sơ theo dõi dùng chung",
      "Nguyên nhân chủ quan được trình bày dưới dạng giả thuyết", "Biểu mẫu, sổ theo dõi do Phòng Khoa học Công nghệ "
@@ -485,6 +522,12 @@ CHUA_DU = [
     ("Ký hiệu, số, ngày của quy chế nội bộ", "Bìa Quy chế ghi Quyết định 213/QĐ-ĐHTĐ, Kế hoạch 07 ghi Nghị quyết "
      "213/NQ-ĐHTĐ; tệp Quy chế sở hữu trí tuệ không ghi số, ngày", "Ảnh hưởng cách trích dẫn văn bản",
      "Bản ký, đóng dấu của Quyết định 213 và Quyết định 217"),
+    ("Danh sách nhân sự, giảng viên từng năm 2021 - 2025 có mã nhân sự", "Chỉ có danh sách năm 2026, không có mã liên "
+     "kết với danh mục bài báo", "Tỷ lệ người có công bố, hệ số Gini là phân tích thăm dò; 12 người thuộc 6 nhóm trùng "
+     "họ tên không gán được bài; chỉ số bài trên giảng viên năm 2025 dùng mẫu số năm 2026",
+     "Danh sách nhân sự từng năm có mã nhân sự; danh mục bài báo có mã tác giả"),
+    ("Số tạp chí của bài Võ (2025)", "Bản PDF có trang 75 - 86 và DOI, không in số tạp chí", "Mục tài liệu tham khảo "
+     "chưa đủ yếu tố APA", "Trang bài báo trên jshou.edu.vn"),
     ("Thuyết minh đề tài được phê duyệt", "Các tệp thuyết minh không có mã số, quyết định giao", "Không dùng làm căn cứ "
      "cho nội dung đã phê duyệt", "Thuyết minh kèm quyết định giao nhiệm vụ"),
 ]

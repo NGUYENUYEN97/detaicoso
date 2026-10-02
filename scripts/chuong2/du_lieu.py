@@ -70,16 +70,22 @@ DON_VI_SAN_LUONG = [
     ("Viện NCGD và CGTT", 6, 3, 0, 17),
     ("Ban GDCB", 12, 3, 6, 34),
 ]
-# Người có bài báo - tái lập bằng scripts/ra_soat/so_khop_tac_gia.py (chỉ xuất số tổng hợp).
-# Quy tắc chính A: giữ dấu, đúng thứ tự họ tên; 252 nhân sự còn 246 tên khác nhau do 6 trường hợp trùng họ tên.
+# Người có bài báo - tái lập bằng scripts/ra_soat/so_khop_tac_gia.py (chỉ xuất số tổng hợp). Phân tích thăm dò trên
+# danh sách nhân sự năm 2026. Đơn vị đếm là người: 252 người, trong đó 240 người có họ tên duy nhất; 12 người thuộc 6
+# nhóm trùng họ tên được đếm riêng, không gán bài báo vì danh mục bài báo không có thông tin định danh để phân biệt
+# (đối chiếu số CCCD, ngày sinh cho thấy đây là những người khác nhau; chỉ dùng ở dạng tổng hợp).
+# Quy tắc chính A: giữ dấu, đúng thứ tự họ tên.
 NHAN_SU_TONG = 252
-NHAN_SU_CO_TEN = 246
-NHAN_SU_CO_BAI = 87
+NHAN_SU_TEN_DUY_NHAT = 240
+NHAN_SU_TRUNG_TEN = 12
+NHOM_TRUNG_TEN = 6
+NHAN_SU_TRUNG_TEN_CO_TRONG_BAI = 8
+NHAN_SU_CO_BAI = 83
 BAI_KHOP = 256
-GINI_BAI = 0.832
-TOP10_BAI = 0.397
+GINI_BAI = 0.836
+TOP10_BAI = 0.383
 # Độ nhạy, quy tắc B: bỏ dấu, đúng thứ tự (nhận cả tên tác giả viết không dấu trong bài quốc tế).
-DO_NHAY_B = dict(bai_khop=340, co_bai=103, gini=0.822)
+DO_NHAY_B = dict(bai_khop=340, co_bai=99, gini=0.827)
 
 # ---------------------------------------------------------------------------
 # 4. Đề tài cấp cơ sở - nguồn: "Tổng hợp đề tài KHCN cấp cơ sở của GV

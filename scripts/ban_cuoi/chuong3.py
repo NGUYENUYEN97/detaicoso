@@ -248,13 +248,15 @@ THACH_THUC = [
     "**1. Yêu cầu tuân thủ tăng từ ngày 15 tháng 11 năm 2026:** nội dung quản trị bắt buộc về sở hữu trí tuệ, liêm chính "
     "khoa học, liêm chính học thuật; dữ liệu kết quả hoạt động phải nhất quán trên HEMIS; kết quả tự đánh giá phải công bố "
     "trước ngày 31 tháng 5 hằng năm.",
-    "**2. Sức ép công bố quốc tế:** ngưỡng công bố WoS, Scopus là 0,3 trên một giảng viên quy đổi, ước tính năm 2025 của Nhà "
-    "trường khoảng 0,31 và văn bằng không được tính; nguy cơ công bố trước khi nộp đơn làm mất tính mới sau mười hai tháng.",
+    "**2. Sức ép công bố quốc tế:** ngưỡng công bố WoS, Scopus là 0,3 trên một giảng viên quy đổi; nếu tính trên danh sách "
+    "giảng viên năm 2026, chỉ số năm 2025 của Nhà trường ước khoảng 0,31, sát ngưỡng, và văn bằng không được tính; nguy cơ công bố trước khi nộp đơn làm mất tính mới sau mười hai tháng.",
     "**3. Thủ tục dài, chi phí tự cân đối:** thẩm định hình thức, công bố đơn, thẩm định nội dung theo Điều 119 Luật Sở hữu "
     "trí tuệ kéo dài nhiều tháng, phát sinh chi phí "
     "tra cứu, soạn đơn, lệ phí và duy trì; là trường tư thục, Nhà trường phải tự cân đối từ nguồn thu của mình.",
-    "**4. Pháp luật thay đổi nhanh, hướng dẫn chưa đồng bộ:** sáu văn bản lớn trong giai đoạn 2025 - 2026; bảng tổng hợp "
-    "cuối Phụ lục II Thông tư số 83/2026/TT-BGDĐT chưa nêu giải pháp hữu ích dù công thức đã tính.",
+    "**4. Pháp luật thay đổi nhanh, cần đối chiếu liên văn bản:** nhiều luật, nghị định, thông tư mới được ban hành "
+    "trong giai đoạn 2025 - 2026, trong đó Nghị định số 267/2025/NĐ-CP đã quy định chi tiết việc giao quyền, thương mại "
+    "hóa và phân chia lợi nhuận; quy chế nội bộ phải được đối chiếu đồng thời với các văn bản này. Bảng tổng hợp cuối "
+    "Phụ lục II Thông tư số 83/2026/TT-BGDĐT chưa nêu giải pháp hữu ích dù công thức đã tính.",
     "**5. Yêu cầu tự chủ năng lực và rủi ro tranh chấp:** cần năng lực tự tra cứu, soạn đơn để phát triển tài sản đơn sở "
     "hữu; nguy cơ tranh chấp đối với sản phẩm đồng sáng tạo giữa giảng viên, người học, doanh nghiệp và sản phẩm có sử "
     "dụng trí tuệ nhân tạo.",
@@ -289,8 +291,8 @@ KET_HOP = [
      "giữ ngưỡng công bố quốc tế vừa không mất tính mới; dùng Quyết định 217 làm nền cho nội dung quản trị bắt buộc về sở "
      "hữu trí tuệ và liêm chính.", "Giải pháp 1, 3"],
     ["Giảm điểm yếu và phòng tránh thách thức",
-     "Lập danh mục số tài sản trí tuệ liên thông với báo cáo trên HEMIS và Nền tảng số quốc gia; lập dự toán phí xác lập "
-     "quyền và giao đầu mối; đào tạo giảng viên về bộc lộ an toàn trước khi công bố.", "Giải pháp 2, 4, 5"],
+     "Lập danh mục số tài sản trí tuệ để quản lý nội bộ, có phân quyền truy cập, và trích dữ liệu được phép công bố cho "
+     "báo cáo trên HEMIS, Nền tảng số quốc gia; lập dự toán phí xác lập quyền và giao đầu mối; đào tạo giảng viên về bộc lộ an toàn trước khi công bố.", "Giải pháp 2, 4, 5"],
 ]
 
 KET_HOP_SAU = (
@@ -338,7 +340,7 @@ BANG_CHI_SO = dict(
           ["Sàng lọc",
            "4. Tỷ lệ đề tài nghiệm thu có phiếu rà soát\n5. Số kết quả được khai báo và sàng lọc mỗi năm\n6. Tỷ lệ kết quả "
            "thuộc nhánh sáng chế, giải pháp hữu ích, kiểu dáng được xem xét bảo mật trước khi công bố\n7. Thời gian từ "
-           "phiếu rà soát đến quyết định xác lập quyền",
+           "khi có kết quả đánh giá tại Khâu 3 đến quyết định xác lập quyền, tách theo luồng sớm và luồng thường",
            "Phiếu khai báo, phiếu rà soát; danh mục số tài sản trí tuệ",
            "100% từ năm 2027\nTheo dõi, làm căn cứ quyết định nhân sự\n100%\nKhông quá 15 ngày làm việc"],
           ["Đơn nộp",
@@ -356,7 +358,7 @@ BANG_CHI_SO = dict(
            "12. Số hợp đồng chuyển giao, cấp phép\n13. Nguồn thu từ khai thác và khoản chi trả cho tác giả, tách theo "
            "thưởng, thù lao, nhuận bút",
            "Hợp đồng; sổ kế toán",
-           "Từ 01 hợp đồng mỗi năm theo mục 1.12 Kế hoạch 07/KH-ĐHTĐ\nTheo dõi và công khai hằng năm"]],
+           "Từ 01 hợp đồng mỗi năm theo mục 1.12 Kế hoạch 07/KH-ĐHTĐ\nTheo dõi hằng năm; công khai số liệu tổng hợp"]],
     nguon="Nguồn: Nhóm nghiên cứu đề xuất. Mục tiêu về đơn và văn bằng là mức tham khảo, cần được điều chỉnh sau thí điểm; "
           "văn bằng chỉ được cấp sau các giai đoạn thẩm định theo Điều 119 Luật Sở hữu trí tuệ nên được đánh giá chậm hơn "
           "các tầng sàng lọc và đơn nộp.",
@@ -388,7 +390,8 @@ BANG_TRIEN_KHAI = dict(
            "tri thức", "Quỹ nghiên cứu khoa học; nguồn thu dịch vụ khoa học công nghệ",
            "Dự toán từ năm 2027; phương án khai thác ở giai đoạn 2",
            "Dòng dự toán, quy định tạm ứng; đề xuất sửa Quy chế chi tiêu; phương án tổ chức khai thác",
-           "Thời gian từ phiếu đến nộp đơn; chỉ số 12, 13 tại Bảng 3.4; điều kiện chuyển bước"],
+           "Thời gian từ kết quả Khâu 3 đến nộp đơn, kể cả đơn nộp trước nghiệm thu; chỉ số 12, 13 tại Bảng 3.4; điều kiện "
+           "chuyển bước"],
           ["**Giải pháp 5.** Hạn chế thứ nhất về kỹ năng nhận diện; giáo trình chưa đăng ký",
            "Phòng Khoa học Công nghệ; Phòng Đào tạo, Viện Nghiên cứu giáo dục và Chuyển giao tri thức",
            "Kinh phí đào tạo thường xuyên; chuyên gia bên ngoài", "Từ năm 2027; học phần từ năm học 2027 - 2028",
@@ -798,8 +801,8 @@ SUA_LAN6 = [
 SO_DO = {
     "[[HINH_PHOI_HOP]]": ("Mô hình phối hợp liên phòng ban trong quản lý quyền sở hữu trí tuệ", "phoi_hop.png",
                           "Nguồn: Nhóm nghiên cứu đề xuất trên cơ sở Điều 11 Quyết định 217 và thực trạng tại Mục 2.2.2."),
-    "[[HINH_TAM_KHAU]]": ("Quy trình 8 khâu quản lý tài sản trí tuệ từ khai báo đến khai thác, kèm phân nhánh theo loại "
-                          "đối tượng", "tam_khau.png",
+    "[[HINH_TAM_KHAU]]": ("Quy trình 8 khâu quản lý tài sản trí tuệ từ khai báo đến khai thác, kèm luồng nộp đơn sớm và "
+                          "phân nhánh theo loại đối tượng", "tam_khau.png",
                           "Nguồn: Nhóm nghiên cứu đề xuất."),
     "[[HINH_LO_TRINH]]": ("Lộ trình triển khai hệ thống giải pháp giai đoạn 2026 - 2030", "lo_trinh.png",
                           "Nguồn: Nhóm nghiên cứu đề xuất."),
@@ -871,6 +874,7 @@ def noi_dung(v, so_hinh_kh=10):
     v.doan("h1", "TIỂU KẾT CHƯƠNG 3")
     v.than_md(*TIEU_KET)
     sua_lan6(v.doc, tu, so_hinh_kh)
+    sua_lan7(v.doc, tu)
     assert v.so_bang == 4, v.so_bang
 
 
@@ -882,6 +886,155 @@ def sua_lan6(doc, tu, so_hinh_kh):
         if isinstance(moi, str):
             moi = moi.replace("{SO_HINH_KH}", str(so_hinh_kh))
         thay_doan(doc, bat_dau, moi, tu=tu)
+
+
+# Lượt chỉnh sửa lần 7 theo góp ý về quy trình nộp đơn sớm, mức độ kết luận, Nghị định số 267/2025/NĐ-CP và dữ liệu
+# công khai. Mỗi mục: (đầu đoạn, [(cụm cũ, cụm mới)], [đoạn mới chèn sau]).
+SUA_LAN7 = [
+    # 3.1.1: bổ sung Nghị định số 267/2025/NĐ-CP
+    ("Thứ ba, Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 có hiệu lực",
+     [("như phân tích tại Mục 2.2.1.",
+       "như phân tích tại Mục 2.2.1. Nghị định số 267/2025/NĐ-CP, có hiệu lực từ ngày 14 tháng 10 năm 2025, quy định chi "
+       "tiết các nội dung này: khoản 2 Điều 32 giao tự động quyền sở hữu phần kết quả tương ứng với kinh phí ngân sách nhà "
+       "nước cho tổ chức chủ trì không phải là đơn vị công lập, như Nhà trường, và yêu cầu theo dõi riêng thông tin về kết "
+       "quả; Điều 34 yêu cầu phân chia lợi nhuận công khai, minh bạch, quy định tổ chức trung gian, môi giới hưởng tối "
+       "thiểu 10% lợi nhuận khi các bên không có thỏa thuận khác, và phần thưởng giữa các đồng tác giả được chia theo thỏa "
+       "thuận của họ.")], []),
+    # 3.1.2: mức độ kết luận
+    ("Kết quả phân tích tại Chương 2 cho thấy các quy định nội bộ liên quan đến lợi ích",
+     [("Các quy định này chưa xung đột trong cùng một tình huống, nhưng chưa làm rõ",
+       "Qua đối chiếu theo từng tình huống, Đề tài chưa xác định được trường hợp các quy định này áp dụng không tương "
+       "thích cho cùng một tài sản; tuy vậy, các quy định chưa làm rõ"),
+      ("cần được rà soát theo Điều 28, Điều 73 Luật số 93/2025/QH15 đối với",
+       "cần được rà soát theo Điều 28, Điều 73 Luật số 93/2025/QH15 và Điều 34 Nghị định số 267/2025/NĐ-CP đối với")],
+     []),
+    # 3.2: nguyên tắc
+    ("Dữ liệu thực trạng tại Chương 2 cho thấy điểm nghẽn nằm ở khâu nối",
+     [("Dữ liệu thực trạng tại Chương 2 cho thấy điểm nghẽn nằm ở khâu nối giữa nghiệm thu và đăng ký",
+       "Dữ liệu thực trạng tại Chương 2 gợi ý điểm nghẽn nằm ở khâu nối giữa kết quả nghiên cứu và đăng ký"),
+      ("trong khi năng lực công bố tập trung ở một nhóm nhỏ với hệ số Gini 0,832. Điểm nghẽn này liên quan đồng thời",
+       "trong khi phân tích thăm dò trên danh sách nhân sự năm 2026 cho thấy hoạt động công bố tập trung ở một nhóm "
+       "tương đối nhỏ. Điểm nghẽn này có thể liên quan đồng thời"),
+      ("năng lực đầu mối và dữ liệu.",
+       "năng lực đầu mối và dữ liệu; mức độ tác động của từng yếu tố cần được kiểm chứng trong quá trình triển khai.")],
+     []),
+    # 3.2.3: mục tiêu
+    ("Thực trạng tại Chương 2 cho thấy 9 đề tài có sản phẩm tiềm năng",
+     [("và Đề tài nhận định khoảng trống kỹ thuật: thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu.",
+       "và Đề tài nêu giả thuyết rằng việc thiếu bước sàng lọc trước khi công bố và tại nghiệm thu có thể là một yếu tố "
+       "cản trở."),
+      ("với cách xử lý phù hợp từng loại đối tượng.",
+       "với cách xử lý phù hợp từng loại đối tượng. Kết quả cần được bảo vệ trước khi công bố phải được quyết định đăng "
+       "ký và cấp kinh phí ngay trong quá trình nghiên cứu, không chờ đến nghiệm thu.")], []),
+    ("Ban hành Quy trình chuẩn 8 khâu quản lý tài sản trí tuệ",
+     [("được tóm tắt tại hình dưới đây và mô tả cụ thể sau đó.",
+       "được tóm tắt tại hình dưới đây và mô tả cụ thể sau đó. Quy trình có hai luồng. Luồng sớm áp dụng cho kết quả đã "
+       "được sàng lọc và đánh giá tại Khâu 2, Khâu 3 và cần nộp đơn trước khi công bố hoặc trình diễn: hồ sơ được chuyển "
+       "thẳng sang Khâu 6 để quyết định đăng ký, cấp kinh phí và nộp đơn, kể cả khi đề tài đang thực hiện. Luồng thường "
+       "áp dụng cho các kết quả còn lại và đi qua Khâu 5. Nghiệm thu là bước kiểm tra, cập nhật tình trạng quyền, không "
+       "phải điều kiện để quyết định đăng ký. Cách làm này phù hợp Điều 35 Quyết định 213, vốn không đặt điều kiện đã "
+       "nghiệm thu đối với việc tác giả nộp đơn tại Phòng Khoa học Công nghệ.")], []),
+    ("Khâu 4:",
+     [("Phòng thông báo công bố, trì hoãn công bố hoặc yêu cầu nộp đơn trước theo Điều 11, hoặc yêu cầu người tham gia ký "
+       "cam kết bảo mật.",
+       "Phòng thông báo công bố, trì hoãn công bố hoặc yêu cầu nộp đơn trước theo Điều 11, hoặc yêu cầu người tham gia ký "
+       "cam kết bảo mật. Khi yêu cầu nộp đơn trước, Phòng chuyển hồ sơ đã có kết quả đánh giá tại Khâu 3 sang Khâu 6 theo "
+       "luồng sớm, và việc công bố chỉ được thực hiện sau khi đã có ngày nộp đơn.")], []),
+    ("Khâu 5:",
+     [("Xác nhận tại nghiệm thu.", "Kiểm tra tại nghiệm thu."),
+      ("kết quả sàng lọc tại Khâu 2 và Khâu 3, đề xuất hướng xử lý. Hội đồng nghiệm thu xác nhận phiếu rà soát; kết quả "
+       "được đề xuất đăng ký được chuyển sang Khâu 6 trong thời hạn quy định.",
+       "kết quả sàng lọc tại Khâu 2 và Khâu 3, tình trạng quyền của các kết quả đã đi theo luồng sớm như đã nộp đơn, đã có "
+       "số đơn, đã chấp nhận đơn hợp lệ, và đề xuất hướng xử lý. Nghiệm thu không phải điều kiện để quyết định đăng ký hay "
+       "cấp kinh phí: Hội đồng nghiệm thu kiểm tra việc khai báo đã đầy đủ chưa, phát hiện kết quả chưa được khai báo, "
+       "xác nhận tình trạng quyền và mức độ đóng góp của các thành viên. Đối với nhiệm vụ sử dụng ngân sách nhà nước, hồ sơ "
+       "đánh giá cuối kỳ có văn bản xác định mức độ đóng góp của thành viên, có xác nhận của các thành viên, để làm căn cứ "
+       "phân chia lợi nhuận theo điểm g khoản 2 Điều 17 Nghị định số 267/2025/NĐ-CP; đề tài cấp cơ sở áp dụng cùng cách "
+       "làm. Kết quả chưa được xử lý trong quá trình nghiên cứu và được đề xuất đăng ký được chuyển sang Khâu 6 theo luồng "
+       "thường.")], []),
+    ("Khâu 6:",
+     [("Quyết định xác lập quyền và dự toán. Trên cơ sở phiếu rà soát, Phòng Khoa học Công nghệ",
+       "Quyết định xác lập quyền và cấp kinh phí. Khâu này nhận hồ sơ từ hai luồng: luồng sớm, gồm kết quả đã được đánh giá "
+       "khả năng bảo hộ tại Khâu 3 và cần nộp đơn trước khi công bố, trình diễn, kể cả khi đề tài đang thực hiện; luồng "
+       "thường, gồm kết quả được đề xuất tại Khâu 5. Phòng Khoa học Công nghệ"),
+      ("Thời hạn từ khi có phiếu rà soát đến khi có quyết định không quá 15 ngày làm việc.",
+       "Thời hạn từ khi có kết quả đánh giá tại Khâu 3 đối với luồng sớm, hoặc từ khi có phiếu rà soát đối với luồng "
+       "thường, đến khi có quyết định không quá 15 ngày làm việc; với luồng sớm, quyết định phải được ban hành và đơn phải "
+       "được nộp trước ngày công bố dự kiến.")], []),
+    ("Phiếu khai báo và phiếu rà soát được ban hành kèm quy trình",
+     [("danh mục số tài sản trí tuệ dùng chung giữa Phòng Khoa học Công nghệ, Bộ phận Pháp chế và bộ phận quản trị thương "
+       "hiệu;",
+       "danh mục số tài sản trí tuệ dùng chung giữa Phòng Khoa học Công nghệ, Bộ phận Pháp chế và bộ phận quản trị thương "
+       "hiệu, có phân quyền truy cập: hồ sơ chưa nộp đơn, bí mật kinh doanh và thông tin bị ràng buộc bởi hợp đồng chỉ "
+       "người được giao xử lý mới truy cập được; danh mục theo dõi riêng kết quả hình thành từ ngân sách nhà nước theo "
+       "khoản 2 Điều 32 Nghị định số 267/2025/NĐ-CP;")], []),
+    # 3.2.1
+    ("- Về lợi ích của tác giả và phân chia nguồn thu:",
+     [("Quy chế không áp một công thức chung cho mọi tài sản và mọi nguồn kinh phí.",
+       "Quy chế không áp một công thức chung cho mọi tài sản và mọi nguồn kinh phí. Quy chế cần kèm mẫu thỏa thuận phân "
+       "chia phần thưởng giữa các đồng tác giả, vì theo khoản 5 Điều 28 Luật số 93/2025/QH15 và khoản 3 Điều 34 Nghị định "
+       "số 267/2025/NĐ-CP, phần thưởng là mức dành chung cho các đồng tác giả và được chia theo thỏa thuận giữa họ; mẫu "
+       "này dùng chung với văn bản xác định mức độ đóng góp lập tại Khâu 5 của Giải pháp 3.")], []),
+    # 3.2.4
+    ("Chương 2 cho thấy quy chế đã có căn cứ chi cho bước xác lập quyền",
+     [("thanh toán khi đơn được nộp sau nghiệm thu,", "thanh toán khi đơn được nộp trước hoặc sau nghiệm thu,")], []),
+    ("Nội dung 1: Lập dòng dự toán hằng năm cho phí xác lập quyền",
+     [("cho các kết quả đã qua Khâu 5, kể cả khi đề tài đã quyết toán;",
+       "cho các kết quả đã được đánh giá khả năng bảo hộ tại Khâu 3 và có quyết định tại Khâu 6, trong thời gian thực "
+       "hiện đề tài hoặc sau nghiệm thu, kể cả khi đề tài đã quyết toán; khoản chi cho đơn nộp trước nghiệm thu được chi từ "
+       "dòng dự toán này, không trừ vào kinh phí của đề tài;"),
+      ("thời hạn đề xuất trong 15 ngày làm việc kể từ khi có phiếu rà soát,",
+       "thời hạn đề xuất trong 15 ngày làm việc kể từ khi có kết quả đánh giá tại Khâu 3 đối với luồng sớm, hoặc từ khi "
+       "có phiếu rà soát đối với luồng thường,"),
+      ("đối với sản phẩm đề tài cấp cơ sở đã qua Khâu 5.",
+       "đối với sản phẩm đề tài cấp cơ sở đã được đánh giá tại Khâu 3, không phân biệt đã nghiệm thu hay chưa.")], []),
+    ("Nội dung 3: Chuẩn bị phương án tổ chức khai thác theo giai đoạn.",
+     [("và hợp đồng thuê tổ chức tư vấn bên ngoài.",
+       "và hợp đồng thuê tổ chức tư vấn bên ngoài; hợp đồng với tổ chức trung gian, môi giới cần thỏa thuận rõ mức hưởng, "
+       "vì khi không có thỏa thuận, khoản 2 Điều 34 Nghị định số 267/2025/NĐ-CP dành cho tổ chức này tối thiểu 10% lợi "
+       "nhuận thu được.")], []),
+    # 3.2.5
+    ("Nội dung 4: Phát hành Cẩm nang sở hữu trí tuệ",
+     [("Xây dựng Chuyên trang Cơ sở dữ liệu số tài sản trí tuệ trên cổng thông tin điện tử của Nhà trường để tôn vinh tác "
+       "giả, minh bạch hóa thông tin và sẵn sàng kết nối với Nền tảng số quốc gia theo điểm đ khoản 3 Điều 28 Luật Giáo dục "
+       "đại học số 125/2025/QH15 và cung cấp dữ liệu cho báo cáo trên HEMIS.",
+       "Xây dựng Chuyên trang giới thiệu tài sản trí tuệ trên cổng thông tin điện tử của Nhà trường để tôn vinh tác giả và "
+       "giới thiệu tài sản sẵn sàng chuyển giao; chuyên trang chỉ đăng thông tin đã được phép công bố, tách khỏi danh mục "
+       "số dùng cho quản lý nội bộ tại Giải pháp 3. Dữ liệu được phép công bố được trích từ danh mục số để kết nối với Nền "
+       "tảng số quốc gia theo điểm đ khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15 và cung cấp cho báo cáo trên "
+       "HEMIS.")], []),
+    # 3.3 thí điểm
+    ("Thí điểm dưới đây là kế hoạch, chưa được triển khai.",
+     [("Đề tài đề xuất thí điểm Khâu 1, Khâu 4 và Khâu 5 của quy trình, gồm phiếu khai báo, xem xét bảo mật trước khi công "
+       "bố và phiếu rà soát tại nghiệm thu,",
+       "Đề tài đề xuất thí điểm Khâu 1, Khâu 4, Khâu 5 và luồng sớm từ Khâu 3 sang Khâu 6 của quy trình, gồm phiếu khai "
+       "báo, xem xét bảo mật trước khi công bố, quyết định đăng ký và cấp kinh phí trước nghiệm thu khi cần, và phiếu rà "
+       "soát tại nghiệm thu,")], []),
+    ("Mục đích của việc thí điểm bao gồm:",
+     [("số đề xuất đăng ký, số đơn được nộp và thời gian xử lý.",
+       "số đề xuất đăng ký, số đơn được nộp theo từng luồng và thời gian xử lý của mỗi luồng.")], []),
+    # 3.4.1 lộ trình
+    ("- Hoàn thiện Chuyên trang Cơ sở dữ liệu số tài sản trí tuệ",
+     [("- Hoàn thiện Chuyên trang Cơ sở dữ liệu số tài sản trí tuệ, sẵn sàng kết nối với Nền tảng số quốc gia.",
+       "- Hoàn thiện danh mục số tài sản trí tuệ có phân quyền truy cập; chuẩn bị trích xuất dữ liệu được phép công bố để "
+       "kết nối với Nền tảng số quốc gia và báo cáo trên HEMIS.")], []),
+    ("- Số hóa toàn bộ dữ liệu tài sản trí tuệ",
+     [("- Số hóa toàn bộ dữ liệu tài sản trí tuệ và công khai minh bạch hằng năm trên Nền tảng số quốc gia.",
+       "- Số hóa đầy đủ dữ liệu tài sản trí tuệ để quản lý nội bộ; hằng năm chỉ công khai dữ liệu được phép công bố, gồm "
+       "văn bằng đã cấp, đơn đã được công bố chính thức và số liệu tổng hợp; hồ sơ chưa nộp đơn, bí mật kinh doanh và "
+       "thông tin bị ràng buộc bởi hợp đồng được giới hạn quyền truy cập.")], []),
+    ("- Ban hành Quy chế quản trị tài sản trí tuệ sửa đổi trước ngày 31 tháng 5 năm 2027",
+     [("theo Điều 28, Điều 73 Luật số 93/2025/QH15 và Điều 135 Luật Sở hữu trí tuệ,",
+       "theo Điều 28, Điều 73 Luật số 93/2025/QH15, Điều 32, Điều 34 Nghị định số 267/2025/NĐ-CP và Điều 135 Luật Sở hữu "
+       "trí tuệ,")], []),
+]
+
+
+def sua_lan7(doc, tu):
+    """Lượt chỉnh sửa lần 7: luồng nộp đơn sớm, mức độ kết luận, Nghị định số 267/2025/NĐ-CP, dữ liệu công khai."""
+    from khung import sua_cum
+    for bat_dau, cap, them in SUA_LAN7:
+        sua_cum(doc, bat_dau, cap, tu=tu, them_sau=them)
 
 
 def dung():

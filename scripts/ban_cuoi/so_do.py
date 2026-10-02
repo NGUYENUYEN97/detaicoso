@@ -289,8 +289,8 @@ def tam_khau():
          ("Sàng lọc sơ bộ, phân nhánh theo loại đối tượng", "Phòng Khoa học Công nghệ"),
          ("Tra cứu, đánh giá khả năng bảo hộ", "Bộ phận Pháp chế, chuyên gia"),
          ("Xem xét bảo mật trước khi công bố hoặc trình diễn", "Phòng Khoa học Công nghệ"),
-         ("Xác nhận tại nghiệm thu bằng phiếu rà soát", "Hội đồng nghiệm thu"),
-         ("Quyết định xác lập quyền, dự toán và người đề xuất chi", "Hiệu trưởng, Phòng Tài chính - Kế toán"),
+         ("Kiểm tra tại nghiệm thu: cập nhật tình trạng quyền", "Hội đồng nghiệm thu"),
+         ("Quyết định xác lập quyền, cấp kinh phí, người đề xuất chi", "Hiệu trưởng, Phòng Tài chính - Kế toán"),
          ("Nộp đơn, đăng ký hoặc áp dụng biện pháp bảo mật; theo dõi, duy trì", "Bộ phận Pháp chế"),
          ("Khai thác và phân chia lợi ích theo nguồn hình thành", "Phòng Khoa học Công nghệ, các đơn vị")]
     xs = [0.2, 4.05, 7.9, 11.75]
@@ -304,7 +304,12 @@ def tam_khau():
         s.mui_ten([(xs[i] + w, 2.1), (xs[i + 1] - 0.05, 2.1)], XAM, mui=0.24)
         s.mui_ten([(xs[3 - i], 7.3), (xs[2 - i] + w + 0.05, 7.3)], XAM, mui=0.24)
     s.mui_ten([(xs[3] + w / 2, 3.9), (xs[3] + w / 2, 5.45)], XAM, mui=0.24)
-    s.nhan(xs[3] + w / 2 - 1.55, 4.45, "hai cổng bắt buộc", 9, dam=True, mau=CAM)
+    s.nhan(xs[3] + w / 2 + 0.1, 4.2, "luồng", 9, dam=True, mau=XAM, can="left")
+    s.nhan(xs[3] + w / 2 + 0.1, 4.7, "thường", 9, dam=True, mau=XAM, can="left")
+    # Luồng sớm: kết quả đã đánh giá tại Khâu 3, cần nộp đơn trước công bố, chuyển thẳng sang Khâu 6.
+    s.mui_ten([(xs[2] + w / 2, 3.9), (xs[2] + w / 2, 5.45)], CAM, day=0.06, mui=0.26, gach=True)
+    s.nhan(xs[2] + w / 2 + 0.1, 4.2, "luồng sớm: cần nộp đơn", 9, dam=True, mau=CAM, can="left")
+    s.nhan(xs[2] + w / 2 + 0.1, 4.7, "trước khi công bố", 9, dam=True, mau=CAM, can="left")
     s.nhan(0.2, 9.45, "Phân nhánh tại Khâu 2:", 9.5, dam=True, mau=XAM, can="left")
     nhanh = [("Sáng chế, giải pháp hữu ích", "Giữ bí mật đến khi nộp đơn"),
              ("Kiểu dáng công nghiệp", "Nộp đơn trước khi trưng bày"),

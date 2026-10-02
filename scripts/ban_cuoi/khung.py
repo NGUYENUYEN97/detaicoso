@@ -248,3 +248,35 @@ def thay_doan(doc, bat_dau, moi, tu=0, giai_trinh=None, vi_tri="", can_cu=""):
         giai_trinh.append((vi_tri, cu, "\n".join(re.sub(r"\*", "", x) for x in moi) if moi != [""] else "(lược bỏ)",
                            can_cu))
     return p
+
+
+def doan_markup(p):
+    """Đọc nội dung đoạn p thành chuỗi markup **đậm**, *nghiêng* theo từng run."""
+    ra = []
+    for r in p._p.findall(qn("w:r")):
+        chu = "".join(t.text or "" for t in r.findall(qn("w:t")))
+        if not chu:
+            continue
+        rpr = r.find(qn("w:rPr"))
+        def _co(tag):
+            x = rpr.find(qn(tag)) if rpr is not None else None
+            return x is not None and x.get(qn("w:val")) not in ("0", "false")
+        if _co("w:b"):
+            chu = f"**{chu}**"
+        elif _co("w:i"):
+            chu = f"*{chu}*"
+        ra.append(chu)
+    return "".join(ra).replace("****", "")
+
+
+def sua_cum(doc, bat_dau, cap, tu=0, them_sau=()):
+    """Trong đoạn duy nhất bắt đầu bằng bat_dau, thay từng cặp (cụm cũ, cụm mới), mỗi cụm cũ phải xuất hiện đúng một
+    lần; giữ định dạng đậm, nghiêng của các phần không đổi. them_sau là các đoạn mới chèn ngay sau đoạn này."""
+    ps = doc.paragraphs[tu:]
+    trung = [p for p in ps if p.text.strip().startswith(bat_dau)]
+    assert len(trung) == 1, f"{len(trung)} đoạn bắt đầu bằng: {bat_dau[:70]}"
+    md = doan_markup(trung[0]).strip()
+    for cu, moi in cap:
+        assert md.count(cu) == 1, f"{md.count(cu)} lần '{cu[:60]}' trong đoạn '{bat_dau[:40]}'"
+        md = md.replace(cu, moi)
+    return thay_doan(doc, bat_dau, [md, *them_sau], tu=tu)

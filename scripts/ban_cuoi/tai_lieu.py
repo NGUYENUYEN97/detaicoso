@@ -13,8 +13,8 @@ Ghi chú kiểm chứng:
 - Milliken và Allen (2013): không truy xuất được nhà xuất bản, đã lược trích dẫn.
 - Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ: tệp gốc không có trong kho; nội dung Điều 9
   lấy từ bản thảo của nhóm, cần bổ sung số hiệu, ngày ban hành khi có tệp.
-- Nguyễn (2025), Võ (2025): lấy từ tệp Zotero của nhóm, có DOI nhưng chưa mở được
-  trang tạp chí để đối chiếu số tập, trang của Võ (2025); cần xác minh trước khi nộp.
+- Nguyễn (2025), Võ (2025): lấy từ tệp Zotero của nhóm. Võ (2025): tên tạp chí theo trang bài báo,
+  trang 75-86 theo bản PDF; bản PDF không in số tạp chí, cần bổ sung số trước khi nộp.
 """
 import re
 
@@ -33,6 +33,10 @@ TAI_LIEU = [
     ("Nghị định số 17/2023/NĐ-CP", "vb",
      "Chính phủ. (2023). *Nghị định số 17/2023/NĐ-CP ngày 26 tháng 4 năm 2023 quy định chi tiết một số điều và biện "
      "pháp thi hành Luật Sở hữu trí tuệ về quyền tác giả, quyền liên quan*."),
+    ("Nghị định số 267/2025/NĐ-CP", "vb",
+     "Chính phủ. (2025). *Nghị định số 267/2025/NĐ-CP ngày 14 tháng 10 năm 2025 quy định chi tiết và hướng dẫn một số "
+     "điều của Luật Khoa học, công nghệ và đổi mới sáng tạo về chương trình, nhiệm vụ khoa học, công nghệ và đổi mới sáng "
+     "tạo và một số quy định về thúc đẩy hoạt động nghiên cứu khoa học, phát triển công nghệ và đổi mới sáng tạo*."),
     ("Nghị định số 134/2026/NĐ-CP", "vb",
      "Chính phủ. (2026). *Nghị định số 134/2026/NĐ-CP ngày 06 tháng 4 năm 2026 sửa đổi, bổ sung một số điều của Nghị "
      "định số 17/2023/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Sở hữu trí tuệ về quyền tác giả, "
@@ -93,7 +97,7 @@ TAI_LIEU = [
     ("Võ, 2025", "vn",
      "Võ, N. H. P. (2025). Quyền của chủ thể không giữ quyền tài sản đối với các tác phẩm hình thành trong nhà trường, "
      "kinh nghiệm quốc tế để hoàn thiện chính sách sở hữu trí tuệ của các trường đại học tại Việt Nam. *Tạp chí Khoa "
-     "học Đại học Mở Hà Nội*, 75-86. https://doi.org/10.59266/houjs.2025.606"),
+     "học Trường Đại học Mở Hà Nội*, 75-86. https://doi.org/10.59266/houjs.2025.606"),
     # Cần bổ sung số tạp chí của bài Võ (2025) khi tra được trang DOI; tên tạp chí và số trang xác định từ bản PDF.
     # --- Tài liệu tiếng nước ngoài ------------------------------------------------------------
     ("Bradley et al., 2013", "nn",

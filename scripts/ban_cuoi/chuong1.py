@@ -452,6 +452,113 @@ SUA_LAN6 = [
 ]
 
 
+# Lượt chỉnh sửa lần 7: phân biệt phân loại pháp lý với phân nhóm quản lý; căn cứ xác lập và thời hạn bảo hộ theo từng
+# đối tượng; hai loại hợp đồng phân biệt theo nội dung quyền được chuyển; bổ sung Nghị định số 267/2025/NĐ-CP.
+# Mỗi mục: (đầu đoạn, [(cụm cũ, cụm mới)], [đoạn mới chèn sau]).
+SUA_LAN7 = [
+    ("Để xác lập cơ chế bảo hộ cho các khối tài sản vô hình đó,",
+     [("Các điều ước quốc tế như Công ước Stockholm năm 1967 về thành lập Tổ chức Sở hữu trí tuệ thế giới hay Hiệp định về "
+       "các khía cạnh liên quan tới thương mại của quyền sở hữu trí tuệ đều xác định quyền sở hữu trí tuệ là quyền độc quyền "
+       "có thời hạn trao cho chủ thể sáng tạo nhằm khai thác, sử dụng, định đoạt và ngăn chặn hành vi sao chép trái phép.",
+       "Các điều ước quốc tế không đưa ra một định nghĩa khái quát mà xác định quyền sở hữu trí tuệ bằng cách liệt kê các "
+       "nhóm quyền: Công ước Stockholm năm 1967 về thành lập Tổ chức Sở hữu trí tuệ thế giới liệt kê các quyền đối với tác "
+       "phẩm văn học, nghệ thuật, khoa học, cuộc biểu diễn, bản ghi âm, chương trình phát sóng, sáng chế, phát minh khoa "
+       "học, kiểu dáng công nghiệp, nhãn hiệu, tên thương mại và quyền chống cạnh tranh không lành mạnh; Hiệp định về các "
+       "khía cạnh liên quan tới thương mại của quyền sở hữu trí tuệ xác định phạm vi gồm các nhóm quyền được quy định từ "
+       "Mục 1 đến Mục 7 Phần II của Hiệp định."),
+      ("Tại Việt Nam, Điều 4 Luật Sở hữu trí tuệ quy định quyền sở hữu trí tuệ là quyền của tổ chức, cá nhân đối với tài sản "
+       "trí tuệ, bao gồm quyền tác giả và quyền liên quan,",
+       "Tại Việt Nam, khoản 1 Điều 4 Luật Sở hữu trí tuệ quy định quyền sở hữu trí tuệ là quyền của tổ chức, cá nhân đối với "
+       "các đối tượng quyền tác giả và quyền liên quan,")], []),
+    ("Trong cơ sở giáo dục đại học, quyền sở hữu trí tuệ được phân thành ba nhóm cấu thành chủ yếu:",
+     [("Trong cơ sở giáo dục đại học, quyền sở hữu trí tuệ được phân thành ba nhóm cấu thành chủ yếu:",
+       "Cần phân biệt phân loại pháp lý với cách phân nhóm phục vụ quản lý. Về pháp lý, khoản 4 Điều 4 Luật Sở hữu trí tuệ "
+       "xác định quyền sở hữu công nghiệp là quyền đối với sáng chế, kiểu dáng công nghiệp, thiết kế bố trí mạch tích hợp "
+       "bán dẫn, nhãn hiệu, tên thương mại, chỉ dẫn địa lý, bí mật kinh doanh và quyền chống cạnh tranh không lành mạnh; "
+       "như vậy nhãn hiệu và tên thương mại thuộc quyền sở hữu công nghiệp. Trên cơ sở phân loại này, để phục vụ công tác "
+       "quản lý trong trường, tài sản trí tuệ có thể được chia thành ba nhóm theo nguồn hình thành và đơn vị chịu trách "
+       "nhiệm; đây là cách phân nhóm quản lý, không thay thế phân loại pháp lý:")], []),
+    ("- Nhóm quyền sở hữu công nghiệp:",
+     [("Nhóm quyền sở hữu công nghiệp:", "Nhóm tài sản công nghệ, thuộc quyền sở hữu công nghiệp:")], []),
+    ("- Nhóm nhãn hiệu và chỉ dẫn thương mại:",
+     [("Nhóm nhãn hiệu và chỉ dẫn thương mại:", "Nhóm tài sản nhận diện, cũng thuộc quyền sở hữu công nghiệp:"),
+      ("Gắn với tên trường, biểu trưng, khẩu hiệu", "Gắn với nhãn hiệu, tên thương mại của trường, biểu trưng, khẩu hiệu"),
+      ("uy tín đào tạo và nghiên cứu của nhà trường.",
+       "uy tín đào tạo và nghiên cứu của nhà trường. Nhóm này được tách riêng với nhóm tài sản công nghệ vì nguồn hình "
+       "thành, đơn vị quản lý và cách khai thác khác nhau.")], []),
+    ("5. Tính giới hạn về thời gian và lãnh thổ bảo hộ:",
+     [("Tính giới hạn về thời gian và lãnh thổ bảo hộ:",
+       "Tính lãnh thổ và sự khác biệt về căn cứ xác lập, thời hạn bảo hộ:"),
+      ("Quyền sở hữu công nghiệp chỉ được bảo hộ trong phạm vi quốc gia đăng ký và có thời hạn luật định (sáng chế 20 năm, "
+       "giải pháp hữu ích 10 năm). Điều này đặt ra yêu cầu nhà trường phải có chiến lược nộp đơn kịp thời và kế hoạch khai "
+       "thác trong khoảng thời gian công nghệ chưa bị lạc hậu.",
+       "Văn bằng bảo hộ do Việt Nam cấp có hiệu lực trên lãnh thổ Việt Nam theo khoản 1 Điều 93 Luật Sở hữu trí tuệ, nên "
+       "muốn được bảo hộ ở nước khác phải nộp đơn tại nước đó hoặc theo điều ước quốc tế. Căn cứ xác lập quyền khác nhau "
+       "giữa các đối tượng theo Điều 6: quyền tác giả phát sinh khi tác phẩm được sáng tạo và thể hiện dưới một hình thức "
+       "vật chất nhất định, không phụ thuộc vào việc đăng ký; quyền đối với sáng chế, kiểu dáng công nghiệp, thiết kế bố "
+       "trí, nhãn hiệu được xác lập trên cơ sở quyết định cấp văn bằng, trừ nhãn hiệu nổi tiếng được xác lập trên cơ sở sử "
+       "dụng; quyền đối với tên thương mại được xác lập trên cơ sở sử dụng hợp pháp; quyền đối với bí mật kinh doanh được "
+       "xác lập trên cơ sở có được một cách hợp pháp và thực hiện việc bảo mật. Thời hạn bảo hộ cũng khác nhau: theo Điều "
+       "93, bằng độc quyền sáng chế có hiệu lực đến hết 20 năm và bằng độc quyền giải pháp hữu ích đến hết 10 năm kể từ "
+       "ngày nộp đơn, kiểu dáng công nghiệp 5 năm và được gia hạn hai lần, nhãn hiệu 10 năm và được gia hạn nhiều lần, chỉ "
+       "dẫn địa lý vô thời hạn; bí mật kinh doanh được bảo hộ chừng nào còn đáp ứng các điều kiện tại Điều 84; theo khoản 1 "
+       "Điều 27, một số quyền nhân thân của tác giả được bảo hộ vô thời hạn. Đặc điểm này đòi hỏi nhà trường chọn hình "
+       "thức bảo hộ phù hợp từng đối tượng và có kế hoạch nộp đơn, khai thác kịp thời đối với các đối tượng có thời hạn "
+       "ngắn.")], []),
+    ("Xác lập quyền là quá trình thực hiện các trình tự, thủ tục pháp lý",
+     [("Xác lập quyền là quá trình thực hiện các trình tự, thủ tục pháp lý tại cơ quan nhà nước có thẩm quyền nhằm xác "
+       "nhận quyền sở hữu hợp pháp đối với tài sản trí tuệ. Đối với quyền sở hữu công nghiệp (sáng chế, giải pháp hữu ích, "
+       "kiểu dáng, nhãn hiệu), quyền chỉ phát sinh trên cơ sở quyết định cấp văn bằng bảo hộ sau khi trải qua các giai "
+       "đoạn thẩm định hình thức, công bố đơn và thẩm định nội dung.",
+       "Xác lập quyền là việc làm phát sinh hoặc xác nhận quyền sở hữu hợp pháp đối với tài sản trí tuệ theo căn cứ quy "
+       "định tại Điều 6 Luật Sở hữu trí tuệ, và căn cứ này khác nhau giữa các đối tượng. Đối với sáng chế, giải pháp hữu "
+       "ích, kiểu dáng công nghiệp, thiết kế bố trí và nhãn hiệu, quyền được xác lập trên cơ sở quyết định cấp văn bằng bảo "
+       "hộ sau các giai đoạn thẩm định theo thủ tục đăng ký, trừ nhãn hiệu nổi tiếng. Đối với tên thương mại, quyền được xác "
+       "lập trên cơ sở sử dụng hợp pháp; đối với bí mật kinh doanh, trên cơ sở có được một cách hợp pháp và thực hiện việc "
+       "bảo mật, nên công việc của nhà trường là thiết lập và duy trì biện pháp bảo mật chứ không phải nộp đơn.")], []),
+    ("1. Chuyển nhượng toàn bộ quyền sở hữu trí tuệ",
+     [("1. Chuyển nhượng toàn bộ quyền sở hữu trí tuệ cho doanh nghiệp để thu về khoản tiền trọn gói một lần.",
+       "1. Chuyển nhượng quyền: chủ sở hữu chuyển giao quyền sở hữu của mình cho tổ chức, cá nhân khác, theo Điều 138 Luật "
+       "Sở hữu trí tuệ đối với quyền sở hữu công nghiệp và Điều 45 đối với quyền tác giả, quyền liên quan.")], []),
+    ("2. Cấp phép quyền sử dụng",
+     [("2. Cấp phép quyền sử dụng (độc quyền hoặc không độc quyền) để thu tiền bản quyền định kỳ tính theo tỷ lệ phần trăm "
+       "doanh thu sản phẩm.",
+       "2. Chuyển quyền sử dụng, thường gọi là cấp phép: chủ sở hữu cho phép tổ chức, cá nhân khác sử dụng đối tượng trong "
+       "phạm vi và thời hạn nhất định, theo Điều 141 và Điều 47, dưới dạng độc quyền, không độc quyền hoặc thứ cấp theo Điều "
+       "143. Hai loại hợp đồng được phân biệt theo việc quyền sở hữu có được chuyển giao hay không; giá và phương thức thanh "
+       "toán, như trả trọn gói, trả theo kỳ, trả theo tỷ lệ doanh thu hoặc kết hợp, là nội dung do các bên thỏa thuận theo "
+       "Điều 140 và Điều 144, áp dụng được cho cả hai loại.")], []),
+    ("- Thu nhập từ chuyển giao công nghệ và cấp phép quyền sử dụng:",
+     [("sẽ đem lại dòng tiền bản quyền định kỳ,",
+       "có thể đem lại khoản thu từ hợp đồng chuyển nhượng hoặc chuyển quyền sử dụng,")], []),
+    ("Về áp dụng theo thời gian, khoản 3 Điều 73",
+     [], ["Nghị định số 267/2025/NĐ-CP ngày 14 tháng 10 năm 2025 của Chính phủ, có hiệu lực từ cùng ngày, quy định chi "
+          "tiết Điều 25, Điều 27, Điều 28 và một số điều khác của Luật số 93/2025/QH15. Ba nhóm nội dung "
+          "liên quan trực tiếp đến cơ sở giáo dục đại học tư thục. Một là, khoản 2 Điều 32 quy định tổ chức chủ trì không "
+          "phải là cơ quan nhà nước, đơn vị sự nghiệp công lập được Nhà nước giao tự động quyền sở hữu phần kết quả tương "
+          "ứng với kinh phí từ ngân sách nhà nước, không cần thủ tục giao quyền và bàn giao tài sản; tổ chức theo dõi riêng "
+          "thông tin về kết quả, không hạch toán chung vào tài sản, và tự quyết định phương án phát triển, ứng dụng hoặc "
+          "thương mại hóa theo Điều 27 của Luật; khoản 6 Điều 32 khẳng định tổ chức được giao quyền có quyền đăng ký bảo hộ. "
+          "Hai là, Điều 34 yêu cầu việc phân chia lợi nhuận bảo đảm công khai, minh bạch; đối với kết quả sử dụng ngân sách "
+          "nhà nước, việc phân chia thực hiện theo khoản 3 Điều 28 của Luật; tổ chức trung gian, môi giới hưởng tối thiểu "
+          "10% lợi nhuận thu được từ thương mại hóa, trừ khi các bên có thỏa thuận khác; phần thưởng cho tác giả khi có đồng "
+          "tác giả được chia theo thỏa thuận giữa các đồng tác giả. Điểm g khoản 2 Điều 17 bổ sung yêu cầu hồ sơ đánh giá "
+          "cuối kỳ có văn bản xác định mức độ đóng góp của thành viên, có xác nhận của các thành viên, làm căn cứ phân chia "
+          "lợi nhuận. Ba là, khoản 2 Điều 56 nhắc lại nguyên tắc nhiệm vụ được phê duyệt trước ngày 01 tháng 10 năm 2025 "
+          "tiếp tục thực hiện theo văn bản có hiệu lực tại thời điểm phê duyệt, còn khoản 3 Điều 56 quy định việc xử lý kết "
+          "quả của các nhiệm vụ này, nếu chưa có quyết định xử lý, được thực hiện theo Nghị định; Nghị định số 70/2018/NĐ-CP "
+          "về quản lý, sử dụng tài sản hình thành từ nhiệm vụ khoa học và công nghệ sử dụng vốn nhà nước hết hiệu lực. Nghị "
+          "định không quy định phương pháp xác định lợi nhuận sau thuế tương ứng với một kết quả cụ thể khi kết quả được hình "
+          "thành từ nhiều nguồn kinh phí; nội dung này cần được tổ chức chủ trì quy định trong quy chế nội bộ."]),
+]
+
+
+def sua_lan7(doc, tu):
+    from khung import sua_cum
+    for bat_dau, cap, them in SUA_LAN7:
+        sua_cum(doc, bat_dau, cap, tu=tu, them_sau=them)
+
+
 SO_DO = {
     "[[HINH_1_1]]": ("Chu trình bốn giai đoạn quản lý quyền sở hữu trí tuệ trong trường đại học", "chu_trinh.png",
                      "Nguồn: Nhóm nghiên cứu xây dựng trên cơ sở Bradley et al., 2013 và Tổ chức Sở hữu trí tuệ thế giới, "
@@ -491,6 +598,7 @@ def noi_dung(v):
             assert not s.startswith("|") and not s.startswith("![") and not s.startswith("[["), s[:60]
             v.doan_md("than", s)
     sua_lan6(v.doc, tu)
+    sua_lan7(v.doc, tu)
 
 
 def sua_lan6(doc, tu):

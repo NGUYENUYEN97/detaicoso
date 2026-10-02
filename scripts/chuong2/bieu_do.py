@@ -7,7 +7,7 @@ Mỗi hình là một dict:
   được chèn ngay sau), binh_luan (các đoạn nhận xét đặt dưới hình).
 """
 from du_lieu import (NAM, NHAN_LUC, SAN_PHAM, THAM_LUAN_QUOC_GIA,
-                     PHAN_HANG_QT, DON_VI_SAN_LUONG, NHAN_SU_CO_TEN, NHAN_SU_CO_BAI, GINI_BAI,
+                     PHAN_HANG_QT, DON_VI_SAN_LUONG, NHAN_SU_TEN_DUY_NHAT, NHAN_SU_TRUNG_TEN, NHAN_SU_CO_BAI, GINI_BAI,
                      DE_TAI, KHUYEN_KHICH, KENH_TAI_TRO, TSTT, TSTT_KY, TIEU_CHI, KE_HOACH,
                      DA_CAP, DA_NOP, CHUA_XM)
 
@@ -242,18 +242,20 @@ HINH.append(dict(
 # H2.6 ----------------------------------------------------------------------
 HINH.append(dict(
     tieu_de="Cơ cấu nhân sự theo tình trạng có công bố bài báo, giai đoạn 2021 - 2025",
-    nguon=f"Nguồn: Nhóm nghiên cứu tính toán trên {NHAN_SU_CO_TEN} tên khác nhau của 252 nhân sự trong danh sách năm "
-          "2026, đối chiếu với danh sách tác giả của hai danh mục bài báo theo quy tắc giữ dấu, đúng thứ tự họ tên.",
-    cot=["Tình trạng", "Số nhân sự"],
-    dong=[["Có ít nhất một bài báo", NHAN_SU_CO_BAI], ["Chưa có bài báo", NHAN_SU_CO_TEN - NHAN_SU_CO_BAI]],
+    nguon=f"Nguồn: Nhóm nghiên cứu tính toán, phân tích thăm dò trên 252 người trong danh sách nhân sự năm 2026, đối "
+          "chiếu với danh sách tác giả của hai danh mục bài báo theo quy tắc giữ dấu, đúng thứ tự họ tên; "
+          f"{NHAN_SU_TRUNG_TEN} người trùng họ tên với người khác không được gán bài báo.",
+    cot=["Tình trạng", "Số người"],
+    dong=[["Có ít nhất một bài báo", NHAN_SU_CO_BAI], ["Chưa ghi nhận bài báo", NHAN_SU_TEN_DUY_NHAT - NHAN_SU_CO_BAI],
+          ["Trùng họ tên, không xác định", NHAN_SU_TRUNG_TEN]],
     dinh_dang=[None, "0"],
-    bieu_do=dict(loai="doughnut", mau_diem=[XANH, "#D9D8D3"], lo=58),
+    bieu_do=dict(loai="doughnut", mau_diem=[XANH, "#D9D8D3", "#F2F1ED"], lo=58),
     sau_doan="Mức độ tập trung sản phẩm theo đơn vị, đo bằng chỉ số Herfindahl",
     binh_luan=[
-        f"Hình 2.6 minh họa trực quan mức độ tập trung nói trên: gần hai phần ba nhân sự, cụ thể "
-        f"{NHAN_SU_CO_TEN - NHAN_SU_CO_BAI} trên {NHAN_SU_CO_TEN} người, chưa đứng tên bài báo nào trong năm năm. Kết "
-        f"hợp với hệ số Gini {so(GINI_BAI, 3)}, dữ liệu cho thấy hoạt động công bố của Nhà trường dựa trên khoảng {NHAN_SU_CO_BAI} người, "
-        f"và trong nhóm này lại dựa chủ yếu vào khoảng 9 người dẫn đầu.",
+        f"Hình 2.6 cho thấy trong {NHAN_SU_TEN_DUY_NHAT} người có họ tên duy nhất, "
+        f"{NHAN_SU_TEN_DUY_NHAT - NHAN_SU_CO_BAI} người chưa được ghi nhận đứng tên bài báo nào trong năm năm. Kết hợp "
+        f"với hệ số Gini {so(GINI_BAI, 3)}, hoạt động công bố tập trung ở khoảng {NHAN_SU_CO_BAI} người. Vì danh sách là "
+        "của năm 2026, kết quả chỉ mang tính thăm dò, chưa đủ để kết luận về quy mô lực lượng nghiên cứu từng năm.",
     ],
 ))
 

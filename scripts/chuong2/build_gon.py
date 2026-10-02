@@ -61,7 +61,7 @@ assert (len(B.DE_TAI), len(B.dt_du_dk), len(B.nop_don), len(B.du_dk_den_2024)) =
 assert (len(B.dt_shcn), len(B.dt_shcn_den_2024), len(B.dt_qtg), len(B.dt_den_2024)) == (9, 6, 2, 31)
 dt_ydd = [d for d in B.dt_du_dk if d[2] == "Viện Y - Dược"]
 assert len(dt_ydd) == 9
-assert (D.NHAN_SU_CO_TEN, D.NHAN_SU_CO_BAI, D.BAI_KHOP) == (246, 87, 256)
+assert (D.NHAN_SU_TEN_DUY_NHAT, D.NHAN_SU_TRUNG_TEN, D.NHAN_SU_CO_BAI, D.BAI_KHOP) == (240, 12, 83, 256)
 assert len(D.TSTT_KY) == 11 and sum(1 for t in D.TSTT_KY if t[4] == D.DA_CAP) == 4
 assert len(B.dt_co_tien) == 19 and B.kp_tong == 424.75 and B.kp_du_dk == 396.75
 xep_loai = {k: sum(1 for d in D.DE_TAI if d[3] == k) for k in ("Xuất sắc", "Tốt", "Khá", "Đạt")}
@@ -341,15 +341,20 @@ def noi_dung(v):
         "đó. Về lợi ích của tác giả khi thương mại hóa, ba đề tài không chịu cùng một chế độ, như phân tích tại Mục "
         "2.2.1. Đây là nguồn tài sản trí tuệ tiềm năng của giai đoạn tới, với điều kiện việc sàng lọc khả năng bảo hộ "
         "được thực hiện trước khi công bố kết quả.",
-        f"Tính trên toàn bộ nhân sự, gồm cả khối hành chính, {D.NHAN_SU_TONG} người trong danh sách năm 2026 tương ứng "
-        f"{D.NHAN_SU_CO_TEN} tên khác nhau do có {D.NHAN_SU_TONG - D.NHAN_SU_CO_TEN} trường hợp trùng họ tên. Theo quy "
-        f"tắc so khớp giữ dấu và đúng thứ tự họ tên, {D.NHAN_SU_CO_BAI} trên {D.NHAN_SU_CO_TEN} tên, tức "
-        f"{pt(D.NHAN_SU_CO_BAI / D.NHAN_SU_CO_TEN)}, đứng tên ít nhất một bài báo trong năm năm; hệ số Gini về số bài "
-        f"là {so(D.GINI_BAI, 3)}, và trong nhóm có công bố, 10% người dẫn đầu chiếm {pt(D.TOP10_BAI)} số lượt đứng "
-        f"tên. Nếu chấp nhận cả cách viết không dấu trong bài quốc tế, số tên có bài là {D.DO_NHAY_B['co_bai']}, tức "
-        f"{pt(D.DO_NHAY_B['co_bai'] / D.NHAN_SU_CO_TEN)}, và hệ số Gini là {so(D.DO_NHAY_B['gini'], 3)}; nhận định về "
-        "mức độ tập trung không đổi giữa hai quy tắc. Lực lượng nghiên cứu nòng cốt vì vậy còn tương đối mỏng so với quy "
-        f"mô Nhà trường. Viện Y - Dược là nơi phát sinh {len(dt_ydd)} trên 11 sản phẩm đề tài có tiềm năng tạo lập tài "
+        f"Phân tích thăm dò dưới đây đối chiếu danh sách tác giả của hai danh mục bài báo với {D.NHAN_SU_TONG} người "
+        "trong danh sách nhân sự năm 2026, gồm cả khối hành chính. Danh sách năm 2026 không gồm người đã nghỉ và có người "
+        "mới tuyển, nên kết quả không phản ánh đúng đội ngũ từng năm 2021 - 2025. Đơn vị đếm là người; "
+        f"{D.NHAN_SU_TRUNG_TEN} người thuộc {D.NHOM_TRUNG_TEN} nhóm trùng họ tên là những người khác nhau nhưng không "
+        "phân biệt được trong danh mục bài báo, nên không được gán bài; trong đó "
+        f"{D.NHAN_SU_TRUNG_TEN_CO_TRONG_BAI} người có họ tên xuất hiện trong danh sách tác giả. Trong "
+        f"{D.NHAN_SU_TEN_DUY_NHAT} người còn lại, theo quy tắc so khớp giữ dấu và đúng thứ tự họ tên, "
+        f"{D.NHAN_SU_CO_BAI} người, tức {pt(D.NHAN_SU_CO_BAI / D.NHAN_SU_TEN_DUY_NHAT)}, đứng tên ít nhất một bài báo "
+        f"trong năm năm; hệ số Gini về số bài là {so(D.GINI_BAI, 3)}, và trong nhóm có công bố, 10% người dẫn đầu chiếm "
+        f"{pt(D.TOP10_BAI)} số lượt đứng tên. Nếu chấp nhận cả cách viết không dấu trong bài quốc tế, số người có bài là "
+        f"{D.DO_NHAY_B['co_bai']}, tức {pt(D.DO_NHAY_B['co_bai'] / D.NHAN_SU_TEN_DUY_NHAT)}, và hệ số Gini là "
+        f"{so(D.DO_NHAY_B['gini'], 3)}. Kết quả gợi ý hoạt động công bố tập trung ở một nhóm tương đối nhỏ trong số nhân "
+        "sự hiện tại; muốn kết luận về quy mô lực lượng nghiên cứu cần đối chiếu theo mã nhân sự với danh sách từng năm. "
+        f"Viện Y - Dược là nơi phát sinh {len(dt_ydd)} trên 11 sản phẩm đề tài có tiềm năng tạo lập tài "
         "sản trí tuệ và đơn sáng chế duy nhất trong kỳ; số lượng công bố và khả năng hình thành tài sản trí tuệ là hai "
         "thước đo khác nhau, cần được theo dõi riêng.")
 
@@ -401,7 +406,7 @@ def noi_dung(v):
     v.than(
         f"Hình 2.{h_mp} cho thấy, trên cùng nguồn thu sau chi phí, phần dành cho tác giả theo hai điểm bằng nhau cho đến "
         "khoảng 333 triệu đồng; từ mức này, phần theo điểm a không tăng thêm do mức trần 100 triệu đồng một đề tài. Vì "
-        "hai điểm áp dụng cho hai phạm vi khác nhau, khác biệt này không phải là xung đột giữa hai quy định mà thể hiện "
+        "hai điểm áp dụng cho hai phạm vi khác nhau, khác biệt này tự nó chưa cho thấy xung đột giữa hai quy định mà thể hiện "
         "tác động của mức trần đối với đề tài sử dụng ngân sách nhà nước.",
         "Đối chiếu theo từng tình huống, chưa xác định được trường hợp nào mà cùng một tài sản đồng thời chịu hai yêu cầu "
         "nội bộ không tương thích: điểm a áp dụng cho đề tài sử dụng ngân sách nhà nước, điểm b cho tài sản thuộc sở hữu "
@@ -737,7 +742,8 @@ def noi_dung(v):
         "5 kiểu dáng công nghiệp và 1 đơn nhãn hiệu đồng sở hữu là thành công nổi bật trong chiến lược hợp tác đại học "
         "với doanh nghiệp mà Ban Giám hiệu đã dày công kết nối.",
         f"Thứ ba, năng lực nghiên cứu tăng nhanh: số bài báo tăng bình quân {pt(B.cagr(B.bb[0], B.bb[4], 4))} một năm, "
-        f"đạt {so(B.bb[4] / tong_gv, 2)} bài trên một giảng viên năm 2025; {kh_dat} trên {len(B.kh_rows)} chỉ tiêu "
+        f"tương đương {so(B.bb[4] / tong_gv, 2)} bài năm 2025 trên một giảng viên nếu tính theo danh sách giảng viên năm "
+        f"2026; {kh_dat} trên {len(B.kh_rows)} chỉ tiêu "
         "khoa học công nghệ xác định được của Kế hoạch 07/KH-ĐHTĐ đạt hoặc vượt; ba đề tài cấp quốc gia với tổng kinh "
         "phí 4,67 tỷ đồng được phê duyệt.",
         f"Thứ tư, đội ngũ có tiềm năng tạo lập tài sản trí tuệ, nhất là ở khối ngành Y - Dược: 11 trên 38 đề tài cấp cơ "
@@ -792,7 +798,8 @@ def noi_dung(v):
     v.than(
         "Các nguyên nhân chủ quan dưới đây là nhận định rút ra từ hồ sơ hiện có, cần được kiểm chứng thêm bằng hồ sơ "
         "thực hiện quy chế và ý kiến của chủ nhiệm đề tài.",
-        "Về quy trình, đây là khoảng trống kỹ thuật cốt lõi: thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu. Biểu "
+        "Về quy trình, trong hồ sơ được tiếp cận chưa thấy biểu mẫu rà soát khả năng bảo hộ tại thời điểm nghiệm thu, và "
+        "đây có thể là một yếu tố cản trở. Biểu "
         "mẫu hiện hành ghi nhận tình trạng đăng ký nhưng chưa yêu cầu sàng lọc khả năng bảo hộ và tình trạng bộc lộ, nên "
         "việc khởi động thủ tục phụ thuộc nhiều vào sự chủ động của chủ nhiệm đề tài khi nộp hồ sơ tại Phòng Khoa học "
         "Công nghệ theo Điều 35 Quyết định 213; mức độ thực hiện nhiệm vụ nhận diện của Phòng theo Điều 11 Quyết định "
@@ -810,8 +817,8 @@ def noi_dung(v):
         "đơn vị.",
         "Về dữ liệu, chưa có danh mục tài sản trí tuệ liên kết với danh mục đề tài nên đơn vị đầu mối chưa có công cụ phát "
         "hiện sản phẩm cần rà soát.",
-        "Về con người, lực lượng nghiên cứu nòng cốt còn mỏng so với quy mô và chưa được bồi dưỡng chuyên sâu về nhận "
-        "diện, bảo hộ tài sản trí tuệ.")
+        "Về con người, phân tích thăm dò trên danh sách nhân sự năm 2026 cho thấy hoạt động công bố tập trung ở một nhóm "
+        "tương đối nhỏ; hồ sơ chưa ghi nhận chương trình bồi dưỡng chuyên sâu về nhận diện, bảo hộ tài sản trí tuệ.")
     h_cnn = v.so_do("Giả thuyết về chuỗi nguyên nhân dẫn đến việc sản phẩm có tiềm năng chưa được đăng ký bảo hộ",
                     os.path.join(GOC, "Ban_cuoi", "so_do", "chuoi_nguyen_nhan.png"),
                     "Nguồn: Nhóm nghiên cứu tổng hợp từ kết quả phân tích tại Mục 2.2 và Mục 2.3. Các mắt xích là giả "
@@ -836,10 +843,12 @@ def noi_dung(v):
         f"ràng: {len(B.dt_du_dk)} trên 38 đề tài có sản phẩm tiềm năng tạo lập tài sản trí tuệ, trong đó "
         f"{len(B.dt_shcn)} thuộc sở hữu công nghiệp, trong khi mới {len(B.nop_don)} đề tài có đơn.",
         "Về khách quan, pháp luật thay đổi dồn dập trong giai đoạn 2025 - 2026 tạo ra độ trễ thể chế đối với các quy chế "
-        "ban hành trước đó, làm phát sinh nhu cầu rà soát phạm vi áp dụng từ cuối năm 2025. Về chủ quan, Đề tài nhận định "
-        "khoảng trống kỹ thuật cốt lõi là thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu, cùng với việc chưa có dự "
-        "toán riêng cho bước đăng ký, chưa thống nhất cách hiểu và thứ tự áp dụng các quy định về lợi ích của tác giả, và "
-        "chưa có dữ liệu liên thông; các nhận định này cần được kiểm chứng trong quá trình triển khai. Đây là căn cứ để "
+        "ban hành trước đó, làm phát sinh nhu cầu rà soát phạm vi áp dụng từ cuối năm 2025. Về chủ quan, Đề tài nêu giả "
+        "thuyết rằng một số yếu tố có thể đang cản trở việc chuyển kết quả thành đơn: trong hồ sơ được tiếp cận chưa thấy "
+        "biểu mẫu rà soát khả năng bảo hộ tại thời điểm nghiệm thu và chưa thấy dự toán riêng cho bước đăng ký; cách hiểu "
+        "và thứ tự áp dụng các quy định về lợi ích của tác giả chưa được thống nhất; dữ liệu chưa liên thông. Hồ sơ hiện có "
+        "chưa đủ để xác định yếu tố nào là nguyên nhân chính; các giả thuyết này cần được kiểm chứng trong quá trình triển "
+        "khai. Đây là căn cứ để "
         "Chương 3 đề xuất hệ thống giải pháp, trong đó bước sàng lọc tại nghiệm thu và trước khi công bố, cùng việc hoàn "
         "thiện quy chế theo phạm vi áp dụng của luật mới, là hai điểm ưu tiên.")
 
@@ -861,8 +870,12 @@ NHAT_KY_LAN6 = [
      "2024: 31, 6, 0", "Không gộp quyền tác giả vào phễu sở hữu công nghiệp"),
     ("Bản ghi trùng", "107 bài gắn đề tài, 475 sản phẩm độc lập, độ phủ 29,9%", "Bỏ; giữ 582 bản ghi",
      "Chưa tái lập được phép so khớp và chưa xác lập được quan hệ trùng lặp"),
-    ("Người có bài báo", "88 trên 247, Gini 0,829, 10% dẫn đầu 39,3%", "87 trên 246 tên, Gini 0,832, 39,7%; độ nhạy "
-     "bỏ dấu: 103 tên, Gini 0,822", "scripts/ra_soat/so_khop_tac_gia.py"),
+    ("Người có bài báo", "88 trên 247, Gini 0,829, 10% dẫn đầu 39,3%", "Đơn vị là người: 83 trên 240 người có họ tên "
+     "duy nhất, 12 người thuộc 6 nhóm trùng họ tên không gán bài; Gini 0,836, 38,3%; độ nhạy bỏ dấu: 99 người, Gini "
+     "0,827. Ghi là phân tích thăm dò trên danh sách năm 2026; bỏ nhận định lực lượng nòng cốt mỏng",
+     "scripts/ra_soat/so_khop_tac_gia.py; trùng họ tên đối chiếu bằng CCCD, ngày sinh ở dạng tổng hợp"),
+    ("Bài báo trên một giảng viên năm 2025", "1,11", "Giữ 1,11, ghi rõ mẫu số là 145 giảng viên theo danh sách năm 2026",
+     "Danh sách nhân sự năm 2026"),
     ("Khả năng tính toán tiêu chí", "5 đầy đủ, 4 một phần, 7 chưa", "4 đầy đủ, 5 một phần, 7 chưa",
      "Kinh phí: Điều 35, 38 Quyết định 213; văn bằng: trạng thái kiểu dáng chưa thống nhất; tra cứu: chưa có số liệu"),
 ]

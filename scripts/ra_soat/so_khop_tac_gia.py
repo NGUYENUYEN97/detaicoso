@@ -8,8 +8,11 @@ hàm, học vị đứng trước tên):
 - A, quy tắc chính: giữ dấu tiếng Việt, so khớp đúng thứ tự âm tiết;
 - B, độ nhạy: bỏ dấu, đ -> d, so khớp đúng thứ tự;
 - C, độ nhạy: bỏ dấu, so khớp theo tập hợp âm tiết, nhận cả cách viết họ sau tên.
-Nhân sự trùng họ tên sau chuẩn hóa được tính là một tên, vì không thể phân biệt từ danh mục bài báo.
-Đơn vị đếm người là "tên chuẩn hóa"; đơn vị đếm bài là dòng bài báo trong danh mục.
+Đơn vị đếm là người trong danh sách năm 2026. Người có họ tên trùng với người khác sau chuẩn hóa không được gán bài
+báo, vì danh mục bài báo không có thông tin định danh để phân biệt; họ được đếm riêng là nhóm không xác định. Các chỉ
+số tỷ lệ, Gini và tỷ trọng nhóm dẫn đầu tính trên những người có họ tên duy nhất. Đây là phân tích thăm dò: danh sách
+năm 2026 không gồm người đã nghỉ và có người mới tuyển, nên không phản ánh đúng đội ngũ từng năm 2021 - 2025.
+Đơn vị đếm bài là dòng bài báo trong danh mục.
 Không ghi ra bất kỳ thông tin cá nhân nào.
 """
 import collections
@@ -80,20 +83,25 @@ def gini(x):
 def tinh(quy_tac="A", bb=None):
     bb = bb or bai_bao()
     ns = nhan_su(quy_tac)
-    khoa = set(k for k in ns if k)
+    so_lan = collections.Counter(k for k in ns if k)
+    duy_nhat = {k for k, v in so_lan.items() if v == 1}
+    trung = {k for k, v in so_lan.items() if v > 1}
     dem = collections.Counter()
     bai_khop = 0
+    trung_co_ten_trong_bai = set()
     for tg in bb:
-        k_bai = {chuan_hoa(a, quy_tac) for a in tg} & khoa
-        if k_bai:
+        k_bai = {chuan_hoa(a, quy_tac) for a in tg}
+        if k_bai & set(so_lan):
             bai_khop += 1
-        dem.update(k_bai)
-    co_bai = [dem[k] for k in khoa]
-    co = sorted([v for v in co_bai if v > 0], reverse=True)
+        dem.update(k_bai & duy_nhat)
+        trung_co_ten_trong_bai |= k_bai & trung
+    so_bai_nguoi = [dem[k] for k in duy_nhat]
+    co = sorted([v for v in so_bai_nguoi if v > 0], reverse=True)
     top = co[:max(1, round(len(co) * 0.1))]
-    return dict(so_bai=len(bb), bai_khop=bai_khop, nhan_su_co_ten=len(ns), ten_chuan_hoa=len(khoa),
-                trung_ten=len(ns) - len(khoa), ten_co_bai=len(co), gini=gini(co_bai),
-                top10=sum(top) / sum(co))
+    return dict(so_bai=len(bb), bai_khop=bai_khop, nguoi=len(ns), nguoi_ten_duy_nhat=len(duy_nhat),
+                nguoi_trung_ten=sum(so_lan[k] for k in trung), nhom_trung_ten=len(trung),
+                nguoi_trung_ten_co_trong_bai=sum(so_lan[k] for k in trung_co_ten_trong_bai),
+                nguoi_co_bai=len(co), gini=gini(so_bai_nguoi), top10=sum(top) / sum(co))
 
 
 if __name__ == "__main__":
