@@ -10,19 +10,16 @@ MO_DAU = [
     ("H0", "MỞ ĐẦU"),
     ("H1", "1. Tính cấp thiết của đề tài"),
     ("P", "Tài sản trí tuệ là nguồn lực quan trọng đối với năng lực cạnh tranh, uy tín học thuật và khả năng tự chủ tài "
-          "chính của cơ sở giáo dục đại học. Giai đoạn 2025 - 2026, pháp luật về lĩnh vực này thay đổi nhanh. Luật Khoa "
-          "học, công nghệ và đổi mới sáng tạo số 93/2025/QH15, có hiệu lực từ ngày 01 tháng 10 năm 2025, giao cho tổ "
-          "chức chủ trì quyền tự quyết về thương mại hóa và quy định mức thưởng tối thiểu cho tác giả đối với phần kết "
-          "quả sử dụng ngân sách nhà nước; Nghị định số 267/2025/NĐ-CP quy định chi tiết các nội dung này. Luật số "
-          "131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ, Luật Giáo dục đại học số 125/2025/QH15 và Quyết định số "
-          "1624/QĐ-TTg sửa đổi Chiến lược sở hữu trí tuệ đến năm 2030 đều đặt yêu cầu mới đối với quản lý tài sản trí "
-          "tuệ trong nhà trường. Kết luận số 51-KL/TW của Bộ Chính trị xác định sở hữu trí tuệ là yếu tố cốt lõi để tự "
-          "chủ chiến lược và cạnh tranh quốc tế."),
-    ("P", "Trường Đại học Thành Đô đã sớm ban hành Quy chế hoạt động khoa học công nghệ kèm Quyết định số 213/QĐ-ĐHTĐ "
-          "năm 2021 và Quy chế quản trị tài sản trí tuệ kèm Quyết định số 217/QĐ-ĐHTĐ năm 2024. Năng lực công bố tăng "
+          "chính của trường đại học. Giai đoạn 2025 - 2026, pháp luật về lĩnh vực này thay đổi nhanh. Luật Khoa học, công "
+          "nghệ và đổi mới sáng tạo năm 2025 và nghị định hướng dẫn giao cho nhà trường quyền tự quyết về thương mại hóa và "
+          "đặt mức thưởng tối thiểu cho tác giả. Luật Sở hữu trí tuệ được sửa đổi, Luật Giáo dục đại học năm 2025 được ban "
+          "hành, Chiến lược sở hữu trí tuệ đến năm 2030 được sửa đổi và Chuẩn cơ sở giáo dục đại học mới ra đời. Tất cả đều "
+          "đặt yêu cầu mới đối với quản lý tài sản trí tuệ trong nhà trường."),
+    ("P", "Trường Đại học Thành Đô đã sớm ban hành Quy chế hoạt động khoa học công nghệ năm 2021, gọi tắt là Quyết định "
+          "213, và Quy chế quản trị tài sản trí tuệ năm 2024, gọi tắt là Quyết định 217. Năng lực công bố tăng "
           "nhanh trong giai đoạn 2021 - 2025, và 11 trên 38 đề tài cấp cơ sở đã tạo ra sản phẩm có tiềm năng tạo lập "
           "tài sản trí tuệ, nhất là ở khối ngành Y - Dược. Tuy vậy, việc chuyển kết quả nghiên cứu thành quyền sở hữu "
-          "trí tuệ còn ở quy mô nhỏ, và các quy chế ban hành trước năm 2025 cần được cập nhật theo luật mới. Nghiên cứu "
+          "trí tuệ còn ở quy mô nhỏ, và các quy chế ban hành trước năm 2025 cần được cập nhật. Nghiên cứu "
           "giải pháp nâng cao hiệu quả quản lý quyền sở hữu trí tuệ vì vậy vừa là yêu cầu tuân thủ pháp luật, vừa là cơ "
           "hội để Nhà trường chủ động thích ứng với khung pháp lý mới."),
     ("H1", "2. Tổng quan tình hình nghiên cứu"),
@@ -84,9 +81,8 @@ MO_DAU = [
     ("H1", "5. Cách tiếp cận và phương pháp nghiên cứu"),
     ("P", "Đề tài tiếp cận theo chu trình quản lý tạo lập, xác lập, khai thác và bảo vệ, kết hợp bộ tiêu chí đánh giá "
           "theo chuỗi đầu vào, quá trình, đầu ra và kết quả xây dựng tại Chương 1."),
-    ("P", "Phương pháp phân tích văn bản được dùng để đối chiếu Quyết định 213, Quyết định 217, Quy chế chi tiêu nội bộ "
-          "và Kế hoạch số 07/KH-ĐHTĐ với Luật Sở hữu trí tuệ, Luật số 93/2025/QH15, Nghị định số 267/2025/NĐ-CP và các "
-          "văn bản liên quan. Dữ liệu định lượng gồm 582 bản ghi sản phẩm khoa học giai đoạn 2021 - 2025 của Phòng Khoa "
+    ("P", "Phương pháp phân tích văn bản được dùng để đối chiếu quy chế, kế hoạch của Nhà trường với pháp luật hiện "
+          "hành. Dữ liệu định lượng gồm 582 bản ghi sản phẩm khoa học giai đoạn 2021 - 2025 của Phòng Khoa "
           "học Công nghệ, hồ sơ 38 đề tài cấp cơ sở, danh mục theo dõi đơn và văn bằng, danh sách 252 nhân sự năm "
           "2026; dữ liệu cá nhân chỉ được dùng ở dạng tổng hợp."),
     ("P", "Dữ liệu được làm sạch, chuẩn hóa tên đơn vị và ghi rõ năm theo mã số, năm phê duyệt, năm nghiệm thu, năm nộp "
@@ -95,6 +91,9 @@ MO_DAU = [
           "nhân sự năm 2026; kết quả chỉ mang tính thăm dò. Mức độ tập trung công bố được đo bằng hệ số Gini; mức hoàn "
           "thành kế hoạch được tính theo tỷ lệ so với chỉ tiêu. Kết quả được tổng hợp bằng ma trận điểm mạnh, điểm yếu, "
           "thời cơ và thách thức làm căn cứ đề xuất giải pháp."),
+    ("P", "**Quy ước tên gọi văn bản.** Mỗi văn bản được gọi bằng một tên ngắn thống nhất trong toàn báo cáo, liệt kê tại "
+          "Bảng 1.1; số hiệu và ngày ban hành đầy đủ ghi tại Tài liệu tham khảo. Điều khoản cụ thể chỉ nêu tại Bảng 1.1 và "
+          "khi đối chiếu quy chế tại Mục 2.2.1; các phần khác chỉ nêu nội dung quy định."),
     ("H1", "6. Ý nghĩa khoa học và thực tiễn"),
     ("P", "**Về khoa học:** đề tài đưa ra khung phân tích và bộ tiêu chí đánh giá có thể tính từ dữ liệu hành chính của "
           "trường đại học, và nêu giả thuyết về vai trò của bước sàng lọc trước công bố trong chuỗi từ đề tài đến văn "
@@ -118,13 +117,10 @@ CHUONG_1 = [
           "Guan (2014) nhấn mạnh hai mặt của tài sản trí tuệ: đó là kết quả của lao động trí óc, và có thể mang lại lợi "
           "ích kinh tế hoặc pháp lý cho chủ sở hữu. Trong trường đại học, tài sản trí tuệ gồm các kết quả học thuật như "
           "công trình nghiên cứu, bài báo, giáo trình, sáng chế và phần mềm (Cục Sở hữu trí tuệ, n.d.)."),
-    ("P", "**Quyền sở hữu trí tuệ.** Khoản 1 Điều 4 Luật Sở hữu trí tuệ quy định quyền sở hữu trí tuệ là quyền của tổ "
-          "chức, cá nhân đối với các đối tượng quyền tác giả và quyền liên quan, quyền sở hữu công nghiệp và quyền đối "
-          "với giống cây trồng (Văn phòng Quốc hội, 2026). Theo khoản 4 Điều 4, quyền sở hữu công nghiệp gồm quyền đối "
-          "với sáng chế, kiểu dáng công nghiệp, thiết kế bố trí, nhãn hiệu, tên thương mại, chỉ dẫn địa lý, bí mật kinh "
-          "doanh và quyền chống cạnh tranh không lành mạnh. Các điều ước quốc tế, như Công ước Stockholm năm 1967 và "
-          "Hiệp định về các khía cạnh liên quan tới thương mại của quyền sở hữu trí tuệ, cũng xác định quyền sở hữu trí "
-          "tuệ bằng cách liệt kê các nhóm quyền."),
+    ("P", "**Quyền sở hữu trí tuệ.** Theo Luật Sở hữu trí tuệ, đây là quyền của tổ chức, cá nhân đối với tài sản trí "
+          "tuệ, gồm ba nhóm: quyền tác giả và quyền liên quan; quyền sở hữu công nghiệp đối với sáng chế, kiểu dáng công "
+          "nghiệp, thiết kế bố trí, nhãn hiệu, tên thương mại, chỉ dẫn địa lý, bí mật kinh doanh; quyền đối với giống cây "
+          "trồng. Các điều ước quốc tế cũng xác định quyền sở hữu trí tuệ bằng cách liệt kê các nhóm quyền này."),
     ("P", "Để thuận tiện cho quản lý, tài sản trí tuệ trong trường có thể chia thành ba nhóm theo nguồn hình thành và đơn "
           "vị phụ trách. Đây là cách phân nhóm quản lý, không thay thế phân loại pháp lý:"),
     ("P", "- Nhóm quyền tác giả: giáo trình, bài giảng, bài báo, báo cáo nghiên cứu, luận văn, phần mềm và cơ sở dữ liệu "
@@ -154,13 +150,11 @@ CHUONG_1 = [
     ("P", "- **Áp lực giữa công bố và bảo hộ.** Giảng viên cần công bố sớm để được ghi nhận, nhưng sáng chế cần giữ bí mật "
           "đến khi nộp đơn. Nếu quy chế không rõ về thưởng, thù lao và cách chia nguồn thu, nhà khoa học dễ tự khai thác "
           "kết quả bên ngoài (Shane, 2004; Võ, 2025)."),
-    ("P", "- **Căn cứ xác lập và thời hạn bảo hộ khác nhau.** Theo Điều 6 Luật Sở hữu trí tuệ, quyền tác giả phát sinh khi "
-          "tác phẩm được định hình, không cần đăng ký; quyền đối với sáng chế, kiểu dáng, nhãn hiệu phát sinh khi được "
-          "cấp văn bằng; quyền đối với tên thương mại phát sinh qua sử dụng hợp pháp; bí mật kinh doanh được bảo hộ khi "
-          "được giữ bí mật. Theo Điều 93, bằng sáng chế có hiệu lực đến hết 20 năm, bằng giải pháp hữu ích đến hết 10 "
-          "năm kể từ ngày nộp đơn; kiểu dáng 5 năm, được gia hạn hai lần; nhãn hiệu 10 năm, được gia hạn nhiều lần. Văn "
-          "bằng do Việt Nam cấp chỉ có hiệu lực tại Việt Nam. Nhà trường vì vậy phải chọn đúng hình thức bảo hộ cho từng "
-          "loại tài sản."),
+    ("P", "- **Căn cứ xác lập và thời hạn bảo hộ khác nhau.** Quyền tác giả phát sinh khi tác phẩm được định hình, không "
+          "cần đăng ký. Sáng chế, kiểu dáng, nhãn hiệu chỉ được bảo hộ khi được cấp văn bằng. Bí mật kinh doanh được bảo hộ "
+          "khi được giữ bí mật. Bằng sáng chế có hiệu lực 20 năm, bằng giải pháp hữu ích 10 năm; kiểu dáng 5 năm, nhãn "
+          "hiệu 10 năm và được gia hạn. Văn bằng do Việt Nam cấp chỉ có hiệu lực tại Việt Nam. Nhà trường vì vậy phải chọn "
+          "đúng hình thức bảo hộ cho từng loại tài sản."),
     ("H2", "1.1.3. Vai trò của quản lý quyền sở hữu trí tuệ đối với nhà trường"),
     ("P", "Quản lý quyền sở hữu trí tuệ tốt mang lại cho trường đại học ba lợi ích thiết thực:"),
     ("P", "- **Nâng chất lượng đào tạo và nghiên cứu.** Kết quả nghiên cứu được quản lý bài bản sẽ nhanh chóng được đưa "
@@ -170,31 +164,28 @@ CHUONG_1 = [
           "dụng tạo ra khoản thu hợp pháp. Năng lực quản lý tốt cũng giúp thu hút hợp đồng nghiên cứu với doanh nghiệp "
           "(O’Dwyer et al., 2023). Sau khi trả thù lao, thưởng cho tác giả, phần còn lại có thể đưa vào quỹ phát triển "
           "khoa học và công nghệ để tái đầu tư."),
-    ("P", "- **Đáp ứng chuẩn và kiểm định chất lượng.** Theo Thông tư số 01/2024/TT-BGDĐT, văn bằng có mặt trong cách tính "
-          "Tiêu chí 6.2 về công bố khoa học: mỗi bằng giải pháp hữu ích được tính như một công bố, mỗi bằng sáng chế được "
-          "tính gấp năm lần; nguồn thu từ chuyển giao góp phần vào Tiêu chí 6.1 về tỷ trọng thu khoa học công nghệ. "
-          "Thông tư số 83/2026/TT-BGDĐT thay thế từ ngày 15 tháng 11 năm 2026 tiếp tục coi trọng văn bằng, như phân tích "
-          "tại Mục 3.1.2."),
+    ("P", "- **Đáp ứng chuẩn và kiểm định chất lượng.** Chuẩn cơ sở giáo dục đại học tính văn bằng vào sản phẩm khoa học "
+          "của trường và tính nguồn thu từ chuyển giao vào thu khoa học công nghệ. Chuẩn mới theo Thông tư 83 tính văn bằng "
+          "cao hơn trước, như tổng hợp tại Bảng 1.1."),
     ("H1", "1.2. Nội dung quản lý quyền sở hữu trí tuệ trong trường đại học"),
     ("H2", "1.2.1. Chu trình quản lý bốn khâu"),
     ("P", "Chiến lược sở hữu trí tuệ đến năm 2030 định hướng phát triển đồng bộ các khâu sáng tạo, xác lập, khai thác và "
-          "bảo vệ quyền sở hữu trí tuệ (Thủ tướng Chính phủ, 2019). Trong trường đại học, bốn khâu này tạo thành chu trình "
+          "bảo vệ quyền sở hữu trí tuệ. Trong trường đại học, bốn khâu này tạo thành chu trình "
           "tại Hình 1.1."),
     ("K", 267, 269, {}),
     ("P", "- **Tạo lập.** Giảng viên, người học tạo ra kết quả nghiên cứu, giáo trình, phần mềm. Nhà trường định hướng qua "
           "nhiệm vụ khoa học công nghệ, hợp tác doanh nghiệp và Không gian sáng tạo mở thử nghiệm. Việc quan trọng ở khâu "
           "này là xác định đối tượng quyền cần đạt ngay khi duyệt thuyết minh."),
-    ("P", "- **Xác lập quyền.** Đây là việc làm phát sinh hoặc xác nhận quyền theo Điều 6 Luật Sở hữu trí tuệ. Sáng chế, "
+    ("P", "- **Xác lập quyền.** Đây là việc làm phát sinh hoặc xác nhận quyền. Sáng chế, "
           "giải pháp hữu ích, kiểu dáng, nhãn hiệu phải nộp đơn và được cấp văn bằng. Bí mật kinh doanh được bảo vệ bằng "
           "biện pháp bảo mật, không nộp đơn. Quyền tác giả phát sinh tự động; giấy chứng nhận đăng ký là chứng cứ khi "
           "khai thác hoặc tranh chấp. Với sáng chế, đơn nên được nộp trước khi công bố để giữ tính mới."),
     ("P", "- **Khai thác.** Khai thác phi thương mại là đưa giáo trình, kết quả nghiên cứu vào đào tạo và quản trị của "
-          "trường. Khai thác thương mại gồm bốn hình thức: chuyển nhượng quyền theo Điều 138 và Điều 45 Luật Sở hữu trí "
-          "tuệ; chuyển quyền sử dụng, thường gọi là cấp phép, theo Điều 141 và Điều 47; góp vốn bằng quyền sở hữu trí tuệ "
-          "để thành lập doanh nghiệp; trực tiếp sản xuất, cung ứng dịch vụ. Giá và cách thanh toán do các bên thỏa "
+          "trường. Khai thác thương mại gồm bốn hình thức: chuyển nhượng quyền; chuyển quyền sử dụng, thường gọi là cấp "
+          "phép; góp vốn bằng quyền sở hữu trí tuệ để thành lập doanh nghiệp; trực tiếp sản xuất, cung ứng dịch vụ. Giá và cách thanh toán do các bên thỏa "
           "thuận."),
     ("P", "- **Bảo vệ.** Gồm bảo mật thông tin nghiên cứu, kiểm tra trùng lặp, theo dõi sao chép trái phép, tự bảo vệ "
-          "quyền theo Điều 198 Luật Sở hữu trí tuệ và phối hợp xử lý xâm phạm. Bảo vệ không phải khâu cuối mà diễn ra "
+          "quyền và phối hợp xử lý xâm phạm. Bảo vệ không phải khâu cuối mà diễn ra "
           "suốt vòng đời tài sản, từ khi có ý tưởng đến khi khai thác."),
     ("P", "Sau khi trả thù lao, thưởng cho tác giả, khoản thu từ khai thác được đưa trở lại quỹ phát triển khoa học và "
           "công nghệ, tạo vòng tái đầu tư cho chu kỳ nghiên cứu tiếp theo."),
@@ -205,96 +196,102 @@ CHUONG_1 = [
           "chi trả thưởng, thù lao, nhuận bút; kiểm tra, gồm theo dõi hồ sơ, giám sát liêm chính và đánh giá hiệu quả để "
           "điều chỉnh chính sách."),
     ("H1", "1.3. Khung pháp lý về quản lý quyền sở hữu trí tuệ trong cơ sở giáo dục đại học"),
-    ("P", "Khung pháp lý gồm chủ trương của Đảng, văn bản quy phạm pháp luật và quy chế nội bộ của từng trường. Mục này chỉ "
-          "nêu các quy định trực tiếp chi phối hoạt động của nhà trường."),
-    ("H2", "1.3.1. Luật Sở hữu trí tuệ và văn bản hướng dẫn"),
-    ("P", "Luật Sở hữu trí tuệ số 50/2005/QH11 đã được sửa đổi bởi các Luật số 36/2009/QH12, số 42/2019/QH14, số "
-          "07/2022/QH15, Luật số 93/2025/QH15 và gần nhất là Luật số 131/2025/QH15, có hiệu lực từ ngày 01 tháng 4 năm "
-          "2026; nội dung hiện hành được hợp nhất tại Văn bản hợp nhất số 67/VBHN-VPQH (Văn phòng Quốc hội, 2026). Ba "
-          "nhóm quy định có ý nghĩa trực tiếp với nhà trường:"),
-    ("P", "- **Quyền đăng ký.** Điều 86a cũ đã bị bãi bỏ; điểm c khoản 1 Điều 86 do Luật số 131/2025/QH15 bổ sung quy định "
-          "tổ chức được giao quyền đối với kết quả nhiệm vụ dùng ngân sách nhà nước có quyền đăng ký sáng chế, kiểu dáng "
-          "công nghiệp, thiết kế bố trí là kết quả của nhiệm vụ đó."),
-    ("P", "- **Thù lao cho tác giả.** Khoản 2 Điều 135 cũ, quy định riêng cho kết quả từ ngân sách, đã bị bãi bỏ. Theo "
-          "khoản 1 Điều 135, chủ sở hữu trả thù lao cho tác giả sáng chế, kiểu dáng, thiết kế bố trí theo thỏa thuận; chỉ "
-          "khi không có thỏa thuận mới áp dụng mức mặc định: 10% lợi nhuận trước thuế khi tự sử dụng, hoặc 15% tổng số "
-          "tiền nhận được mỗi lần trước thuế khi chuyển giao quyền sử dụng. Luật không đặt mức trần."),
-    ("P", "- **Quyền tác giả.** Theo khoản 1 Điều 39, tổ chức giao nhiệm vụ sáng tác là chủ sở hữu quyền tài sản, trừ khi "
-          "có thỏa thuận khác; vì vậy nhà trường là chủ sở hữu giáo trình, bài giảng được giao biên soạn. Điều 25 quy định "
-          "ngoại lệ cho giảng dạy, nghiên cứu; Điều 28 quy định hành vi xâm phạm. Nghị định số 134/2026/NĐ-CP bổ sung "
-          "Điều 5a: quyền tác giả đối với tác phẩm có dùng trí tuệ nhân tạo chỉ phát sinh khi con người đóng góp sáng tạo "
-          "trực tiếp."),
+    ("H2", "1.3.1. Các văn bản pháp luật chính"),
+    ("P", "Bảng 1.1 tổng hợp các văn bản trực tiếp chi phối hoạt động sở hữu trí tuệ của nhà trường, tên gọi tắt dùng "
+          "trong báo cáo, quy định chính và yêu cầu đặt ra cho nhà trường."),
+    ("BANG", "Bảng 1.1. Các văn bản pháp luật chính về quản lý quyền sở hữu trí tuệ trong cơ sở giáo dục đại học",
+     ["Văn bản và tên gọi tắt", "Quy định chính liên quan đến nhà trường", "Yêu cầu đối với nhà trường"],
+     [
+         [["**Luật Sở hữu trí tuệ**",
+           "Luật số 50/2005/QH11, sửa đổi bởi các Luật số 36/2009/QH12, 42/2019/QH14, 07/2022/QH15, 93/2025/QH15 và "
+           "131/2025/QH15; hợp nhất tại Văn bản hợp nhất số 67/VBHN-VPQH"],
+          ["Điều 39: nhà trường là chủ sở hữu quyền tài sản đối với tác phẩm giao cho giảng viên biên soạn, trừ khi có "
+           "thỏa thuận khác.",
+           "Điều 60: sáng chế mất tính mới nếu bị bộc lộ trước khi nộp đơn; chỉ một số trường hợp bộc lộ được giữ tính mới "
+           "khi đơn được nộp trong 12 tháng.",
+           "Điều 86: tổ chức chủ trì nhiệm vụ dùng ngân sách nhà nước có quyền đăng ký sáng chế, kiểu dáng, thiết kế bố "
+           "trí là kết quả của nhiệm vụ.",
+           "Điều 135: thù lao cho tác giả sáng chế, kiểu dáng, thiết kế bố trí theo thỏa thuận; nếu không có thỏa thuận "
+           "là 10% lợi nhuận trước thuế khi tự sử dụng hoặc 15% số tiền nhận được khi chuyển giao."],
+          ["Nộp đơn trước khi công bố.", "Quy định thù lao trong quy chế hoặc hợp đồng.",
+           "Đăng ký kết quả của đề tài cấp quốc gia."]],
+         [["**Luật KH,CN&ĐMST**",
+           "Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15, hiệu lực từ 01/10/2025"],
+          ["Điều 25: tổ chức chủ trì tự động được giao quyền sở hữu phần kết quả tương ứng với kinh phí ngân sách nhà "
+           "nước, không phải bồi hoàn.",
+           "Điều 27: tổ chức tự quyết hình thức, giá và cách chia lợi nhuận khi thương mại hóa.",
+           "Điều 28: với phần dùng ngân sách, thưởng tác giả tối thiểu 30% lợi nhuận sau thuế; phần không dùng ngân sách "
+           "do chủ sở hữu tự quyết.",
+           "Điều 66: quỹ phát triển khoa học và công nghệ của tổ chức được chi cho đăng ký, bảo hộ, khai thác.",
+           "Điều 73: nhiệm vụ phê duyệt trước 01/10/2025 theo quy định cũ, trừ lợi nhuận từ văn bằng đã cấp của nhiệm "
+           "vụ giao từ 01/01/2023."],
+          ["Xác định lợi ích theo nguồn kinh phí và thời điểm giao nhiệm vụ.",
+           "Không để mức trần làm thưởng thấp hơn 30%.", "Lập dự toán chi cho bảo hộ."]],
+         [["**Nghị định 267**",
+           "Nghị định số 267/2025/NĐ-CP hướng dẫn Luật KH,CN&ĐMST, hiệu lực từ 14/10/2025"],
+          ["Điều 17: hồ sơ đánh giá cuối kỳ có văn bản xác định mức đóng góp của các thành viên.",
+           "Điều 32: tổ chức chủ trì ngoài công lập được giao quyền sở hữu tự động và phải theo dõi riêng kết quả.",
+           "Điều 34: chia lợi nhuận công khai; tổ chức trung gian hưởng tối thiểu 10% nếu không có thỏa thuận khác; "
+           "đồng tác giả chia thưởng theo thỏa thuận."],
+          ["Ghi nhận mức đóng góp khi nghiệm thu.", "Lập danh mục riêng kết quả từ ngân sách.",
+           "Ban hành mẫu thỏa thuận chia thưởng."]],
+         [["**Luật Giáo dục đại học**", "Luật số 125/2025/QH15, hiệu lực từ 01/01/2026"],
+          ["Điều 27: đăng ký, bảo hộ, khai thác tài sản trí tuệ là nội dung của hoạt động khoa học công nghệ.",
+           "Điều 28: được định giá, góp vốn, thành lập doanh nghiệp quản lý tài sản trí tuệ; phải lập quỹ phát triển "
+           "khoa học và công nghệ và công khai kết quả hằng năm trên Nền tảng số quốc gia."],
+          ["Chuẩn bị phương án khai thác.", "Có dữ liệu tài sản trí tuệ đủ để công khai."]],
+         [["**Thông tư 83**",
+           "Thông tư số 83/2026/TT-BGDĐT quy định Chuẩn cơ sở giáo dục đại học, hiệu lực từ 15/11/2026, thay Thông tư "
+           "số 01/2024/TT-BGDĐT"],
+          ["Yêu cầu quy chế quản trị về sở hữu trí tuệ, liêm chính khoa học, liêm chính học thuật.",
+           "Tính văn bằng vào sản phẩm khoa học quy đổi: bằng giải pháp hữu ích tính 3, bằng sáng chế tính 5; tách riêng "
+           "nguồn thu từ thương mại hóa.",
+           "Dữ liệu thống nhất trên HEMIS; công bố kết quả tự đánh giá trước ngày 31/5 hằng năm."],
+          ["Ban hành quy chế sửa đổi trước 31/5/2027.", "Thống kê văn bằng đúng định nghĩa của Chuẩn."]],
+         [["**Kết luận 51** và **Quyết định 1624**",
+           "Kết luận số 51-KL/TW năm 2026 của Bộ Chính trị; Quyết định số 1624/QĐ-TTg năm 2026 sửa đổi Chiến lược sở hữu "
+           "trí tuệ đến năm 2030 ban hành kèm Quyết định số 1068/QĐ-TTg"],
+          ["Kết luận 51: chuyển từ quản lý hành chính sang kiến tạo hệ sinh thái sở hữu trí tuệ.",
+           "Kế thừa từ Quyết định 1068: dùng chỉ số sở hữu trí tuệ để đánh giá trường; trường khối kỹ thuật, công nghệ "
+           "đăng ký bảo hộ đồng thời với công bố.",
+           "Điểm mới: thí điểm định giá ít nhất 100 quyền; trung tâm tư vấn định giá, khai thác trong trường; hướng tới "
+           "đưa sở hữu trí tuệ thành nội dung học bắt buộc."],
+          ["Sàng lọc trước khi công bố.", "Chuẩn bị tham gia thí điểm định giá.", "Đưa sở hữu trí tuệ vào đào tạo."]],
+         [["**Văn bản khác**",
+           "Luật Chuyển giao công nghệ số 07/2017/QH14; Nghị định số 134/2026/NĐ-CP, gọi tắt là Nghị định 134; Chỉ thị số "
+           "02/CT-TTg năm 2026, gọi tắt là Chỉ thị 02"],
+          ["Luật Chuyển giao công nghệ: chuyển giao, định giá, góp vốn bằng kết quả nghiên cứu.",
+           "Nghị định 134: tác phẩm có dùng trí tuệ nhân tạo chỉ được bảo hộ quyền tác giả khi con người đóng góp sáng tạo "
+           "trực tiếp.",
+           "Chỉ thị 02: tăng cường thực thi quyền, xây dựng cơ sở dữ liệu quốc gia về thực thi."],
+          ["Quy định việc dùng trí tuệ nhân tạo trong quy chế liêm chính."]],
+     ],
+     "Nguồn: Nhóm nghiên cứu tổng hợp từ các văn bản nêu trong bảng.", [2300, 4500, 2268]),
+    ("P", "Bảng 1.1 cho thấy hai thay đổi lớn. Thứ nhất, quyền quyết định chuyển về nhà trường: tổ chức chủ trì tự động có "
+          "quyền sở hữu phần kết quả dùng ngân sách, có quyền đăng ký và tự quyết cách thương mại hóa. Thứ hai, đi kèm "
+          "quyền là nghĩa vụ: thưởng tối thiểu cho tác giả, ghi nhận mức đóng góp, theo dõi riêng kết quả từ ngân sách, "
+          "công khai kết quả và đáp ứng Chuẩn cơ sở giáo dục đại học."),
+    ("H2", "1.3.2. Hệ quả đối với quy chế nội bộ"),
     ("P", "Để không nhầm lẫn các khoản lợi ích, báo cáo dùng bốn thuật ngữ. **Thù lao** là khoản chủ sở hữu trả cho tác "
-          "giả sáng chế, kiểu dáng, thiết kế bố trí theo Điều 135 Luật Sở hữu trí tuệ. **Thưởng** là khoản trích từ lợi "
-          "nhuận thương mại hóa theo Điều 28 Luật số 93/2025/QH15. **Nhuận bút** là khoản trả cho tác giả sách, giáo "
-          "trình. **Phân chia nguồn thu** là việc chủ sở hữu phân bổ khoản thu cho trường, đơn vị có tác giả và quỹ. Bốn "
-          "khoản này khác nhau về căn cứ, người hưởng và cơ sở tính, nên tỷ lệ của khoản này không so sánh trực tiếp được "
-          "với khoản khác."),
-    ("P", "Ngoài ra, Luật Chuyển giao công nghệ số 07/2017/QH14 điều chỉnh việc chuyển giao, định giá và góp vốn bằng kết "
-          "quả nghiên cứu; Luật Giáo dục được sửa đổi bởi Luật số 123/2025/QH15 tạo khung chung cho hoạt động giáo dục."),
-    ("H2", "1.3.2. Luật Khoa học, công nghệ và đổi mới sáng tạo năm 2025 và Nghị định số 267/2025/NĐ-CP"),
-    ("P", "Luật số 93/2025/QH15, có hiệu lực từ ngày 01 tháng 10 năm 2025, thay đổi căn bản quyền đối với kết quả nghiên "
-          "cứu dùng ngân sách nhà nước (Quốc hội, 2025b). Bốn nội dung chính là:"),
-    ("P", "- **Giao quyền tự động.** Khoản 2 Điều 25 quy định tổ chức chủ trì được tự động giao quyền quản lý, sử dụng, "
-          "quyền sở hữu phần kết quả tương ứng với kinh phí ngân sách nhà nước, không phải làm thủ tục giao quyền, không "
-          "phải bồi hoàn. Điều 27 cho phép tổ chức tự quyết định hình thức, giá và cách chia lợi nhuận khi thương mại hóa. "
-          "Điểm b khoản 2 Điều 37 khẳng định tổ chức ngoài công lập cũng được giao quyền như vậy."),
-    ("P", "- **Thưởng cho tác giả.** Điều 28 phân biệt theo nguồn kinh phí. Với phần không dùng ngân sách nhà nước, chủ sở "
-          "hữu tự quyết định cách dùng lợi nhuận, kể cả thưởng cho tác giả. Với phần dùng ngân sách nhà nước, tổ chức chủ "
-          "trì phải thưởng cho tác giả tối thiểu 30% lợi nhuận sau thuế, hoặc 30% giá trị kết quả khi góp vốn, thành lập "
-          "doanh nghiệp. Tác giả sáng chế, kiểu dáng, thiết kế bố trí còn được hưởng thù lao theo Luật Sở hữu trí tuệ. "
-          "Phần thưởng là mức chung cho các đồng tác giả."),
-    ("P", "- **Chuyển tiếp.** Theo khoản 3 Điều 73, nhiệm vụ được phê duyệt trước ngày 01 tháng 10 năm 2025 tiếp tục theo "
-          "quy định tại thời điểm phê duyệt. Khoản 7 Điều 73 là ngoại lệ: Điều 28 áp dụng cho lợi nhuận chưa chia từ sáng "
-          "chế, kiểu dáng, thiết kế bố trí, giống cây trồng đã được cấp văn bằng của nhiệm vụ giao từ ngày 01 tháng 01 năm "
-          "2023."),
-    ("P", "- **Kinh phí cho bảo hộ.** Điểm b khoản 2 Điều 66 cho phép quỹ phát triển khoa học và công nghệ của tổ chức chi "
-          "cho đăng ký, bảo hộ, quản lý, khai thác quyền sở hữu trí tuệ."),
-    ("P", "Nghị định số 267/2025/NĐ-CP, có hiệu lực từ ngày 14 tháng 10 năm 2025, quy định chi tiết các điều trên. Khoản 2 "
-          "Điều 32 giao tự động quyền sở hữu cho tổ chức chủ trì ngoài công lập và yêu cầu theo dõi riêng thông tin về kết "
-          "quả. Điều 34 yêu cầu chia lợi nhuận công khai, minh bạch; tổ chức trung gian hưởng tối thiểu 10% lợi nhuận nếu "
-          "các bên không thỏa thuận khác; phần thưởng giữa các đồng tác giả chia theo thỏa thuận của họ. Điểm g khoản 2 "
-          "Điều 17 yêu cầu hồ sơ đánh giá cuối kỳ có văn bản xác định mức đóng góp của các thành viên. Nghị định số "
-          "70/2018/NĐ-CP về tài sản hình thành từ nhiệm vụ khoa học và công nghệ hết hiệu lực. Nghị định chưa quy định "
-          "cách tính lợi nhuận của một kết quả hình thành từ nhiều nguồn kinh phí, nên nhà trường cần tự quy định trong "
-          "quy chế."),
-    ("P", "Từ các quy định trên, có ba điểm áp dụng cho nhà trường. Một là, muốn biết tác giả được hưởng gì trong một trường "
-          "hợp cụ thể, phải xác định đồng thời nguồn kinh phí, thời điểm giao nhiệm vụ và loại đối tượng. Hai là, thù lao "
-          "theo Điều 135 và thưởng theo Điều 28 là hai khoản riêng, không thay thế nhau. Ba là, quy chế nội bộ có thể quy "
-          "định mức có lợi hơn cho tác giả, nhưng không được thấp hơn mức tối thiểu của Luật trong các trường hợp bắt "
-          "buộc."),
-    ("H2", "1.3.3. Luật Giáo dục đại học năm 2025 và Chiến lược sở hữu trí tuệ đến năm 2030"),
-    ("P", "Luật Giáo dục đại học số 125/2025/QH15, có hiệu lực từ ngày 01 tháng 01 năm 2026, coi đăng ký, bảo hộ, khai thác "
-          "tài sản trí tuệ là một nội dung của hoạt động khoa học công nghệ tại điểm e khoản 3 Điều 27 (Quốc hội, 2025a). "
-          "Điều 28 cho phép cơ sở giáo dục đại học thành lập doanh nghiệp quản lý tài sản trí tuệ; định giá, góp vốn, chia "
-          "lợi ích từ tài sản trí tuệ; đồng thời yêu cầu thành lập quỹ phát triển khoa học và công nghệ, tuân thủ liêm "
-          "chính và công khai kết quả hằng năm trên Nền tảng số quốc gia."),
-    ("P", "Kết luận số 51-KL/TW yêu cầu chuyển từ tư duy quản lý hành chính sang kiến tạo hệ sinh thái sở hữu trí tuệ, xử "
-          "lý nghiêm đạo văn và đẩy mạnh thương mại hóa (Bộ Chính trị, 2026). Quyết định số 1624/QĐ-TTg sửa đổi Chiến "
-          "lược sở hữu trí tuệ đến năm 2030 (Thủ tướng Chính phủ, 2026b). Với cơ sở giáo dục đại học, cần phân biệt nội "
-          "dung kế thừa và nội dung mới:"),
-    ("P", "- **Kế thừa từ Quyết định số 1068/QĐ-TTg năm 2019:** dùng chỉ số đo lường về sở hữu trí tuệ để đánh giá hiệu quả "
-          "hoạt động; xác định đối tượng quyền cần đạt với kết quả dùng ngân sách nhà nước; trường khối kỹ thuật, công nghệ "
-          "đăng ký bảo hộ đồng thời với việc công bố bài báo về kết quả có tính ứng dụng cao, theo điểm b khoản 4 Mục III."),
-    ("P", "- **Mới hoặc mở rộng:** thí điểm hỗ trợ xác định giá trị ít nhất 100 quyền sở hữu trí tuệ, theo điểm đ khoản 5 "
-          "Mục II; phát triển trung tâm tư vấn, hỗ trợ định giá và khai thác thương mại trong cơ sở giáo dục đại học, theo "
-          "điểm a khoản 6 Mục III; nghiên cứu đưa sở hữu trí tuệ và kỹ năng khai thác thương mại thành nội dung học bắt "
-          "buộc, theo điểm b khoản 8 Mục III."),
-    ("P", "Chỉ thị số 02/CT-TTg yêu cầu tăng cường thực thi quyền sở hữu trí tuệ và bảo đảm môi trường học thuật tôn trọng "
-          "bản quyền (Thủ tướng Chính phủ, 2026a)."),
-    ("H2", "1.3.4. Yêu cầu đối với quy chế nội bộ của nhà trường"),
-    ("P", "Để pháp luật đi vào hoạt động hằng ngày, quy chế sở hữu trí tuệ của nhà trường cần có bốn nhóm nội dung: xác định "
-          "quyền sở hữu theo từng nguồn kinh phí, gồm nhiệm vụ trường giao, đề tài dùng cơ sở vật chất của trường, sản "
-          "phẩm của người học và hợp đồng với doanh nghiệp; quy trình khai báo, đánh giá và quyết định nộp đơn trước khi "
-          "công bố; cơ chế chia lợi ích theo nguồn hình thành và loại đối tượng, tách thưởng, thù lao, nhuận bút với phần "
-          "chia nguồn thu, phù hợp Luật số 93/2025/QH15 và Nghị định số 267/2025/NĐ-CP; đầu mối, trách nhiệm phối hợp và "
-          "kinh phí cho đăng ký, khai thác. Quy chế hiện hành của Trường Đại học Thành Đô được đối chiếu với các yêu cầu "
-          "này tại Mục 2.2.1."),
+          "giả sáng chế, kiểu dáng, thiết kế bố trí theo Luật Sở hữu trí tuệ. **Thưởng** là khoản trích từ lợi nhuận "
+          "thương mại hóa theo Luật KH,CN&ĐMST. **Nhuận bút** là khoản trả cho tác giả sách, giáo trình. **Phân chia "
+          "nguồn thu** là việc chủ sở hữu phân bổ khoản thu cho trường, đơn vị có tác giả và quỹ. Bốn khoản này khác nhau "
+          "về căn cứ, người hưởng và cơ sở tính, nên tỷ lệ của khoản này không so sánh trực tiếp được với khoản khác."),
+    ("P", "Từ đó, có ba điểm áp dụng. Một là, muốn biết tác giả được hưởng gì, phải xác định cùng lúc nguồn kinh phí, "
+          "thời điểm giao nhiệm vụ và loại đối tượng. Hai là, thù lao và thưởng là hai khoản riêng, không thay thế nhau. "
+          "Ba là, quy chế nội bộ có thể quy định mức có lợi hơn cho tác giả, nhưng không được thấp hơn mức tối thiểu của "
+          "luật. Pháp luật chưa hướng dẫn cách tính lợi nhuận của một kết quả hình thành từ nhiều nguồn kinh phí, nên nhà "
+          "trường cần tự quy định trong quy chế."),
+    ("P", "Quy chế sở hữu trí tuệ của nhà trường vì vậy cần có bốn nhóm nội dung: xác định quyền sở hữu theo từng nguồn "
+          "kinh phí, gồm nhiệm vụ trường giao, đề tài dùng cơ sở vật chất của trường, sản phẩm của người học và hợp đồng "
+          "với doanh nghiệp; quy trình khai báo, đánh giá và quyết định nộp đơn trước khi công bố; cơ chế chia lợi ích "
+          "theo nguồn hình thành và loại đối tượng; đầu mối, trách nhiệm phối hợp và kinh phí cho đăng ký, khai thác. Quy "
+          "chế hiện hành của Trường Đại học Thành Đô được đối chiếu với các yêu cầu này tại Mục 2.2.1."),
     ("H1", "1.4. Tiêu chí đánh giá, yếu tố ảnh hưởng và khung phân tích"),
     ("H2", "1.4.1. Tiêu chí đánh giá hiệu quả"),
     ("P", "Hiệu quả quản lý được đánh giá theo chuỗi bốn nhóm: đầu vào, quá trình, đầu ra và kết quả. Mười sáu tiêu chí được "
-          "trình bày tại Bảng 1.1; đây cũng là căn cứ để đánh giá khả năng đo lường của dữ liệu tại Chương 2."),
-    ("K", 272, 274, {}),
+          "trình bày tại Bảng 1.2; đây cũng là căn cứ để đánh giá khả năng đo lường của dữ liệu tại Chương 2."),
+    ("K", 272, 274, {"Bảng 1.1.": "Bảng 1.2."}),
     ("P", "Cách đo theo chuỗi giúp phân biệt nhà trường đã đầu tư, tổ chức bao nhiêu với việc đã tạo ra bao nhiêu quyền và "
           "mang lại giá trị gì. Nếu chỉ đo đầu vào và đầu ra, nhà trường chưa biết hoạt động sở hữu trí tuệ có hiệu quả "
           "thực sự hay không."),
@@ -313,7 +310,7 @@ CHUONG_1 = [
           "sách cho trường đại học, thúc đẩy việc thành lập văn phòng chuyển giao công nghệ và doanh nghiệp khởi nguồn "
           "(Shane, 2004). Văn phòng chuyển giao không chỉ làm thủ tục mà còn tiếp thị công nghệ, định giá và kết nối nhà "
           "đầu tư (Siegel et al., 2007; Thursby & Kemp, 2002). Các trường thành công thường dành cho nhà sáng chế một tỷ lệ "
-          "đáng kể trong doanh thu cấp phép (Siegel et al., 2007). Luật số 93/2025/QH15 của Việt Nam cũng đi theo hướng "
+          "đáng kể trong doanh thu cấp phép (Siegel et al., 2007). Luật KH,CN&ĐMST của Việt Nam cũng đi theo hướng "
           "giao quyền tự động cho tổ chức chủ trì."),
     ("P", "**Kinh nghiệm trong nước.** Một số trường đại học tự chủ như Đại học Quốc gia Thành phố Hồ Chí Minh, Đại học "
           "Bách khoa Hà Nội, Trường Đại học Tôn Đức Thắng đã ban hành quy chế sở hữu trí tuệ riêng, có quy định khai báo "
@@ -327,10 +324,8 @@ CHUONG_1 = [
     ("P", "- Thuê tổ chức đại diện sở hữu công nghiệp khi chưa có nhân sự chuyên trách."),
     ("P", "- Dùng Không gian sáng tạo mở thử nghiệm để người học, giảng viên và doanh nghiệp cùng thử nghiệm, hoàn thiện "
           "sản phẩm trước khi quyết định nộp đơn hoặc chuyển giao. Mọi người tham gia phải ký cam kết bảo mật, hoặc nhà "
-          "trường nộp đơn trước khi đưa sản phẩm ra thử nghiệm rộng. Nếu kết quả đã lỡ bộc lộ, khoản 3 Điều 60 Luật Sở hữu "
-          "trí tuệ chỉ giữ tính mới của sáng chế khi người có quyền đăng ký, hoặc người có thông tin từ người đó, bộc lộ "
-          "và đơn được nộp tại Việt Nam trong 12 tháng; đây là phương án dự phòng, không thay cho nguyên tắc nộp đơn "
-          "trước."),
+          "trường nộp đơn trước khi đưa sản phẩm ra thử nghiệm rộng. Thời hạn 12 tháng giữ tính mới khi kết quả đã lỡ "
+          "bộc lộ chỉ là phương án dự phòng, không thay cho nguyên tắc nộp đơn trước."),
     ("TK", "TIỂU KẾT CHƯƠNG 1"),
     ("P", "Chương 1 đã làm rõ bốn vấn đề làm căn cứ cho đánh giá thực trạng và đề xuất giải pháp."),
     ("P", "Thứ nhất, quản lý quyền sở hữu trí tuệ trong trường đại học là quản lý chu trình tạo lập, xác lập, khai thác và "
@@ -338,8 +333,7 @@ CHUONG_1 = [
           "nguồn, nhiều chủ thể và chịu áp lực giữa công bố và bảo hộ."),
     ("P", "Thứ hai, khung pháp lý 2025 - 2026 chuyển nhiều quyền quyết định về nhà trường: tổ chức chủ trì được giao quyền "
           "tự động và có quyền đăng ký; thưởng cho tác giả tối thiểu 30% lợi nhuận sau thuế với phần kết quả từ ngân sách, "
-          "tách biệt với thù lao theo Điều 135; Nghị định số 267/2025/NĐ-CP yêu cầu ghi nhận đóng góp và thỏa thuận chia "
-          "thưởng giữa đồng tác giả. Vì vậy, quy chế nội bộ phải xác định lợi ích theo nguồn kinh phí, thời điểm giao "
+          "tách biệt với thù lao; mức đóng góp và thỏa thuận chia thưởng giữa đồng tác giả phải được ghi nhận. Vì vậy, quy chế nội bộ phải xác định lợi ích theo nguồn kinh phí, thời điểm giao "
           "nhiệm vụ và loại đối tượng."),
     ("P", "Thứ ba, bộ 16 tiêu chí theo chuỗi đầu vào, quá trình, đầu ra, kết quả và sáu nhóm yếu tố ảnh hưởng là công cụ "
           "đánh giá thực trạng tại Chương 2."),

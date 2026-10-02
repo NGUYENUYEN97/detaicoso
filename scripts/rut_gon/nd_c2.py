@@ -5,7 +5,8 @@ CHUONG_2 = [
     ("CH", 328),
     ("P", "Chương này đánh giá thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô giai đoạn 2021 - 2025 "
           "theo khung phân tích tại Mục 1.4. Dữ liệu lấy từ các danh mục thống kê của Phòng Khoa học Công nghệ, danh sách "
-          "nhân sự năm 2026, danh mục tài sản trí tuệ, các quy chế nội bộ và Kế hoạch số 07/KH-ĐHTĐ. Văn bản ban hành sau "
+          "nhân sự năm 2026, danh mục tài sản trí tuệ, các quy chế nội bộ và Kế hoạch hoạt động khoa học công nghệ giai đoạn 2024 - 2028, gọi tắt "
+          "là Kế hoạch 07. Văn bản ban hành sau "
           "năm 2025 chỉ dùng để mô tả yêu cầu hiện hành, không dùng để giải thích kết quả của kỳ đánh giá. Năm của số liệu "
           "được ghi tại từng bảng, hình."),
 
@@ -45,8 +46,7 @@ CHUONG_2 = [
           "nguyên nhân, nhưng cho thấy cần xem xét quy trình và cơ chế, không chỉ năng lực nghiên cứu (Mục 2.3.3)."),
     ("P", "Trong hai năm cuối kỳ, Nhà trường chủ trì ba đề tài cấp quốc gia do Quỹ Phát triển khoa học và công nghệ quốc gia "
           "tài trợ, tổng kinh phí 4,67 tỷ đồng. Các đề tài được phê duyệt ngày 26 tháng 3 năm 2024, ngày 30 tháng 9 năm "
-          "2025 và ngày 15 tháng 12 năm 2025, đều đang thực hiện. Theo điểm c khoản 1 Điều 86 Luật Sở hữu trí tuệ được bổ "
-          "sung bởi Luật số 131/2025/QH15, Nhà trường có quyền đăng ký sáng chế, kiểu dáng công nghiệp, thiết kế bố trí "
+          "2025 và ngày 15 tháng 12 năm 2025, đều đang thực hiện. Là tổ chức chủ trì, Nhà trường có quyền đăng ký sáng chế, kiểu dáng công nghiệp, thiết kế bố trí "
           "là kết quả của các nhiệm vụ này. Đây là nguồn tài sản tiềm năng của giai đoạn tới, với điều kiện kết quả được "
           "sàng lọc trước khi công bố."),
     ("P", "Đề tài đối chiếu thăm dò danh sách tác giả của hai danh mục bài báo với 252 người trong danh sách nhân sự năm "
@@ -61,15 +61,12 @@ CHUONG_2 = [
     ("H1", "2.2. Thực trạng thể chế, tổ chức và nguồn lực quản lý"),
     ("H2", "2.2.1. Hệ thống quy định nội bộ"),
     ("P", "Nhà trường có bốn văn bản chứa quy định về sở hữu trí tuệ."),
-    ("P", "- **Quy chế hoạt động khoa học công nghệ** kèm Quyết định số 213/QĐ-ĐHTĐ năm 2021, sau đây gọi là Quyết định 213. "
-          "Chương VI dành cho sở hữu trí tuệ và chuyển giao công nghệ. Điều 34 liệt kê phạm vi tài sản khá đầy đủ. Điều 35 "
-          "quy định quy trình đăng ký một cửa do Phòng Khoa học Công nghệ thực hiện. Điều 36 quy định chia nguồn thu khi "
-          "chuyển giao."),
-    ("P", "- **Quy chế quản trị tài sản trí tuệ** kèm Quyết định số 217/QĐ-ĐHTĐ ngày 21 tháng 11 năm 2024, sau đây gọi là "
-          "Quyết định 217. Văn bản mở rộng phạm vi tới cơ sở dữ liệu, giáo trình điện tử, bí quyết và tên miền. Điều 10 "
-          "yêu cầu tác giả xin ý kiến Phòng Khoa học Công nghệ trước khi công bố tài sản có thể bảo hộ. Điều 11 giao Phòng "
-          "xây dựng quy trình, biểu mẫu khai báo, lập hồ sơ theo dõi; giao Bộ phận Pháp chế làm thủ tục xác lập quyền. "
-          "Điều 14 quy định các hành vi xâm phạm quyền tác giả."),
+    ("P", "- **Quyết định 213** năm 2021. Chương VI về sở hữu trí tuệ liệt kê phạm vi tài sản khá đầy đủ, quy định đăng ký "
+          "một cửa qua Phòng Khoa học Công nghệ và cách chia nguồn thu khi chuyển giao tại Điều 36."),
+    ("P", "- **Quyết định 217** ngày 21 tháng 11 năm 2024. Văn bản mở rộng phạm vi tới cơ sở dữ liệu, giáo trình điện tử, bí "
+          "quyết và tên miền; yêu cầu tác giả xin ý kiến Phòng Khoa học Công nghệ trước khi công bố tài sản có thể bảo hộ; "
+          "giao Phòng xây dựng biểu mẫu khai báo, hồ sơ theo dõi; giao Bộ phận Pháp chế làm thủ tục xác lập quyền; quy "
+          "định các hành vi xâm phạm quyền tác giả."),
     ("P", "- **Quy chế chi tiêu nội bộ** ban hành ngày 01 tháng 8 năm 2026, ban hành sau kỳ đánh giá nên chỉ dùng để mô tả "
           "cơ chế hiện hành."),
     ("P", "- **Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ** năm 2025. Văn bản gốc chưa có trong hồ sơ nên nội dung được "
@@ -79,37 +76,36 @@ CHUONG_2 = [
           "cùng hiệu lực. Bảng 2.3 tập hợp các quy định về lợi ích của tác giả và chia nguồn thu."),
     ("K", 355, 357, {}),
     ("P", "Các tỷ lệ trong Bảng 2.3 không so sánh trực tiếp được, vì khác nhau về đối tượng hưởng và cơ sở tính. Mức 30% "
-          "tại điểm a là khen thưởng tập thể tác giả, tính trên nguồn thu sau chi phí. Mức tối thiểu 30% tại Điều 28 Luật "
-          "số 93/2025/QH15 là thưởng, tính trên lợi nhuận sau thuế. Mức 15% tại Điều 135 Luật Sở hữu trí tuệ là thù lao, "
-          "tính trên tổng số tiền nhận được trước thuế. Chỉ điểm a và điểm b khoản 4 Điều 36 Quyết định 213 có cùng cơ sở "
-          "tính, nên được mô phỏng chung tại Hình 2.2."),
+          "tại điểm a là khen thưởng tập thể tác giả, tính trên nguồn thu sau chi phí. Mức tối thiểu 30% của Luật "
+          "KH,CN&ĐMST là thưởng, tính trên lợi nhuận sau thuế. Mức 15% của Luật Sở hữu trí tuệ là thù lao, tính trên tổng "
+          "số tiền nhận được trước thuế. Chỉ điểm a và điểm b của Quyết định 213 có cùng cơ sở tính, nên được mô phỏng "
+          "chung tại Hình 2.2."),
     ("K", 359, 361, {}),
     ("P", "Trên cùng nguồn thu, phần của tác giả theo hai điểm bằng nhau đến khoảng 333 triệu đồng. Từ mức này, phần theo "
           "điểm a không tăng do mức trần 100 triệu đồng một đề tài. Hai điểm áp dụng cho hai phạm vi khác nhau, nên khác "
           "biệt này chưa phải là xung đột. Nó chỉ cho thấy tác động của mức trần với đề tài dùng ngân sách nhà nước."),
     ("P", "Chưa thấy trường hợp nào một tài sản cùng lúc chịu hai yêu cầu nội bộ không tương thích. Tuy vậy, có ba điểm cần "
           "thống nhất cách hiểu:"),
-    ("P", "- Quan hệ giữa Điều 13 Quyết định 217 và khoản 4 Điều 36 Quyết định 213, vì văn bản sau không dẫn chiếu văn bản "
-          "trước."),
+    ("P", "- Quan hệ giữa quy định chia lợi ích của Quyết định 217 và của Quyết định 213, vì văn bản sau không dẫn chiếu "
+          "văn bản trước."),
     ("P", "- Quan hệ giữa mức trích 50% kinh phí chuyển giao về Nhà trường tại Quy chế chi tiêu nội bộ năm 2026 và phần 30% "
           "của tác giả tại điểm b."),
     ("P", "- Thuật ngữ: điểm a gọi là khen thưởng, điểm b ghi tác giả hưởng 30% theo Luật Sở hữu trí tuệ, trong khi pháp "
-          "luật phân biệt thưởng theo Điều 28 Luật số 93/2025/QH15 với thù lao theo Điều 135 Luật Sở hữu trí tuệ."),
-    ("P", "Đối chiếu với luật hiện hành, có ba điểm cần rà soát. **Một là**, với nhiệm vụ dùng ngân sách nhà nước giao từ "
-          "ngày 01 tháng 10 năm 2025, và với sáng chế, kiểu dáng công nghiệp, thiết kế bố trí đã được cấp văn bằng từ nhiệm "
-          "vụ giao từ ngày 01 tháng 01 năm 2023 theo khoản 7 Điều 73, thưởng cho tác giả phải đạt tối thiểu 30% lợi nhuận "
-          "sau thuế. Mức trần 100 triệu đồng chỉ gây thiếu hụt khi 30% lợi nhuận sau thuế vượt 100 triệu đồng. Khoản nộp "
-          "ngân sách 40% không thuộc các mục đích sử dụng lợi nhuận tại khoản 3 Điều 28. **Hai là**, ba đề tài cấp quốc gia "
-          "không cùng một chế độ. Đề tài phê duyệt ngày 15 tháng 12 năm 2025 thuộc phạm vi Điều 28. Hai đề tài phê duyệt "
-          "trước ngày 01 tháng 10 năm 2025 theo pháp luật tại thời điểm phê duyệt (khoản 3 Điều 73), trừ trường hợp tại "
-          "khoản 7 Điều 73. **Ba là**, với sáng chế, kiểu dáng công nghiệp, thiết kế bố trí, điểm b tính 30% trên nguồn "
-          "thu sau chi phí, còn mức mặc định tại Điều 135 tính 15% trên tổng số tiền trước thuế. Khi chi phí vượt một nửa "
-          "nguồn thu, mức theo điểm b thấp hơn. Cần xác định quy chế có được coi là thỏa thuận về thù lao hay không. Như "
-          "vậy, việc cập nhật quy chế phải theo từng trường hợp; không thể kết luận mức trần trái luật trong mọi trường "
-          "hợp, cũng không thể thay bằng một tỷ lệ chung."),
+          "luật phân biệt thưởng với thù lao (Mục 1.3.2)."),
+    ("P", "Đối chiếu với luật hiện hành, có ba điểm cần rà soát. **Một là**, với kết quả dùng ngân sách nhà nước thuộc phạm "
+          "vi Luật KH,CN&ĐMST, thưởng cho tác giả phải đạt tối thiểu 30% lợi nhuận sau thuế. Mức trần 100 triệu đồng của "
+          "điểm a chỉ gây thiếu hụt khi 30% lợi nhuận sau thuế vượt 100 triệu đồng. Khoản nộp ngân sách 40% cũng không còn "
+          "nằm trong các mục đích dùng lợi nhuận mà Luật cho phép. **Hai là**, theo quy định chuyển tiếp, ba đề tài cấp "
+          "quốc gia không cùng một chế độ. Đề tài phê duyệt ngày 15 tháng 12 năm 2025 áp dụng Luật mới. Hai đề tài phê "
+          "duyệt trước ngày 01 tháng 10 năm 2025 áp dụng quy định cũ, trừ lợi nhuận từ sáng chế, kiểu dáng, thiết kế bố "
+          "trí đã được cấp văn bằng. **Ba là**, với sáng chế, kiểu dáng, thiết kế bố trí, điểm b tính 30% trên nguồn thu "
+          "sau chi phí, còn thù lao mặc định của Luật Sở hữu trí tuệ là 15% tổng số tiền trước thuế. Khi chi phí vượt "
+          "một nửa nguồn thu, mức theo điểm b thấp hơn. Cần xác định quy chế có được coi là thỏa thuận về thù lao hay "
+          "không. Như vậy, việc cập nhật quy chế phải theo từng trường hợp; không thể kết luận mức trần trái luật trong "
+          "mọi trường hợp, cũng không thể thay bằng một tỷ lệ chung."),
 
     ("H2", "2.2.2. Tổ chức bộ máy và đầu mối quản lý"),
-    ("P", "Theo Điều 35 Quyết định 213 và Điều 11 Quyết định 217, Phòng Khoa học Công nghệ là đầu mối tiếp nhận, nhận diện, "
+    ("P", "Theo Quyết định 213 và Quyết định 217, Phòng Khoa học Công nghệ là đầu mối tiếp nhận, nhận diện, "
           "theo dõi và xúc tiến thương mại hóa; Bộ phận Pháp chế làm thủ tục xác lập quyền. Thực tế, công việc chia cho bốn "
           "đơn vị (Hình 2.3). Phòng Khoa học Công nghệ tiếp nhận hồ sơ đề tài. Bộ phận quản trị thương hiệu thuộc Trung tâm "
           "Tuyển sinh và Quản trị thương hiệu lập danh mục nhãn hiệu, biểu trưng. Bộ phận Pháp chế thuộc Trung tâm Dịch vụ "
@@ -119,15 +115,15 @@ CHUONG_2 = [
     ("K", 367, 369, {}),
     ("P", "Ba trong bốn đầu mối thuộc khối Quản trị và Dịch vụ, còn kết quả nghiên cứu phát sinh ở khối Đào tạo và Nghiên "
           "cứu. Quyết định 217 đã phân công trách nhiệm rõ. Tuy nhiên, hồ sơ được tiếp cận chưa có biểu mẫu khai báo hay "
-          "sổ theo dõi dùng chung giữa các đơn vị. Mức độ thực hiện Điều 10 và Điều 11 vì vậy cần được đánh giá thêm, chưa "
+          "sổ theo dõi dùng chung giữa các đơn vị. Mức độ thực hiện các nhiệm vụ này vì vậy cần được đánh giá thêm, chưa "
           "thể kết luận là chưa thực hiện."),
 
     ("H2", "2.2.3. Nguồn lực tài chính và cơ chế khuyến khích"),
     ("P", "Nhà trường có ba kênh tài trợ nghiên cứu với cơ chế khác nhau (Bảng 2.4)."),
     ("K", 373, 375, {}),
     ("P", "Đề tài cấp cơ sở là kênh duy nhất trong kỳ tạo ra sản phẩm có tiềm năng, được cấp 424,75 triệu đồng trong năm "
-          "năm. Quy chế đã có căn cứ chi cho xác lập quyền: Điều 35 Quyết định 213 giao Phòng nộp đơn và lệ phí; Điều 38 "
-          "cho phép chi thuê ngoài; Điều 13 Quyết định 217 coi lệ phí xác lập quyền là khoản được trừ khi chia lợi ích. "
+          "năm. Quy chế đã có căn cứ chi cho xác lập quyền: Quyết định 213 giao Phòng nộp đơn, lệ phí và cho phép chi "
+          "thuê ngoài; Quyết định 217 coi lệ phí xác lập quyền là khoản được trừ khi chia lợi ích. "
           "Điều còn thiếu là dự toán riêng cho phí nộp đơn, phí đại diện, phí duy trì; cách tạm ứng khi đơn nộp sau nghiệm "
           "thu; và người chịu trách nhiệm đề xuất chi. Số chi thực tế cho xác lập quyền cũng chưa được thống kê. Quỹ Học "
           "bổng sau tiến sĩ Ngô Xuân Độ có thể trang trải chi phí đăng ký, nhưng chỉ cho đối tượng học bổng và mới hoạt "
@@ -145,15 +141,15 @@ CHUONG_2 = [
     ("P", "Xét riêng giờ quy đổi, văn bằng được tính cao: sáng chế chuẩn Việt Nam được 360 giờ, cao hơn bài báo Web of "
           "Science hạng Q1 với 300 giờ. Nhưng chỉ bài báo quốc tế được thưởng tiền, từ 10 đến 20 triệu đồng một bài, và "
           "được ghi nhận ngay khi đăng. Văn bằng không có tiền thưởng và chỉ được ghi nhận khi được cấp, tức sau thẩm định "
-          "hình thức, công bố đơn và thẩm định nội dung theo Điều 119 Luật Sở hữu trí tuệ. Với giảng viên, công bố trước vì "
-          "vậy có lợi hơn về thời gian ghi nhận. Trong khi đó, khoản 3 Điều 60 Luật Sở hữu trí tuệ chỉ giữ tính mới của "
+          "hình thức, công bố đơn và thẩm định nội dung. Với giảng viên, công bố trước vì "
+          "vậy có lợi hơn về thời gian ghi nhận. Trong khi đó, Luật Sở hữu trí tuệ chỉ giữ tính mới của "
           "sáng chế khi đơn được nộp trong 12 tháng kể từ ngày bộc lộ, và chỉ áp dụng cho một số trường hợp bộc lộ nhất "
           "định. Đây là rủi ro cần xử lý cho giai đoạn tới. Đề tài không dùng cơ chế năm 2026 để giải thích kết quả 2021 "
           "- 2025."),
 
     ("H2", "2.2.4. Hệ thống dữ liệu phục vụ quản lý"),
     ("P", "Các danh mục thống kê của Phòng Khoa học Công nghệ chưa có danh mục tài sản trí tuệ đã đăng ký hoặc được cấp "
-          "văn bằng, dù Điều 11 Quyết định 217 đã giao nhiệm vụ này. Tệp theo dõi đơn và văn bằng hiện có gồm hai bảng "
+          "văn bằng, dù Quyết định 217 đã giao nhiệm vụ này. Tệp theo dõi đơn và văn bằng hiện có gồm hai bảng "
           "chưa thống nhất trạng thái của 5 kiểu dáng công nghiệp và không liên kết với danh mục đề tài. Danh mục bài báo "
           "không ghi mã đề tài, nên chưa biết bao nhiêu bài phát sinh từ đề tài. Dữ liệu cũng chưa chuẩn hóa: tên đơn vị "
           "ghi nhiều cách, biểu mẫu giáo trình năm 2021 khác các năm sau, năm của đề tài có thể là năm mã số, năm phê "
@@ -162,7 +158,7 @@ CHUONG_2 = [
     ("P", "Trong 16 tiêu chí tại Mục 1.4.1, chỉ 4 tiêu chí tính được đầy đủ, 5 tiêu chí tính được một phần và 7 tiêu chí "
           "chưa tính được. Nhóm kết quả không có tiêu chí nào tính được đầy đủ. Nhà trường đếm được số đơn và giấy chứng "
           "nhận, nhưng chưa đo được giá trị mà các quyền mang lại. Từ năm 2026, đây lại là thông tin phải công khai theo "
-          "điểm đ khoản 3 Điều 28 Luật Giáo dục đại học số 125/2025/QH15."),
+          "Luật Giáo dục đại học."),
 
     ("H1", "2.3. Thực trạng tạo lập, xác lập và bảo vệ quyền sở hữu trí tuệ"),
     ("H2", "2.3.1. Đối sánh giữa quy định và thực tế phát sinh"),
@@ -233,8 +229,7 @@ CHUONG_2 = [
           "nhất, vì hệ thống thống kê chưa theo dõi việc khai thác."),
 
     ("H1", "2.5. Đánh giá chung"),
-    ("P", "Kết quả hai năm 2024 - 2025 được đối chiếu với Kế hoạch hoạt động khoa học công nghệ giai đoạn 2024 - 2028 kèm "
-          "Kế hoạch số 07/KH-ĐHTĐ. Đây là thước đo khách quan vì do chính Nhà trường đặt ra."),
+    ("P", "Kết quả hai năm 2024 - 2025 được đối chiếu với Kế hoạch 07. Đây là thước đo khách quan vì do chính Nhà trường đặt ra."),
     ("K", 431, 433, {}),
     ("P", "Hình 2.10 cho thấy 6 trên 9 chỉ tiêu xác định được đạt hoặc vượt kế hoạch. Nhóm công bố vượt xa: bài báo quốc tế "
           "đạt 85 so với 30 bài, tức 283%; sách có ISBN 267%; bài kỷ yếu hội thảo cấp Trường 223%; bài báo trong nước "
@@ -244,7 +239,7 @@ CHUONG_2 = [
           "được tỷ lệ. Hai năm này chỉ có 5 kiểu dáng ghi năm 2024 nhưng trạng thái chưa thống nhất; giấy chứng nhận quyền "
           "tác giả năm 2025 thuộc pháp nhân UNIGO. Nếu 5 kiểu dáng được xác nhận, kết quả là 125%, nhưng cả 5 đều từ hợp "
           "tác doanh nghiệp, không từ đề tài. Vì Kế hoạch gộp sáng chế với kiểu dáng và quyền tác giả, chỉ tiêu có thể đạt "
-          "mà không cần kết quả nghiên cứu nào được bảo hộ. Kế hoạch 07/KH-ĐHTĐ từng nhận định giai đoạn 2019 - 2023 chưa "
+          "mà không cần kết quả nghiên cứu nào được bảo hộ. Kế hoạch 07 từng nhận định giai đoạn 2019 - 2023 chưa "
           "có công trình được chuyển giao và tài sản trí tuệ còn hạn chế; sau hai năm, nhận định này về cơ bản vẫn đúng."),
 
     ("H2", "2.5.1. Kết quả đạt được"),
@@ -256,7 +251,7 @@ CHUONG_2 = [
           "tạo ra 5 kiểu dáng và 1 đơn nhãn hiệu đồng sở hữu."),
     ("P", "**Thứ ba**, năng lực nghiên cứu tăng nhanh. Số bài báo tăng bình quân 62,7% một năm, tương đương 1,11 bài năm "
           "2025 trên một giảng viên nếu tính theo danh sách giảng viên năm 2026. 6 trên 9 chỉ tiêu xác định được của Kế "
-          "hoạch 07/KH-ĐHTĐ đạt hoặc vượt. Ba đề tài cấp quốc gia với tổng kinh phí 4,67 tỷ đồng được phê duyệt."),
+          "hoạch 07 đạt hoặc vượt. Ba đề tài cấp quốc gia với tổng kinh phí 4,67 tỷ đồng được phê duyệt."),
     ("P", "**Thứ tư**, đội ngũ có tiềm năng tạo lập tài sản trí tuệ, nhất là khối Y - Dược. 11 trên 38 đề tài có sản phẩm "
           "tiềm năng, trong đó 9 thuộc sở hữu công nghiệp. Đã có đơn sáng chế đầu tiên từ đề tài năm 2025 và thêm một đơn "
           "năm 2026."),
@@ -268,8 +263,7 @@ CHUONG_2 = [
     ("P", "**Thứ nhất**, kết quả nghiên cứu chưa được chuyển thành quyền tương xứng với tiềm năng. 9 đề tài có sản phẩm "
           "tiềm năng sở hữu công nghiệp nhưng mới 1 đề tài có đơn; 2 sản phẩm thuộc quyền tác giả chưa đăng ký."),
     ("P", "**Thứ hai**, các quy định nội bộ chưa làm rõ phạm vi và thứ tự áp dụng về lợi ích của tác giả, chưa phân biệt "
-          "thưởng, thù lao và phần chia nguồn thu. Điểm a khoản 4 Điều 36 Quyết định 213 cần rà soát theo Điều 28 và Điều "
-          "73 Luật số 93/2025/QH15."),
+          "thưởng, thù lao và phần chia nguồn thu. Mức trần tại điểm a cần rà soát theo Luật KH,CN&ĐMST."),
     ("P", "**Thứ ba**, luồng thương hiệu và luồng nghiên cứu vận hành tách biệt. Danh mục tài sản và danh mục đề tài do hai "
           "bộ phận lập, không liên kết với nhau."),
     ("P", "**Thứ tư**, tài sản do Nhà trường đơn sở hữu từ kết quả nghiên cứu còn ít: ngoài 4 tài sản thương hiệu, trong kỳ "
@@ -283,11 +277,10 @@ CHUONG_2 = [
 
     ("H2", "2.5.3. Nguyên nhân của hạn chế"),
     ("H3", "a) Nguyên nhân khách quan"),
-    ("P", "- **Pháp luật thay đổi nhanh.** Luật số 93/2025/QH15 có hiệu lực từ ngày 01 tháng 10 năm 2025; Luật Giáo dục "
-          "đại học số 125/2025/QH15 từ ngày 01 tháng 01 năm 2026; Luật số 131/2025/QH15 từ ngày 01 tháng 4 năm 2026; tiếp "
-          "theo là Kết luận số 51-KL/TW và Quyết định số 1624/QĐ-TTg năm 2026. Quy chế ban hành năm 2021 và 2024 phù hợp "
-          "với pháp luật thời điểm đó, nên nay cần rà soát. Nguyên nhân này giải thích nhu cầu cập nhật quy chế, không giải "
-          "thích kết quả xác lập quyền giai đoạn 2021 - 2024."),
+    ("P", "- **Pháp luật thay đổi nhanh.** Các văn bản mới tại Bảng 1.1 có hiệu lực dồn dập từ tháng 10 năm 2025 đến "
+          "tháng 11 năm 2026. Quy chế ban hành năm 2021 và 2024 phù hợp với pháp luật thời điểm đó, nên nay cần rà soát. "
+          "Nguyên nhân này giải thích nhu cầu cập nhật quy chế, không giải thích kết quả xác lập quyền giai đoạn 2021 - "
+          "2024."),
     ("P", "- **Thủ tục dài và tốn chi phí.** Xác lập quyền sở hữu công nghiệp mất nhiều thời gian và phát sinh phí tra cứu, "
           "soạn đơn, lệ phí, phí duy trì. Là trường tư thục, Nhà trường tự cân đối các khoản này."),
     ("P", "- **Cơ cấu ngành.** Phần lớn ngành đào tạo thuộc kinh tế, quản lý, ngôn ngữ, giáo dục và pháp luật, chủ yếu tạo "

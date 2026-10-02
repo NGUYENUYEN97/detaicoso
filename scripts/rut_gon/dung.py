@@ -34,9 +34,44 @@ HINH_KHOANG, HINH_DAU, HINH_MAU = (101, 118), 101, 102
 THAN = (119, 646)
 TLTK = (646, 700)
 # Tài liệu không còn được trích dẫn trong bản rút gọn.
-BO_TLTK = ["Rialti, R.", "Chính phủ. (2023). Nghị định số 17/2023"]
+BO_TLTK = ["Rialti, R.", "Chính phủ. (2023). Nghị định số 17/2023", "Quốc hội. (2025c). Luật số 123/2025"]
 
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+
+# Tên gọi tắt thống nhất, áp dụng cho các bảng, hình giữ lại từ bản v2 (thứ tự thay có ý nghĩa).
+TEN_GON = [
+    ("theo quyền tại điểm c khoản 1 Điều 86 Luật Sở hữu trí tuệ", "theo quyền đăng ký của tổ chức chủ trì"),
+    ("Dựa vào Điều 28, Điều 73 Luật số 93/2025/QH15 và Điều 135 Luật Sở hữu trí tuệ để",
+     "Dựa vào Luật KH,CN&ĐMST và Luật Sở hữu trí tuệ để"),
+    ("theo Điều 28, Điều 73 Luật số 93/2025/QH15, Điều 32, Điều 34 Nghị định số 267/2025/NĐ-CP và Điều 135 Luật Sở "
+     "hữu trí tuệ", "theo Luật KH,CN&ĐMST, Nghị định 267 và Luật Sở hữu trí tuệ"),
+    ("điểm a Điều 36 Quyết định 213 cần rà soát theo Điều 28, Điều 73 Luật số 93/2025/QH15",
+     "mức trần tại Quyết định 213 cần rà soát theo Luật KH,CN&ĐMST"),
+    ("điểm c khoản 1 Điều 86 do Luật số 131/2025/QH15 bổ sung trao quyền đăng ký cho tổ chức chủ trì; Điều 28 Luật Giáo "
+     "dục đại học số 125/2025/QH15 cho phép",
+     "Luật Sở hữu trí tuệ trao quyền đăng ký cho tổ chức chủ trì; Luật Giáo dục đại học cho phép"),
+    ("Điều 35, Điều 38 Quyết định 213 có căn cứ chi", "Quyết định 213 có căn cứ chi"),
+    ("Điều 35 Quyết định 213 giao Phòng Khoa học Công nghệ nộp đơn, lệ phí; Điều 38 cho phép chi thuê ngoài, chi khác "
+     "liên quan trực tiếp", "Quyết định 213 giao Phòng Khoa học Công nghệ nộp đơn, lệ phí và cho phép chi thuê ngoài"),
+    (" theo Điều 119 Luật Sở hữu trí tuệ", ""),
+    (" Bảng tổng hợp cuối Phụ lục II Thông tư số 83/2026/TT-BGDĐT chưa nêu giải pháp hữu ích dù công thức đã tính.", ""),
+    ("các văn bản nêu tại Mục 3.1.1", "các văn bản tại Bảng 1.1"),
+    ("theo Bảng 1 Phụ lục I Thông tư số 83/2026/TT-BGDĐT", "theo Thông tư 83"),
+    ("trên cơ sở Điều 11 Quyết định 217", "trên cơ sở Quyết định 217"),
+    ("khoản 4 Điều 36 Quy chế ban hành kèm Quyết định số 213/QĐ-ĐHTĐ", "Điều 36 Quyết định 213"),
+    ("điểm a và điểm b khoản 4 Điều 36 Quyết định 213", "điểm a và điểm b Điều 36 Quyết định 213"),
+    ("Luật số 93/2025/QH15 và Văn bản hợp nhất số 67/VBHN-VPQH", "Luật KH,CN&ĐMST và Luật Sở hữu trí tuệ"),
+    ("Luật Giáo dục đại học số 125/2025/QH15", "Luật Giáo dục đại học"),
+    ("Luật số 93/2025/QH15", "Luật KH,CN&ĐMST"),
+    ("Nghị định số 267/2025/NĐ-CP", "Nghị định 267"),
+    ("Nghị định số 134/2026/NĐ-CP", "Nghị định 134"),
+    ("Thông tư số 83/2026/TT-BGDĐT", "Thông tư 83"),
+    ("Quyết định số 1624/QĐ-TTg", "Quyết định 1624"),
+    ("Kết luận số 51-KL/TW", "Kết luận 51"),
+    ("Chỉ thị số 02/CT-TTg", "Chỉ thị 02"),
+    ("Kế hoạch số 07/KH-ĐHTĐ", "Kế hoạch 07"),
+    ("Kế hoạch 07/KH-ĐHTĐ", "Kế hoạch 07"),
+]
 
 
 def chu(el):
@@ -105,7 +140,7 @@ class Dung:
             for p in ([el] if el.tag == qn("w:p") else el.iter(qn("w:p"))):
                 s = chu(p)
                 moi = s
-                for cu, m in thay.items():
+                for cu, m in TEN_GON + list(thay.items()):
                     moi = moi.replace(cu, m)
                 if moi != s:
                     ts = list(p.iter(qn("w:t")))
@@ -115,6 +150,86 @@ class Dung:
                         t.text = ""
             ra.append(el)
         return ra
+
+    def o(self, mau_tc, cac_doan, rong):
+        """Một ô bảng từ ô mẫu, mỗi phần tử của cac_doan là một đoạn, nhận **đậm**."""
+        tc = copy.deepcopy(mau_tc)
+        tc.find(qn("w:tcPr")).find(qn("w:tcW")).set(qn("w:w"), str(rong))
+        mau_p = tc.find(qn("w:p"))
+        rpr = mau_p.find(qn("w:r")).find(qn("w:rPr"))
+        for p in tc.findall(qn("w:p")):
+            tc.remove(p)
+        for s in cac_doan:
+            p = copy.deepcopy(mau_p)
+            for c in list(p):
+                if c.tag != qn("w:pPr"):
+                    p.remove(c)
+            for chu_, dam, _ in tach_markup(s):
+                r = p.makeelement(qn("w:r"), {})
+                rp = copy.deepcopy(rpr)
+                b = rp.find(qn("w:b"))
+                if dam and b is None:
+                    rp.insert(0, rp.makeelement(qn("w:b"), {}))
+                r.append(rp)
+                te = r.makeelement(qn("w:t"), {})
+                te.text = chu_
+                te.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+                r.append(te)
+                p.append(r)
+            tc.append(p)
+        return tc
+
+    def bang(self, chu_thich, tieu_de, hang, nguon, rong):
+        """Dựng bảng mới theo mẫu Bảng 3.2 của bản v2 (khối 495 - 497)."""
+        cap = copy.deepcopy(self.els[495])
+        for bm in cap.findall(qn("w:bookmarkStart")) + cap.findall(qn("w:bookmarkEnd")):
+            cap.remove(bm)
+        ts = list(cap.iter(qn("w:t")))
+        ts[0].text = chu_thich
+        for x in ts[1:]:
+            x.text = ""
+        tbl = copy.deepcopy(self.els[496])
+        grid = tbl.find(qn("w:tblGrid"))
+        for g, w in zip(grid.findall(qn("w:gridCol")), rong):
+            g.set(qn("w:w"), str(w))
+        trs = tbl.findall(qn("w:tr"))
+        tr_dau, tr_mau = trs[0], trs[1]
+        for tr in trs:
+            tbl.remove(tr)
+        tr = copy.deepcopy(tr_dau)
+        tcs = tr.findall(qn("w:tc"))
+        for tc in tcs:
+            tr.remove(tc)
+        for j, s in enumerate(tieu_de):
+            tr.append(self.o(tcs[j], ["**" + s + "**"], rong[j]))
+        tbl.append(tr)
+        for h in hang:
+            tr = copy.deepcopy(tr_mau)
+            trpr = tr.find(qn("w:trPr"))
+            if trpr is None:
+                trpr = tr.makeelement(qn("w:trPr"), {})
+                tr.insert(0, trpr)
+            if trpr.find(qn("w:cantSplit")) is None:
+                trpr.insert(0, trpr.makeelement(qn("w:cantSplit"), {}))
+            tcs = tr.findall(qn("w:tc"))
+            for tc in tcs:
+                tr.remove(tc)
+            for j, cac_doan in enumerate(h):
+                # Phần mở đầu trước dấu hai chấm ở cột giữa được in đậm cho dễ dò.
+                cac_doan = [re.sub(r"^([^:*]{1,40}):", r"**\1:**", s) if j == 1 else s for s in cac_doan]
+                tc = self.o(tcs[j], cac_doan, rong[j])
+                for p in tc.findall(qn("w:p")):
+                    jc = p.find(qn("w:pPr")).find(qn("w:jc"))
+                    if jc is not None:
+                        jc.set(qn("w:val"), "left")
+                tr.append(tc)
+            tbl.append(tr)
+        ng = copy.deepcopy(self.els[497])
+        ts = list(ng.iter(qn("w:t")))
+        ts[0].text = nguon
+        for x in ts[1:]:
+            x.text = ""
+        return [cap, tbl, ng]
 
     def chuong(self, idx):
         p = copy.deepcopy(self.els[idx])
@@ -137,6 +252,8 @@ class Dung:
                 ra.append(self.chuong(muc[1]))
             elif loai == "K":
                 ra.extend(self.giu(muc[1], muc[2], muc[3]))
+            elif loai == "BANG":
+                ra.extend(self.bang(*muc[1:]))
             else:
                 ra.append(self.doan(loai, muc[1]))
         return ra
@@ -150,6 +267,9 @@ class Dung:
             if any(s.startswith(k) for k in BO_TLTK):
                 continue
             el = copy.deepcopy(el)
+            if s.startswith("Quốc hội. (2025d)"):
+                for x in el.iter(qn("w:t")):
+                    x.text = (x.text or "").replace("2025d", "2025c")
             if i == a:
                 bs = el.find(qn("w:bookmarkStart"))
                 self.muc.append((0, s, bs.get(qn("w:name")) if bs is not None else self.bookmark(el)))

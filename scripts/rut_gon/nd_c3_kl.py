@@ -5,32 +5,21 @@ CHUONG_3 = [
     ("CH", 472),
     ("H1", "3.1. Căn cứ, định hướng và nguyên tắc xây dựng giải pháp"),
     ("H2", "3.1.1. Yêu cầu mới của khung pháp lý đối với Nhà trường"),
-    ("P", "Mục 1.3 đã phân tích các văn bản pháp luật mới. Phần này chỉ nêu những yêu cầu mà Nhà trường phải đáp ứng:"),
-    ("P", "- **Về quyền sở hữu và quyền đăng ký.** Theo khoản 2 Điều 25 Luật số 93/2025/QH15 và khoản 2 Điều 32 Nghị định "
-          "số 267/2025/NĐ-CP, Nhà trường là tổ chức chủ trì ngoài công lập được tự động giao quyền sở hữu phần kết quả "
-          "tương ứng với kinh phí ngân sách nhà nước, và phải theo dõi riêng các kết quả này. Theo điểm c khoản 1 Điều 86 "
-          "Luật Sở hữu trí tuệ được bổ sung bởi Luật số 131/2025/QH15, Nhà trường có quyền đăng ký sáng chế, kiểu dáng "
-          "công nghiệp, thiết kế bố trí từ ba đề tài cấp quốc gia đang thực hiện."),
-    ("P", "- **Về lợi ích của tác giả.** Với phần kết quả dùng ngân sách nhà nước, thưởng cho tác giả tối thiểu 30% lợi "
-          "nhuận sau thuế (Điều 28 Luật số 93/2025/QH15), chia giữa các đồng tác giả theo thỏa thuận (khoản 3 Điều 34 Nghị "
-          "định số 267/2025/NĐ-CP). Thù lao theo Điều 135 Luật Sở hữu trí tuệ là khoản riêng. Tổ chức trung gian hưởng "
-          "tối thiểu 10% lợi nhuận khi không có thỏa thuận khác (khoản 2 Điều 34 Nghị định). Hồ sơ đánh giá cuối kỳ phải có "
-          "văn bản xác định mức đóng góp của thành viên (điểm g khoản 2 Điều 17 Nghị định)."),
-    ("P", "- **Về tài chính.** Quỹ phát triển khoa học và công nghệ của tổ chức được chi cho đăng ký, bảo hộ, khai thác "
-          "quyền sở hữu trí tuệ (điểm b khoản 2 Điều 66 Luật số 93/2025/QH15)."),
-    ("P", "- **Về công khai và đánh giá.** Luật Giáo dục đại học số 125/2025/QH15 cho phép trường đại học định giá, góp "
-          "vốn, thành lập doanh nghiệp quản lý tài sản trí tuệ và yêu cầu công khai kết quả khoa học công nghệ hằng năm "
-          "(Điều 28). Thông tư số 83/2026/TT-BGDĐT, hiệu lực từ ngày 15 tháng 11 năm 2026, yêu cầu quy chế quản trị về sở "
-          "hữu trí tuệ, liêm chính học thuật và dữ liệu thống nhất trên HEMIS."),
-    ("P", "- **Về định hướng chiến lược.** Kết luận số 51-KL/TW yêu cầu chuyển từ quản lý hành chính sang kiến tạo hệ sinh "
-          "thái sở hữu trí tuệ. Quyết định số 1624/QĐ-TTg kế thừa các yêu cầu của Quyết định số 1068/QĐ-TTg về chỉ số sở "
-          "hữu trí tuệ trong đánh giá và đăng ký đồng thời với công bố; điểm mới là thí điểm định giá ít nhất 100 quyền, "
-          "mở rộng chức năng trung tâm tư vấn sang định giá, khai thác, và định hướng đưa sở hữu trí tuệ thành nội dung học "
-          "bắt buộc. Chỉ thị số 02/CT-TTg năm 2026 yêu cầu xây dựng cơ sở dữ liệu quốc gia về thực thi quyền."),
+    ("P", "Từ Bảng 1.1, Nhà trường phải đáp ứng năm nhóm yêu cầu:"),
+    ("P", "- **Quyền và nghĩa vụ đối với kết quả từ ngân sách.** Nhà trường tự động có quyền sở hữu phần kết quả tương ứng "
+          "với kinh phí ngân sách, có quyền đăng ký sáng chế, kiểu dáng, thiết kế bố trí từ ba đề tài cấp quốc gia, và "
+          "phải theo dõi riêng các kết quả này."),
+    ("P", "- **Lợi ích của tác giả.** Thưởng tối thiểu 30% lợi nhuận sau thuế với phần dùng ngân sách; thù lao là khoản "
+          "riêng; đồng tác giả chia thưởng theo thỏa thuận; mức đóng góp được ghi nhận khi nghiệm thu."),
+    ("P", "- **Kinh phí.** Quỹ phát triển khoa học và công nghệ được chi cho đăng ký, bảo hộ, khai thác."),
+    ("P", "- **Chuẩn và công khai.** Có quy chế quản trị về sở hữu trí tuệ, liêm chính học thuật; dữ liệu thống nhất trên "
+          "HEMIS; công khai kết quả hằng năm."),
+    ("P", "- **Định hướng chiến lược.** Đăng ký đồng thời với công bố, tham gia thí điểm định giá, phát triển bộ phận tư "
+          "vấn và đào tạo về sở hữu trí tuệ."),
 
     ("H2", "3.1.2. Phân tích điểm mạnh, điểm yếu, cơ hội và thách thức"),
-    ("P", "Bảng 3.1 tổng hợp các yếu tố bên trong rút ra từ Chương 2 và các yếu tố bên ngoài từ khung pháp lý mới. Thông tư "
-          "số 83/2026/TT-BGDĐT chưa áp dụng cho kỳ 2021 - 2025 nên được xếp vào nhóm cơ hội và thách thức."),
+    ("P", "Bảng 3.1 tổng hợp các yếu tố bên trong rút ra từ Chương 2 và các yếu tố bên ngoài từ khung pháp lý mới. Thông tư 83 "
+          "chưa áp dụng cho kỳ 2021 - 2025 nên được xếp vào nhóm cơ hội và thách thức."),
     ("K", 490, 492, {}),
     ("P", "Bảng 3.1 cho thấy ba điểm. Thứ nhất, điểm mạnh nằm ở nền tảng và đầu vào: quy chế, năng lực nghiên cứu, sản "
           "phẩm tiềm năng. Điểm yếu nằm ở khâu nối và vận hành: quy trình, kinh phí, bộ máy, dữ liệu. Thứ hai, phần lớn cơ "
@@ -45,9 +34,9 @@ CHUONG_3 = [
 
     ("H2", "3.1.3. Nguyên tắc xây dựng giải pháp"),
     ("P", "- **Đồng hành thay vì chờ hồ sơ.** Bộ phận quản lý hỗ trợ nhà nghiên cứu từ khâu ý tưởng, theo tinh thần Kết "
-          "luận số 51-KL/TW, thay vì chỉ tiếp nhận khi kết quả đã xong."),
+          "luận 51, thay vì chỉ tiếp nhận khi kết quả đã xong."),
     ("P", "- **Bám căn cứ pháp lý.** Mỗi giải pháp đáp ứng ít nhất một yêu cầu cụ thể của khung pháp lý mới."),
-    ("P", "- **Khả thi và kế thừa.** Giữ phân công tại Điều 11 Quyết định 217; hoàn thiện quy chế, biểu mẫu hiện có thay vì "
+    ("P", "- **Khả thi và kế thừa.** Giữ phân công đã có tại Quyết định 217; hoàn thiện quy chế, biểu mẫu hiện có thay vì "
           "thay thế; việc cần nhiều nguồn lực làm theo giai đoạn, có điều kiện chuyển bước."),
     ("P", "- **Sàng lọc và bảo mật trước khi công bố.** Kết quả có tiềm năng được sàng lọc trước mọi hoạt động công bố, "
           "trình diễn; kết quả cần bảo hộ được nộp đơn sớm, không chờ nghiệm thu."),
@@ -64,29 +53,26 @@ CHUONG_3 = [
     ("P", "Xử lý hạn chế thứ hai. Hoàn thiện Quy chế quản trị tài sản trí tuệ trên nền Quyết định 217, hợp nhất Chương VI "
           "Quyết định 213, làm rõ phạm vi và thứ tự áp dụng, bảo đảm phù hợp pháp luật hiện hành."),
     ("H3", "b) Nội dung"),
-    ("P", "Theo khoản 3 Điều 17 Quyết định 217, Bộ phận Pháp chế tham mưu sửa Quy chế khi pháp luật thay đổi. Quy chế sửa "
-          "đổi cần có các nội dung sau:"),
-    ("P", "- **Phạm vi:** một danh mục đối tượng thống nhất trên cơ sở Điều 3 Quyết định 217, gồm cả giáo trình số, sưu "
+    ("P", "Quy chế sửa đổi cần có các nội dung sau:"),
+    ("P", "- **Phạm vi:** một danh mục đối tượng thống nhất trên cơ sở danh mục của Quyết định 217, gồm cả giáo trình số, sưu "
           "tập dữ liệu, bí mật kinh doanh và phần mềm."),
     ("P", "- **Lợi ích của tác giả theo ba lớp.** Lớp 1 là nghĩa vụ theo luật: với kết quả dùng ngân sách nhà nước thuộc "
-          "phạm vi Điều 28 Luật số 93/2025/QH15, thưởng tác giả không thấp hơn 30% lợi nhuận sau thuế, không áp mức trần "
+          "phạm vi Luật KH,CN&ĐMST, thưởng tác giả không thấp hơn 30% lợi nhuận sau thuế, không áp mức trần "
           "làm phần thưởng thấp hơn mức này, không giữ khoản nộp ngân sách như tỷ lệ cố định; nhiệm vụ phê duyệt trước ngày "
-          "01 tháng 10 năm 2025 áp dụng văn bản tại thời điểm phê duyệt, trừ trường hợp tại khoản 7 Điều 73; thù lao theo "
-          "Điều 135 Luật Sở hữu trí tuệ là khoản riêng. Lớp 2 là phần Nhà trường tự quyết với tài sản không dùng ngân sách "
+          "01 tháng 10 năm 2025 áp dụng quy định cũ, trừ lợi nhuận từ văn bằng đã cấp; thù lao "
+          "theo Luật Sở hữu trí tuệ là khoản riêng. Lớp 2 là phần Nhà trường tự quyết với tài sản không dùng ngân sách "
           "nhà nước: tỷ lệ cho tác giả, cho đơn vị và cho quỹ phát triển khoa học công nghệ, làm rõ quan hệ với mức trích "
           "50% tại Quy chế chi tiêu nội bộ. Lớp 3 là nhuận bút sách, giáo trình theo Quy chế chi tiêu nội bộ. Tỷ lệ cụ thể "
           "của lớp 2 cần được mô phỏng trên một số tình huống trước khi ban hành."),
-    ("P", "- **Mẫu thỏa thuận chia thưởng giữa đồng tác giả**, theo khoản 5 Điều 28 Luật số 93/2025/QH15 và khoản 3 Điều "
-          "34 Nghị định số 267/2025/NĐ-CP; dùng chung với văn bản xác định mức đóng góp tại Khâu 5 của Giải pháp 3."),
+    ("P", "- **Mẫu thỏa thuận chia thưởng giữa đồng tác giả** theo Nghị định 267, dùng chung với văn bản xác định mức đóng góp tại Khâu 5 của Giải pháp 3."),
     ("P", "- **Quan hệ pháp lý:** quyền, nghĩa vụ của Nhà trường và tác giả; xử lý tranh chấp nội bộ; xử lý quyền khi tác "
           "giả chuyển công tác."),
-    ("P", "- **Liêm chính học thuật:** mở rộng Điều 14 Quyết định 217, bổ sung kiểm tra trùng lặp, công khai việc dùng trí "
-          "tuệ nhân tạo theo Điều 5a Nghị định số 134/2026/NĐ-CP và quy trình xử lý vi phạm, đáp ứng Thông tư số "
-          "83/2026/TT-BGDĐT."),
+    ("P", "- **Liêm chính học thuật:** mở rộng quy định về xâm phạm quyền tác giả của Quyết định 217; bổ sung kiểm tra trùng "
+          "lặp, công khai việc dùng trí tuệ nhân tạo theo Nghị định 134 và quy trình xử lý vi phạm, đáp ứng Thông tư 83."),
     ("P", "- **Nhãn hiệu hệ sinh thái:** quản lý nhãn hiệu của Nhà trường và các pháp nhân thành viên, cơ chế cấp phép sử "
           "dụng nhãn hiệu."),
     ("H3", "c) Chủ thể thực hiện"),
-    ("P", "Bộ phận Pháp chế soạn thảo; Phòng Khoa học Công nghệ rà soát chuyên môn; Hội đồng Khoa học và Đào tạo thẩm định; "
+    ("P", "Bộ phận Pháp chế, đơn vị được Quyết định 217 giao tham mưu sửa Quy chế, soạn thảo; Phòng Khoa học Công nghệ rà soát chuyên môn; Hội đồng Khoa học và Đào tạo thẩm định; "
           "Hiệu trưởng trình Hội đồng trường ban hành. Trong quá trình soạn thảo cần lấy ý kiến giảng viên các viện."),
     ("H3", "d) Điều kiện bảo đảm"),
     ("P", "Kinh phí thuê chuyên gia rà soát dự thảo; rà soát đồng bộ Quy chế chi tiêu nội bộ và Điều lệ Quỹ Học bổng sau "
@@ -94,7 +80,7 @@ CHUONG_3 = [
 
     ("H2", "3.2.2. Giải pháp 2: Kiện toàn đầu mối và cơ chế phối hợp"),
     ("H3", "a) Mục tiêu"),
-    ("P", "Xử lý hạn chế thứ ba. Bảo đảm các nhiệm vụ đã giao tại Điều 11 Quyết định 217 có người làm, có quy chế phối hợp "
+    ("P", "Xử lý hạn chế thứ ba. Bảo đảm các nhiệm vụ đã giao tại Quyết định 217 có người làm, có quy chế phối hợp "
           "và có số liệu về khối lượng công việc để quyết định bước tiếp theo."),
     ("H3", "b) Nội dung"),
     ("P", "- **Giai đoạn 1:** giao một nhân sự của Phòng Khoa học Công nghệ và một nhân sự của Bộ phận Pháp chế làm đầu mối "
@@ -104,7 +90,7 @@ CHUONG_3 = [
           "từ 5 đơn mỗi năm; ngưỡng cụ thể do Ban Giám hiệu quyết định sau thí điểm."),
     ("P", "- **Cơ chế phối hợp:** ba trục chức năng và hai đơn vị phối hợp như Hình 3.1."),
     ("K", 529, 531, {}),
-    ("P", "Trung tâm tư vấn, định giá và thương mại hóa theo điểm a khoản 6 Mục III Điều 1 Quyết định số 1624/QĐ-TTg đặt ở "
+    ("P", "Trung tâm tư vấn, định giá và thương mại hóa theo định hướng của Quyết định 1624 đặt ở "
           "giai đoạn 2, khi đã có tài sản sẵn sàng chuyển giao, có nhu cầu định giá thực tế và có kinh phí vận hành. Trước "
           "đó, định giá và đàm phán được thuê ngoài, có Viện Nghiên cứu giáo dục và Chuyển giao tri thức phối hợp."),
     ("H3", "c) Chủ thể thực hiện"),
@@ -124,7 +110,7 @@ CHUONG_3 = [
     ("P", "Ban hành quy trình 8 khâu cho đề tài cấp cơ sở và nhiệm vụ dùng ngân sách (Hình 3.2). Quy trình có hai luồng. "
           "**Luồng sớm** dành cho kết quả đã qua Khâu 2, Khâu 3 và cần nộp đơn trước khi công bố: hồ sơ chuyển thẳng sang "
           "Khâu 6, kể cả khi đề tài đang thực hiện. **Luồng thường** dành cho các kết quả còn lại, đi qua Khâu 5. Nghiệm "
-          "thu là bước kiểm tra, không phải điều kiện để quyết định đăng ký. Cách làm này phù hợp Điều 35 Quyết định 213, "
+          "thu là bước kiểm tra, không phải điều kiện để quyết định đăng ký. Cách làm này phù hợp Quyết định 213, "
           "vốn không yêu cầu đã nghiệm thu mới được nộp đơn."),
     ("K", 542, 544, {}),
     ("P", "- **Khâu 1. Khai báo.** Bổ sung vào Mẫu 01, Mẫu 06 các trường: loại đối tượng dự kiến, chủ thể quyền, đồng tác "
@@ -136,19 +122,18 @@ CHUONG_3 = [
     ("P", "- **Khâu 3. Tra cứu và đánh giá khả năng bảo hộ.** Bộ phận Pháp chế hoặc tổ chức đại diện tra cứu, đánh giá sơ "
           "bộ tính mới, trình độ sáng tạo, khả năng áp dụng và đề xuất loại hình đăng ký."),
     ("P", "- **Khâu 4. Xem xét bảo mật trước khi công bố.** Trước khi gửi bài, báo cáo hội thảo hay trình diễn, chủ nhiệm "
-          "xin ý kiến Phòng theo Điều 10 Quyết định 217. Phòng cho công bố, đề nghị trì hoãn, yêu cầu ký cam kết bảo mật "
+          "xin ý kiến Phòng như Quyết định 217 đã quy định. Phòng cho công bố, đề nghị trì hoãn, yêu cầu ký cam kết bảo mật "
           "hoặc yêu cầu nộp đơn trước. Khi yêu cầu nộp đơn trước, hồ sơ chuyển sang Khâu 6 theo luồng sớm và chỉ công bố sau "
-          "khi có ngày nộp đơn. Nếu kết quả đã bị bộc lộ, Phòng xác định ngày bộc lộ và kiểm tra trường hợp được hưởng thời "
-          "hạn 12 tháng theo khoản 3 Điều 60 Luật Sở hữu trí tuệ."),
+          "khi có ngày nộp đơn. Nếu kết quả đã bị bộc lộ, Phòng xác định ngày bộc lộ và kiểm tra trường hợp còn được hưởng thời "
+          "hạn 12 tháng."),
     ("P", "- **Khâu 5. Kiểm tra tại nghiệm thu.** Mẫu 16 bổ sung phiếu rà soát: loại đối tượng, chủ thể quyền, nguồn kinh "
           "phí, ngày bộc lộ, kết quả sàng lọc, tình trạng của các đơn đã nộp theo luồng sớm và đề xuất xử lý. Hội đồng kiểm "
-          "tra khai báo đầy đủ chưa, phát hiện kết quả chưa khai báo, xác nhận mức đóng góp của thành viên theo điểm g "
-          "khoản 2 Điều 17 Nghị định số 267/2025/NĐ-CP."),
-    ("P", "- **Khâu 6. Quyết định đăng ký và cấp kinh phí.** Phòng trình Hiệu trưởng quyết định theo Điều 35 Quyết định 213, "
+          "tra khai báo đầy đủ chưa, phát hiện kết quả chưa khai báo, xác nhận mức đóng góp của thành viên theo yêu "
+          "cầu của Nghị định 267."),
+    ("P", "- **Khâu 6. Quyết định đăng ký và cấp kinh phí.** Phòng trình Hiệu trưởng quyết định, "
           "kèm dự toán, nguồn chi, người đề xuất chi và thời hạn nộp đơn, trong 15 ngày làm việc. Với luồng sớm, đơn phải "
           "được nộp trước ngày công bố dự kiến."),
-    ("P", "- **Khâu 7. Nộp đơn, theo dõi và duy trì.** Bộ phận Pháp chế nộp đơn, theo dõi các mốc thẩm định theo Điều 119 "
-          "Luật Sở hữu trí tuệ, cập nhật danh mục số theo bốn trạng thái thống nhất, cảnh báo phí duy trì trước 03 tháng."),
+    ("P", "- **Khâu 7. Nộp đơn, theo dõi và duy trì.** Bộ phận Pháp chế nộp đơn, theo dõi các mốc thẩm định, cập nhật danh mục số theo bốn trạng thái thống nhất, cảnh báo phí duy trì trước 03 tháng."),
     ("P", "- **Khâu 8. Khai thác và chia lợi ích.** Phòng chủ trì xúc tiến thương mại hóa, phối hợp Viện Nghiên cứu giáo "
           "dục và Chuyển giao tri thức và tổ chức tư vấn; lợi ích chia theo các lớp tại Giải pháp 1."),
     ("H3", "c) Chủ thể thực hiện"),
@@ -158,26 +143,26 @@ CHUONG_3 = [
     ("H3", "d) Điều kiện bảo đảm"),
     ("P", "Phiếu khai báo, phiếu rà soát ban hành kèm quy trình; tài khoản công cụ tra cứu sáng chế; danh mục số tài sản trí "
           "tuệ dùng chung, có phân quyền truy cập với hồ sơ chưa nộp đơn và bí mật kinh doanh; danh mục riêng cho kết quả "
-          "từ ngân sách nhà nước theo khoản 2 Điều 32 Nghị định số 267/2025/NĐ-CP."),
+          "từ ngân sách nhà nước theo Nghị định 267."),
 
     ("H2", "3.2.4. Giải pháp 4: Hoàn thiện cơ chế tài chính và chuẩn bị khai thác theo giai đoạn"),
     ("H3", "a) Mục tiêu"),
     ("P", "Xử lý nguyên nhân về nguồn lực, động lực và hạn chế thứ sáu. Chuyển căn cứ chi hiện có thành dòng dự toán vận "
           "hành được, điều chỉnh thời điểm ghi nhận văn bằng và chuẩn bị phương án khai thác."),
     ("H3", "b) Nội dung"),
-    ("P", "- **Dòng dự toán phí xác lập quyền** hằng năm trong Quỹ nghiên cứu khoa học, căn cứ Điều 35, Điều 38 Quyết định "
-          "213 và điểm b khoản 2 Điều 66 Luật số 93/2025/QH15. Dòng này chi lệ phí, phí đại diện cho kết quả đã qua Khâu 3 "
+    ("P", "- **Dòng dự toán phí xác lập quyền** hằng năm trong Quỹ nghiên cứu khoa học, căn cứ Quyết định 213 và Luật "
+          "KH,CN&ĐMST. Dòng này chi lệ phí, phí đại diện cho kết quả đã qua Khâu 3 "
           "và có quyết định tại Khâu 6, kể cả đơn nộp trước nghiệm thu hoặc sau khi đề tài đã quyết toán, không trừ vào kinh "
           "phí đề tài. Phòng Khoa học Công nghệ đề xuất chi trong 15 ngày làm việc; Bộ phận Pháp chế được tạm ứng. Quy mô "
           "tính theo số hồ sơ dự kiến nhân mức phí hiện hành. Đề nghị bổ sung Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ "
           "để hỗ trợ phí đăng ký cho sản phẩm đề tài cấp cơ sở."),
     ("P", "- **Sửa Quy chế chi tiêu nội bộ năm 2026:** ghi nhận 50% giờ quy đổi khi có thông báo chấp nhận đơn hợp lệ và 50% "
-          "khi được cấp văn bằng; xem xét thưởng tiền cho bằng sáng chế, giải pháp hữu ích. Khoản thưởng này tách biệt với "
-          "thưởng theo Điều 28 Luật số 93/2025/QH15 và thù lao theo Điều 135 Luật Sở hữu trí tuệ."),
+          "khi được cấp văn bằng; xem xét thưởng tiền cho bằng sáng chế, giải pháp hữu ích. Khoản thưởng nội bộ này tách biệt với "
+          "thưởng khi thương mại hóa và thù lao theo luật."),
     ("P", "- **Khai thác theo giai đoạn.** Giai đoạn 1 và 2, định giá, đàm phán qua Phòng Khoa học Công nghệ, Bộ phận Pháp "
           "chế và tổ chức tư vấn thuê ngoài. Hợp đồng với tổ chức trung gian phải thỏa thuận rõ mức hưởng, vì nếu không, "
-          "khoản 2 Điều 34 Nghị định số 267/2025/NĐ-CP dành cho tổ chức này tối thiểu 10%. Đề án doanh nghiệp quản lý tài "
-          "sản trí tuệ theo khoản 1 Điều 28 Luật Giáo dục đại học chỉ đặt ra khi đã có văn bằng có đối tác quan tâm, có ít "
+          "Nghị định 267 dành cho tổ chức này tối thiểu 10%. Đề án doanh nghiệp quản lý tài "
+          "sản trí tuệ theo Luật Giáo dục đại học chỉ đặt ra khi đã có văn bằng có đối tác quan tâm, có ít "
           "nhất một hợp đồng chuyển giao và phương án tài chính tự trang trải được."),
     ("H3", "c) Chủ thể thực hiện"),
     ("P", "Phòng Tài chính - Kế toán lập dự toán, quy định tạm ứng, đề xuất sửa Quy chế chi tiêu nội bộ. Phòng Khoa học Công "
@@ -190,9 +175,9 @@ CHUONG_3 = [
     ("H2", "3.2.5. Giải pháp 5: Đào tạo và phát triển văn hóa sở hữu trí tuệ"),
     ("H3", "a) Mục tiêu"),
     ("P", "Nâng kỹ năng nhận diện và bộc lộ an toàn cho giảng viên, sinh viên. Căn cứ: 6 đề tài mã số 2021 - 2024 có sản "
-          "phẩm tiềm năng chưa có đơn; 87 giáo trình chưa đăng ký quyền tác giả; Kế hoạch 07/KH-ĐHTĐ không tách riêng tập "
-          "huấn về sở hữu trí tuệ. Giải pháp cũng đón đầu định hướng đưa sở hữu trí tuệ thành nội dung học bắt buộc tại "
-          "điểm b khoản 8 Mục III Điều 1 Quyết định số 1624/QĐ-TTg."),
+          "phẩm tiềm năng chưa có đơn; 87 giáo trình chưa đăng ký quyền tác giả; Kế hoạch 07 không tách riêng tập "
+          "huấn về sở hữu trí tuệ. Giải pháp cũng đón đầu định hướng đưa sở hữu trí tuệ thành nội dung học bắt buộc của "
+          "Quyết định 1624."),
     ("H3", "b) Nội dung"),
     ("P", "- Đưa học phần sở hữu trí tuệ vào chương trình đào tạo từ năm học 2027 - 2028, gồm đối tượng bảo hộ, tra cứu sáng "
           "chế, thủ tục đăng ký và đạo đức nghiên cứu."),
@@ -240,7 +225,7 @@ CHUONG_3 = [
     ("K", 598, 624, {}),
     ("H2", "3.4.2. Bộ chỉ số theo dõi đánh giá hiệu quả"),
     ("P", "Bộ chỉ số tại Bảng 3.4 phân tầng theo chuỗi kết quả: sàng lọc, đơn nộp, văn bằng và khai thác, vì mỗi tầng có độ "
-          "trễ khác nhau. Chỉ tiêu văn bằng tại mục 1.11 Kế hoạch 07/KH-ĐHTĐ cần thống kê đúng phạm vi, không gồm nhãn hiệu, "
+          "trễ khác nhau. Chỉ tiêu văn bằng tại mục 1.11 Kế hoạch 07 cần thống kê đúng phạm vi, không gồm nhãn hiệu, "
           "và tách riêng văn bằng từ kết quả nghiên cứu, tránh trường hợp chỉ tiêu đạt mà không có kết quả nghiên cứu nào "
           "được bảo hộ (Hình 2.10)."),
     ("K", 627, 629, {}),
@@ -266,7 +251,7 @@ KET_LUAN = [
           "trình quản lý bốn khâu, bộ 16 tiêu chí đánh giá và khung phân tích. Đề tài cũng chỉ ra những thay đổi chính của "
           "khung pháp lý 2025 - 2026: giao quyền tự động cho tổ chức chủ trì, quyền đăng ký của tổ chức chủ trì, mức thưởng "
           "tối thiểu 30% cho tác giả với kết quả dùng ngân sách nhà nước và yêu cầu ghi nhận đóng góp, thỏa thuận chia "
-          "thưởng theo Nghị định số 267/2025/NĐ-CP."),
+          "thưởng giữa đồng tác giả."),
     ("P", "**Về thực trạng**, Nhà trường có tầm nhìn thể chế sớm, năng lực công bố tăng nhanh và 11 hồ sơ tài sản trí tuệ "
           "trong kỳ 2021 - 2025, trong đó 4 tài sản đã được cấp văn bằng, giấy chứng nhận và 5 kiểu dáng công nghiệp cần "
           "xác nhận trạng thái. Hợp tác với doanh nghiệp đã mang lại kết quả rõ. Tiềm năng lớn nhất ở khối Y - Dược: 11 "
@@ -278,15 +263,15 @@ KET_LUAN = [
           "điểm, lộ trình đến năm 2030 và bộ chỉ số theo dõi."),
     ("H1", "2. Kiến nghị với cơ quan quản lý nhà nước"),
     ("P", "Đề tài kiến nghị Bộ Khoa học và Công nghệ hướng dẫn thêm hai vấn đề. Một là, cách xác định lợi nhuận sau thuế "
-          "tương ứng với một kết quả, làm căn cứ thưởng tác giả theo khoản 3 Điều 28 Luật số 93/2025/QH15, khi kết quả hình "
+          "tương ứng với một kết quả, làm căn cứ thưởng tác giả theo Luật KH,CN&ĐMST, khi kết quả hình "
           "thành từ cả ngân sách nhà nước và kinh phí đối ứng. Hai là, cơ sở tính mức tối thiểu 10% cho tổ chức trung gian "
-          "tại khoản 2 Điều 34 Nghị định số 267/2025/NĐ-CP, vì quy định vừa nêu lợi nhuận thu được vừa nêu giá trị hợp "
+          "của Nghị định 267, vì quy định vừa nêu lợi nhuận thu được vừa nêu giá trị hợp "
           "đồng. Bộ Giáo dục và Đào tạo có hướng dẫn cách tính các chỉ số về sở hữu trí tuệ trong Chuẩn cơ sở giáo dục đại "
           "học. Cục Sở hữu trí tuệ mở rộng tập huấn và hỗ trợ phí nộp đơn cho trường đại học tư thục."),
     ("H1", "3. Kiến nghị với Hội đồng trường và Ban Giám hiệu"),
     ("P", "**Thứ nhất**, chỉ đạo hoàn thiện Quy chế quản trị tài sản trí tuệ trên nền Quyết định 217, hợp nhất quy định của "
-          "Quyết định 213, thống nhất với Quy chế chi tiêu nội bộ; phân biệt thưởng, thù lao, nhuận bút; bảo đảm mức tối "
-          "thiểu theo Điều 28 Luật số 93/2025/QH15; ban hành mẫu thỏa thuận chia thưởng giữa đồng tác giả."),
+          "Quyết định 213, thống nhất với Quy chế chi tiêu nội bộ; phân biệt thưởng, thù lao, nhuận bút; bảo đảm mức thưởng tối "
+          "thiểu của Luật KH,CN&ĐMST; ban hành mẫu thỏa thuận chia thưởng giữa đồng tác giả."),
     ("P", "**Thứ hai**, bổ sung phiếu khai báo và phiếu rà soát vào biểu mẫu đề tài; cho phép quyết định đăng ký và cấp kinh "
           "phí ngay trong quá trình nghiên cứu; lập danh mục số tài sản trí tuệ có phân quyền; rà soát ngay tình trạng bộc "
           "lộ của các đề tài có sản phẩm tiềm năng chưa có đơn và xác nhận trạng thái 5 kiểu dáng công nghiệp."),
