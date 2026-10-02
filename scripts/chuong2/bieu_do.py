@@ -6,9 +6,10 @@ Mỗi hình là một dict:
   theo cột), bieu_do (cấu hình biểu đồ), sau_doan (đoạn văn trong Word mà hình
   được chèn ngay sau), binh_luan (các đoạn nhận xét đặt dưới hình).
 """
-from du_lieu import (NAM, NHAN_LUC, SAN_PHAM, THAM_LUAN_QUOC_GIA, BAI_BAO_GAN_DE_TAI,
-                     PHAN_HANG_QT, DON_VI_SAN_LUONG, NHAN_SU_CO_TEN, NHAN_SU_CO_BAI,
-                     DE_TAI, KHUYEN_KHICH, KENH_TAI_TRO, TSTT, TIEU_CHI, KE_HOACH)
+from du_lieu import (NAM, NHAN_LUC, SAN_PHAM, THAM_LUAN_QUOC_GIA,
+                     PHAN_HANG_QT, DON_VI_SAN_LUONG, NHAN_SU_CO_TEN, NHAN_SU_CO_BAI, GINI_BAI,
+                     DE_TAI, KHUYEN_KHICH, KENH_TAI_TRO, TSTT, TSTT_KY, TIEU_CHI, KE_HOACH,
+                     DA_CAP, DA_NOP, CHUA_XM)
 
 # Bảng màu phân loại cố định (đã kiểm tra phân biệt được với người mù màu).
 XANH, CAM, NGOC, VANG, HONG, LUC, TIM = ("#2A78D6", "#EB6834", "#1BAF7A", "#EDA100",
@@ -50,7 +51,6 @@ bb = [a + b for a, b in zip(sp["Bài báo đăng tạp chí trong nước"], sp[
 gt = sp["Giáo trình, tài liệu giảng dạy"]
 tong_nam = [sum(v[i] for _, v in SAN_PHAM) for i in range(5)]
 tong_ban_ghi = sum(tong_nam) + THAM_LUAN_QUOC_GIA
-doc_lap = tong_ban_ghi - BAI_BAO_GAN_DE_TAI
 ty_so = [b / g for b, g in zip(bb, gt)]
 
 q = PHAN_HANG_QT
@@ -73,13 +73,17 @@ dt_duoc = [d for d in dt_du_dk if d[2] == "Viện Y - Dược" or d[0] == "08-20
 dt_den_2024 = [d for d in DE_TAI if d[1] <= 2024]
 du_dk_den_2024 = [d for d in dt_du_dk if d[1] <= 2024]
 nop_don = [d for d in dt_du_dk if d[8].startswith("Đã nộp")]
+# Phễu sở hữu công nghiệp: không gộp hai sản phẩm thuộc quyền tác giả (bộ mẫu cây thuốc, bộ tiêu bản)
+dt_qtg = [d for d in dt_du_dk if d[7].startswith("Sưu tập dữ liệu")]
+dt_shcn = [d for d in dt_du_dk if d not in dt_qtg]
+dt_shcn_den_2024 = [d for d in dt_shcn if d[1] <= 2024]
 
 tstt_nam = list(range(2021, 2027))
 nguon_ts = ["Thương hiệu", "Hợp tác doanh nghiệp", "Nghiên cứu"]
 
 
 def dem_ts(nam, nguon):
-    return sum(1 for t in TSTT if t[2] == nam and t[5] == nguon)
+    return sum(1 for t in TSTT if t[3] == nam and t[6] == nguon)
 
 
 luy_ke, s = [], 0
@@ -238,8 +242,8 @@ HINH.append(dict(
 # H2.6 ----------------------------------------------------------------------
 HINH.append(dict(
     tieu_de="Cơ cấu nhân sự theo tình trạng có công bố bài báo, giai đoạn 2021 - 2025",
-    nguon="Nguồn: Nhóm nghiên cứu tính toán trên 247 nhân sự có họ tên đầy đủ trong danh sách năm 2026, đối chiếu "
-          "với danh sách tác giả của hai danh mục bài báo.",
+    nguon=f"Nguồn: Nhóm nghiên cứu tính toán trên {NHAN_SU_CO_TEN} tên khác nhau của 252 nhân sự trong danh sách năm "
+          "2026, đối chiếu với danh sách tác giả của hai danh mục bài báo theo quy tắc giữ dấu, đúng thứ tự họ tên.",
     cot=["Tình trạng", "Số nhân sự"],
     dong=[["Có ít nhất một bài báo", NHAN_SU_CO_BAI], ["Chưa có bài báo", NHAN_SU_CO_TEN - NHAN_SU_CO_BAI]],
     dinh_dang=[None, "0"],
@@ -248,7 +252,7 @@ HINH.append(dict(
     binh_luan=[
         f"Hình 2.6 minh họa trực quan mức độ tập trung nói trên: gần hai phần ba nhân sự, cụ thể "
         f"{NHAN_SU_CO_TEN - NHAN_SU_CO_BAI} trên {NHAN_SU_CO_TEN} người, chưa đứng tên bài báo nào trong năm năm. Kết "
-        f"hợp với hệ số Gini 0,829, dữ liệu cho thấy toàn bộ hoạt động công bố của Nhà trường dựa trên khoảng 88 người, "
+        f"hợp với hệ số Gini {so(GINI_BAI, 3)}, dữ liệu cho thấy hoạt động công bố của Nhà trường dựa trên khoảng {NHAN_SU_CO_BAI} người, "
         f"và trong nhóm này lại dựa chủ yếu vào khoảng 9 người dẫn đầu.",
     ],
 ))
@@ -283,36 +287,28 @@ HINH.append(dict(
 ))
 
 # H2.8 ----------------------------------------------------------------------
+# Chỉ đặt cạnh nhau hai quy định có cùng cơ sở tính: nguồn thu sau khi trừ các khoản chi phí cần thiết, hợp lệ.
+# Điều 135 Luật Sở hữu trí tuệ (tổng tiền trước thuế) và Điều 28 Luật số 93/2025/QH15 (lợi nhuận sau thuế) khác cơ sở
+# tính nên được trình bày tại Bảng 2.3, không vẽ chung.
 muc_thu = [0, 100, 200, 300, 400, 500, 600, 700]
 HINH.append(dict(
-    tieu_de="Mô phỏng phần lợi ích của tác giả theo các quy định nội bộ và mức mặc định của Luật Sở hữu trí tuệ",
-    nguon="Nguồn: Nhóm nghiên cứu mô phỏng từ Điều 36 Quyết định số 213/QĐ-ĐHTĐ, Điều 9 Điều lệ Quỹ Học bổng sau "
-          "tiến sĩ Ngô Xuân Độ và điểm b khoản 1 Điều 135 Luật Sở hữu trí tuệ. Khoản thu là số tiền nhận được từ một "
-          "hợp đồng chuyển giao sau khi trừ chi phí hợp lệ; đơn vị: triệu đồng.",
-    cot=["Khoản thu từ chuyển giao", "Quyết định 213, điểm a", "Quyết định 213, điểm b",
-         "Quỹ Ngô Xuân Độ, năm đầu", "Quỹ Ngô Xuân Độ, từ năm thứ hai", "Luật Sở hữu trí tuệ, Điều 135"],
-    dong=[[str(x), min(0.3 * x, 100), 0.3 * x, 0.5 * x, 0.2 * x, 0.15 * x] for x in muc_thu],
-    dinh_dang=[None, "0", "0", "0", "0", "0"],
+    tieu_de="Mô phỏng phần dành cho tác giả theo điểm a và điểm b khoản 4 Điều 36 Quyết định 213 trên cùng cơ sở tính",
+    nguon="Nguồn: Nhóm nghiên cứu mô phỏng từ khoản 4 Điều 36 Quy chế ban hành kèm Quyết định số 213/QĐ-ĐHTĐ. Trục "
+          "hoành là nguồn thu sau khi trừ các khoản chi phí cần thiết, hợp lệ, cơ sở tính chung của hai điểm; đơn vị: "
+          "triệu đồng. Điểm a áp dụng cho sản phẩm đề tài sử dụng ngân sách nhà nước do Trường chủ trì: 30% khen thưởng "
+          "tập thể tác giả, tối đa 100 triệu đồng một đề tài, phần vượt chuyển vào quỹ khen thưởng, phúc lợi. Điểm b "
+          "áp dụng cho tài sản trí tuệ thuộc sở hữu của Trường: tác giả hưởng 30%. Hai điểm có phạm vi khác nhau nên "
+          "không cùng áp dụng cho một tài sản.",
+    cot=["Nguồn thu sau chi phí hợp lệ", "Điểm a: khen thưởng tập thể tác giả, đề tài sử dụng ngân sách nhà nước",
+         "Điểm b: tác giả, tài sản trí tuệ thuộc sở hữu của Trường"],
+    dong=[[str(x), min(0.3 * x, 100), 0.3 * x] for x in muc_thu],
+    dinh_dang=[None, "0", "0"],
     bieu_do=dict(loai="line",
-                 chuoi=[dict(cot=1, mau=XANH, dam=2.25), dict(cot=2, mau=NGOC, dam=2.25, gach=True),
-                        dict(cot=3, mau=CAM, dam=2.25), dict(cot=4, mau=TIM, dam=2.25, gach=True),
-                        dict(cot=5, mau="#3B3A36", dam=1.5, cham=True)],
-                 truc_y="Phần của tác giả (triệu đồng)", truc_x="Khoản thu từ một hợp đồng chuyển giao (triệu đồng)"),
-    sau_doan="Năm quy định này chưa được rà soát",
-    binh_luan=[
-        "Hình 2.8 mô phỏng hệ quả của sự thiếu thống nhất nói trên đối với một hợp đồng chuyển giao cụ thể. Với cùng "
-        "khoản thu 500 triệu đồng, phần của tác giả dao động từ 100 triệu đồng theo điểm a Điều 36 Quyết định 213 hoặc "
-        "theo Quỹ từ năm thứ hai, lên 150 triệu đồng theo điểm b, và tới 250 triệu đồng theo Quỹ trong năm đầu; chênh "
-        "lệch giữa mức cao nhất và thấp nhất là 2,5 lần. Đường điểm a bị bẻ gãy tại mức thu khoảng 333 triệu đồng do "
-        "trần 100 triệu đồng, nghĩa là từ ngưỡng này mọi khoản thu tăng thêm không còn tạo thêm lợi ích cho tác giả.",
-        "Quy định thứ năm, tại Điều 13 Quy chế quản trị tài sản trí tuệ năm 2024, không nêu tỷ lệ mà giao Hiệu trưởng "
-        "quyết định nên không thể mô phỏng. Với khoản thu dưới khoảng 667 triệu đồng, cả bốn đường của quy chế nội bộ đều nằm trên đường mặc định 15% của "
-        "Luật, cho thấy về mặt tỷ lệ, Nhà trường không kém hào phóng so với chuẩn pháp luật; vượt ngưỡng này, đường điểm "
-        "a nằm dưới đường của Luật do tác động của mức trần, như thể hiện tại mức thu 700 triệu đồng. Vấn đề nằm ở chỗ tác giả không biết trước mình thuộc "
-        "đường nào. Khi phần thưởng kỳ vọng không xác định được, quyết định đầu tư công sức cho việc đăng ký và chuyển "
-        "giao cũng khó được đưa ra, đặc biệt khi so với công bố khoa học, nơi mức thưởng được niêm yết rõ theo từng hạng "
-        "tạp chí.",
-    ],
+                 chuoi=[dict(cot=1, mau=XANH, dam=2.25), dict(cot=2, mau=NGOC, dam=2.25, gach=True)],
+                 truc_y="Phần dành cho tác giả (triệu đồng)",
+                 truc_x="Nguồn thu sau khi trừ chi phí cần thiết, hợp lệ (triệu đồng)"),
+    sau_doan="",
+    binh_luan=[],
 ))
 
 # H2.9 ----------------------------------------------------------------------
@@ -401,27 +397,24 @@ HINH.append(dict(
 
 # H2.12 ---------------------------------------------------------------------
 loai_ts = ["Quyền tác giả", "Nhãn hiệu", "Kiểu dáng công nghiệp", "Sáng chế"]
-da_cap = [sum(1 for t in TSTT if t[0] == l and t[3] == "Đã cấp văn bằng") for l in loai_ts]
-dang_xl = [sum(1 for t in TSTT if t[0] == l and t[3] != "Đã cấp văn bằng") for l in loai_ts]
-dong_so_huu = [sum(1 for t in TSTT if t[0] == l and t[4].startswith("Đồng")) for l in loai_ts]
+nhom_tt = [DA_CAP, CHUA_XM, DA_NOP]
+dem_tt = {n: [sum(1 for t in TSTT_KY if t[0] == l and t[4] == n) for l in loai_ts] for n in nhom_tt}
+da_cap = dem_tt[DA_CAP]
 HINH.append(dict(
-    tieu_de="Tài sản trí tuệ của Nhà trường theo loại hình và tình trạng pháp lý",
-    nguon="Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.7.",
-    cot=["Loại hình", "Đã cấp văn bằng", "Đang xử lý", "Trong đó đồng sở hữu với doanh nghiệp"],
-    dong=[[loai_ts[i], da_cap[i], dang_xl[i], dong_so_huu[i]] for i in range(4)],
+    tieu_de="Hồ sơ tài sản trí tuệ của Nhà trường trong kỳ 2021 - 2025 theo loại hình và tình trạng pháp lý",
+    nguon="Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.6. Không gồm đơn sáng chế nộp năm 2026. Nhóm chưa xác minh là "
+          "5 kiểu dáng công nghiệp có số hiệu văn bằng tại bảng thống kê văn bằng nhưng được ghi là chờ cấp bằng tại "
+          "bảng theo dõi đơn.",
+    cot=["Loại hình", DA_CAP, "Có số hiệu văn bằng, trạng thái chưa xác minh", DA_NOP],
+    dong=[[loai_ts[i]] + [dem_tt[n][i] for n in nhom_tt] for i in range(4)],
     dinh_dang=[None, "0", "0", "0"],
     bieu_do=dict(loai="bar", xep_chong=True, khoang_cach=55, dao_truc=True,
                  chuoi=[dict(cot=1, mau=XANH, nhan=True, an_nhan_0=True),
-                        dict(cot=2, mau=VANG, nhan=True, an_nhan_0=True)],
-                 truc_y="Số tài sản"),
-    sau_doan="Hai đặc điểm cần được ghi nhận. Thứ nhất, đúng một nửa",
-    binh_luan=[
-        f"Hình 2.12 cho thấy cơ cấu danh mục lệch về nhóm có thủ tục đơn giản. Kiểu dáng công nghiệp là loại hình lớn "
-        f"nhất với {da_cap[2]} văn bằng, song toàn bộ đều đồng sở hữu với doanh nghiệp và bảo hộ hình dáng bên ngoài "
-        f"của sản phẩm chứ không bảo hộ công thức hay quy trình. Sáng chế, loại hình phản ánh trực tiếp năng lực nghiên "
-        f"cứu, mới có {dang_xl[3]} hồ sơ đang xử lý và chưa có văn bằng nào. Giải pháp hữu ích, loại hình phù hợp nhất "
-        f"với sản phẩm đề tài cấp cơ sở như phân tích tại Mục 2.3.3, hoàn toàn vắng mặt trong danh mục.",
-    ],
+                        dict(cot=2, mau=XAM, nhan=True, an_nhan_0=True),
+                        dict(cot=3, mau=VANG, nhan=True, an_nhan_0=True)],
+                 truc_y="Số hồ sơ"),
+    sau_doan="",
+    binh_luan=[],
 ))
 
 # H2.13 ---------------------------------------------------------------------
@@ -455,9 +448,9 @@ nhom_q = ["Giải pháp hữu ích", "Giải pháp hữu ích hoặc sáng chế
 dem_q = [sum(1 for d in dt_du_dk if d[7] == n) for n in nhom_q]
 shcn = sum(dem_q[i] for i in (0, 1, 2, 4))
 HINH.append(dict(
-    tieu_de="Sản phẩm đề tài cấp cơ sở đủ điều kiện xác lập quyền theo nhóm quyền có thể xác lập",
+    tieu_de="Sản phẩm đề tài cấp cơ sở có tiềm năng tạo lập tài sản trí tuệ theo nhóm quyền dự kiến",
     nguon="Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.8.",
-    cot=["Nhóm quyền có thể xác lập", "Số sản phẩm"],
+    cot=["Nhóm quyền dự kiến", "Số sản phẩm"],
     dong=[[nhom_q[i], dem_q[i]] for i in range(len(nhom_q))],
     dinh_dang=[None, "0"],
     bieu_do=dict(loai="bar", khoang_cach=60, dao_truc=True,
@@ -478,83 +471,47 @@ HINH.append(dict(
 # H2.15 ---------------------------------------------------------------------
 HINH.append(dict(
     tieu_de="Chuỗi chuyển hóa từ đề tài cấp cơ sở sang đơn đăng ký sở hữu công nghiệp",
-    nguon="Nguồn: Nhóm nghiên cứu tính toán từ danh mục đề tài cấp cơ sở và Bảng 2.8.",
-    cot=["Bậc chuyển hóa", "Toàn giai đoạn 2021 - 2025", "Đề tài giao từ năm 2021 đến năm 2024"],
+    nguon="Nguồn: Nhóm nghiên cứu tính toán từ danh mục đề tài cấp cơ sở và Bảng 2.7. Chuỗi chỉ xét sở hữu công "
+          "nghiệp, không gồm 2 sản phẩm thuộc quyền tác giả. Cột thứ hai gồm các đề tài mang mã số từ năm 2021 đến năm "
+          "2024, đều nghiệm thu trước ngày 31 tháng 5 năm 2025.",
+    cot=["Bậc chuyển hóa", "Toàn bộ 38 đề tài, mã số 2021 - 2025", "Đề tài mã số 2021 - 2024"],
     dong=[["Đề tài đã nghiệm thu", len(DE_TAI), len(dt_den_2024)],
-          ["Có sản phẩm đủ điều kiện xác lập quyền", len(dt_du_dk), len(du_dk_den_2024)],
+          ["Có sản phẩm tiềm năng sở hữu công nghiệp", len(dt_shcn), len(dt_shcn_den_2024)],
           ["Đã nộp đơn đăng ký", len(nop_don), sum(1 for d in nop_don if d[1] <= 2024)]],
     dinh_dang=[None, "0", "0"],
     bieu_do=dict(loai="bar", khoang_cach=45, dao_truc=True,
                  chuoi=[dict(cot=1, mau=XANH, nhan=True), dict(cot=2, mau=NGOC, nhan=True)],
                  truc_y="Số đề tài"),
-    sau_doan="Số liệu tại Bảng 2.8 cần được đọc cùng với yếu tố độ trễ",
-    binh_luan=[
-        f"Hình 2.15 lượng hóa chuỗi chuyển hóa trên cùng một đơn vị phân tích là đề tài. Ở bậc thứ nhất, "
-        f"{pt(len(dt_du_dk) / len(DE_TAI))} số đề tài tạo ra sản phẩm cụ thể có thể xác lập quyền, một tỷ lệ đáng "
-        f"ghi nhận đối với một trường đại học có phần lớn ngành đào tạo thuộc khoa học xã hội, kinh tế và ngôn ngữ. Điểm đứt gãy nằm ở "
-        f"bậc thứ hai: chỉ {pt(len(nop_don) / len(dt_du_dk))} số đề tài đủ điều kiện được nộp đơn, và nếu chỉ xét nhóm "
-        f"đề tài giao đến năm 2024, tỷ lệ này là 0%.",
-        "Hình dạng của chuỗi cho thấy vấn đề của Nhà trường không nằm ở đầu vào mà ở khâu nối giữa nghiệm thu và đăng "
-        "ký. Sản phẩm được tạo ra nhưng không được chuyển sang bước tiếp theo. Đây là căn cứ để xác định khâu rà soát "
-        "khả năng bảo hộ tại thời điểm nghiệm thu là điểm can thiệp ưu tiên của hệ thống giải pháp tại Chương 3.",
-    ],
+    sau_doan="",
+    binh_luan=[],
 ))
 
 # H2.16 ---------------------------------------------------------------------
-kh_rows = []
-for ten, nhom, k1, k2, t1, t2 in KE_HOACH:
-    kh_rows.append([ten, nhom, k1 + k2, t1 + t2, (t1 + t2) / (k1 + k2)])
-kh = {r[0]: list(r) for r in kh_rows}
-TEN_NGAN_KH = {
-    "Bài báo tạp chí quốc tế": "Bài báo quốc tế",
-    "Sách có chỉ số ISBN": "Sách có ISBN",
-    "Tham luận hội thảo cấp trường": "Tham luận cấp trường",
-    "Bài báo tạp chí trong nước, gồm tạp chí của Trường": "Bài báo trong nước",
-    "Đề tài cấp Bộ, Nhà nước": "Đề tài cấp Bộ, Nhà nước",
-    "Đề tài cấp cơ sở": "Đề tài cấp cơ sở",
-    "Tham luận hội thảo quốc tế": "Tham luận quốc tế",
-    "Giáo trình, tài liệu tham khảo": "Giáo trình, tài liệu",
-    "Công nhận sáng chế, kiểu dáng, quyền tác giả": "Văn bằng sở hữu trí tuệ",
-    "Chuyển giao công nghệ": "Chuyển giao công nghệ",
-}
-for r in kh_rows:
-    r[0] = TEN_NGAN_KH[r[0]]
+# Chỉ tiêu 1.11 chưa xác định được kết quả (trạng thái 5 kiểu dáng chưa thống nhất) nên không đưa vào biểu đồ.
+kh_rows, kh_chua_xd = [], []
+for muc, ten, nhom, k1, k2, t1, t2 in KE_HOACH:
+    if t1 is None:
+        kh_chua_xd.append([f"{muc}. {ten}", nhom, k1 + k2])
+        continue
+    kh_rows.append([f"{muc}. {ten}", nhom, k1 + k2, t1 + t2, (t1 + t2) / (k1 + k2)])
+kh = {r[0].split(". ", 1)[1]: list(r) for r in kh_rows}
 mau_nhom = {"Công bố": XANH, "Đề tài và học liệu": NGOC, "Tài sản trí tuệ": CAM}
 HINH.append(dict(
     tieu_de="Tỷ lệ thực hiện so với chỉ tiêu Kế hoạch 07/KH-ĐHTĐ, cộng dồn hai năm 2024 - 2025",
     nguon="Nguồn: Nhóm nghiên cứu tính toán từ mục 2.2.4 Kế hoạch số 07/KH-ĐHTĐ ngày 01 tháng 7 năm 2024 và các danh mục "
-          "thống kê của Phòng Khoa học Công nghệ. Chỉ tiêu bài báo trong nước gồm bài đăng tạp chí trong nước và tạp chí "
-          "của Trường; văn bằng sở hữu trí tuệ gồm sáng chế, kiểu dáng công nghiệp, quyền tác giả được cấp; không gồm "
-          "tham luận hội thảo quốc gia do danh mục không có năm. Màu xanh dương: công bố; xanh lục: đề tài và học liệu; "
-          "cam: tài sản trí tuệ.",
+          "thống kê của Phòng Khoa học Công nghệ; tên chỉ tiêu ghi theo nguyên văn Kế hoạch, kèm số mục. Mục 1.3 và "
+          "1.4 được cộng chung do danh mục bài báo trong nước gồm cả tạp chí của Trường. Đề tài xếp theo năm ghi trong "
+          "mã số hoặc năm phê duyệt kinh phí. Không gồm mục 1.5 do danh mục tham luận hội thảo quốc gia không có năm, "
+          "và mục 1.11 do trạng thái pháp lý của 5 kiểu dáng công nghiệp chưa thống nhất. Màu xanh dương: công bố; xanh "
+          "lục: đề tài và học liệu; cam: tài sản trí tuệ.",
     cot=["Chỉ tiêu", "Nhóm", "Kế hoạch 2024 - 2025", "Thực hiện 2024 - 2025", "Tỷ lệ thực hiện"],
     dong=kh_rows,
     dinh_dang=[None, None, "0", "0", "0%"],
     bieu_do=dict(loai="bar", khoang_cach=45, dao_truc=True,
                  chuoi=[dict(cot=4, mau=XANH, nhan=True, mau_diem=[mau_nhom[r[1]] for r in kh_rows])],
                  truc_y="Tỷ lệ thực hiện so với kế hoạch", dd_y="0%", an_chu_giai=True),
-    sau_doan="Trước khi đi vào từng nhóm kết quả và hạn chế",
-    binh_luan=[
-        f"Hình 2.16 cho thấy kết quả hai năm đầu của kế hoạch phân hóa rõ theo ba nhóm, được thể hiện bằng ba màu. Nhóm "
-        f"công bố, màu xanh dương, vượt xa chỉ tiêu: bài báo quốc tế đạt {kh['Bài báo tạp chí quốc tế'][3]} bài so với "
-        f"chỉ tiêu {kh['Bài báo tạp chí quốc tế'][2]} bài, tương đương {pt(kh['Bài báo tạp chí quốc tế'][4], 0)}; sách "
-        f"đạt {pt(kh['Sách có chỉ số ISBN'][4], 0)}; tham luận cấp trường đạt "
-        f"{pt(kh['Tham luận hội thảo cấp trường'][4], 0)}; bài báo trong nước đạt "
-        f"{pt(kh['Bài báo tạp chí trong nước, gồm tạp chí của Trường'][4], 0)}. Nhóm đề tài và học liệu, màu xanh lục, dao "
-        f"động quanh mức kế hoạch, từ {pt(kh['Giáo trình, tài liệu tham khảo'][4], 0)} với giáo trình đến "
-        f"{pt(kh['Đề tài cấp Bộ, Nhà nước'][4], 0)} với đề tài cấp Bộ, Nhà nước.",
-        f"Nhóm tài sản trí tuệ, màu cam, cần được đọc thận trọng. Chỉ tiêu công nhận sáng chế, kiểu dáng công nghiệp và "
-        f"quyền tác giả đạt {pt(kh['Công nhận sáng chế, kiểu dáng, quyền tác giả'][4], 0)} với "
-        f"{kh['Công nhận sáng chế, kiểu dáng, quyền tác giả'][3]} văn bằng, nhưng đó là 5 kiểu dáng công nghiệp đồng sở "
-        f"hữu với doanh nghiệp và 1 nhãn hiệu Thado Edupark; không văn bằng nào hình thành từ đề tài nghiên cứu. Chỉ tiêu "
-        f"chuyển giao công nghệ năm 2025 không đạt. Nguyên nhân một phần nằm ở cách thiết kế chỉ tiêu: Kế hoạch gộp sáng "
-        f"chế với kiểu dáng công nghiệp và quyền tác giả, nên chỉ tiêu có thể hoàn thành mà không cần kết quả nghiên cứu "
-        f"nào được bảo hộ.",
-        "Bản thân Kế hoạch 07/KH-ĐHTĐ đã tự đánh giá giai đoạn 2019 - 2023 là chưa có công trình nghiên cứu khoa học được "
-        "chuyển giao công nghệ và tài sản trí tuệ còn hạn chế. Sau hai năm thực hiện, trong khi công bố tăng vượt bậc, hai "
-        "nhận định này về cơ bản vẫn giữ nguyên. Đây là bằng chứng khái quát nhất cho các kết quả và hạn chế được phân "
-        "tích dưới đây.",
-    ],
+    sau_doan="",
+    binh_luan=[],
 ))
 
 for i, h in enumerate(HINH, 1):

@@ -184,3 +184,67 @@ def luu(v, ten, tieu_de, so_chuong):
     for x in kiem_tra(v.doc):
         print("CẢNH BÁO:", x)
     return ra
+
+
+# ---------------------------------------------------------------------------
+# Sửa đoạn tại chỗ sau khi dựng (dùng cho các lượt chỉnh sửa có bảng giải trình)
+# ---------------------------------------------------------------------------
+def _dat_chu(p, text):
+    """Ghi lại nội dung đoạn p theo markup **đậm**, *nghiêng*, giữ định dạng của run đầu."""
+    runs = p._p.findall(qn("w:r"))
+    mau = copy.deepcopy(runs[0]) if runs else etree.Element(qn("w:r"))
+    co_chu = [r for r in runs if "".join(t.text or "" for t in r.findall(qn("w:t"))).strip()]
+    def _dam(r):
+        rpr = r.find(qn("w:rPr"))
+        b = rpr.find(qn("w:b")) if rpr is not None else None
+        return b is not None and b.get(qn("w:val")) not in ("0", "false")
+    ca_doan_dam = bool(co_chu) and all(_dam(r) for r in co_chu)
+    for r in runs:
+        r.getparent().remove(r)
+    for x in mau.findall(qn("w:t")) + mau.findall(qn("w:br")):
+        mau.remove(x)
+    rpr0 = mau.find(qn("w:rPr"))
+    if rpr0 is not None and not ca_doan_dam:
+        for x in rpr0.findall(qn("w:b")) + rpr0.findall(qn("w:bCs")) + rpr0.findall(qn("w:i")):
+            rpr0.remove(x)
+    for chu, dam, nghieng in tach_markup(text):
+        r = copy.deepcopy(mau)
+        rpr = r.find(qn("w:rPr"))
+        if rpr is None:
+            rpr = etree.Element(qn("w:rPr"))
+            r.insert(0, rpr)
+        if dam and rpr.find(qn("w:b")) is None:
+            etree.SubElement(rpr, qn("w:b"))
+        if nghieng and rpr.find(qn("w:i")) is None:
+            etree.SubElement(rpr, qn("w:i"))
+        t = etree.SubElement(r, qn("w:t"))
+        t.text = chu
+        t.set(XML_SPACE, "preserve")
+        p._p.append(r)
+    del rpr0
+
+
+def thay_doan(doc, bat_dau, moi, tu=0, giai_trinh=None, vi_tri="", can_cu=""):
+    """Thay đoạn duy nhất bắt đầu bằng bat_dau (tính từ đoạn thứ tu) bằng moi.
+    moi là chuỗi hoặc danh sách chuỗi; chuỗi rỗng xóa đoạn; các chuỗi sau được chèn thành đoạn mới ngay sau.
+    Nếu có danh sách giai_trinh, ghi (vị trí, nội dung cũ, nội dung mới, căn cứ)."""
+    ps = doc.paragraphs[tu:]
+    trung = [p for p in ps if p.text.strip().startswith(bat_dau)]
+    assert len(trung) == 1, f"{len(trung)} đoạn bắt đầu bằng: {bat_dau[:70]}"
+    p = trung[0]
+    cu = p.text.strip()
+    moi = [moi] if isinstance(moi, str) else list(moi)
+    if moi == [""]:
+        p._p.getparent().remove(p._p)
+    else:
+        neo = p._p
+        _dat_chu(p, moi[0])
+        for t in moi[1:]:
+            el = copy.deepcopy(p._p)
+            neo.addnext(el)
+            neo = el
+            _dat_chu(docx.text.paragraph.Paragraph(el, p._parent), t)
+    if giai_trinh is not None:
+        giai_trinh.append((vi_tri, cu, "\n".join(re.sub(r"\*", "", x) for x in moi) if moi != [""] else "(lược bỏ)",
+                           can_cu))
+    return p

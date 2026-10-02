@@ -241,15 +241,16 @@ def bon_dau_moi():
 
 def chuoi_nguyen_nhan():
     s = SoDo(15.5, 7.7)
-    o = [(0.2, 0.4, "Chưa có danh mục tài sản trí tuệ trong hệ thống thống kê", XAM_NHAT, XAM, False),
-         (5.4, 0.4, "Khoảng trống kỹ thuật: chưa có biểu mẫu rà soát khả năng bảo hộ khi nghiệm thu", CAM_NHAT, CAM, True),
-         (10.6, 0.4, "Tác giả tự nhận diện và tự khởi động thủ tục đăng ký", XAM_NHAT, XAM, False),
-         (10.6, 4.6, "Chưa có dòng kinh phí nộp đơn; phần thưởng cho văn bằng đến chậm", XAM_NHAT, XAM, False),
-         (5.4, 4.6, "Kết quả nghiên cứu được ưu tiên công bố trước", XAM_NHAT, XAM, False),
+    o = [(0.2, 0.4, "Danh mục tài sản trí tuệ chưa liên kết với danh mục đề tài", XAM_NHAT, XAM, False),
+         (5.4, 0.4, "Khoảng trống kỹ thuật: thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu", CAM_NHAT, CAM, True),
+         (10.6, 0.4, "Việc khởi động thủ tục phụ thuộc vào sự chủ động của chủ nhiệm đề tài", XAM_NHAT, XAM, False),
+         (10.6, 4.6, "Chưa có dự toán riêng và người chịu trách nhiệm đề xuất chi cho bước đăng ký", XAM_NHAT, XAM,
+          False),
+         (5.4, 4.6, "Kết quả có thể được công bố trước khi được sàng lọc", XAM_NHAT, XAM, False),
          (0.2, 4.6, "Quá 12 tháng kể từ ngày bộc lộ, sáng chế và giải pháp hữu ích mất tính mới", VANG_NHAT, VANG, False)]
     for i, (x, y, t, nen, vien, dam) in enumerate(o, 1):
         s.hop(x, y, 4.7, 2.7, [T(f"{i}", 10.5, True), T(t, 10.5, dam)], nen=nen, vien=vien, day=0.05 if dam else 0.035)
-    s.nhan(7.75, 3.25, "điểm nghẽn cốt lõi", 9.5, dam=True, mau=CAM)
+    s.nhan(7.75, 3.25, "điểm nghẽn giả định", 9.5, dam=True, mau=CAM)
     s.mui_ten([(4.9, 1.75), (5.35, 1.75)], XAM)
     s.mui_ten([(10.1, 1.75), (10.55, 1.75)], XAM)
     s.mui_ten([(12.95, 3.1), (12.95, 4.55)], XAM)
@@ -273,7 +274,7 @@ def phoi_hop():
     s.mui_ten([(5.4, 3.2), (3.3, 5.05)], XANH, hai_dau=True)
     s.mui_ten([(10.1, 3.2), (12.2, 5.05)], XANH, hai_dau=True)
     s.mui_ten([(5.95, 6.9), (9.55, 6.9)], XANH, hai_dau=True)
-    s.hop(1.3, 9.1, 5.9, 2.2, [T("Phòng Tài chính - Kế toán", 10.5, True), T("Kinh phí nộp đơn, chi trả thù lao, giám sát quỹ", 10)],
+    s.hop(1.3, 9.1, 5.9, 2.2, [T("Phòng Tài chính - Kế toán", 10.5, True), T("Dự toán phí xác lập quyền, chi trả thưởng, thù lao", 10)],
           nen=XAM_NHAT, vien=XAM, gach=True)
     s.hop(8.3, 9.1, 5.9, 2.2, [T("Trung tâm Tuyển sinh và Quản trị thương hiệu", 10.5, True),
                                T("Nhãn hiệu, bộ nhận diện, cấp phép sử dụng", 10)], nen=XAM_NHAT, vien=XAM, gach=True)
@@ -283,41 +284,52 @@ def phoi_hop():
 
 
 def tam_khau():
-    s = SoDo(15.5, 9.4)
-    k = [("Xác định trước đối tượng quyền từ thuyết minh đề tài", "Chủ nhiệm đề tài, Phòng Khoa học Công nghệ"),
-         ("Ươm tạo, thử nghiệm tại Không gian sáng tạo mở thử nghiệm", "Viện Nghiên cứu giáo dục và Chuyển giao tri thức"),
-         ("Tra cứu thông tin sáng chế tiền kiểm", "Bộ phận Pháp chế"),
-         ("Rà soát bắt buộc khả năng bảo hộ tại nghiệm thu", "Hội đồng nghiệm thu"),
-         ("Thẩm định nội bộ trong 15 ngày làm việc", "Bộ phận Pháp chế"),
-         ("Soạn và nộp đơn trước hoặc cùng lúc công bố", "Bộ phận Pháp chế"),
-         ("Duy trì hiệu lực, cảnh báo trước 3 tháng", "Bộ phận Pháp chế"),
-         ("Khai thác thương mại và phân bổ lợi ích", "Viện Nghiên cứu giáo dục và Chuyển giao tri thức")]
+    s = SoDo(15.5, 12.4)
+    k = [("Khai báo kết quả và nhu cầu bảo hộ trên phiếu khai báo", "Chủ nhiệm đề tài"),
+         ("Sàng lọc sơ bộ, phân nhánh theo loại đối tượng", "Phòng Khoa học Công nghệ"),
+         ("Tra cứu, đánh giá khả năng bảo hộ", "Bộ phận Pháp chế, chuyên gia"),
+         ("Xem xét bảo mật trước khi công bố hoặc trình diễn", "Phòng Khoa học Công nghệ"),
+         ("Xác nhận tại nghiệm thu bằng phiếu rà soát", "Hội đồng nghiệm thu"),
+         ("Quyết định xác lập quyền, dự toán và người đề xuất chi", "Hiệu trưởng, Phòng Tài chính - Kế toán"),
+         ("Nộp đơn, đăng ký hoặc áp dụng biện pháp bảo mật; theo dõi, duy trì", "Bộ phận Pháp chế"),
+         ("Khai thác và phân chia lợi ích theo nguồn hình thành", "Phòng Khoa học Công nghệ, các đơn vị")]
     xs = [0.2, 4.05, 7.9, 11.75]
     w, h = 3.55, 3.6
     vt = [(xs[i], 0.3) for i in range(4)] + [(xs[3 - i], 5.5) for i in range(4)]
     for i, ((x, y), (ten, chu_tri)) in enumerate(zip(vt, k), 1):
-        noi = i == 4
+        noi = i in (4, 5)
         s.hop(x, y, w, h, [T(f"Khâu {i}", 10.5, True), T(ten, 10, noi), T(chu_tri, 9, nghieng=True)],
               nen=CAM_NHAT if noi else XANH_NHAT, vien=CAM if noi else XANH, day=0.05 if noi else 0.035)
     for i in range(3):
         s.mui_ten([(xs[i] + w, 2.1), (xs[i + 1] - 0.05, 2.1)], XAM, mui=0.24)
         s.mui_ten([(xs[3 - i], 7.3), (xs[2 - i] + w + 0.05, 7.3)], XAM, mui=0.24)
     s.mui_ten([(xs[3] + w / 2, 3.9), (xs[3] + w / 2, 5.45)], XAM, mui=0.24)
-    s.nhan(xs[3] + w / 2 - 1.55, 4.45, "mắt xích quyết định", 9, dam=True, mau=CAM)
+    s.nhan(xs[3] + w / 2 - 1.55, 4.45, "hai cổng bắt buộc", 9, dam=True, mau=CAM)
+    s.nhan(0.2, 9.45, "Phân nhánh tại Khâu 2:", 9.5, dam=True, mau=XAM, can="left")
+    nhanh = [("Sáng chế, giải pháp hữu ích", "Giữ bí mật đến khi nộp đơn"),
+             ("Kiểu dáng công nghiệp", "Nộp đơn trước khi trưng bày"),
+             ("Nhãn hiệu", "Tra cứu trước khi sử dụng"),
+             ("Quyền tác giả", "Ghi nhận; đăng ký khi cần chứng cứ"),
+             ("Bí mật kinh doanh", "Biện pháp bảo mật, không nộp đơn")]
+    wn = 2.95
+    for i, (ten, cach) in enumerate(nhanh):
+        s.hop(0.2 + i * (wn + 0.1), 10.0, wn, 2.2, [T(ten, 9.5, True), T(cach, 9)], nen="white", vien=XAM, gach=True)
     return s.luu("tam_khau.png")
 
 
 def lo_trinh():
     s = SoDo(15.5, 7.4)
     gd = [("Giai đoạn 1", "Quý IV/2026 - quý II/2027", XANH, XANH_NHAT,
-           ["Ban hành quy chế hợp nhất trước 31/5/2027", "Quy trình 8 khâu, biểu mẫu nghiệm thu mới",
-            "Thí điểm rà soát tại Viện Y - Dược", "Nhân sự chuyên trách, dòng kinh phí nộp đơn", "Danh mục số tài sản trí tuệ"]),
+           ["Hoàn thiện quy chế, ban hành trước 31/5/2027", "Bổ sung phiếu khai báo, phiếu rà soát vào biểu mẫu hiện có",
+            "Lập kế hoạch và triển khai thí điểm tại Viện Y - Dược", "Giao đầu mối kiêm nhiệm, lập dự toán phí xác lập "
+            "quyền", "Lập danh mục số tài sản trí tuệ"]),
           ("Giai đoạn 2", "Quý III/2027 - năm 2028", NGOC, NGOC_NHAT,
-           ["Đề án doanh nghiệp quản lý tài sản trí tuệ", "Học phần sở hữu trí tuệ từ năm học 2027 - 2028",
-            "Chuyên trang dữ liệu số tài sản trí tuệ", "Ít nhất 01 hợp đồng chuyển giao"]),
+           ["Đánh giá thí điểm, áp dụng toàn trường", "Xem xét vị trí chuyên trách khi đạt ngưỡng hồ sơ",
+            "Học phần sở hữu trí tuệ từ năm học 2027 - 2028", "Phương án tổ chức trung tâm tư vấn, định giá nếu đủ "
+            "điều kiện"]),
           ("Giai đoạn 3", "Năm 2029 - 2030", VANG, VANG_NHAT,
-           ["Doanh nghiệp quản lý tài sản trí tuệ vận hành", "Định giá, góp vốn bằng tài sản trí tuệ",
-            "Thương mại hóa thường xuyên", "Công khai dữ liệu trên Nền tảng số quốc gia"])]
+           ["Vận hành ổn định quy trình và dữ liệu", "Doanh nghiệp quản lý tài sản trí tuệ khi đủ điều kiện",
+            "Định giá, góp vốn khi có tài sản phù hợp", "Công khai dữ liệu trên Nền tảng số quốc gia"])]
     w = 5.1
     for i, (ten, tg, dam, nhat, ds) in enumerate(gd):
         x = 0.2 + i * (w + 0.05)

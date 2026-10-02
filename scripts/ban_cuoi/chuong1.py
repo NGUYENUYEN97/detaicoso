@@ -184,8 +184,7 @@ SUA = [
     # 1.5.2: không dùng ngoặc đơn để giải thích thuật ngữ tiếng Anh
     ("mô hình Không gian sáng tạo mở thử nghiệm (được định danh là Living Lab trong Thuyết minh và Đề cương nghiên cứu đã "
      "được phê duyệt) được tiếp cận",
-     "mô hình Không gian sáng tạo mở thử nghiệm, được Thuyết minh và Đề cương nghiên cứu đã phê duyệt gọi là mô hình Living "
-     "Lab, được tiếp cận"),
+     "mô hình Không gian sáng tạo mở thử nghiệm, được thuyết minh đề tài gọi là mô hình Living Lab, được tiếp cận"),
     ("Theo đó, sáng chế không bị coi là mất tính mới nếu được người có quyền đăng ký hoặc người có được thông tin trực tiếp "
      "hoặc gián tiếp từ người đó công bố công khai, với điều kiện đơn đăng ký sáng chế phải được nộp tại Cục Sở hữu trí tuệ "
      "trong thời hạn 12 tháng kể từ ngày công bố; hoặc giải pháp được trưng bày tại các cuộc triển lãm chính thức được công "
@@ -345,6 +344,114 @@ def chuan_bi():
     return md
 
 
+# Lượt chỉnh sửa theo bản góp ý ba chương (tháng 10 năm 2026). Mỗi mục: (đầu đoạn hiện có, nội dung mới).
+# Nội dung mới là chuỗi hoặc danh sách chuỗi (các chuỗi sau được chèn thành đoạn mới ngay sau đoạn được thay).
+SUA_LAN6 = [
+    ("- Giải quyết xung đột lợi ích giữa nhà trường và nhà nghiên cứu:",
+     "- Giải quyết xung đột lợi ích giữa nhà trường và nhà nghiên cứu: Nhà trường đóng vai trò là chủ đầu tư cung cấp cơ "
+     "sở vật chất, phòng thí nghiệm và kinh phí; trong khi giảng viên là người trực tiếp lao động sáng tạo (Shane, 2004; "
+     "Võ, 2025). Nếu quy chế nội bộ không quy định minh bạch các khoản thưởng, thù lao dành cho tác giả và cách phân "
+     "chia khoản thu từ chuyển giao, nhà khoa học có thể giữ lại kết quả nghiên cứu để tự khai thác bên ngoài, gây thất "
+     "thoát tài sản của nhà trường. Đồng thời, nhà quản lý phải giải quyết hài hòa xung đột giữa áp lực công bố bài báo "
+     "sớm để tính điểm chức danh và yêu cầu giữ bí mật để nộp đơn đăng ký bảo hộ sáng chế."),
+    ("- Tạo lập chu trình tái đầu tư khép kín:",
+     "- Tạo lập chu trình tái đầu tư khép kín: Sau khi thực hiện các nghĩa vụ đối với tác giả theo pháp luật và quy chế "
+     "nội bộ, gồm thù lao theo Điều 135 Luật Sở hữu trí tuệ đối với sáng chế, kiểu dáng công nghiệp, thiết kế bố trí và "
+     "tiền thưởng theo Điều 28 Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 khi kết quả thuộc phạm vi "
+     "điều chỉnh của điều này, phần còn lại của nguồn thu từ thương mại hóa có thể được trích bổ sung vào quỹ phát triển "
+     "khoa học và công nghệ của trường để nâng cấp phòng thí nghiệm và tài trợ cho các đề tài nghiên cứu tiếp theo."),
+    ("Việc bãi bỏ khoản 2 Điều 135 có ý nghĩa bước ngoặt:",
+     ["Việc bãi bỏ khoản 2 Điều 135 có nghĩa là Luật Sở hữu trí tuệ không còn quy định một khung thù lao riêng cho sáng "
+      "chế, kiểu dáng công nghiệp, thiết kế bố trí là kết quả của nhiệm vụ sử dụng ngân sách nhà nước, và khoản 1 Điều "
+      "135 không đặt mức trần thù lao. Điều này không có nghĩa là nguồn kinh phí không còn ảnh hưởng đến lợi ích của tác "
+      "giả: đối với kết quả sử dụng ngân sách nhà nước, Điều 28 Luật số 93/2025/QH15 đặt ra yêu cầu riêng về thưởng cho "
+      "tác giả, được phân tích tại Mục 1.3.2.",
+      "Để tránh đồng nhất các khoản lợi ích khác nhau, Đề tài sử dụng bốn thuật ngữ theo nghĩa sau. Thù lao của tác giả "
+      "là khoản chủ sở hữu sáng chế, kiểu dáng công nghiệp, thiết kế bố trí phải trả cho tác giả theo Điều 135 Luật Sở "
+      "hữu trí tuệ trong suốt thời hạn bảo hộ, theo thỏa thuận hoặc theo mức mặc định tính trên lợi nhuận trước thuế hay "
+      "trên tổng số tiền nhận được mỗi lần trước thuế. Thưởng cho tác giả là khoản trích từ lợi nhuận thương mại hóa kết "
+      "quả nghiên cứu theo Điều 28 Luật số 93/2025/QH15, bắt buộc tối thiểu 30% lợi nhuận sau thuế đối với phần kết quả "
+      "sử dụng ngân sách nhà nước, và do chủ sở hữu tự quyết định đối với phần không sử dụng ngân sách nhà nước. Nhuận "
+      "bút là khoản chi trả cho tác giả tác phẩm như sách, giáo trình theo pháp luật về quyền tác giả và quy chế chi tiêu "
+      "của tổ chức. Phân chia lợi nhuận, hay phân chia nguồn thu, là việc chủ sở hữu phân bổ khoản thu cho các bên như tổ "
+      "chức chủ trì, đơn vị có tác giả, quỹ phát triển khoa học và công nghệ. Bốn khoản này khác nhau về căn cứ pháp lý, "
+      "đối tượng hưởng và cơ sở tính, nên tỷ lệ của khoản này không thể so sánh trực tiếp với tỷ lệ của khoản khác."]),
+    ("Thứ hai, về phân chia lợi nhuận: Điều 28 phân biệt hai trường hợp.",
+     ["Thứ hai, về phân chia lợi nhuận từ thương mại hóa: Điều 28 phân biệt theo nguồn hình thành kết quả. Theo khoản "
+      "2, với phần lợi nhuận tương ứng kết quả không sử dụng ngân sách nhà nước, chủ sở hữu tự quyết định việc xử lý lợi "
+      "nhuận, bao gồm thưởng cho tác giả. Theo khoản 3, với phần lợi nhuận tương ứng phần kết quả sử dụng ngân sách nhà "
+      "nước, tổ chức chủ trì sử dụng lợi nhuận sau thuế để: thưởng cho tác giả tối thiểu 30% lợi nhuận thu được từ cho "
+      "thuê, bán, chuyển nhượng, chuyển giao quyền sử dụng, tự khai thác, sử dụng kết quả, hoặc tối thiểu 30% giá trị kết "
+      "quả khi góp vốn, hợp tác, liên doanh, liên kết, thành lập doanh nghiệp; thưởng cho cá nhân có đóng góp trực tiếp "
+      "vào hoạt động tổ chức thương mại hóa; tái đầu tư cho hoạt động khoa học, công nghệ và đổi mới sáng tạo; và mục đích "
+      "khác. Khoản 4 quy định khi kết quả sử dụng ngân sách nhà nước là sáng chế, thiết kế bố trí, kiểu dáng công nghiệp, "
+      "giống cây trồng được bảo hộ, tác giả vừa hưởng khoản thưởng nêu trên vừa hưởng các quyền lợi khác theo Luật Sở hữu "
+      "trí tuệ, trong đó có thù lao theo Điều 135. Khoản 5 xác định phần thưởng là mức dành chung cho các đồng tác giả; "
+      "khoản 6 giao Chính phủ quy định chi tiết. Cùng với đó, điểm b khoản 2 Điều 66 cho phép quỹ phát triển khoa học và "
+      "công nghệ của tổ chức chi cho đăng ký, bảo hộ, quản lý, khai thác quyền sở hữu trí tuệ.",
+      "Về áp dụng theo thời gian, khoản 3 Điều 73 quy định nhiệm vụ khoa học và công nghệ đã được phê duyệt giao chủ trì "
+      "trước ngày 01 tháng 10 năm 2025 tiếp tục thực hiện theo Luật Khoa học và công nghệ số 29/2013/QH13, Nghị quyết số "
+      "193/2025/QH15 và văn bản hướng dẫn có hiệu lực tại thời điểm phê duyệt. Khoản 7 Điều 73 quy định ngoại lệ: Điều 28 "
+      "được áp dụng đối với lợi nhuận chưa phân chia từ thương mại hóa sáng chế, kiểu dáng công nghiệp, thiết kế bố trí, "
+      "giống cây trồng là kết quả của nhiệm vụ được giao từ ngày 01 tháng 01 năm 2023 đến trước ngày 01 tháng 10 năm 2025 "
+      "và đã được cấp văn bằng bảo hộ. Như vậy, để xác định nghĩa vụ đối với tác giả trong một trường hợp cụ thể cần trả "
+      "lời đồng thời ba câu hỏi: kết quả có sử dụng ngân sách nhà nước hay không và ở phần nào; nhiệm vụ được giao vào "
+      "thời điểm nào; đối tượng có phải là sáng chế, kiểu dáng công nghiệp, thiết kế bố trí đã được bảo hộ hay không."]),
+    ("Luật số 93/2025/QH15 đã tạo ra bước đột phá thể chế mang tính đồng bộ",
+     "Luật số 93/2025/QH15 điều chỉnh đồng thời hai cơ chế: cơ chế thưởng cho tác giả khi thương mại hóa kết quả nghiên "
+     "cứu tại Điều 28, và cơ chế thù lao cho tác giả sáng chế, kiểu dáng công nghiệp, thiết kế bố trí trong Luật Sở hữu "
+     "trí tuệ thông qua khoản 7 Điều 71: điểm b sửa khoản 1 Điều 135 theo nguyên tắc thỏa thuận với mức mặc định 10% và "
+     "15%; điểm h bãi bỏ Điều 86a, Điều 133a và khoản 2 Điều 135. Sau sửa đổi, khung thù lao riêng theo nguồn kinh phí "
+     "không còn nằm trong Luật Sở hữu trí tuệ, còn yêu cầu riêng đối với kết quả sử dụng ngân sách nhà nước được quy định "
+     "tại Điều 28 dưới hình thức mức thưởng tối thiểu."),
+    ("Sự đổi mới căn bản này mang lại kết luận pháp lý",
+     "Từ các quy định trên, Đề tài rút ra ba nhận định làm căn cứ cho Chương 2 và Chương 3. Một là, nguồn kinh phí vẫn "
+     "quyết định cơ chế áp dụng: với phần kết quả không sử dụng ngân sách nhà nước, chủ sở hữu tự quyết định việc phân "
+     "chia lợi nhuận và mức thưởng theo khoản 2 Điều 28; với phần kết quả sử dụng ngân sách nhà nước thuộc phạm vi áp "
+     "dụng của Điều 28, phần thưởng cho tác giả không thấp hơn 30% lợi nhuận sau thuế, hoặc 30% giá trị kết quả khi góp "
+     "vốn. Hai là, thù lao theo Điều 135 là nghĩa vụ riêng của chủ sở hữu đối với tác giả sáng chế, kiểu dáng công "
+     "nghiệp, thiết kế bố trí, có cơ sở tính khác và không bị thay thế bởi khoản thưởng theo khoản 4 Điều 28; Luật không "
+     "đặt trần đối với thù lao, và mức 10%, 15% chỉ áp dụng khi các bên không có thỏa thuận. Ba là, quy chế nội bộ có "
+     "thể quy định mức có lợi hơn cho tác giả, nhưng không thể quy định mức thấp hơn mức tối thiểu của Luật đối với các "
+     "trường hợp thuộc phạm vi bắt buộc; một trường hợp cụ thể thuộc cơ chế nào phụ thuộc vào nguồn kinh phí, thời điểm "
+     "giao nhiệm vụ và loại đối tượng như đã nêu."),
+    ("Các quy chế nội bộ của Nhà trường, gồm Quy chế hoạt động khoa học công nghệ",
+     "Các quy chế nội bộ của Nhà trường, gồm Quy chế hoạt động khoa học công nghệ ban hành kèm Quyết định số "
+     "213/QĐ-ĐHTĐ ngày 28 tháng 12 năm 2021 và Quy chế quản trị tài sản trí tuệ ban hành kèm Quyết định số 217/QĐ-ĐHTĐ "
+     "ngày 21 tháng 11 năm 2024, đều được xây dựng trước khi Luật số 93/2025/QH15 có hiệu lực. Điểm a khoản 4 Điều 36 "
+     "Quyết định 213 áp dụng cho sản phẩm đề tài sử dụng ngân sách nhà nước do Trường chủ trì, đã nghiệm thu và được "
+     "thương mại hóa: nguồn thu sau khi trừ các khoản chi phí cần thiết, hợp lệ được chia 40% nộp ngân sách nhà nước, 30% "
+     "cho Trường và 30% khen thưởng tập thể tác giả, tối đa 100 triệu đồng một đề tài. Đối chiếu với Điều 28 và Điều 73 "
+     "Luật số 93/2025/QH15, quy định này không mâu thuẫn với Luật trong mọi trường hợp, nhưng cần được rà soát ở ba điểm. "
+     "Thứ nhất, mức trần có thể làm phần thưởng thấp hơn mức tối thiểu 30% khi kết quả thuộc phạm vi áp dụng Điều 28 và "
+     "30% lợi nhuận sau thuế vượt 100 triệu đồng. Thứ hai, cơ sở tính của Quy chế là nguồn thu sau chi phí, còn cơ sở "
+     "tính của Luật là lợi nhuận sau thuế. Thứ ba, khoản nộp ngân sách nhà nước không thuộc các mục đích sử dụng lợi "
+     "nhuận liệt kê tại khoản 3 Điều 28. Với nhiệm vụ được phê duyệt trước ngày 01 tháng 10 năm 2025 và không thuộc "
+     "khoản 7 Điều 73, việc phân chia tiếp tục theo pháp luật và văn bản có hiệu lực tại thời điểm phê duyệt. Đây là căn "
+     "cứ để Chương 2 xác định phạm vi áp dụng của từng quy định nội bộ và Chương 3 đề xuất hoàn thiện quy chế."),
+    ("3. Xác định công thức phân chia cụ thể tỷ lệ doanh thu thương mại hóa",
+     "3. Xác định cơ chế phân chia lợi ích theo từng nguồn hình thành tài sản và từng loại đối tượng, phân biệt thưởng, "
+     "thù lao, nhuận bút với phần chia cho nhóm nghiên cứu, đơn vị quản lý trực tiếp và quỹ phát triển khoa học công "
+     "nghệ của nhà trường, phù hợp với luật mới."),
+    ("3. Thực hiện: Tổ chức vận hành các quy trình nghiệp vụ",
+     "3. Thực hiện: Tổ chức vận hành các quy trình nghiệp vụ tiếp nhận đề xuất, thẩm định tính mới, hỗ trợ nộp đơn đăng "
+     "ký, tổ chức đàm phán hợp đồng chuyển giao công nghệ và chi trả thưởng, thù lao, nhuận bút cho tác giả."),
+    ("3. Yếu tố nguồn lực tài chính:",
+     "3. Yếu tố nguồn lực tài chính: Nguồn kinh phí bảo đảm cho việc nộp đơn, duy trì hiệu lực văn bằng và kinh phí thử "
+     "nghiệm hoàn thiện công nghệ. Khi các khoản này chưa được dự toán và bố trí sẵn, kết quả nghiên cứu dễ dừng lại ở "
+     "dạng bài báo thay vì được đăng ký bảo hộ."),
+    ("Thứ ba, cập nhật hệ thống pháp luật quốc gia hiện hành,",
+     "Thứ ba, cập nhật hệ thống pháp luật quốc gia hiện hành, làm rõ cơ chế tự động giao quyền sở hữu kết quả nghiên cứu "
+     "tại Điều 25 Luật số 93/2025/QH15, quyền đăng ký theo điểm c khoản 1 Điều 86 Luật Sở hữu trí tuệ do Luật số "
+     "131/2025/QH15 bổ sung; phân biệt thưởng cho tác giả theo Điều 28 Luật số 93/2025/QH15, với mức tối thiểu 30% lợi "
+     "nhuận sau thuế đối với phần kết quả sử dụng ngân sách nhà nước, và thù lao theo Điều 135 Luật Sở hữu trí tuệ, vốn "
+     "theo thỏa thuận, không có trần và chỉ áp dụng mức mặc định khi không có thỏa thuận; làm rõ quy định chuyển tiếp tại "
+     "khoản 3 và khoản 7 Điều 73. Trên cơ sở đó, Chương 1 xác định rằng việc rà soát quy chế nội bộ phải căn cứ vào nguồn "
+     "kinh phí, thời điểm giao nhiệm vụ và loại đối tượng của từng trường hợp, không thể áp một tỷ lệ chung cho mọi tài "
+     "sản."),
+]
+
+
 SO_DO = {
     "[[HINH_1_1]]": ("Chu trình bốn giai đoạn quản lý quyền sở hữu trí tuệ trong trường đại học", "chu_trinh.png",
                      "Nguồn: Nhóm nghiên cứu xây dựng trên cơ sở Bradley et al., 2013 và Tổ chức Sở hữu trí tuệ thế giới, "
@@ -357,6 +464,7 @@ SO_DO = {
 
 def noi_dung(v):
     import so_do
+    tu = len(v.doc.paragraphs)
     md = chuan_bi()
     thu_muc = os.path.join(GOC, "Ban_cuoi", "so_do")
     if not os.path.exists(os.path.join(thu_muc, "chu_trinh.png")):
@@ -382,6 +490,15 @@ def noi_dung(v):
         else:
             assert not s.startswith("|") and not s.startswith("![") and not s.startswith("[["), s[:60]
             v.doan_md("than", s)
+    sua_lan6(v.doc, tu)
+
+
+def sua_lan6(doc, tu):
+    """Lượt chỉnh sửa theo bản góp ý ba chương: tách thưởng, thù lao, nhuận bút, phân chia lợi nhuận; đối chiếu đầy
+    đủ Điều 28, Điều 73 Luật số 93/2025/QH15 và Điều 135 Luật Sở hữu trí tuệ."""
+    from khung import thay_doan
+    for bat_dau, moi in SUA_LAN6:
+        thay_doan(doc, bat_dau, moi, tu=tu)
 
 
 def dung():

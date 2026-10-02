@@ -168,7 +168,9 @@ def dung_workbook():
     r = 5 + len(B.HINH)
     for ten, mo_ta in [("Nhat_ky_chuan_hoa", "Các chỉnh sửa số liệu so với bản Chương 2 trước"),
                        ("DL_De_tai", "Danh mục 38 đề tài cấp cơ sở đã chuẩn hóa, không gồm thông tin cá nhân"),
-                       ("DL_TSTT", "Danh mục 12 tài sản trí tuệ thuộc sở hữu của Nhà trường"),
+                       ("DL_TSTT", "Danh mục hồ sơ tài sản trí tuệ thuộc sở hữu hoặc đồng sở hữu của Nhà trường"),
+                       ("DL_Quy_dinh_loi_ich", "Quy định về lợi ích của tác giả và phân chia nguồn thu, Bảng 2.3"),
+                       ("DL_Ke_hoach_07", "Mười chỉ tiêu Kế hoạch 07/KH-ĐHTĐ được đối chiếu, gồm chỉ tiêu chưa xác định"),
                        ("DL_Tieu_chi", "Đánh giá khả năng tính toán 16 tiêu chí tại Mục 1.4.2")]:
         ml.write(r, 1, mo_ta, f["o"])
         ml.write_url(r, 2, f"internal:'{ten}'!A1", f["lien_ket"], ten)
@@ -223,10 +225,39 @@ def dung_workbook():
     ts.set_column(1, 1, 60)
     ts.set_column(2, 2, 8)
     ts.set_column(3, 5, 28)
-    ts.write(0, 0, "TÀI SẢN TRÍ TUỆ THUỘC SỞ HỮU CỦA TRƯỜNG ĐẠI HỌC THÀNH ĐÔ", f["tieu_de"])
-    ts.write_row(2, 0, ["Loại hình", "Tên tài sản", "Năm", "Trạng thái", "Cơ cấu sở hữu", "Nguồn hình thành"], f["cot"])
+    ts.set_column(6, 7, 20)
+    ts.write(0, 0, "HỒ SƠ TÀI SẢN TRÍ TUỆ THUỘC SỞ HỮU HOẶC ĐỒNG SỞ HỮU CỦA TRƯỜNG ĐẠI HỌC THÀNH ĐÔ", f["tieu_de"])
+    ts.write_row(2, 0, ["Loại hình", "Tên tài sản", "Số đơn, số hiệu văn bằng", "Năm", "Trạng thái", "Cơ cấu sở hữu",
+                        "Nguồn hình thành", "Trong kỳ 2021 - 2025"], f["cot"])
     for i, t in enumerate(D.TSTT):
-        ts.write_row(3 + i, 0, t, f["o"])
+        ts.write_row(3 + i, 0, list(t[:7]) + ["Có" if t[7] else "Không, năm 2026"], f["o"])
+    n = 4 + len(D.TSTT)
+    ts.write(n, 0, "Ghi chú: năm là năm cấp văn bằng, giấy chứng nhận hoặc năm nộp đơn. Năm kiểu dáng công nghiệp có số "
+                   "hiệu văn bằng tại Sheet2 nhưng Sheet1 ghi chờ cấp bằng nên xếp nhóm chưa xác minh. Sheet1 có một dòng "
+                   "sáng chế ghi chấp nhận đơn hợp lệ nhưng không có số đơn nên không gán được.", f["thuong"])
+
+    ql = wb.add_worksheet("DL_Quy_dinh_loi_ich")
+    ql.set_column(0, 4, 40)
+    ql.write(0, 0, "QUY ĐỊNH VỀ LỢI ÍCH CỦA TÁC GIẢ VÀ PHÂN CHIA NGUỒN THU", f["tieu_de"])
+    ql.write_row(2, 0, ["Văn bản, điều khoản", "Phạm vi và nguồn kinh phí", "Đối tượng hưởng và tỷ lệ", "Cơ sở tính",
+                        "Điều kiện, mức trần"], f["cot"])
+    for i, t in enumerate(D.QUY_DINH_LOI_ICH):
+        ql.write_row(3 + i, 0, t, f["o"])
+
+    kh7 = wb.add_worksheet("DL_Ke_hoach_07")
+    kh7.set_column(0, 0, 8)
+    kh7.set_column(1, 1, 60)
+    kh7.set_column(2, 7, 14)
+    kh7.write(0, 0, "CHỈ TIÊU KẾ HOẠCH 07/KH-ĐHTĐ VÀ KẾT QUẢ 2024 - 2025", f["tieu_de"])
+    kh7.write_row(2, 0, ["Mục", "Chỉ tiêu theo nguyên văn", "Nhóm", "Kế hoạch 2024", "Kế hoạch 2025",
+                         "Thực hiện 2024", "Thực hiện 2025", "Tỷ lệ"], f["cot"])
+    for i, (muc, ten, nhom, k1, k2, t1, t2) in enumerate(D.KE_HOACH):
+        tl = "Chưa xác định" if t1 is None else f"{(t1 + t2) / (k1 + k2):.0%}"
+        kh7.write_row(3 + i, 0, [muc, ten, nhom, k1, k2, "Chưa xác định" if t1 is None else t1,
+                                 "Chưa xác định" if t2 is None else t2, tl], f["o"])
+    kh7.write(4 + len(D.KE_HOACH), 0, "Ghi chú mục 1.11: không gồm nhãn hiệu. Nếu 5 kiểu dáng công nghiệp được xác nhận "
+                                      "cấp năm 2024 thì kết quả là 5 trên 4, tức 125%; bản trước tính 6 trên 4, tức "
+                                      "150%, do gộp nhãn hiệu Thado Edupark.", f["thuong"])
 
     tc = wb.add_worksheet("DL_Tieu_chi")
     tc.set_column(0, 0, 14)

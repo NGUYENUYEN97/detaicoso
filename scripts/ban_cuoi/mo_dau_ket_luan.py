@@ -10,7 +10,8 @@ MO_DAU = [
         "Tài sản trí tuệ là nguồn lực vô hình quyết định năng lực cạnh tranh, uy tín học thuật và khả năng tự chủ tài "
         "chính của cơ sở giáo dục đại học. Giai đoạn 2025 - 2026 chứng kiến sự thay đổi dồn dập của pháp luật quốc gia "
         "về lĩnh vực này: Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15 có hiệu lực từ ngày 01 tháng 10 "
-        "năm 2025 trao cho tổ chức chủ trì quyền tự quyết về thương mại hóa, giá và phân chia lợi ích; Luật số "
+        "năm 2025 trao cho tổ chức chủ trì quyền tự quyết về thương mại hóa và giá, đồng thời quy định mức thưởng tối thiểu "
+        "cho tác giả đối với phần kết quả sử dụng ngân sách nhà nước; Luật số "
         "131/2025/QH15 sửa đổi Luật Sở hữu trí tuệ; Luật Giáo dục đại học số 125/2025/QH15 và Quyết định số "
         "1624/QĐ-TTg điều chỉnh Chiến lược sở hữu trí tuệ đến năm 2030 đều đặt yêu cầu mới đối với quản trị tài sản trí "
         "tuệ trong nhà trường. Bộ Chính trị, tại Kết luận số 51-KL/TW, xác định sở hữu trí tuệ là yếu tố cốt lõi để tự "
@@ -18,9 +19,9 @@ MO_DAU = [
         "Trường Đại học Thành Đô đã sớm có tầm nhìn thể chế khi ban hành Quy chế hoạt động khoa học công nghệ kèm Quyết "
         "định số 213/QĐ-ĐHTĐ năm 2021 và Quy chế quản trị tài sản trí tuệ kèm Quyết định số 217/QĐ-ĐHTĐ năm 2024. Năng "
         "lực công bố của Nhà trường tăng nhanh trong giai đoạn 2021 - 2025, và 11 trên 38 đề tài cấp cơ sở đã tạo ra sản "
-        "phẩm đủ điều kiện xác lập quyền, nhất là ở khối ngành Y - Dược. Tuy vậy, kênh chuyển hóa từ kết quả nghiên cứu "
+        "phẩm có tiềm năng tạo lập tài sản trí tuệ, nhất là ở khối ngành Y - Dược. Tuy vậy, kênh chuyển hóa từ kết quả nghiên cứu "
         "sang quyền sở hữu trí tuệ mới vận hành ở quy mô nhỏ, và các quy chế ban hành trước năm 2025 cần được cập nhật "
-        "theo luật mới. Việc nghiên cứu giải pháp nâng cao hiệu quả quản lý quyền sở hữu trí tuệ vì vậy vừa là yêu cầu "
+        "theo phạm vi áp dụng của luật mới. Việc nghiên cứu giải pháp nâng cao hiệu quả quản lý quyền sở hữu trí tuệ vì vậy vừa là yêu cầu "
         "tuân thủ pháp luật, vừa là cơ hội để Nhà trường đi tiên phong đón đầu khung pháp lý mới.",
     ]),
     ("2. Tổng quan tình hình nghiên cứu", [
@@ -70,10 +71,16 @@ MO_DAU = [
         "Quy chế ban hành kèm Quyết định 217, Quy chế chi tiêu nội bộ và Kế hoạch số 07/KH-ĐHTĐ với Luật Sở hữu trí tuệ "
         "hợp nhất, Luật số 93/2025/QH15 và các văn bản hướng dẫn. Dữ liệu định lượng gồm 582 bản ghi sản phẩm khoa học "
         "giai đoạn 2021 - 2025 từ các danh mục thống kê của Phòng Khoa học Công nghệ, hồ sơ 38 đề tài cấp cơ sở, danh mục "
-        "12 tài sản trí tuệ và danh sách 252 nhân sự năm 2026; dữ liệu cá nhân chỉ được sử dụng ở dạng tổng hợp.",
-        "Các danh mục được làm sạch, chuẩn hóa tên đơn vị và so khớp tên chủ nhiệm đề tài với danh sách tác giả trong ba "
-        "năm kể từ năm nghiệm thu để loại trừ bản ghi trùng. Sản phẩm của từng đề tài được phân loại theo đối tượng quyền "
-        "có thể xác lập. Mức độ tập trung công bố được đo bằng hệ số Gini; mức độ hoàn thành kế hoạch được tính theo tỷ "
+        "theo dõi đơn và văn bằng của Nhà trường và danh sách 252 nhân sự năm 2026; dữ liệu cá nhân chỉ được sử dụng ở dạng "
+        "tổng hợp.",
+        "Các danh mục được làm sạch và chuẩn hóa tên đơn vị; năm của mỗi số liệu được xác định rõ theo mã số, năm phê "
+        "duyệt, năm nghiệm thu, năm nộp đơn hoặc năm cấp văn bằng. Do các danh mục dùng đơn vị thống kê khác nhau và không "
+        "có trường liên kết, 582 bản ghi được giữ là tổng số bản ghi, không quy đổi thành số sản phẩm độc lập. Tên tác giả "
+        "bài báo được so khớp với danh sách nhân sự theo quy tắc giữ dấu, kèm phân tích độ nhạy với quy tắc bỏ dấu. Hồ sơ "
+        "tài sản trí tuệ được phân loại theo bốn nhóm trạng thái pháp lý: đã nộp đơn, đã chấp nhận đơn hợp lệ, đã cấp văn "
+        "bằng hoặc giấy chứng nhận, chưa xác minh. Sản phẩm của từng đề tài được đánh giá sơ bộ theo đối tượng quyền dự "
+        "kiến; các quy định về lợi ích của tác giả được đối chiếu theo phạm vi, đối tượng hưởng, cơ sở tính và điều kiện "
+        "áp dụng. Mức độ tập trung công bố được đo bằng hệ số Gini; mức độ hoàn thành kế hoạch được tính theo tỷ "
         "lệ thực hiện so với chỉ tiêu. Kết quả phân tích được tổng hợp bằng ma trận điểm mạnh, điểm yếu, thời cơ và "
         "thách thức làm căn cứ đề xuất giải pháp.",
     ]),
@@ -100,16 +107,23 @@ KET_LUAN = [
         "theo chuỗi và khung phân tích; đồng thời làm rõ những thay đổi căn bản của Luật số 93/2025/QH15 và Luật số "
         "131/2025/QH15, trong đó có cơ chế tự động giao quyền, quyền tự quyết về thương mại hóa của tổ chức chủ trì và "
         "mức thưởng tối thiểu 30% cho tác giả đối với kết quả sử dụng ngân sách nhà nước.",
-        "Về thực trạng, Trường Đại học Thành Đô có tầm nhìn thể chế sớm, năng lực công bố tăng nhanh, 12 tài sản trí tuệ "
-        "đã được xác lập hoặc đang xử lý đơn và chiến lược hợp tác đại học với doanh nghiệp mà Ban Giám hiệu đã dày công "
-        "kết nối đã mang lại thành công nổi bật. Tiềm năng tài sản trí tuệ rất lớn, đặc biệt ở khối ngành Y - Dược, "
-        "với 11 trên 38 đề tài có sản phẩm đủ điều kiện xác lập quyền. Khoảng cách giữa tiềm năng và kết quả có nguyên "
-        "nhân khách quan là độ trễ thể chế trước sự thay đổi dồn dập của pháp luật quốc gia giai đoạn 2025 - 2026, và "
-        "nguyên nhân chủ quan cốt lõi là khoảng trống kỹ thuật: thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu.",
-        "Về giải pháp, Đề tài đề xuất năm nhóm giải pháp đồng bộ: hoàn thiện quy chế nội bộ hợp nhất theo luật mới; kiện "
-        "toàn bộ máy và cơ chế phối hợp liên phòng ban; chuẩn hóa quy trình 8 khâu với phiếu rà soát bắt buộc tại nghiệm "
-        "thu; xây dựng cơ chế tài chính linh hoạt; phát triển đào tạo và văn hóa sở hữu trí tuệ. Các giải pháp đi kèm "
-        "phương án thí điểm tại Viện Y - Dược, lộ trình ba giai đoạn đến năm 2030 và bộ chỉ số theo dõi.",
+        "Về thực trạng, Trường Đại học Thành Đô có tầm nhìn thể chế sớm, năng lực công bố tăng nhanh, 11 hồ sơ tài sản trí "
+        "tuệ trong kỳ 2021 - 2025, trong đó 4 tài sản đã được cấp văn bằng, giấy chứng nhận và 5 kiểu dáng công nghiệp cần "
+        "xác nhận trạng thái, và chiến lược hợp tác đại học với doanh nghiệp mà Ban Giám hiệu đã dày công "
+        "kết nối đã mang lại thành công nổi bật. Tiềm năng tài sản trí tuệ là rõ ràng, đặc biệt ở khối ngành Y - Dược, "
+        "với 11 trên 38 đề tài có sản phẩm tiềm năng, trong đó 9 thuộc sở hữu công nghiệp nhưng mới 1 đề tài có đơn. Độ "
+        "trễ thể chế trước sự thay đổi dồn dập của pháp luật quốc gia giai đoạn 2025 - 2026 làm phát sinh nhu cầu rà soát "
+        "phạm vi áp dụng của quy chế từ cuối năm 2025; đối với kết quả của kỳ đánh giá, Đề tài nhận định nguyên nhân chủ "
+        "quan cốt lõi là khoảng trống kỹ thuật: thiếu một biểu mẫu rà soát tại thời điểm nghiệm thu, cùng với việc chưa "
+        "có dự toán riêng cho bước đăng ký và chưa thống nhất cách hiểu, thứ tự áp dụng các quy định về lợi ích của tác "
+        "giả. Đề tài cũng xác định các quy định nội bộ không xung đột trong cùng một tình huống, và mức trần 100 triệu "
+        "đồng tại Quyết định 213 chỉ cần sửa đối với các trường hợp thuộc phạm vi Điều 28 Luật số 93/2025/QH15.",
+        "Về giải pháp, Đề tài đề xuất năm nhóm giải pháp đồng bộ: hoàn thiện quy chế với cơ chế lợi ích của tác giả theo "
+        "nguồn hình thành tài sản, thời điểm giao nhiệm vụ và loại đối tượng; giao đầu mối, cơ chế phối hợp và bố trí nhân "
+        "sự theo giai đoạn; chuẩn hóa quy trình 8 khâu với khai báo, sàng lọc, xem xét bảo mật trước khi công bố và phiếu "
+        "rà soát tại nghiệm thu; lập dòng dự toán cho bước xác lập quyền và chuẩn bị phương án khai thác theo điều kiện "
+        "chuyển bước; phát triển đào tạo và văn hóa sở hữu trí tuệ. Các giải pháp đi kèm kế hoạch thí điểm tại Viện Y - "
+        "Dược, lộ trình ba giai đoạn đến năm 2030 và bộ chỉ số phân tầng từ sàng lọc, đơn nộp, văn bằng đến khai thác.",
     ]),
     ("2. Kiến nghị với cơ quan quản lý nhà nước", [
         "Bộ Khoa học và Công nghệ sớm ban hành văn bản hướng dẫn thi hành Điều 25, Điều 27 và Điều 28 Luật số "
@@ -120,13 +134,17 @@ KET_LUAN = [
         "dục đại học tư thục.",
     ]),
     ("3. Kiến nghị với Hội đồng trường và Ban Giám hiệu Trường Đại học Thành Đô", [
-        "Thứ nhất, chỉ đạo hợp nhất Quy chế ban hành kèm Quyết định 213, Quy chế ban hành kèm Quyết định 217 và các quy "
-        "định liên quan trong Quy chế chi tiêu nội bộ thành một Quy chế quản trị tài sản trí tuệ thống nhất theo Luật số "
-        "93/2025/QH15, bỏ mức trần tiền thưởng và bảo đảm mức tối thiểu cho tác giả theo luật.",
-        "Thứ hai, ban hành ngay phiếu rà soát khả năng bảo hộ bắt buộc tại thời điểm nghiệm thu đề tài và rà soát lại "
-        "các đề tài đã nghiệm thu giai đoạn 2021 - 2024 có sản phẩm đủ điều kiện xác lập quyền.",
-        "Thứ ba, bố trí dòng kinh phí riêng cho phí nộp đơn, phí duy trì hiệu lực văn bằng và giao đầu mối chuyên trách "
-        "tại Phòng Khoa học Công nghệ; tổ chức thí điểm tại Viện Y - Dược và đánh giá theo bộ chỉ số sau mỗi năm.",
+        "Thứ nhất, chỉ đạo hoàn thiện Quy chế quản trị tài sản trí tuệ trên nền Quyết định 217, hợp nhất các quy định về "
+        "sở hữu trí tuệ của Quyết định 213 và thống nhất với Quy chế chi tiêu nội bộ, trong đó xác định phạm vi và thứ tự "
+        "áp dụng các quy định về lợi ích của tác giả, phân biệt thưởng, thù lao, nhuận bút, và bảo đảm mức tối thiểu theo "
+        "Điều 28 Luật số 93/2025/QH15 cho các trường hợp thuộc phạm vi áp dụng của Luật.",
+        "Thứ hai, bổ sung phiếu khai báo và phiếu rà soát vào các biểu mẫu đề xuất, thuyết minh, hợp đồng, nghiệm thu "
+        "hiện có; rà soát tình trạng bộc lộ của 6 đề tài mã số 2021 - 2024 có sản phẩm tiềm năng sở hữu công nghiệp và "
+        "xác nhận trạng thái pháp lý của 5 kiểu dáng công nghiệp.",
+        "Thứ ba, lập dòng dự toán cho phí nộp đơn, phí đại diện, phí duy trì hiệu lực văn bằng, quy định người đề xuất chi "
+        "và cách tạm ứng; giao đầu mối kiêm nhiệm tại Phòng Khoa học Công nghệ và Bộ phận Pháp chế, xem xét vị trí chuyên "
+        "trách khi khối lượng hồ sơ đạt ngưỡng; triển khai kế hoạch thí điểm tại Viện Y - Dược và đánh giá theo bộ chỉ số "
+        "sau mỗi năm.",
         "Thứ tư, tiếp tục phát huy chiến lược hợp tác với doanh nghiệp, đồng thời chủ động phát triển thêm tài sản trí "
         "tuệ thuộc sở hữu riêng của Nhà trường từ đề tài cấp cơ sở và ba đề tài cấp quốc gia đang thực hiện.",
     ]),
