@@ -19,7 +19,7 @@ RA = os.path.join(GOC, "Ban_cuoi", "Ban_hoan_thien_03-10-2026", "Bao_cao_ra_soat
 MUC = {
     "A": "A - Phải sửa trước khi nộp",
     "B": "B - Cần sửa",
-    "C": "C - Hình thức",
+    "C": "C - Sai sót nhỏ",
 }
 
 # (vị trí, nội dung trong báo cáo, đối chiếu nguồn gốc, mức, đề xuất)
@@ -35,8 +35,8 @@ NHOM = [
          "A", "Sửa thành: số liệu thứ cấp giai đoạn 2021 - 2025. Thay các chữ khảo sát ở Chương 2 bằng rà soát hoặc tổng hợp dữ liệu hành chính."),
         ("Trang đầu",
          "Mã số đề tài: ĐTCS-2026-SHTT.",
-         "Không có trong thuyết minh hay quyết định giao đề tài trong hồ sơ. Theo thống nhất trước đó, mã số để trống để chủ nhiệm tự điền.",
-         "B", "Để trống hoặc điền đúng mã số trên quyết định giao đề tài."),
+         "Không có trong thuyết minh hay văn bản giao đề tài trong hồ sơ.",
+         "B", "Đối chiếu với quyết định giao đề tài."),
         ("Mục 2.3.3, Hình 2.11, Tiểu kết Chương 2, Kết luận",
          "Khẳng định giảng viên đã vội vàng công bố bài báo, làm mất tính mới tuyệt đối của giải pháp; nhóm nghiên cứu đã làm sáng tỏ chuỗi nguyên nhân gốc rễ.",
          "Tên Hình 2.11 ghi là giả thuyết. Hồ sơ không có dữ liệu cho thấy sản phẩm nào trong 8 sản phẩm đã bị bộc lộ qua bài báo. Đây là giả thuyết chưa kiểm chứng nhưng được viết như phát hiện.",
@@ -165,8 +165,8 @@ NHOM = [
     ("4. Trích dẫn và tài liệu tham khảo", [
         ("Mở đầu (danh mục đầu) và Tài liệu tham khảo cuối",
          "Cùng một tài liệu được ghi hai thông tin xuất bản khác nhau, ví dụ Maresova et al. (2019): Administrative Sciences 9(3) ở đầu, Economies 7(4) ở cuối.",
-         "Đối chiếu bản PDF, tệp Zotero và danh mục đã kiểm chứng: danh mục ở cuối sai thông tin xuất bản của 15 tài liệu (chi tiết ở Bảng 2). Thông tin xuất bản sai khiến người đọc không truy xuất được tài liệu, nên là lỗi liêm chính.",
-         "A", "Thay danh mục cuối bằng danh mục đã kiểm chứng; bỏ danh mục trùng ở Mở đầu."),
+         "Đối chiếu bản PDF và tệp Zotero: danh mục ở cuối sai thông tin xuất bản của 15 tài liệu (chi tiết ở Bảng 2). Thông tin xuất bản sai khiến người đọc không truy xuất được tài liệu, nên là lỗi liêm chính.",
+         "A", "Sửa thông tin xuất bản theo Bảng 2."),
         ("Mở đầu 2.2; danh mục số 8",
          "Rialti, Marzi, Caputo & Mayah (2022), Establishing successful university-industry collaborations, DOI 10.1007/s10961-022-09932-2.",
          "Bản PDF có trong thư mục ghi tác giả là Michele O'Dwyer, Raffaele Filieri và Lisa O'Malley; The Journal of Technology Transfer (2023) 48: 900-931. Báo cáo gán bài cho sai tác giả, và danh mục cuối lại ghi sai tạp chí (Technovation).",
@@ -195,36 +195,12 @@ NHOM = [
          "Viết đầy đủ tên tác giả Việt: Lê Thị Thu Hà và Nguyễn Thành Khang; Phạm Thúy Hằng; Lê Thị Thanh Tâm và Hoàng Đình Thái; Phạm Thị Thúy Hằng và Nguyễn Thanh Hùng.",
          "Danh mục chỉ có chữ viết tắt (Lê, T. T. H.; Phạm, T. H.); thư mục không có bản gốc. Tên đầy đủ có thể là suy đoán.",
          "B", "Dùng họ và năm theo APA, ví dụ (Lê & Nguyễn, 2019), trừ khi đã kiểm tra tên trên bài gốc."),
-        ("Toàn bài",
-         "Trích dẫn trong bài dạng (năm 2019), (Phạm Thúy Hằng, năm 2019); dùng các từ chứng minh, khẳng định cho nghiên cứu định tính.",
-         "Không đúng APA 7; mức độ khẳng định vượt nội dung nguồn.",
-         "C", "Chuyển sang (Phạm, 2019); thay chứng minh bằng cho thấy."),
     ]),
-    ("5. Cấu trúc và hình thức", [
-        ("Mục lục và thân bài",
-         "Mục lục theo khung đã chốt nhưng thân bài có 1.1.1 - 1.1.3, 2.3.3, Chương 3 gồm 3.1 - 3.4, tên các phần Kết luận cũng khác mục lục.",
-         "Thân bài không khớp mục lục và khung đã chốt.",
-         "B", "Đưa thân bài về đúng khung đã chốt."),
+    ("5. Dẫn chiếu nội bộ", [
         ("2.2.4; 3.4",
-         "Dẫn chiếu bộ 16 chỉ tiêu tại Mục 1.4.1.",
-         "Báo cáo không có Mục 1.4.1; Chương 1 chỉ nêu bốn nhóm tiêu chí, không đánh số 16 chỉ tiêu.",
-         "B", "Bổ sung bảng 16 chỉ tiêu ở Chương 1 hoặc sửa dẫn chiếu."),
-        ("Chương 2",
-         "Bảng đánh số 2.1, 2.2, 2.4, 2.7, 2.5, 2.6, 2.3 theo thứ tự xuất hiện; hình đánh số 2.3, 2.1, 2.4, 2.5, 2.8, 2.7, 2.9, 2.2, 2.6, 2.10, 2.11.",
-         "Đánh số không theo thứ tự xuất hiện.",
-         "C", "Đánh số lại theo thứ tự xuất hiện."),
-        ("Các hình ở Chương 2 và 3",
-         "Hình vẽ bằng ký tự (dấu gạch, dấu cộng); còn sót ký hiệu Markdown (####, :---, **, *).",
-         "Không dùng được trong báo cáo in nộp nghiệm thu.",
-         "C", "Thay bằng biểu đồ và sơ đồ đã dựng ở bản trước."),
-        ("Mục lục",
-         "Có mục Phụ lục.",
-         "Báo cáo không có phụ lục.",
-         "C", "Bỏ mục hoặc bổ sung phụ lục."),
-        ("Toàn bài",
-         "Nhiều cụm sáo ngữ và tuyệt đối: đột phá, bứt phá, nhảy vọt, mổ xẻ, chìa khóa then chốt, triệt tiêu, tuyệt đối, cực kỳ nghiêm trọng.",
-         "Trái văn phong khoa học và quy tắc biên tập đã thống nhất.",
-         "C", "Thay bằng diễn đạt trung tính."),
+         "Dẫn chiếu bộ 16 chỉ tiêu đã xác lập tại Mục 1.4.1 ở Chương 1.",
+         "Báo cáo không có Mục 1.4.1; Chương 1 chỉ nêu bốn nhóm tiêu chí, không có danh sách 16 chỉ tiêu được đánh số như Hình 2.6 sử dụng.",
+         "B", "Bổ sung danh sách 16 chỉ tiêu ở Chương 1 hoặc sửa dẫn chiếu."),
     ]),
 ]
 
@@ -256,8 +232,9 @@ TLTK = [
 ]
 
 DUNG = [
-    "Nhân lực năm 2026 (Bảng 2.1) khớp danh sách nhân sự ở dạng tổng hợp: 252 nhân sự, 145 giảng viên; Phòng KHCN có 02 nhân sự trình độ thạc sĩ.",
-    "Bảng 2.2 sản phẩm khoa học 2021 - 2025, tổng kinh phí 424,75 triệu đồng và cơ cấu 19/16/3, 71 bài quốc tế có phân hạng, hệ số Gini 0,836 và tỷ lệ 38,3%.",
+    "Bảng 2.1 khớp từng dòng với danh sách nhân sự ở dạng tổng hợp (252 nhân sự, 145 giảng viên, 94 tiến sĩ, 25 GS và PGS); các tỷ lệ 37,3%, 57,9%, 86,2%, 88,0%; Phòng KHCN có 02 nhân sự trình độ thạc sĩ; số ngành của ba viện.",
+    "Bảng 2.2 khớp từng ô; các phép tính 3,43 lần, 36,1%/năm, 7 lần, 62,7%/năm, tỷ trọng 41,1% và 83,9%; tổng kinh phí 424,75 triệu đồng và cơ cấu 19/16/3; 396,75 triệu đồng (93,4%); 71 bài quốc tế có phân hạng; hệ số Gini 0,836 và tỷ lệ 38,3%; ba đề tài NAFOSTED 4,67 tỷ đồng và ngày phê duyệt.",
+    "Bảng 2.7: mã số, sản phẩm, nhóm quyền và ngày nghiệm thu khớp danh mục đề tài (trừ cột đơn vị, xem phát hiện số 30).",
     "Bảng 2.6 về 12 hồ sơ tài sản trí tuệ (số đơn, số văn bằng, chủ sở hữu); chuỗi 38 - 9 - 1 và nhóm 31 đề tài 2021 - 2024 không có đơn ở Hình 2.9.",
     "Nội dung điểm a, điểm b khoản 4 Điều 36 Quyết định 213 (40/30/30, trần 100 triệu đồng; 30/20/50), Điều 13 Quyết định 217 và Bảng 7 Quy chế chi tiêu nội bộ ở Bảng 2.3; phép mô phỏng ngưỡng 333 triệu đồng.",
     "Khoản 1 Điều 135 ở Bảng 2.3 và Chương 3 (10% lợi nhuận trước thuế; 15% tổng số tiền nhận được trước thuế); Điều 6, Điều 60, Điều 90, Điều 93, khoản 1 và khoản 2 Điều 148 Luật Sở hữu trí tuệ.",
@@ -359,19 +336,19 @@ def main():
               "Chiến lược của Trường, khung chiến lược Edupark); bộ dữ liệu đã chuẩn hóa Du_lieu_bieu_do_Chuong_2.xlsx; bản PDF của các tài "
               "liệu tham khảo hiện có. Nghị định 100/2026/NĐ-CP không có trong thư mục nên được tra cứu trên mạng. Dữ liệu cá nhân trong "
               "danh sách nhân sự chỉ được dùng ở dạng tổng hợp.")
-    doan(doc, "Mức độ: A là lỗi phải sửa trước khi nộp (sai quy định pháp luật, sai số liệu, tài liệu tham khảo sai hoặc không kiểm chứng, khai "
-              "phương pháp không thực hiện); B là lỗi cần sửa; C là lỗi hình thức.")
+    doan(doc, "Phạm vi: chỉ kiểm tra tính chính xác của nội dung, không đánh giá bố cục, cách trình bày hay văn phong. Mức độ: A là lỗi "
+              "phải sửa trước khi nộp (sai quy định pháp luật, sai số liệu, tài liệu tham khảo sai, khai phương pháp không thực hiện); "
+              "B là lỗi cần sửa; C là sai sót nhỏ.")
 
     tong = {m: sum(1 for _, ds in NHOM for x in ds if x[3] == m) for m in "ABC"}
     doan(doc, "2. Kết luận chung", 13, True, truoc=6)
     doan(doc, f"Có {tong['A'] + tong['B'] + tong['C']} phát hiện, trong đó {tong['A']} lỗi mức A, {tong['B']} lỗi mức B và {tong['C']} lỗi mức C. "
-              "Báo cáo chưa đủ điều kiện nộp nghiệm thu nếu chưa sửa các lỗi mức A. Năm vấn đề chính:")
+              "Báo cáo chưa đủ điều kiện nộp nghiệm thu nếu chưa sửa các lỗi mức A. Bốn vấn đề chính:")
     for s in [
         "Khai phương pháp chuyên gia và dữ liệu sơ cấp trong khi đề tài không thực hiện; viết giả thuyết về việc công bố sớm làm mất tính mới như một phát hiện đã chứng minh.",
         "Một số căn cứ pháp luật sai: Điều 86a đã bị bãi bỏ; Điều 73 và Điều 126 Luật Sở hữu trí tuệ dẫn sai nội dung; mức thưởng 30% đến 50% không có trong luật; tên, ngày và nội dung của Nghị định 100/2026 sai.",
         "Bốn nhóm số liệu của Trường lệch với nguồn gốc: kinh phí đề tài theo năm (Hình 2.4), chỉ tiêu Kế hoạch 07 (Hình 2.10), giờ quy đổi và mức thưởng (Hình 2.5), số đề tài tiềm năng thuộc Viện Y - Dược.",
         "Danh mục tài liệu tham khảo cuối sai thông tin xuất bản của 15 tài liệu và mâu thuẫn với danh mục ở Mở đầu; một bài báo bị gán cho sai tác giả (Rialti thay cho O'Dwyer).",
-        "Thân bài không khớp khung đã chốt; hình vẽ bằng ký tự; đánh số bảng, hình không theo thứ tự.",
     ]:
         p = doan(doc, "- " + s, sau=3)
         p.paragraph_format.left_indent = Cm(0.6)
@@ -393,17 +370,13 @@ def main():
              [1.3, 3.0, 6.2, 8.0, 2.2, 5.0], hang, mau_muc=True)
 
     doan(doc, "4. Bảng 2. Thông tin xuất bản sai trong danh mục tài liệu tham khảo cuối", 13, True, truoc=10)
-    doan(doc, "Cột thông tin đúng lấy từ bản PDF (khi có) và danh mục đã kiểm chứng trong bản Bao_cao_toan_van_de_tai_khung_moi.docx.", 12, nghieng=True)
+    doan(doc, "Cột thông tin đúng lấy từ bản PDF (khi có) và tệp Zotero trong thư mục đề tài.", 12, nghieng=True)
     bang(doc, ["Tài liệu", "Báo cáo ghi", "Thông tin đúng"], [5.0, 10.0, 10.7], TLTK)
 
-    doan(doc, "5. Hướng xử lý đề xuất", 13, True, truoc=10)
-    for s in [
-        "Cách 1, khuyến nghị: lấy bản Bao_cao_toan_van_de_tai_khung_moi.docx (đã đối chiếu nguồn, đúng khung đã chốt) làm nền; bổ sung từ bản tải lên những phần có giá trị sau khi sửa, như phân tích chênh lệch giữa 30% sau chi phí của điểm b Điều 36 và mức 15% của Điều 135, kế hoạch thí điểm sàng lọc và bộ chỉ số theo dõi.",
-        "Cách 2: sửa trực tiếp bản tải lên theo Bảng 1 và Bảng 2, thay danh mục tài liệu tham khảo, thay hình vẽ bằng ký tự bằng biểu đồ từ bộ dữ liệu đã chuẩn hóa, đưa thân bài về đúng khung.",
-        "Dù chọn cách nào, cần bổ sung văn bản gốc cho các nội dung chưa có nguồn: hai hợp đồng sách, Điều lệ Quỹ Ngô Xuân Độ, quy định tỷ lệ trùng lặp, quyết định thành lập Trường, tên các trung tâm ở Hình 2.3.",
-    ]:
-        p = doan(doc, "- " + s, sau=3)
-        p.paragraph_format.left_indent = Cm(0.6)
+    doan(doc, "5. Văn bản cần bổ sung", 13, True, truoc=10)
+    doan(doc, "Các nội dung sau chưa có văn bản gốc trong hồ sơ; cần bổ sung để giữ lại, nếu không thì bỏ: hai hợp đồng chuyển giao quyền sử dụng "
+              "sách; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ; quy định về tỷ lệ trùng lặp; quyết định thành lập Trường; tên các đơn vị ở "
+              "Hình 2.3; bản gốc các bài của Maresova et al., Öztürk, Phạm và Nguyễn (2018), Lê và Nguyễn (2019) để kiểm tra các con số được dẫn.")
 
     doc.save(RA)
     print("Đã lưu", RA, tong)
