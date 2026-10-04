@@ -1,0 +1,927 @@
+menu_ctrl = {
+    menuVersionKey: "vszc",
+
+    init: function () {
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", menu_ctrl.loadDataMenu);
+        } else {
+            menu_ctrl.loadDataMenu();
+        }
+    },
+
+    loadDataMenu: function () {
+        document.querySelectorAll(".zone-menu").forEach(function (item) {
+            var zoneCode = item.getAttribute("data-zone");
+            if (!zoneCode) {
+                return;
+            }
+
+            try {
+                var htmlZone = localStorage.getItem(zoneCode);
+                if (htmlZone) {
+                    item.innerHTML = htmlZone;
+                }
+            } catch (e) { }
+        });
+
+        menu_ctrl.initMenuTab();
+
+        var vr = "";
+        try {
+            vr = localStorage.getItem(menu_ctrl.menuVersionKey) || "";
+        } catch (e) { }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/Misc/GetDataMenuZone", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                try {
+                    var rs = JSON.parse(xhr.responseText);
+                    menu_ctrl.loadData(rs.DataZoneMenu || [], rs.DataVr || "");
+                } catch (e) {
+                    console.error("Parse menu data error:", e);
+                }
+            }
+        };
+        xhr.send("&vr=" + encodeURIComponent(vr));
+    },
+
+    loadData: function (listItem, vs) {
+        if (!listItem || !listItem.length) {
+            return;
+        }
+
+        document.querySelectorAll(".zone-menu").forEach(function (el) {
+            if (el) {
+                el.innerHTML = "";
+            }
+        });
+
+        for (var i = 0; i < listItem.length; i++) {
+            var item = listItem[i];
+            if (!item || !item.ZoneCode) {
+                continue;
+            }
+
+            var zonecode = item.ZoneCode;
+            var zone_ = document.querySelector('.zone-menu[data-zone="' + zonecode.replace(/"/g, '\\"') + '"]');
+            if (!zone_) {
+                continue;
+            }
+
+            if (item.Html && item.Html.length > 10) {
+                zone_.innerHTML = item.Html;
+            } else {
+                var type = parseInt(item.Type, 10);
+                if (isNaN(type)) {
+                    continue;
+                }
+
+                var themeItem = menu_ctrl.getThemeZoneItem(type);
+                if (!themeItem) {
+                    continue;
+                }
+
+                zone_.innerHTML += themeItem;
+
+                var zone_append = zone_.querySelector(".zone-append");
+                if (zone_append && item.ListParent && item.ListParent.length) {
+                    for (var k = 0; k < item.ListParent.length; k++) {
+                        var parent = item.ListParent[k];
+                        if (!parent) {
+                            continue;
+                        }
+
+                        var div = document.createElement("div");
+
+                        var menuHTML = menu_ctrl.getThemeZoneItemFist(type)
+                            .replaceAll("{{link}}", parent.Link || "#")
+                            .replaceAll("{{name}}", parent.Name || "")
+                            .replaceAll("{{title}}", parent.Name || "")
+                            .replaceAll("{{cate}}", parent.CateId || "");
+
+                        if (type === 2 && k === 5) {
+                            var contactBox = `
+                                <div class="w-20-100 fl mb25">
+                                    <div class="flex">
+                                        <div class="border-bottom__white w-full"></div>
+                                        <div class="item-box-menu"></div>
+                                    </div>
+                                    <div class="mt10 pl25 font15 font-helvetica">
+                                        <div class="pt10"><span class="bold color-blue-7 uppercase">Liên hệ tòa soạn</span></div>
+                                        <div class="pt10 font20"><span class="bold white"><i class="icon-phone mr2"></i> 0947271302</span></div>
+                                        <div class="pt10"><span class="bold color-blue-7 uppercase">Liên hệ quảng cáo</span></div>
+                                        <div class="pt10"><span class="white">Ms Linh<span class="bold ml2"> 098 9033388</span></span></div>
+                                    </div>
+                                </div>`;
+
+                            div.innerHTML = contactBox;
+                            if (div.firstChild) {
+                                zone_append.appendChild(div.firstChild);
+                            }
+                        }
+
+                        div.innerHTML = menuHTML;
+
+                        if (parent.IsSearchChild === 1 && parent.ListChild && parent.ListChild.length > 0) {
+                            menu_ctrl.initZoneChild(type, parent.ListChild, div);
+                        }
+
+                        if (div.firstChild) {
+                            zone_append.appendChild(div.firstChild);
+                        }
+                    }
+                }
+            }
+
+            try {
+                localStorage.setItem(zonecode, zone_.innerHTML);
+            } catch (e) { }
+        }
+
+        try {
+            localStorage.setItem(menu_ctrl.menuVersionKey, vs);
+        } catch (e) { }
+
+        menu_ctrl.initMenuTab();
+        menu_ctrl.initEvent();
+    },
+
+    initZoneChild: function (type, ListChild, div) {
+        var zone_child = div.querySelector(".zone-child");
+        if (!zone_child || !ListChild) {
+            return;
+        }
+
+        for (var k = 0; k < ListChild.length; k++) {
+            var child = ListChild[k];
+            var childHTML = "";
+
+            if (type === 2 || type === 3) {
+                var classHide = k > 4 ? " menu-hide hide" : "";
+                childHTML = '<li class="' + classHide.trim() + ' pt5"><a href="' + (child.Link || "#") + '" class="font13" title="' + (child.Name || "") + '">' + (child.Name || "") + "</a></li>";
+            } else if (type === 1) {
+                childHTML = '<li class="menu-tab" data-cate="' + (child.CateId || "") + '"><a href="' + (child.Link || "#") + '" title="' + (child.Name || "") + '">' + (child.Name || "") + "</a></li>";
+            } else if (type === 5 || type === 8) {
+                childHTML = '<li data-cate="' + (child.CateId || "") + '"><a href="' + (child.Link || "#") + '" title="' + (child.Name || "") + '">' + (child.Name || "") + "</a></li>";
+            }
+
+            if (childHTML) {
+                var childNode = menu_ctrl.getElm(childHTML);
+                if (childNode) {
+                    zone_child.appendChild(childNode);
+                }
+            }
+        }
+    },
+
+    initMenuTab: function () {
+        menu_ctrl.initMenuTabMobile();
+    },
+
+    initMenuTabMobile: function () {
+        var input_cate = document.querySelector("input.id-category");
+        var pageInput = document.querySelector("input#page_view");
+        var page = pageInput ? pageInput.value : "";
+
+        if (!input_cate || !input_cate.getAttribute("data-id")) {
+            return;
+        }
+
+        var zone_menu_tab = document.querySelector('.zone-menu[data-zone="zone_sub_menu_mobile"]');
+        if (!zone_menu_tab) {
+            return;
+        }
+
+        var id_cate = input_cate.getAttribute("data-id");
+        var menu_active = zone_menu_tab.querySelector('.menu-tab[data-cate="' + id_cate + '"]');
+        if (!menu_active) {
+            return;
+        }
+
+        var ul = zone_menu_tab.querySelector(".ul-set-menu");
+        var ul_son = zone_menu_tab.querySelector(".ul-set-menu-son");
+        if (!ul || !ul_son) {
+            return;
+        }
+
+        if (menu_active.classList.contains("parent-menu")) {
+            var nameParent = menu_active.getAttribute("data-name") || "";
+            var linkParent = menu_active.getAttribute("data-link") || "#";
+
+            ul.innerHTML = `
+                <li class="pl5 pt5 mr10 li-icon"><a href="/" class="pl10 pr10 tc bold"><i class="fa fa-home color-blue-1 font16"></i></a></li>
+                <li class="pr5 li-bot"><h1><a href="${linkParent}" class="color-blue-1 font14 pl10 pr10 uppercase">${nameParent}</a></h1></li>
+            `;
+
+            menu_active.querySelectorAll("li").forEach(function (child) {
+                var nameChild = child.getAttribute("data-name") || "";
+                var linkChild = child.getAttribute("data-link") || "#";
+                var li = menu_ctrl.getElm('<li class="relative"><a href="' + linkChild + '" class="bg-white pl10 pr10 radius-3">' + nameChild + "</a></li>");
+                if (li) {
+                    ul_son.appendChild(li);
+                }
+            });
+        } else {
+            var parent = menu_active.closest(".parent-menu");
+            if (!parent) {
+                return;
+            }
+
+            var nameParent = parent.getAttribute("data-name") || "";
+            var linkParent = parent.getAttribute("data-link") || "#";
+            var nameChild = menu_active.getAttribute("data-name") || "";
+            var linkChild = menu_active.getAttribute("data-link") || "#";
+
+            ul.innerHTML = `
+                <li class="pl5 pt5 mr10 li-icon"><a href="/" class="pl10 pr10 tc bold"><i class="fa fa-home color-blue-1 font16"></i></a></li>
+                <li class="pr5 li-bot"><h1><a href="${linkParent}" class="color-blue-1 font14 pl10 pr10 uppercase">${nameParent}</a></h1></li>
+            `;
+
+            ul_son.innerHTML = '<li class="relative"><a href="' + linkChild + '" class="bg-white pl10 pr10 radius-3 color-blue-1">' + nameChild + "</a></li>";
+        }
+
+        if (page === "detail") {
+            var spanMenu = document.querySelector(".span-set-menu");
+            if (spanMenu && !menu_active.classList.contains("parent-menu")) {
+                var detailParent = menu_active.closest(".parent-menu");
+                if (detailParent) {
+                    spanMenu.innerHTML = '<a href="' + (detailParent.getAttribute("data-link") || "#") + '" title="' + (detailParent.getAttribute("data-name") || "") + '" class="color-blue-1 font18 opensans-bold">' + (detailParent.getAttribute("data-name") || "") + '<i class="fa fa-angle-double-right pl10 pr10 text-crumb"></i></a>';
+                }
+            }
+        }
+    },
+
+    initEvent: function () {
+        document.querySelectorAll('.zone-menu[data-zone="menu_ex_pc"], .zone-menu[data-zone="zone_menu_bot"]').forEach(function (area) {
+            area.addEventListener("click", function (e) {
+                if (e.target.classList.contains("view-more-menu")) {
+                    var hides = e.target.closest("div").querySelectorAll(".menu-hide");
+                    hides.forEach(function (item) {
+                        item.classList.toggle("hide");
+                    });
+                    e.target.textContent = e.target.textContent.trim() === "Xem thêm" ? "Thu gọn" : "Xem thêm";
+                }
+            });
+        });
+
+        var menuOther = document.querySelector(".btn-menu-other");
+        if (menuOther) {
+            menuOther.addEventListener("click", function () {
+                var box = document.querySelector(".box-other-menu");
+                if (box) {
+                    box.classList.toggle("hide");
+                    this.innerHTML = box.classList.contains("hide")
+                        ? '<i class="icon-menu"></i>'
+                        : '<i class="fa fa-times item-icon"></i>';
+                }
+            });
+        }
+
+        var acMenu = document.querySelector(".ac-menu");
+        if (acMenu) {
+            acMenu.addEventListener("click", function () {
+                document.body.classList.toggle("show_menu");
+            });
+        }
+
+        document.querySelectorAll(".cl-menu").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                document.body.classList.remove("show_menu");
+            });
+        });
+
+        document.querySelectorAll("li.sub").forEach(function (item) {
+            var plus = item.querySelector(".ti-plus");
+            var minus = item.querySelector(".ti-minus");
+            var childUl = item.querySelector(".zone-child");
+
+            if (plus && childUl) {
+                plus.addEventListener("click", function (e) {
+                    e.stopImmediatePropagation();
+
+                    document.querySelectorAll("li.sub.active").forEach(function (other) {
+                        if (other !== item) {
+                            other.classList.remove("active");
+                        }
+                    });
+
+                    item.classList.toggle("active");
+                });
+            }
+
+            if (minus && childUl) {
+                minus.addEventListener("click", function (e) {
+                    e.stopImmediatePropagation();
+                    item.classList.remove("active");
+                });
+            }
+        });
+    },
+
+    getThemeZoneItem: function (typeTheme) {
+        var theme;
+        switch (typeTheme) {
+            case 1:
+                theme = '<div class="w-maxcontent mg-auto z-6 clearfix"><ul class="ms-navigation uppercase lh-38 font15 clearfix pd0 mg0 zone-append div-menu"></ul></div>';
+                break;
+            case 2:
+                theme = '<div class="ms-menu mt50 abs20 transition-ef w-page-submenu clearfix hide box-other-menu z-100" style="left:0"><div class="border pt10 w-page bt-5-blue"><div class="w-full mg-auto all-catelink row zone-append menu-ex-pc"></div></div></div>';
+                break;
+            case 3:
+                theme = '<div class="ms-menu transition-ef w-page-submenu clearfix box-other-menu pl-14 pr-14"><div class="pt10 w-full bb-3-blue"><div class="w-full mg-auto all-catelink row zone-append menu-ex-pc"></div></div></div>';
+                break;
+            case 4:
+                theme = '<div class="navfooter bg-red"><div class="main fit-x"><ul class="tc font12 lh-38 uppercase setlast-li zone-append"></ul></div></div>';
+                break;
+            case 5:
+                theme = '<ul class="lh0 clearfix"><li class="fl"><a class="btn-menu h40 w40 lh-40 cl-menu pl5"><i class="font22 bold ics-cancel"></i></a></li></ul><ul class="zone-append" id="ul_ex"></ul>';
+                break;
+            case 6:
+                theme = '<ul class="pr30 lh-40 zone-append" id="ul_scroll_menu"></ul>';
+                break;
+            case 7:
+                theme = '<aside id="footer-category" class="bor-4top-e5 is-footer"><div class="main pt15 pb15 clearfix"><ul class="uppercase clearfix opensans-semibold zone-append"></ul></div></aside>';
+                break;
+            case 8:
+                theme = '<div class="bg-white"><div class="div-scroll"><ul class="pr30 lh-30 ul-set-menu"></ul></div><div class="border-top mb-2"></div><div class="border-top mb-2"></div><div class="border-top"></div><div class="div-scroll"><ul class="pr30 lh-38 ul-set-menu-son ul-none"></ul></div></div><div class="zone-append hide"></div>';
+                break;
+            default:
+                theme = "";
+        }
+        return theme;
+    },
+
+    getThemeZoneItemFist: function (typeTheme) {
+        var theme;
+        switch (typeTheme) {
+            case 1:
+                theme = '<li class="fl relative menu-tab menu-parent h45" data-cate="{{cate}}"><a href="{{link}}" class="white pl9 pt5 h45">{{name}}<i class="fa fa-angle-down ml2"></i></a><ul class="uppercase lh-35 font14 clearfix zone-child"></ul></li>';
+                break;
+            case 2:
+                theme = '<div class="w-20-100 fl pl25 mb20 zone-parent"><a href="{{link}}" class="cate-mt-link bold relative uppercase" title="{{title}}">{{name}}</a><ul class="mt10 zone-child font-helvetica"></ul></div>';
+                break;
+            case 3:
+                theme = '<div class="w-20-100 fl pl25 mb20 zone-parent"><a href="{{link}}" class="cate-mt-link bold relative uppercase font-char" title="{{title}}">{{name}}</a><ul class="mt10 zone-child"></ul></div>';
+                break;
+            case 4:
+                theme = '<li class="inline relative"><a class="nav-link white pl10 pr10" href="{{link}}" title="{{title}}">{{name}}</a></li>';
+                break;
+            case 5:
+                theme = '<li class="sub"><a data-cate="{{cate}}" href="{{link}}" title="{{title}}">{{name}}</a><i class="ti-plus"></i><i class="ti-minus"></i><ul class="zone-child"></ul></li>';
+                break;
+            case 6:
+                theme = '<li class="li-top"><a class="pl10 pr10 tc bold ms-fs-28 color-blue-5 uppercase" href="{{link}}" title="{{title}}">{{name}}</a></li>';
+                break;
+            case 7:
+                theme = '<li class="fl w50-100 pl5 pr5 lh0"><h4><a class="w-full borbot-d9-doted lh-40 ellipsis" href="{{link}}" title="{{title}}">{{name}}</a></h4></li>';
+                break;
+            case 8:
+                theme = '<div class="menu-tab parent-menu" data-cate="{{cate}}" data-name="{{name}}" data-link="{{link}}"><ul class="zone-child"></ul></div>';
+                break;
+            default:
+                theme = "<div></div>";
+        }
+        return theme;
+    },
+
+    getElm: function (str) {
+        var div = document.createElement("div");
+        div.innerHTML = str;
+        return div.firstChild;
+    }
+};
+
+menu_ctrl.init();
+
+/* ===== Home ad slider: tự động trượt, dots chỉ hiển thị (không click) ===== */
+(function () {
+    function initAdSlider(root) {
+        var track = root.querySelector('.home-adslider-track');
+        var slides = root.querySelectorAll('.home-adslider-slide');
+        var dots = root.querySelectorAll('.home-adslider-dot');
+        var total = slides.length;
+        if (!track || total <= 1) {
+            return;
+        }
+
+        var index = 0;
+        var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 4000;
+        var timer = null;
+
+        function go(i) {
+            index = (i + total) % total;
+            track.style.transform = 'translateX(' + (-index * 100) + '%)';
+            for (var d = 0; d < dots.length; d++) {
+                dots[d].classList.toggle('is-active', d === index);
+            }
+        }
+
+        function start() {
+            stop();
+            timer = setInterval(function () { go(index + 1); }, delay);
+        }
+
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        root.addEventListener('mouseenter', stop);
+        root.addEventListener('mouseleave', start);
+
+        go(0);
+        start();
+    }
+
+    function initAllAdSliders() {
+        var sliders = document.querySelectorAll('.home-adslider');
+        for (var i = 0; i < sliders.length; i++) {
+            initAdSlider(sliders[i]);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAllAdSliders);
+    } else {
+        initAllAdSliders();
+    }
+})();
+
+/* ===== Home side banner (hot_banner_4–7): riêng, chỉ slide có dữ liệu mới chạy ===== */
+(function () {
+    function slideHasAdData(slide) {
+        if (!slide) return false;
+        var box = slide.querySelector('.ads-item') || slide;
+        if (box.querySelector('img, iframe, a, video, object, embed')) return true;
+        var ins = box.querySelector('ins');
+        if (!ins) return false;
+        if (ins.children.length > 0) return true;
+        var html = (ins.innerHTML || '').replace(/<script[\s\S]*?<\/script>/gi, '').replace(/\s+/g, '');
+        return html.length > 0;
+    }
+
+    function allSlides(root) {
+        return Array.prototype.slice.call(root.querySelectorAll('.home-sidebanner-slide'));
+    }
+
+    function cycleSlides(root) {
+        var all = allSlides(root);
+        var filled = [];
+        for (var i = 0; i < all.length; i++) {
+            if (slideHasAdData(all[i])) filled.push(all[i]);
+        }
+        if (filled.length >= 2) return filled;
+        if (filled.length === 1 && root.getAttribute('data-sb-settled') === '1') return filled;
+        return all;
+    }
+
+    function initHomeSideBanner(root) {
+        if (!root || root.getAttribute('data-sb-on') === '1') return;
+        root.setAttribute('data-sb-on', '1');
+
+        var list = allSlides(root);
+        if (!list.length) return;
+
+        var index = 0;
+        var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 3500;
+        var timer = null;
+        var refreshTimer = null;
+
+        function setActive(i) {
+            var cycle = cycleSlides(root);
+            if (!cycle.length) return;
+            index = ((i % cycle.length) + cycle.length) % cycle.length;
+
+            var active = cycle[index];
+            var all = allSlides(root);
+            for (var s = 0; s < all.length; s++) {
+                if (all[s] === active) all[s].classList.add('is-active');
+                else all[s].classList.remove('is-active');
+            }
+        }
+
+        function start() {
+            stop();
+            if (cycleSlides(root).length <= 1) return;
+            timer = setInterval(function () { setActive(index + 1); }, delay);
+        }
+
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        function refresh() {
+            clearTimeout(refreshTimer);
+            refreshTimer = setTimeout(function () {
+                setActive(index);
+                start();
+            }, 80);
+        }
+
+        root.addEventListener('mouseenter', stop);
+        root.addEventListener('mouseleave', start);
+
+        if (!root.querySelector('.home-sidebanner-slide.is-active')) {
+            list[0].classList.add('is-active');
+        }
+
+        setActive(0);
+        start();
+
+        if (window.MutationObserver) {
+            var obs = new MutationObserver(refresh);
+            obs.observe(root, { childList: true, subtree: true });
+        }
+
+        window.addEventListener('load', refresh);
+        setTimeout(refresh, 2000);
+        setTimeout(function () {
+            root.setAttribute('data-sb-settled', '1');
+            refresh();
+        }, 5000);
+    }
+
+    function initAll() {
+        var roots = document.querySelectorAll('.home-sidebanner');
+        for (var i = 0; i < roots.length; i++) {
+            initHomeSideBanner(roots[i]);
+        }
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initAll, 0);
+    } else {
+        document.addEventListener('DOMContentLoaded', initAll);
+    }
+    window.addEventListener('load', initAll);
+})();
+
+/* ===== Home MB banner (hot_banner_4–7 mobile): riêng, cao theo banner đang hiện ===== */
+(function () {
+    function slideHasAdData(slide) {
+        if (!slide) return false;
+        var box = slide.querySelector('.ads-item') || slide;
+        if (box.querySelector('img, iframe, a, video, object, embed')) return true;
+        var ins = box.querySelector('ins');
+        if (!ins) return false;
+        if (ins.children.length > 0) return true;
+        var html = (ins.innerHTML || '').replace(/<script[\s\S]*?<\/script>/gi, '').replace(/\s+/g, '');
+        return html.length > 0;
+    }
+
+    function allSlides(root) {
+        return Array.prototype.slice.call(root.querySelectorAll('.home-mbbanner-slide'));
+    }
+
+    function cycleSlides(root) {
+        var all = allSlides(root);
+        var filled = [];
+        for (var i = 0; i < all.length; i++) {
+            if (slideHasAdData(all[i])) filled.push(all[i]);
+        }
+        if (filled.length >= 2) return filled;
+        if (filled.length === 1 && root.getAttribute('data-mb-settled') === '1') return filled;
+        return all;
+    }
+
+    function initMbBanner(root) {
+        if (!root || root.getAttribute('data-mb-on') === '1') return;
+        root.setAttribute('data-mb-on', '1');
+
+        var list = allSlides(root);
+        if (!list.length) return;
+
+        var index = 0;
+        var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 3500;
+        var timer = null;
+        var refreshTimer = null;
+
+        function setActive(i) {
+            var cycle = cycleSlides(root);
+            if (!cycle.length) return;
+            index = ((i % cycle.length) + cycle.length) % cycle.length;
+
+            var active = cycle[index];
+            var all = allSlides(root);
+            for (var s = 0; s < all.length; s++) {
+                if (all[s] === active) all[s].classList.add('is-active');
+                else all[s].classList.remove('is-active');
+            }
+        }
+
+        function start() {
+            stop();
+            if (cycleSlides(root).length <= 1) return;
+            timer = setInterval(function () { setActive(index + 1); }, delay);
+        }
+
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        function refresh() {
+            clearTimeout(refreshTimer);
+            refreshTimer = setTimeout(function () {
+                setActive(index);
+                start();
+            }, 80);
+        }
+
+        if (!root.querySelector('.home-mbbanner-slide.is-active')) {
+            list[0].classList.add('is-active');
+        }
+
+        setActive(0);
+        start();
+
+        if (window.MutationObserver) {
+            var obs = new MutationObserver(refresh);
+            obs.observe(root, { childList: true, subtree: true });
+        }
+
+        window.addEventListener('load', refresh);
+        setTimeout(refresh, 2000);
+        setTimeout(function () {
+            root.setAttribute('data-mb-settled', '1');
+            refresh();
+        }, 5000);
+    }
+
+    function initAllMb() {
+        var roots = document.querySelectorAll('.home-mbbanner');
+        for (var i = 0; i < roots.length; i++) {
+            initMbBanner(roots[i]);
+        }
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initAllMb, 0);
+    } else {
+        document.addEventListener('DOMContentLoaded', initAllMb);
+    }
+    window.addEventListener('load', initAllMb);
+})();
+;
+layout = {
+
+    newsSlider: {
+        index: 0,
+        timer: null
+    },
+
+    init: function () {
+        var element_view = document.querySelector(".load-extra-topnew");
+
+        if (element_view) {
+            var category = element_view.getAttribute("data-category");
+            var author = element_view.getAttribute("data-author");
+            var channel = element_view.getAttribute("data-channel");
+
+            let send = "";
+
+            if (category) {
+                send = "categoryId=" + category + "&pageIndex=1";
+                layout.getlayout(send);
+            } else if (author) {
+                send = "authorId=" + author + "&pageIndex=1";
+                layout.getlayout(send);
+            } else if (channel) {
+                send = "channelId=" + channel + "&pageIndex=1";
+                layout.getlayout(send);
+            } else {
+                send = "pageIndex=1";
+                layout.getlayout(send);
+            }
+        }
+
+        document.querySelectorAll(".infor-contactus a").forEach(function (element) {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("popup-tuvan").style.display = "block";
+            });
+        });
+
+        document.querySelector(".close[data-dismiss='modal']").addEventListener("click", function () {
+            document.getElementById("popup-tuvan").style.display = "none";
+        });
+
+        document.getElementById("popup-tuvan").addEventListener("click", function (event) {
+            if (event.target === this) {
+                this.style.display = "none";
+            }
+        });
+
+        document.querySelector(".select-selected").addEventListener("click", function () {
+            document.querySelector(".select-items").classList.toggle("select-hide");
+        });
+
+        document.querySelectorAll(".select-items div").forEach(function (element) {
+            element.addEventListener("click", function () {
+
+                const selectedType = this.getAttribute("data-type");
+                const select = document.getElementById("service");
+                select.value = selectedType;
+
+                const selectedText = this.textContent;
+                document.querySelector(".select-selected").textContent = selectedText;
+
+                document.querySelectorAll(".select-items div").forEach(function (item) {
+                    item.classList.remove("same-as-selected");
+                });
+
+                this.classList.add("same-as-selected");
+                document.querySelector(".select-items").classList.add("select-hide");
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.matches('.select-selected')) {
+                const selectItems = document.querySelector(".select-items");
+                if (selectItems && !selectItems.classList.contains("select-hide")) {
+                    selectItems.classList.add("select-hide");
+                }
+            }
+        });
+
+        document.getElementById('formBuy').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let isValid = true;
+            let errContainer = document.querySelector('.err');
+
+            errContainer.innerHTML = '';
+            errContainer.style.display = 'none';
+
+            let email = document.querySelector('input[name="Email"]').value;
+            let phone = document.querySelector('input[name="PhoneNumber"]').value;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                isValid = false;
+                errContainer.style.display = 'block';
+                errContainer.innerHTML += `
+                <div class="err-item">
+                    <div class="is-invalid"></div>
+                    <div class="invalid-feedback">Email không hợp lệ</div>
+                </div>`;
+            }
+
+            const phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                isValid = false;
+                errContainer.style.display = 'block';
+                errContainer.innerHTML += `
+                <div class="err-item">
+                    <div class="is-invalid"></div>
+                    <div class="invalid-feedback">Số điện thoại phải đủ 10 số</div>
+                </div>`;
+            }
+
+            if (isValid) {
+                const formData = new FormData(this);
+
+                fetch('/PrintMagazine/ContactMagazine', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.Code > 0) {
+                            alert('Gửi thông tin thành công!');
+                        } else {
+                            alert('Có lỗi xảy ra, vui lòng thử lại.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Có lỗi xảy ra khi gửi thông tin.');
+                    });
+            }
+        });
+    },
+
+    getlayout: function (send) {
+
+        var element_view = document.querySelector(".load-extra-topnew");
+        var element_cmt = document.querySelector(".load-extra-topview");
+
+        if (element_view) {
+            var xvr = new XMLHttpRequest();
+            xvr.open("GET", "/tin-moi-hom-nay.html", true);
+
+            xvr.onreadystatechange = function () {
+                if (xvr.readyState === 4 && xvr.status === 200 && element_view) {
+                    element_view.innerHTML = xvr.responseText;
+
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            layout.initNewsSlider();
+                        });
+                    });
+                }
+            };
+
+            xvr.send();
+        }
+
+        if (element_cmt) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/Author/GetArticleInTopView", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200 && element_cmt) {
+                    element_cmt.innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send(send);
+        }
+
+        layout.loadlayout();
+    },
+
+    initNewsSlider: function () {
+
+        // SLIDER 1 + SLIDER 2 + tất cả slider khác
+        var sliders = document.querySelectorAll("[data-news-slider], [data-gocnhin-slider]");
+
+        if (!sliders || sliders.length === 0) return;
+
+        sliders.forEach(function (slider) {
+
+            var track = slider.querySelector(".news-track");
+            var slides = slider.querySelectorAll(".news-slide");
+
+            if (!track || slides.length === 0) return;
+
+            var total = slides.length;
+            var index = 0;
+            var timer = null;
+            var delay = parseInt(slider.getAttribute("data-autoplay"), 10) || 3000;
+
+            function go(i) {
+                index = (i + total) % total;
+                track.style.transform = "translateX(" + (-index * 100) + "%)";
+            }
+
+            function next() {
+                go(index + 1);
+            }
+
+            function prev() {
+                go(index - 1);
+            }
+
+            var nextBtn = slider.querySelector(".next");
+            var prevBtn = slider.querySelector(".prev");
+
+            if (nextBtn) nextBtn.onclick = next;
+            if (prevBtn) prevBtn.onclick = prev;
+
+            function start() {
+                stop();
+                timer = setInterval(next, delay);
+            }
+
+            function stop() {
+                if (timer) clearInterval(timer);
+            }
+
+            slider.onmouseenter = stop;
+            slider.onmouseleave = start;
+
+            start();
+            go(0);
+        });
+    },
+
+    loadlayout: function () {
+
+        var topnew = document.getElementsByClassName("btn-extra-topnew")[0];
+        var topview = document.getElementsByClassName("btn-extra-topview")[0];
+        var new_ = document.getElementsByClassName("load-extra-topnew")[0];
+        var view_ = document.getElementsByClassName("load-extra-topview")[0];
+
+        if (topnew) {
+            topnew.addEventListener('click', function () {
+                topnew.classList.add('comment');
+                topview.classList.remove('comment');
+                new_.classList.remove('hide');
+                view_.classList.add('hide');
+            });
+        }
+
+        if (topview) {
+            topview.addEventListener('click', function () {
+                topview.classList.add('comment');
+                topnew.classList.remove('comment');
+                new_.classList.add('hide');
+                view_.classList.remove('hide');
+            });
+        }
+    }
+};
+
+layout.init();;
