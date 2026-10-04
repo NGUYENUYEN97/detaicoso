@@ -188,8 +188,8 @@ NHOM = [
          "Chương của Guan (2014) có trong thư mục mở đầu bằng nhận định không có định nghĩa thống nhất về sở hữu trí tuệ; không thấy luận điểm như báo cáo nêu.",
          "B", "Diễn đạt lại đúng luận điểm của nguồn."),
         ("Mở đầu 2.1, 2.2",
-         "Maresova et al. tổng quan 22 công trình, phân loại theo bốn trụ cột; Öztürk khảo sát 96 chuyên gia; Phạm và Nguyễn (2018) nêu tỷ lệ 50% - 70% doanh thu cấp phép cho tác giả; Lê và Nguyễn (2019) đề xuất mô hình 5 bước.",
-         "Thư mục không có bản gốc của các bài này nên chưa kiểm chứng được các con số. Danh mục cuối còn ghi Phạm và Nguyễn (2018) về Đại học Bách khoa Hà Nội, trái với chính Mở đầu ghi Đại học Thanh Hoa.",
+         "Maresova et al. tổng quan 22 công trình, phân loại theo bốn trụ cột; Phạm và Nguyễn (2018) nêu tỷ lệ 50% - 70% doanh thu cấp phép cho tác giả; Lê và Nguyễn (2019) đề xuất mô hình 5 bước.",
+         "Thư mục không có bản gốc của các bài này nên chưa kiểm chứng được các con số. (Số liệu Öztürk khảo sát 96 tư vấn viên sở hữu công nghiệp là đúng theo trang Zenodo của bài.) Danh mục cuối còn ghi Phạm và Nguyễn (2018) về Đại học Bách khoa Hà Nội, trái với chính Mở đầu ghi Đại học Thanh Hoa.",
          "B", "Kiểm tra bản gốc; chưa kiểm chứng được thì bỏ con số."),
         ("Mở đầu, Chương 1",
          "Viết đầy đủ tên tác giả Việt: Lê Thị Thu Hà và Nguyễn Thành Khang; Phạm Thúy Hằng; Lê Thị Thanh Tâm và Hoàng Đình Thái; Phạm Thị Thúy Hằng và Nguyễn Thanh Hùng.",
@@ -219,9 +219,9 @@ TLTK = [
      "Bài học từ Đại học Thanh Hoa, Trung Quốc; Tạp chí Khoa học và Giáo dục, Trường ĐHSP Huế, 3(47), 84-94"),
     ("Cục Sở hữu trí tuệ & Bộ KH&CN (2024)", "Kỷ yếu hội thảo khoa học quốc gia", "Nhà xuất bản Khoa học và Kỹ thuật"),
     ("Cục Sở hữu trí tuệ, tài liệu tập huấn", "Năm 2024, Trung tâm Đào tạo Sở hữu trí tuệ", "Không ghi năm (n.d.), kèm địa chỉ truy cập"),
-    ("Bstieler et al. (2015)", "Tên bài rút gọn; trang 100-112", "... US biotechnology industry: IP policies, shared governance, and champions; 32(1), 111-121"),
-    ("Bulsara & Vaghela (2025)", "International Journal of Innovation Studies, 9(2), 145-159", "Tech Monitor, WIPO, 38-43"),
-    ("Holgersson (2021)", "European Journal of Innovation Management, 24(5), 1421-1440", "Báo cáo của European Patent Office / Chalmers University"),
+    ("Bstieler et al. (2015)", "Tên bài rút gọn; trang 100-112; danh mục ở Mở đầu ghi DOI 10.1111/jpim.12244", "... U.S. biotechnology industry: IP policies, shared governance, and champions; 32(1), 111-121; DOI đúng 10.1111/jpim.12242 (trang Wiley)"),
+    ("Bulsara & Vaghela (2025)", "International Journal of Innovation Studies, 9(2), 145-159 (danh mục ở Mở đầu ghi Tech Monitor, WIPO)", "Asia-Pacific Tech Monitor, 42(2), tháng 4 - 6/2025, do APCTT (ESCAP) xuất bản, không phải WIPO"),
+    ("Holgersson (2021)", "European Journal of Innovation Management, 24(5), 1421-1440 (danh mục ở Mở đầu ghi European Patent Office)", "Báo cáo của European Commission, Directorate-General for Research and Innovation; tác giả hoàn thành tháng 10/2021, phát hành ngày 02/3/2022"),
     ("Holgersson & Aaboen (2019)", "The Journal of Technology Transfer, 44(3), 856-887",
      "Technology in Society, 59, Article 101132"),
     ("Maresova et al. (2019)", "Economies, 7(4), 105", "Administrative Sciences, 9(3), Article 67"),
@@ -370,13 +370,13 @@ def main():
              [1.3, 3.0, 6.2, 8.0, 2.2, 5.0], hang, mau_muc=True)
 
     doan(doc, "4. Bảng 2. Thông tin xuất bản sai trong danh mục tài liệu tham khảo cuối", 13, True, truoc=10)
-    doan(doc, "Cột thông tin đúng lấy từ bản PDF (khi có) và tệp Zotero trong thư mục đề tài.", 12, nghieng=True)
+    doan(doc, "Cột thông tin đúng lấy từ bản PDF (khi có), tệp Zotero trong thư mục đề tài và trang của nhà xuất bản (tra cứu ngày 04/10/2026).", 12, nghieng=True)
     bang(doc, ["Tài liệu", "Báo cáo ghi", "Thông tin đúng"], [5.0, 10.0, 10.7], TLTK)
 
     doan(doc, "5. Văn bản cần bổ sung", 13, True, truoc=10)
     doan(doc, "Các nội dung sau chưa có văn bản gốc trong hồ sơ; cần bổ sung để giữ lại, nếu không thì bỏ: hai hợp đồng chuyển giao quyền sử dụng "
               "sách; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ; quy định về tỷ lệ trùng lặp; quyết định thành lập Trường; tên các đơn vị ở "
-              "Hình 2.3; bản gốc các bài của Maresova et al., Öztürk, Phạm và Nguyễn (2018), Lê và Nguyễn (2019) để kiểm tra các con số được dẫn.")
+              "Hình 2.3; bản gốc các bài của Maresova et al., Phạm và Nguyễn (2018), Lê và Nguyễn (2019) để kiểm tra các con số được dẫn.")
 
     doc.save(RA)
     print("Đã lưu", RA, tong)
