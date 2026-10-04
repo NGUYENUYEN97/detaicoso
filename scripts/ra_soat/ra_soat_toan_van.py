@@ -157,10 +157,18 @@ NHOM = [
          "Trường Cao đẳng thành lập theo Quyết định số 762/QĐ-BGD&ĐT ngày 19/02/2004; triết lý Trí - Năng - Nhân - Hòa.",
          "Chiến lược của Trường ghi Trường Cao đẳng Công nghệ Thành Đô thành lập ngày 30/11/2004, nâng cấp thành Trường Đại học ngày 27/5/2009. Khung chiến lược Edupark ghi triết lý Trí - Năng - Hòa - Nhân. Số hiệu hai quyết định chưa có văn bản để đối chiếu.",
          "B", "Sửa ngày và thứ tự triết lý; kiểm tra số quyết định."),
-        ("Hình 2.3; giải pháp 3.2.3, 3.2.4",
-         "Đầu mối Trung tâm Đào tạo và Chuyển giao công nghệ, Viện Quản trị và Sáng tạo số; Trung tâm Công nghệ thông tin chủ trì hoặc phối hợp.",
-         "Các đơn vị này không có trong cơ cấu tổ chức ở Bảng 2.1 và danh sách nhân sự năm 2026.",
-         "B", "Kiểm tra tên đơn vị; dùng đúng tên trong quy chế tổ chức."),
+        ("Hình 2.3; 2.1.2; 2.3.2 (ý Ba là); Bảng 3.1 (W3); Bảng 3.2 (WT); Tiểu kết Chương 2; Kết luận; Kiến nghị",
+         "Công tác quản lý tài sản trí tuệ bị phân mảnh qua bốn đầu mối: Phòng KHCN, Bộ phận Pháp chế, Trung tâm Đào tạo và Chuyển giao công nghệ, Viện Quản trị và Sáng tạo số.",
+         "Theo xác nhận của chủ nhiệm đề tài (04/10/2026), Trường không có Trung tâm Đào tạo và Chuyển giao công nghệ và Viện Quản trị và Sáng tạo số; hai đơn vị này cũng không có trong cơ cấu ở Bảng 2.1 và danh sách nhân sự năm 2026. Cơ cấu thực tế: mỗi viện có Phòng Học vụ và Hợp tác đối ngoại và Phòng Công nghệ, Đổi mới sáng tạo và Khởi nghiệp. Báo cáo không nhắc tới các Phòng Công nghệ, Đổi mới sáng tạo và Khởi nghiệp, là đầu mối gần nhất với nơi tạo ra sản phẩm.",
+         "A", "Vẽ lại Hình 2.3 theo cơ cấu thực tế; viết lại nhận định về số đầu mối và sự phân mảnh ở mọi chỗ được nhắc lại."),
+        ("Giải pháp 3.2.3 (đơn vị chủ trì, danh mục công nghệ); Bảng 3.3; 3.2.4 (đơn vị phối hợp)",
+         "Trung tâm Đào tạo và Chuyển giao công nghệ chủ trì giải pháp 3.2.3; Trung tâm Công nghệ thông tin, Trung tâm Quản trị thương hiệu phối hợp giải pháp 3.2.4.",
+         "Trung tâm Đào tạo và Chuyển giao công nghệ không tồn tại. Trung tâm Tuyển sinh và Quản trị thương hiệu không tham gia quản lý tài sản trí tuệ (xác nhận của chủ nhiệm đề tài). Trung tâm Công nghệ thông tin không có trong cơ cấu ở Bảng 2.1.",
+         "A", "Giao chủ trì, phối hợp cho đơn vị có thật, ví dụ Phòng KHCN và các Phòng Công nghệ, Đổi mới sáng tạo và Khởi nghiệp của viện; kiểm tra tên đơn vị công nghệ thông tin."),
+        ("Mục 2.1.2",
+         "Liệt kê Trung tâm Tuyển sinh và Quản trị thương hiệu trong khối tham mưu, quản lý chức năng của bộ máy quản lý và triển khai hoạt động khoa học công nghệ.",
+         "Trung tâm Tuyển sinh không tham gia hoạt động quản lý tài sản trí tuệ (xác nhận của chủ nhiệm đề tài). Bảng 2.1 nêu đơn vị này chỉ để thống kê nhân lực thì không sai.",
+         "B", "Bỏ đơn vị này khỏi danh sách đơn vị tham gia quản lý khoa học công nghệ và tài sản trí tuệ."),
     ]),
     ("4. Trích dẫn và tài liệu tham khảo", [
         ("Mở đầu (danh mục đầu) và Tài liệu tham khảo cuối",
@@ -371,8 +379,7 @@ def main():
 
     doan(doc, "5. Văn bản cần bổ sung", 13, True, truoc=10)
     doan(doc, "Các nội dung sau chưa có văn bản gốc trong hồ sơ; cần bổ sung để giữ lại, nếu không thì bỏ: hai hợp đồng chuyển giao quyền sử dụng "
-              "sách; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ; quy định về tỷ lệ trùng lặp; quyết định thành lập Trường; tên các đơn vị ở "
-              "Hình 2.3; bản gốc các bài của Maresova et al., Phạm và Nguyễn (2018), Lê và Nguyễn (2019) để kiểm tra các con số được dẫn.")
+              "sách; Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ; quy định về tỷ lệ trùng lặp; quyết định thành lập Trường; bản gốc các bài của Maresova et al., Phạm và Nguyễn (2018), Lê và Nguyễn (2019) để kiểm tra các con số được dẫn.")
 
     doc.save(RA)
     print("Đã lưu", RA, tong)
