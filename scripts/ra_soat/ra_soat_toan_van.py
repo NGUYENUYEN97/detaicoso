@@ -189,7 +189,7 @@ NHOM = [
          "B", "Diễn đạt lại đúng luận điểm của nguồn."),
         ("Mở đầu 2.1, 2.2",
          "Maresova et al. tổng quan 22 công trình, phân loại theo bốn trụ cột; Phạm và Nguyễn (2018) nêu tỷ lệ 50% - 70% doanh thu cấp phép cho tác giả; Lê và Nguyễn (2019) đề xuất mô hình 5 bước.",
-         "Thư mục không có bản gốc của các bài này nên chưa kiểm chứng được các con số. (Số liệu Öztürk khảo sát 96 tư vấn viên sở hữu công nghiệp là đúng theo trang Zenodo của bài.) Danh mục cuối còn ghi Phạm và Nguyễn (2018) về Đại học Bách khoa Hà Nội, trái với chính Mở đầu ghi Đại học Thanh Hoa.",
+         "Thư mục không có bản gốc của các bài này nên chưa kiểm chứng được các con số. Con số 22 công trình và mô hình 5 bước đã có từ bản thuyết minh đề tài; tỷ lệ 50% - 70% chỉ thấy trong một bản nháp cũ, ghi là kinh nghiệm quốc tế, không gắn với Đại học Thanh Hoa. (Số liệu Öztürk khảo sát 96 tư vấn viên sở hữu công nghiệp là đúng theo trang Zenodo của bài.) Danh mục cuối còn ghi Phạm và Nguyễn (2018) về Đại học Bách khoa Hà Nội, trái với chính Mở đầu ghi Đại học Thanh Hoa.",
          "B", "Kiểm tra bản gốc; chưa kiểm chứng được thì bỏ con số."),
     ]),
     ("5. Dẫn chiếu nội bộ", [
