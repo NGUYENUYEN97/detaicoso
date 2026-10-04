@@ -191,10 +191,6 @@ NHOM = [
          "Maresova et al. tổng quan 22 công trình, phân loại theo bốn trụ cột; Phạm và Nguyễn (2018) nêu tỷ lệ 50% - 70% doanh thu cấp phép cho tác giả; Lê và Nguyễn (2019) đề xuất mô hình 5 bước.",
          "Thư mục không có bản gốc của các bài này nên chưa kiểm chứng được các con số. (Số liệu Öztürk khảo sát 96 tư vấn viên sở hữu công nghiệp là đúng theo trang Zenodo của bài.) Danh mục cuối còn ghi Phạm và Nguyễn (2018) về Đại học Bách khoa Hà Nội, trái với chính Mở đầu ghi Đại học Thanh Hoa.",
          "B", "Kiểm tra bản gốc; chưa kiểm chứng được thì bỏ con số."),
-        ("Mở đầu, Chương 1",
-         "Viết đầy đủ tên tác giả Việt: Lê Thị Thu Hà và Nguyễn Thành Khang; Phạm Thúy Hằng; Lê Thị Thanh Tâm và Hoàng Đình Thái; Phạm Thị Thúy Hằng và Nguyễn Thanh Hùng.",
-         "Danh mục chỉ có chữ viết tắt (Lê, T. T. H.; Phạm, T. H.); thư mục không có bản gốc. Tên đầy đủ có thể là suy đoán.",
-         "B", "Dùng họ và năm theo APA, ví dụ (Lê & Nguyễn, 2019), trừ khi đã kiểm tra tên trên bài gốc."),
     ]),
     ("5. Dẫn chiếu nội bộ", [
         ("2.2.4; 3.4",
