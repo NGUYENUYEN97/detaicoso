@@ -1,0 +1,469 @@
+﻿(function (w, d) {
+    'use strict';
+
+    if (w.adsbs && w.adsbs.VERSION >= '4.31') return;
+
+    const A = {};
+    const CFG = {
+        delivery: 'https://delivery.lsvn.vn/Delivery/Pop',
+        portal: 'http://cms.lsvn.vn/',
+        lazyMargin: '300px',
+        clsBg: '#f1f3f4'
+    };
+
+    const STATE = {
+        lazyObs: null,
+        requested: {},
+        slideCss: false
+    };
+
+    /* ================= SLIDE CSS (ADD) ================= */
+    function injectSlideCSS() {
+        if (STATE.slideCss) return;
+        STATE.slideCss = true;
+
+        const css = `
+.ads-slide{position:relative;width:100%;overflow:hidden}
+.ads-slide-inner{display:flex;transition:transform .6s ease}
+.ads-slide-item{width:100%;flex-shrink:0;text-align:center}
+.ads-slide-dots{position:absolute;bottom:6px;left:0;right:0;text-align:center;z-index:2}
+.ads-slide-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);margin:0 3px;cursor:pointer}
+.ads-slide-dot.active{background:#fff}
+        `;
+
+        const style = d.createElement('style');
+        style.innerHTML = css;
+        d.head.appendChild(style);
+    }
+
+    /* ================= UTIL ================= */
+    const qs = k => new URLSearchParams(w.location.search).get(k);
+    const isDebug = () => qs('ads') === 'show';
+    const device = () =>
+        Math.max(d.documentElement.clientWidth, w.innerWidth) <= 970 ? 2 : 1;
+    const folder = () => d.body ? d.body.getAttribute('data-ads') || '' : '';
+
+    /* ================= VIEWPORT CHECK ================= */
+    function isAboveTheFold(el) {
+        const rect = el.getBoundingClientRect();
+        const vh = w.innerHeight || d.documentElement.clientHeight;
+        return rect.top < vh;
+    }
+
+    /* ================= CLS SMART ================= */
+    function applyCLS(ins) {
+        if (ins.dataset.clsDone) return;
+
+        const w0 = parseInt(ins.dataset.width || 0);
+        const h0 = parseInt(ins.dataset.height || 0);
+
+        const fixed =
+            ins.dataset.priority === '1' || isAboveTheFold(ins);
+
+        ins.style.display = 'block';
+        ins.style.margin = '0 auto';
+        ins.style.background = CFG.clsBg;
+
+        if (fixed && h0) {
+            ins.style.minHeight = h0 + 'px';
+        } else {
+            ins.style.minHeight = '0';
+        }
+
+        if (w0) ins.style.maxWidth = w0 + 'px';
+
+        ins.dataset.clsDone = '1';
+    }
+
+    /* ================= DEBUG ================= */
+    function debugRender(ins) {
+        const box = d.createElement('div');
+        box.style.cssText = `
+            height:100%;
+            min-height:80px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border:2px dashed #999;
+            background:repeating-linear-gradient(45deg,#eee,#eee 10px,#f9f9f9 10px,#f9f9f9 20px);
+            cursor:pointer;
+        `;
+
+        const badge = d.createElement('div');
+        const priority = ins.dataset.priority === '1';
+        const fold = isAboveTheFold(ins) ? 'ABOVE' : 'BELOW';
+
+        badge.textContent =
+            `${ins.dataset.zone} | ${priority ? 'PRIORITY' : fold}`;
+
+        badge.style.cssText = `
+            padding:8px 12px;
+            color:#fff;
+            font-size:13px;
+            border-radius:4px;
+            background:${priority ? '#e91e63' : (fold === 'ABOVE' ? '#2196f3' : '#4caf50')};
+        `;
+
+        box.appendChild(badge);
+        box.onclick = () => {
+            w.open(
+                CFG.portal +
+                'AdsManager/Index?type=list-zone&action=edit-zone&zonecode=' +
+                ins.dataset.zone,
+                '_blank'
+            );
+        };
+
+        ins.innerHTML = '';
+        ins.appendChild(box);
+    }
+
+    function injectHTML(htmlString, target) {
+        if (!target) return;
+
+        const template = document.createElement('template');
+        template.innerHTML = htmlString;
+
+        function cloneAndAppend(node, parent) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                const tag = node.tagName.toLowerCase();
+
+                if (tag === 'script') {
+                    const script = document.createElement('script');
+
+                    for (const attr of node.attributes) {
+                        script.setAttribute(attr.name, attr.value);
+                    }
+
+                    if (node.textContent && node.textContent.trim()) {
+                        script.textContent = node.textContent;
+                    }
+
+                    parent.appendChild(script);
+                    return;
+                }
+
+                const el = document.createElement(node.tagName);
+
+                for (const attr of node.attributes) {
+                    try {
+                        el.setAttribute(attr.name, attr.value);
+                    } catch {
+
+                    }
+                }
+
+                for (const child of node.childNodes) {
+                    cloneAndAppend(child, el);
+                }
+
+                parent.appendChild(el);
+                return;
+            }
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                parent.appendChild(
+                    document.createTextNode(node.textContent)
+                );
+                return;
+            }
+
+            if (node.nodeType === Node.COMMENT_NODE) {
+                parent.appendChild(
+                    document.createComment(node.textContent)
+                );
+            }
+        }
+
+        for (const node of template.content.childNodes) {
+            cloneAndAppend(node, target);
+        }
+    }
+
+    /* ================= FETCH ================= */
+    function fetchZone(zone, ins) {
+        if (!zone || STATE.requested[zone]) return;
+        STATE.requested[zone] = 1;
+
+        const url =
+            CFG.delivery +
+            '?zone=' + encodeURIComponent(zone) +
+            '&device=' + device() +
+            '&folder=' + encodeURIComponent(folder());
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+            if (!xhr.responseText) return;
+            let data;
+            try { data = JSON.parse(xhr.responseText); } catch (e) { return; }
+            render(data, ins);
+        };
+        xhr.send();
+    }
+
+    function buildIframe(html, target, banner = {}) {
+        if (!html || !target || target.dataset.rendered) return;
+        target.dataset.rendered = '1';
+
+        const iframe = document.createElement('iframe');
+        iframe.style.cssText = 'width:100%;border:0;display:block;overflow:hidden;';
+        iframe.scrolling = 'no';
+
+        const h = banner.Height || target.dataset.height;
+        if (h) iframe.style.height = h + 'px';
+
+        iframe.setAttribute(
+            'sandbox',
+            'allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation'
+        );
+
+        const blob = new Blob(
+            ['<!doctype html><html><body style="margin:0">' + html + '</body></html>'],
+            { type: 'text/html' }
+        );
+
+        iframe.src = URL.createObjectURL(blob);
+        iframe.onload = () => URL.revokeObjectURL(iframe.src);
+
+        target.replaceChildren(iframe);
+    }
+
+    /* ================= SLIDE ================= */
+    function renderSlide(list, ins) {
+
+        injectSlideCSS();
+
+        const wrap = d.createElement('div');
+        wrap.className = 'ads-slide';
+
+        const inner = d.createElement('div');
+        inner.className = 'ads-slide-inner';
+
+        list.forEach(banner => {
+
+            const item = d.createElement('div');
+            item.className = 'ads-slide-item';
+
+            if (banner.UseIframe == 1) {
+                buildIframe(banner.BannerCode, item, banner);
+            } else {
+                injectHTML(banner.BannerCode, item);
+            }
+
+            inner.appendChild(item);
+        });
+
+        wrap.appendChild(inner);
+
+        const dots = d.createElement('div');
+        dots.className = 'ads-slide-dots';
+
+        list.forEach((_, i) => {
+            const dot = d.createElement('span');
+            dot.className = 'ads-slide-dot' + (i === 0 ? ' active' : '');
+            dot.dataset.index = i;
+            dots.appendChild(dot);
+        });
+
+        wrap.appendChild(dots);
+        ins.appendChild(wrap);
+
+        startSlide(wrap);
+    }
+
+    function startSlide(wrap) {
+        const inner = wrap.querySelector('.ads-slide-inner');
+        const dots = wrap.querySelectorAll('.ads-slide-dot');
+        const total = inner.children.length;
+
+        if (total <= 1) return;
+
+        let index = 0;
+
+        function go(i) {
+            index = i;
+            inner.style.transform = 'translateX(' + (-index * 100) + '%)';
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
+        }
+
+        dots.forEach((dot, i) => {
+            dot.onclick = () => go(i);
+        });
+
+        setInterval(() => {
+            index++;
+            if (index >= total) index = 0;
+            go(index);
+        }, 5000);
+    }
+
+    /* ================= INPAGE ================= */
+    function renderInpageMobile(banner) { /* giữ nguyên code */
+        if (!banner.BannerCode) return;
+
+        const article = d.querySelector('.edittor-content');
+        if (!article) return;
+
+        const pTags = article.querySelectorAll(":scope > p");
+
+        if (pTags.length > 5) {
+            const adWrapper = document.createElement("div");
+            adWrapper.className = "inpage-ad";
+            adWrapper.style.height = "667px";
+            adWrapper.style.width = "100%";
+
+            const adb = document.createElement("div");
+            adb.className = "inpage-ad-b";
+
+            Object.assign(adb.style, {
+                position: "absolute",
+                width: "100%",
+                height: "667px",
+                clip: "rect(0 375px 667px -11px)",
+                left: "0"
+            });
+
+            const adContent = document.createElement("div");
+            adContent.className = "inpage-ad-content";
+
+            const adAlign = document.createElement("div");
+            adAlign.className = "inpage-ad-align";
+
+            if (banner.UseIframe == 1) {
+                buildIframe(banner.BannerCode, adAlign, banner);
+            } else {
+                injectHTML(banner.BannerCode, adAlign);
+            }
+
+            Object.assign(adContent.style, {
+                display: "inline-block",
+                width: "100%",
+                height: "667px",
+                position: "fixed",
+                top: "0",
+                left: "0",
+                WebkitBackfaceVisibility: "hidden",
+                WebkitTransform: "translate3d(0, 0, 0)",
+                zIndex: "1"
+            });
+
+            Object.assign(adAlign.style, {
+                "text-align": "center",
+                "margin-top": "10px"
+            });
+            adContent.appendChild(adAlign);
+            adb.appendChild(adContent);
+            adWrapper.appendChild(adb);
+
+            pTags[4].insertAdjacentElement("afterend", adWrapper);
+        }
+    }
+
+    function renderInpagePC(banner) {
+        if (!banner.BannerCode) return;
+
+        const article = d.querySelector('.edittor-content');
+        if (!article) return;
+
+        const ps = article.querySelectorAll(':scope > p');
+        if (ps.length < 5) return;
+
+        const wrap = d.createElement('div');
+        wrap.style.cssText = `
+            width:100%;
+            margin:30px 0;
+            background:${CFG.clsBg};
+        `;
+
+        ps[Math.floor(ps.length / 2)]
+            .insertAdjacentElement('afterend', wrap);
+
+        if (banner.UseIframe == 1) {
+            buildIframe(banner.BannerCode, wrap, banner);
+            return;
+        }
+
+        injectHTML(banner.BannerCode, wrap);
+    }
+
+    /* ================= RENDER ================= */
+    function render(list, ins) {
+        if (!Array.isArray(list)) return;
+
+        if (list.length > 1) {
+            ins.innerHTML = '';
+            renderSlide(list, ins);
+            return;
+        }
+
+        const banner = list.find(b => b.ZoneName === ins.dataset.zone);
+        if (!banner || !banner.BannerCode) {
+            ins.innerHTML = '';
+            return;
+        }
+
+        ins.innerHTML = '';
+
+        if (banner.ZoneName.includes("inpage_mobile")) {
+            renderInpageMobile(banner);
+            return;
+        }
+
+        if (banner.ZoneName.includes("inpage_pc")) {
+            renderInpagePC(banner);
+            return;
+        }
+
+        if (banner.UseIframe == 1) {
+            buildIframe(banner.BannerCode, ins, banner);
+            return;
+        }
+
+        injectHTML(banner.BannerCode, ins);
+    }
+
+    /* ================= MAIN ================= */
+    A.push = function () {
+        const list = d.querySelectorAll(
+            'ins[data-ad="bs"][data-platform="' + device() + '"]'
+        );
+        if (!list.length) return;
+
+        if (isDebug()) {
+            list.forEach(debugRender);
+            return;
+        }
+
+        const lazy = [];
+
+        list.forEach(ins => {
+            if (ins.dataset.priority === '1') {
+                fetchZone(ins.dataset.zone, ins);
+            } else {
+                lazy.push(ins);
+            }
+        });
+
+        if (!('IntersectionObserver' in w)) {
+            lazy.forEach(ins => fetchZone(ins.dataset.zone, ins));
+            return;
+        }
+
+        STATE.lazyObs = STATE.lazyObs || new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    fetchZone(e.target.dataset.zone, e.target);
+                    STATE.lazyObs.unobserve(e.target);
+                }
+            });
+        }, { rootMargin: CFG.lazyMargin });
+
+        lazy.forEach(ins => STATE.lazyObs.observe(ins));
+    };
+
+    A.VERSION = '4.31';
+    w.adsbs = A;
+
+})(window, document);
