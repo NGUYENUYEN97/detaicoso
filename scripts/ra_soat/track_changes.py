@@ -166,6 +166,77 @@ class TrackEditor:
         return moi
 
 
+    # ------------------------------------------------------------------
+    # Thao tác trên cả đoạn, cả bảng (dùng khi thay hình vẽ bằng ký tự)
+    # ------------------------------------------------------------------
+    def _dau(self, tag):
+        e = etree.Element(q(tag))
+        e.set(q("id"), self._id())
+        e.set(q("author"), self.author)
+        e.set(q("date"), self.date)
+        return e
+
+    def _danh_dau_doan(self, p, tag):
+        """Đánh dấu dấu đoạn (pilcrow) là chèn hoặc xóa."""
+        ppr = p.find(q("pPr"))
+        if ppr is None:
+            ppr = etree.Element(q("pPr"))
+            p.insert(0, ppr)
+        rpr = ppr.find(q("rPr"))
+        if rpr is None:
+            rpr = etree.SubElement(ppr, q("rPr"))
+            # rPr phải đứng trước sectPr, pPrChange nếu có
+            for ten in ("sectPr", "pPrChange"):
+                e = ppr.find(q(ten))
+                if e is not None:
+                    e.addprevious(rpr)
+                    break
+        for cu in rpr.findall(q("ins")) + rpr.findall(q("del")):
+            rpr.remove(cu)
+        rpr.insert(0, self._dau(tag))
+
+    def _xoa_runs(self, p):
+        runs = [r for r in p.findall(q("r"))]
+        if not runs:
+            return
+        d = self._dau("del")
+        runs[0].addprevious(d)
+        for r in runs:
+            for t in r.findall(q("t")):
+                t.tag = q("delText")
+            d.append(r)
+
+    def xoa_doan(self, p):
+        """Xóa cả đoạn p (nội dung và dấu đoạn) ở chế độ theo dõi."""
+        self._xoa_runs(p)
+        self._danh_dau_doan(p, "del")
+
+    def xoa_bang(self, tbl):
+        """Xóa cả bảng ở chế độ theo dõi: đánh dấu xóa từng hàng và nội dung ô."""
+        for tr in tbl.findall(q("tr")):
+            trpr = tr.find(q("trPr"))
+            if trpr is None:
+                trpr = etree.Element(q("trPr"))
+                tblpr_ex = tr.find(q("tblPrEx"))
+                (tblpr_ex.addnext if tblpr_ex is not None else (lambda e: tr.insert(0, e)))(trpr)
+            trpr.append(self._dau("del"))
+            for p in tr.iter(q("p")):
+                self._xoa_runs(p)
+
+    def chen_doan_sau(self, el, runs_xml, ppr_xml=None):
+        """Chèn đoạn mới sau phần tử el; runs_xml là danh sách chuỗi XML w:r (có khai báo namespace)."""
+        moi = etree.Element(q("p"))
+        if ppr_xml is not None:
+            moi.append(etree.fromstring(ppr_xml) if isinstance(ppr_xml, str) else copy.deepcopy(ppr_xml))
+        self._danh_dau_doan(moi, "ins")
+        ins = self._dau("ins")
+        moi.append(ins)
+        for rx in runs_xml:
+            ins.append(etree.fromstring(rx) if isinstance(rx, str) else rx)
+        el.addnext(moi)
+        return moi
+
+
 def ap_dung(vao, ra, sua, author, merge_runs=None):
     tmp = tempfile.mkdtemp()
     src = os.path.join(tmp, "src.docx")
