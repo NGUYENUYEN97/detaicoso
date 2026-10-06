@@ -144,6 +144,8 @@ class TrackEditor:
         rpr_p = ppr.find(q("rPr"))
         if rpr_p is None:
             rpr_p = etree.SubElement(ppr, q("rPr"))
+        for cu in rpr_p.findall(q("ins")) + rpr_p.findall(q("del")):
+            rpr_p.remove(cu)  # đoạn mẫu có thể là đoạn vừa chèn, đã mang dấu ins
         dau = etree.Element(q("ins"))
         rpr_p.insert(0, dau)  # w:ins phải đứng đầu rPr của dấu đoạn
         dau.set(q("id"), self._id())
