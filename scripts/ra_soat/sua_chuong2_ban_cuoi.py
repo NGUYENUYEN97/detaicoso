@@ -59,13 +59,14 @@ BIEU_DO = {
     "Hình 2.8. Sản phẩm đề tài cấp cơ sở có tiềm năng": _h(13, 5),
     "Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường": _h(
         11, 6,
-        cot=["Loại hình", "Đã cấp văn bằng, giấy chứng nhận", "Chờ cấp bằng", "Đơn đã được chấp nhận hợp lệ"],
+        cot=["Loại hình", "Đã cấp văn bằng, giấy chứng nhận", "Chờ cấp bằng (theo sổ theo dõi)", "Đã nộp đơn"],
         nguon="Nguồn: Sổ theo dõi đơn nhãn hiệu, kiểu dáng công nghiệp, sáng chế và bảng thống kê văn bằng của "
               "Trường Đại học Thành Đô."),
 }
 assert [d[1:] for d in BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"]] == \
     [[2, 0, 0], [2, 0, 1], [0, 5, 0], [0, 0, 1]]
-# Nhãn hiệu Double2n: sổ theo dõi ghi Chờ cấp bằng; đơn sáng chế 1-2025-07378: Chấp nhận đơn hợp lệ
+# Nhãn hiệu Double2n: sổ theo dõi ghi Chờ cấp bằng; đơn sáng chế 1-2025-07378: đã nộp năm 2025
+# (dòng "Chấp nhận đơn hợp lệ" trong sổ không ghi số đơn nên không gắn với đơn này)
 BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"] = [
     ["Quyền tác giả", 2, 0, 0], ["Nhãn hiệu", 2, 1, 0], ["Kiểu dáng công nghiệp", 0, 5, 0], ["Sáng chế", 0, 0, 1]]
 
@@ -284,6 +285,42 @@ T["md2"] = ("Tuy nhiên, trong 9 đề tài này mới có 1 đề tài nộp đ
             "đầu mối chưa gắn với một quy trình chung và chưa có quy trình sàng lọc khả năng bảo hộ trước khi công bố kết "
             "quả nghiên cứu.")
 
+# --- Vòng đối chiếu nguồn lần 3 (danh mục gốc trong Tai lieu thanh do)
+T["213b"] = ("Công bố khoa học là hoạt động chủ đạo. Danh mục ghi nhận 405 bản ghi bài báo, gồm 290 bản ghi trong nước và "
+             "115 bài quốc tế, trong đó 71 bài đăng trên tạp chí có phân hạng; 87 giáo trình, tài liệu giảng dạy; 12 sản "
+             "phẩm thuộc nhóm sách, chương sách và tài liệu xuất bản có ISBN; 37 tham luận hội thảo (21 quốc gia, 16 quốc "
+             "tế); 38 đề tài cấp cơ sở và 3 đề tài cấp quốc gia do Quỹ NAFOSTED tài trợ với tổng kinh phí được phê duyệt "
+             "4,67 tỷ đồng. Bài báo quốc tế tăng từ 11 bài năm 2023 lên 33 bài năm 2024 và 52 bài năm 2025; số bài đăng "
+             "trên tạp chí có phân hạng tăng từ 1 lên 40 bài trong cùng thời gian. Năng lực tạo ra kết quả nghiên cứu của "
+             "Nhà trường vì vậy đã tăng đáng kể; các mục sau xem xét bao nhiêu kết quả trong số đó được nhận diện và xác "
+             "lập quyền.")
+T["213c"] = ("Theo danh mục đề tài cấp cơ sở, tổng kinh phí bằng tiền ghi cho 19 đề tài là 424,75 triệu đồng, chưa gồm khoản "
+             "20 triệu đồng đề nghị hỗ trợ thêm của đề tài 09-2025; 16 đề tài chỉ được quy đổi giờ nghiên cứu khoa học và 3 "
+             "đề tài tự tìm nguồn tài trợ (Hình 2.3). Năm 2021 chưa có đề tài được cấp kinh phí; từ năm 2022, kinh phí "
+             "hằng năm dao động từ 70 đến 145 triệu đồng và cao nhất vào năm 2025. Kinh phí bình quân của một đề tài được "
+             "cấp tăng từ 28,0 triệu đồng năm 2022 lên 36,25 triệu đồng năm 2025.")
+T["221d"] = T["221d"].replace("11 đề tài (28,9%) có sản phẩm có thể bảo hộ",
+                              "11 đề tài (28,9%) có sản phẩm mà nhóm nghiên cứu đánh giá là có thể bảo hộ")
+T["222b"] = ("Tính đến hết năm 2025, Nhà trường có 11 hồ sơ tài sản trí tuệ (Bảng 2.6, Hình 2.6). Bốn hồ sơ đã được cấp văn "
+             "bằng, gồm 2 giấy chứng nhận quyền tác giả đối với bộ biểu trưng và 2 văn bằng nhãn hiệu Thanh do University, "
+             "Thado Edupark. Sáu hồ sơ đồng sở hữu với doanh nghiệp được sổ theo dõi ghi trạng thái chờ cấp bằng, gồm nhãn "
+             "hiệu Double2n và 5 kiểu dáng công nghiệp bao bì sản phẩm thảo dược. Đơn sáng chế số 1-2025-07378 về hợp chất "
+             "từ lá Quế hoa đã được nộp năm 2025. Trong kỳ, Nhà trường chưa có bằng độc quyền sáng chế hoặc giải pháp hữu "
+             "ích nào.")
+T["223c"] = ("Về kết quả thực tế, hồ sơ đã đối chiếu chưa có hợp đồng chuyển nhượng, chuyển quyền sử dụng hay chứng từ doanh "
+             "thu từ khai thác tài sản trí tuệ trong kỳ, và chưa có doanh nghiệp khởi nguồn từ kết quả nghiên cứu. Danh mục "
+             "đề tài ghi đề tài 08-2023 có sản phẩm chuyển giao công nghệ cho Nhà trường thương mại hóa, nhưng chưa có hồ "
+             "sơ xác định hợp đồng và doanh thu. Các tài sản đã được xác lập là nhãn hiệu và quyền tác giả đối với bộ biểu "
+             "trưng được sử dụng cho nhận diện thương hiệu và truyền thông tuyển sinh. Vì vậy, các quy định phân chia lợi "
+             "ích nêu trên chưa có căn cứ để đánh giá qua thực tế áp dụng.")
+T["224b"] = T["224b"].replace("Hồ sơ của Nhà trường chưa có quy trình", "Trong hồ sơ nhóm nghiên cứu tiếp cận được, chưa có quy trình")
+T["231d"] = ("Bốn là, trong hai năm 2024 - 2025, phần lớn chỉ tiêu công bố của Kế hoạch số 07/KH-ĐHTĐ đạt hoặc vượt kế hoạch; "
+             "chỉ tiêu tham luận hội thảo quốc tế đạt 10 trên 11, chỉ tiêu chuyển giao công nghệ chưa phát sinh.")
+T["232c"] = ("Thứ ba, chưa ghi nhận hoạt động khai thác thương mại phát sinh doanh thu: hồ sơ chưa có hợp đồng chuyển nhượng, "
+             "chuyển quyền sử dụng hoặc chuyển giao công nghệ có thu phí, chưa có doanh nghiệp khởi nguồn từ kết quả nghiên "
+             "cứu.")
+T["tk2"] = T["tk2"].replace("chưa có hợp đồng chuyển giao phát sinh doanh thu", "chưa ghi nhận hợp đồng chuyển giao phát sinh doanh thu")
+
 # Bảng 2.7 rút gọn: phạm vi áp dụng, tỷ lệ phân chia, điểm bất cập
 BANG27 = dict(
     dau="Văn bản, điều khoản",
@@ -324,8 +361,9 @@ DOAN = [
      "21 tham luận hội thảo quốc gia do danh mục không ghi năm)"),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ các danh mục thống kê sản phẩm khoa học của Phòng",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ các danh mục thống kê sản phẩm khoa học của Phòng Khoa học Công nghệ. Tham luận "
-     "hội thảo quốc gia không ghi năm nên chỉ ghi tổng của kỳ; đề tài cấp quốc gia tính theo năm phê duyệt kinh phí. Dòng "
-     "tổng cộng là tổng số bản ghi sản phẩm của các loại hình)"),
+     "hội thảo quốc gia không ghi năm nên chỉ ghi tổng của kỳ; đề tài cấp cơ sở tính theo năm ghi trong mã số đề tài (đề "
+     "tài 14-2024 nghiệm thu năm 2025); đề tài cấp quốc gia tính theo năm phê duyệt kinh phí. Dòng tổng cộng là tổng số "
+     "bản ghi; danh mục bài báo trong nước có 3 bài được ghi lặp, tạo 4 bản ghi thừa)"),
     ("Theo số liệu Bảng 2.2 và Hình 2.1, số lượng sản phẩm", T["213b"]),
     ("Hoạt động nghiên cứu khoa học cấp cơ sở có sự chuyển biến căn bản", T["213c"]),
     ("Khung thể chế điều chỉnh hoạt động sáng tạo khoa học công nghệ", T["221a"]),
@@ -338,8 +376,11 @@ DOAN = [
     ("Bảng 2.5 đối sánh giữa quy định của Luật Sở hữu trí tuệ", T["222a"]),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ sổ theo dõi nhãn hiệu, kiểu dáng công nghiệp và thống kê văn bằng",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ sổ theo dõi đơn nhãn hiệu, kiểu dáng công nghiệp, sáng chế và bảng thống kê "
-     "văn bằng của Trường Đại học Thành Đô. Hồ sơ số 12 nộp năm 2026, nằm ngoài kỳ đánh giá)"),
+     "văn bằng của Trường Đại học Thành Đô. Trạng thái ghi theo sổ theo dõi, chưa đối chiếu thông báo của Cục Sở hữu trí "
+     "tuệ. Hồ sơ số 12 nộp năm 2026, nằm ngoài kỳ đánh giá)"),
     ("Theo Bảng 2.6 và Hình 2.7, tính đến hết năm 2025", T["222b"]),
+    ("(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục thuyết minh và quyết toán đề tài cấp cơ sở)",
+     "(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục đề tài cấp cơ sở giai đoạn 2021 - 2025. Năm tính theo mã số đề tài)"),
     ("(Nguồn: Nhóm nghiên cứu phân loại từ 11 đề tài cấp cơ sở có sản phẩm ứng dụng)",
      "(Nguồn: Nhóm nghiên cứu phân loại từ Bảng 2.4)"),
     ("(Nguồn: Nhóm nghiên cứu mô hình hóa từ kết quả nghiệm thu 38 đề tài",
@@ -395,7 +436,7 @@ MOT_PHAN = [
     # SWOT thống nhất với Chương 2
     ("S2. Năng lực nghiên cứu tăng nhanh", "5/9 chỉ tiêu Kế hoạch 07 đạt hoặc vượt", "6/9 chỉ tiêu Kế hoạch 07 đạt hoặc vượt"),
     ("S2. Năng lực nghiên cứu tăng nhanh", "1 đơn sáng chế Quế hoa đang trong giai đoạn thẩm định hình thức",
-     "1 đơn sáng chế Quế hoa đã được chấp nhận hợp lệ"),
+     "1 đơn sáng chế Quế hoa đã nộp năm 2025"),
     # Chương 3: dẫn chiếu tới các hình đã bỏ
     ("Xử lý Hạn chế 2 (bất cập mức trần", "Bảng 2.3 và Hình 2.2 cho thấy", "Bảng 2.7 và Mục 2.2.3 cho thấy"),
     ("Xử lý Hạn chế 3 (thiếu liên thông)", "Hình 2.6 có 7/16 tiêu chí khuyết trắng dữ liệu.",
@@ -419,7 +460,10 @@ for hang, cu, moi in [
 O += [
     ("Số TT", 5, 5, "Đã nộp đơn, đang thẩm định", "Chờ cấp bằng"),
     *[("Số TT", r, 5, "Chưa xác minh trạng thái", "Chờ cấp bằng") for r in range(6, 11)],
-    ("Số TT", 11, 5, "Đã nộp đơn, đang thẩm định hình thức", "Đã được chấp nhận hợp lệ"),
+    ("Số TT", 11, 5, "Đã nộp đơn, đang thẩm định hình thức", "Đã nộp đơn năm 2025"),
+    ("Loại hình sản phẩm khoa học", 5, 0, "Sách chuyên khảo, tham khảo (ISBN)", "Sách, chương sách, tài liệu có ISBN"),
+    ("Loại hình sản phẩm khoa học", 1, 0, "Bài báo khoa học trong nước", "Bài báo khoa học trong nước (số bản ghi)"),
+    ("Nhóm quyền", 1, 3, "405 bài báo, 12 cuốn sách", "405 bản ghi bài báo; 12 sách, chương sách"),
     ("Nhóm quyền", 7, 4, "5 hồ sơ có số hiệu văn bằng, trạng thái chờ xác minh", "5 hồ sơ đồng sở hữu, chờ cấp bằng"),
     ("Nhóm quyền", 8, 4, "Đã cấp 2 văn bằng bảo hộ; 01 đơn đang xử lý", "Đã cấp 2 văn bằng bảo hộ; 01 đơn chờ cấp bằng"),
 ]

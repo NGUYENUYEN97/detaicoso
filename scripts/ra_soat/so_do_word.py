@@ -179,7 +179,7 @@ def nguyen_nhan():
         "Hạn chế trong quản lý quyền sở hữu trí tuệ",
         "1. Kết quả có thể bảo hộ chưa được chuyển thành đơn đăng ký",
         "2. Quy chế nội bộ chưa đồng bộ với khung pháp lý mới",
-        "3. Chưa có hoạt động khai thác thương mại phát sinh doanh thu",
+        "3. Chưa ghi nhận hợp đồng khai thác thương mại phát sinh doanh thu",
         "4. Mô hình quản lý phân tán, chưa có cơ sở dữ liệu theo dõi tài sản"],
         nen=CAM_NHAT, vien=CAM, size=10.5, can="left", le=0.4)
     return s

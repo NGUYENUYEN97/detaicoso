@@ -239,12 +239,12 @@ S2.DOAN_CHUA += [
     ("S1. Ban hành quy định nội bộ từ sớm",
      "S1. Đã có quy chế về hoạt động khoa học công nghệ (Quyết định 213) và quản trị tài sản trí tuệ (Quyết định 217).\n"
      "S2. Năng lực nghiên cứu tăng nhanh: số bài báo năm 2025 gấp 7 lần năm 2021.\n"
-     "S3. Đã có sản phẩm có thể bảo hộ: 11 đề tài cấp cơ sở, 1 đơn sáng chế được chấp nhận hợp lệ."),
+     "S3. Đã có sản phẩm có thể bảo hộ: 11 đề tài cấp cơ sở, 1 đơn sáng chế đã nộp."),
     ("W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp",
      "W1. Tỷ lệ chuyển hóa kết quả nghiên cứu thành đơn đăng ký sở hữu công nghiệp còn thấp.\n"
      "W2. Chưa có quy trình sàng lọc trước công bố; quy chế nội bộ chưa thống nhất.\n"
      "W3. Chưa có bộ phận chuyên trách về sở hữu trí tuệ; dữ liệu quản lý phân tán.\n"
-     "W4. Chưa có hoạt động thương mại hóa phát sinh doanh thu."),
+     "W4. Chưa ghi nhận hợp đồng thương mại hóa phát sinh doanh thu."),
     ("O1. Khung pháp luật mới trao quyền tự chủ",
      "O1. Luật số 93/2025/QH15 giao tổ chức chủ trì quyền sở hữu phần kết quả sử dụng ngân sách nhà nước; Luật số "
      "125/2025/QH15 cho phép thành lập doanh nghiệp khoa học và công nghệ.\n"
