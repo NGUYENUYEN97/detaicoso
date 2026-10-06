@@ -432,6 +432,12 @@ def van_ban(p):
     return "".join(t.text or "" for r in p.findall(q("r")) for t in r.findall(q("t")))
 
 
+# Điểm mở rộng cho các chương khác (scripts/ra_soat/sua_chuong3_ban_cuoi.py)
+BANG_THAY = [BANG27]
+THAY_TAT_CA = []
+DOAN_CHUA = []  # (chuỗi nằm trong đúng một đoạn, văn bản mới hoặc None để xóa)
+
+
 def chen_bang(ed, mau, cau_hinh):
     """Chèn bảng mới (theo dõi thay đổi) ngay sau bảng mẫu, dùng lại định dạng ô của bảng mẫu."""
     hang = mau.findall(q("tr"))
@@ -456,8 +462,12 @@ def chen_bang(ed, mau, cau_hinh):
         p.append(ins)
         r = etree.SubElement(ins, q("r"))
         r.append(copy.deepcopy(r_mau.find(q("rPr"))))
-        t = etree.SubElement(r, q("t"))
-        t.text = text
+        for k, dong in enumerate(text.split("\n")):
+            if k:
+                etree.SubElement(r, q("br"))
+            t = etree.SubElement(r, q("t"))
+            t.text = dong
+            t.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
         return tc
 
     for k, dong in enumerate([cau_hinh["cot"]] + cau_hinh["dong"]):
@@ -499,7 +509,7 @@ def main():
         return hits[0]
 
     def bang(o_dau):
-        hits = [t for t in vung2 if t.tag == q("tbl") and van_ban(t.find(".//" + q("p"))) == o_dau]
+        hits = [t for t in body.iter(q("tbl")) if van_ban(t.find(".//" + q("p"))) == o_dau]
         if len(hits) != 1:
             raise ValueError(f"{len(hits)} bảng có ô đầu: {o_dau}")
         return hits[0]
@@ -514,8 +524,8 @@ def main():
         return hits[0]
 
     dich_mot_phan = [(tim_chua(d), c, m) for d, c, m in MOT_PHAN]
-    dich_ngoai = [(tim(d, tat_ca_doan), m) for d, m in DOAN_NGOAI]
-    bang27_cu = bang(BANG27["dau"])
+    dich_ngoai = [(tim(d, tat_ca_doan), m) for d, m in DOAN_NGOAI] + [(tim_chua(a), m) for a, m in DOAN_CHUA]
+    bang_cu = [(bang(b["dau"]), b) for b in BANG_THAY]
     dich_o = []
     for o_dau, r, c, cu, moi in O:
         tc = bang(o_dau).findall(q("tr"))[r].findall(q("tc"))[c]
@@ -599,10 +609,16 @@ def main():
     for p, cu, moi in dich_mot_phan:
         ed._replace_in(p, cu, moi)
     for p, moi in dich_ngoai:
-        ed._replace_in(p, van_ban(p), moi)
+        if moi is None:
+            ed.xoa_doan(p)
+        else:
+            ed._replace_in(p, van_ban(p), moi)
     # Bảng 2.7: xóa bảng cũ, chèn bảng rút gọn ngay sau
-    chen_bang(ed, bang27_cu, BANG27)
-    ed.xoa_bang(bang27_cu)
+    for cu, b in bang_cu:
+        chen_bang(ed, cu, b)
+        ed.xoa_bang(cu)
+    for cu, moi in THAY_TAT_CA:
+        ed.replace(cu, moi, tat_ca=True)
 
     # 4. Đánh số lại hình, bảng từ Chương 2 đến hết văn bản
     pham_vi = [p for el in con[i2:] for p in ([el] if el.tag == q("p") else el.iter(q("p")))]
