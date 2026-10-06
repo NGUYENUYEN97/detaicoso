@@ -53,7 +53,7 @@ def _h(i, so, **sua):
 
 
 BIEU_DO = {
-    "Hình 2.1. Cơ cấu và diễn biến sản phẩm khoa học": _h(1, 2),
+    "Hình 2.1. Cơ cấu và diễn biến sản phẩm khoa học": _h(1, 2),  # dữ liệu sau khi loại trùng, xem dưới
     "Hình 2.4. Số đề tài cấp cơ sở theo hình thức kinh phí": _h(9, 3),
     "Hình 2.5. Giờ nghiên cứu quy đổi và mức thưởng": _h(10, 4),
     "Hình 2.8. Sản phẩm đề tài cấp cơ sở có tiềm năng": _h(13, 5),
@@ -69,6 +69,11 @@ assert [d[1:] for d in BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của 
 # (dòng "Chấp nhận đơn hợp lệ" trong sổ không ghi số đơn nên không gắn với đơn này)
 BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"] = [
     ["Quyền tác giả", 2, 0, 0], ["Nhãn hiệu", 2, 1, 0], ["Kiểu dáng công nghiệp", 5, 0, 0], ["Sáng chế", 0, 0, 1]]
+
+for _i, _d in enumerate(BIEU_DO["Hình 2.1. Cơ cấu và diễn biến sản phẩm khoa học"]["dong"]):
+    _d[1] = [17, 42, 49, 71, 107][_i]
+    _d[-1] = [56, 100, 84, 127, 190][_i]
+    assert _d[-1] == sum(_d[1:-1]), _d
 
 SO_DO = {
     "Hình 2.3. Phân công đầu mối": ("Hình 2.1", SD.dau_moi),
@@ -348,6 +353,21 @@ T["231c"] = ("Ba là, công tác xác lập quyền đã có kết quả cụ th
              "2 giấy chứng nhận quyền tác giả, 2 nhãn hiệu và 5 kiểu dáng công nghiệp đồng sở hữu với doanh nghiệp; lần đầu "
              "tiên có đơn đăng ký sáng chế từ kết quả đề tài cấp cơ sở (đề tài 09-2025).")
 
+# --- Loại bài trùng (quyết định của chủ nhiệm đề tài): danh mục bài báo trong nước có 3 bài ghi lặp, 4 bản ghi thừa.
+#     Giữ mỗi bài ở năm xuất bản: graphene oxide (11/2024) bỏ 1 bản ghi 2025 và 1 bản ghi 2024; Paederia foetida
+#     (28/12/2022) bỏ bản ghi 2023; Chlorpheniramine (9/2023) bỏ bản ghi 2025.
+#     Trong nước: 17, 42, 49, 71, 107 = 286; tổng theo năm 56, 100, 84, 127, 190; cộng 21 tham luận quốc gia = 578.
+TRONG_NUOC = [17, 42, 49, 71, 107]
+TONG_NAM = [56, 100, 84, 127, 190]
+T["213a"] = ("Giai đoạn 2021 - 2025, hoạt động nghiên cứu khoa học của Nhà trường tăng rõ rệt, đặc biệt trong hai năm 2024 - "
+             "2025. Số sản phẩm khoa học tăng từ 56 năm 2021 lên 190 năm 2025, gấp 3,4 lần, tương ứng mức tăng bình quân "
+             "khoảng 36% mỗi năm. Sau mức giảm năm 2023 (84 sản phẩm), số sản phẩm tăng lên 127 năm 2024 và tiếp tục tăng "
+             "khoảng 50% trong năm 2025 (Hình 2.2, Bảng 2.2).")
+T["213b"] = T["213b"].replace("Danh mục ghi nhận 405 bản ghi bài báo, gồm 290 bản ghi trong nước và 115 bài quốc tế",
+                              "Trong kỳ có 401 bài báo, gồm 286 bài trong nước và 115 bài quốc tế")
+T["231b"] = T["231b"].replace("lên 192 năm 2025", "lên 190 năm 2025")
+T["tk1"] = T["tk1"].replace("lên 192 (năm 2025)", "lên 190 (năm 2025)")
+
 # Bảng 2.7 rút gọn: phạm vi áp dụng, tỷ lệ phân chia, điểm bất cập
 BANG27 = dict(
     dau="Văn bản, điều khoản",
@@ -390,8 +410,7 @@ DOAN = [
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ các danh mục thống kê sản phẩm khoa học của Phòng Khoa học Công nghệ. Tham luận "
      "hội thảo quốc gia không ghi năm nên chỉ ghi tổng của kỳ; đề tài cấp cơ sở tính theo năm ghi trong mã số đề tài (đề "
      "tài 14-2024 nghiệm thu năm 2025); đề tài cấp quốc gia tính theo năm phê duyệt kinh phí. Dòng tổng cộng là tổng số "
-     "bản ghi; trong danh mục bài báo trong nước, 2 bài có thông tin xuất bản trùng nhau được ghi lặp 3 bản ghi, 1 bài "
-     "khác có thể trùng cần xác nhận)"),
+     "bản ghi; bài báo trong nước đã loại 4 bản ghi trùng lặp của 3 bài, mỗi bài giữ ở năm xuất bản)"),
     ("Theo số liệu Bảng 2.2 và Hình 2.1, số lượng sản phẩm", T["213b"]),
     ("Hoạt động nghiên cứu khoa học cấp cơ sở có sự chuyển biến căn bản", T["213c"]),
     ("Khung thể chế điều chỉnh hoạt động sáng tạo khoa học công nghệ", T["221a"]),
@@ -444,6 +463,11 @@ DOAN = [
 ]
 # Đoạn ngoài Chương 2 (Mở đầu)
 DOAN_NGOAI = [
+    ("- Về sản phẩm khoa học công nghệ (582 bản ghi)",
+     "- Về sản phẩm khoa học công nghệ (578 bản ghi): số liệu được tổng hợp từ các danh mục thống kê của Phòng Khoa học "
+     "Công nghệ giai đoạn 2021 - 2025 (bài báo, tham luận, sách, giáo trình và đề tài), sau khi loại 4 bản ghi bài báo "
+     "trùng lặp. Do các loại hình có đơn vị ghi nhận khác nhau, tổng này phản ánh quy mô sản lượng, không tương ứng hoàn "
+     "toàn với số sản phẩm độc lập (một đề tài có thể đồng thời tạo ra báo cáo, bài báo và tham luận)."),
     ("Trường Đại học Thành Đô đang chuyển mình mạnh mẽ", T["md1"]),
     ("Tuy nhiên, thực tiễn quản trị sở hữu trí tuệ tại Nhà trường đang bộc lộ", T["md2"]),
 ]
@@ -453,6 +477,9 @@ CHEN = [
 ]
 # Sửa một phần trong đoạn: (đầu đoạn gốc, chuỗi cũ, chuỗi mới)
 MOT_PHAN = [
+    ("năng lực nghiên cứu khoa học tăng trưởng vượt bậc với 582 sản phẩm",
+     "năng lực nghiên cứu khoa học tăng trưởng vượt bậc với 582 sản phẩm (bài báo tăng gấp 7 lần)",
+     "năng lực nghiên cứu khoa học tăng nhanh với 578 sản phẩm (số bài báo năm 2025 gấp 7 lần năm 2021)"),
     # "hao hụt" -> tỷ lệ chuyển hóa còn thấp (Chương 3, Kết luận)
     ("W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp (hao hụt 88,9%;",
      "W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp (hao hụt 88,9%; 6 đề tài giai đoạn 2021 - 2024 chưa nộp đơn)",
@@ -475,7 +502,8 @@ MOT_PHAN = [
 O = []
 # Bảng 2.2: trả về số liệu đã đối chiếu với các danh mục thống kê gốc (cộng đúng 56, 100, 85, 128, 192; 582)
 for hang, cu, moi in [
-    (1, ["17", "62", "37", "72", "109", "297"], ["17", "42", "50", "72", "109", "290"]),
+    (1, ["17", "62", "37", "72", "109", "297"], ["17", "42", "49", "71", "107", "286"]),
+    (10, ["56", "100", "85", "128", "192", "582"], ["56", "100", "84", "127", "190", "578"]),
     (2, ["6", "8", "16", "33", "52", "115"], ["6", "13", "11", "33", "52", "115"]),
     (3, ["0", "0", "3", "29", "39", "71"], ["0", "2", "1", "28", "40", "71"]),
     (4, ["26", "20", "17", "13", "11", "87"], ["26", "31", "12", "7", "11", "87"]),
@@ -493,8 +521,7 @@ O += [
                                        "3-0039696-000"])],
     ("Số TT", 11, 5, "Đã nộp đơn, đang thẩm định hình thức", "Đã nộp đơn năm 2025"),
     ("Loại hình sản phẩm khoa học", 5, 0, "Sách chuyên khảo, tham khảo (ISBN)", "Sách, chương sách, tài liệu có ISBN"),
-    ("Loại hình sản phẩm khoa học", 1, 0, "Bài báo khoa học trong nước", "Bài báo khoa học trong nước (số bản ghi)"),
-    ("Nhóm quyền", 1, 3, "405 bài báo, 12 cuốn sách", "405 bản ghi bài báo; 12 sách, chương sách"),
+    ("Nhóm quyền", 1, 3, "405 bài báo, 12 cuốn sách", "401 bài báo; 12 sách, chương sách"),
     ("Nhóm quyền", 7, 4, "5 hồ sơ có số hiệu văn bằng, trạng thái chờ xác minh",
      "Đã cấp 5 bằng độc quyền năm 2024, đồng sở hữu với doanh nghiệp"),
     ("Nhóm quyền", 8, 4, "Đã cấp 2 văn bằng bảo hộ; 01 đơn đang xử lý", "Đã cấp 2 văn bằng bảo hộ; 01 đơn chờ cấp bằng"),
