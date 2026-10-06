@@ -436,6 +436,7 @@ def van_ban(p):
 BANG_THAY = [BANG27]
 THAY_TAT_CA = []
 DOAN_CHUA = []  # (chuỗi nằm trong đúng một đoạn, văn bản mới hoặc None để xóa)
+BANG_XOA = []  # ô đầu của các bảng cần xóa cả bảng
 
 
 def chen_bang(ed, mau, cau_hinh):
@@ -526,6 +527,7 @@ def main():
     dich_mot_phan = [(tim_chua(d), c, m) for d, c, m in MOT_PHAN]
     dich_ngoai = [(tim(d, tat_ca_doan), m) for d, m in DOAN_NGOAI] + [(tim_chua(a), m) for a, m in DOAN_CHUA]
     bang_cu = [(bang(b["dau"]), b) for b in BANG_THAY]
+    bang_xoa = [bang(d) for d in BANG_XOA]
     dich_o = []
     for o_dau, r, c, cu, moi in O:
         tc = bang(o_dau).findall(q("tr"))[r].findall(q("tc"))[c]
@@ -617,6 +619,8 @@ def main():
     for cu, b in bang_cu:
         chen_bang(ed, cu, b)
         ed.xoa_bang(cu)
+    for t in bang_xoa:
+        ed.xoa_bang(t)
     for cu, moi in THAY_TAT_CA:
         ed.replace(cu, moi, tat_ca=True)
 

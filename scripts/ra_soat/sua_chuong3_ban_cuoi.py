@@ -28,7 +28,11 @@ S2.MOT_PHAN = [m for m in S2.MOT_PHAN
 S2.THAY_TAT_CA += [
     ("CHƯƠNG 3. HỆ THỐNG GIẢI PHÁP", "CHƯƠNG 3. GIẢI PHÁP"),
     (" ĐÁP ỨNG KHUNG PHÁP LÝ MỚI", ""),
+    ("Định hướng chiến lược và yêu cầu mới từ khung pháp lý giai đoạn 2025 - 2026", "Căn cứ xây dựng hệ thống giải pháp"),
 ]
+# Bỏ Bảng 3.2 (lặp với Mục 3.2): Bảng 3.3, 3.4 thành 3.2, 3.3
+S2.DOI_SO.update({"Bảng 3.3": "Bảng 3.2", "Bảng 3.4": "Bảng 3.3"})
+S2.BANG_XOA.append("Nhóm phương án")
 
 TPL = "Phòng Khoa học công nghệ"
 S2.DOAN_NGOAI += [
@@ -40,33 +44,33 @@ S2.DOAN_NGOAI += [
      "lực từ năm 2025, 2026."),
     # 3.1.1: rút gọn, dẫn đúng điều khoản
     ("Việc xây dựng hệ thống giải pháp quản lý quyền sở hữu trí tuệ tại Trường",
-     "Các giải pháp được xây dựng trên ba nhóm căn cứ: định hướng chính sách, khung pháp lý mới và kết quả đánh giá "
-     "thực trạng ở Chương 2."),
+     "Các giải pháp được xây dựng trên ba căn cứ: chính sách, pháp lý và thực tiễn rút ra từ Chương 2."),
     ("Về chủ trương của Đảng và Nhà nước: Nghị quyết số 45-NQ/TW",
-     "Về định hướng chính sách, Chiến lược phát triển khoa học, công nghệ và đổi mới sáng tạo đến năm 2030 (Quyết định "
-     "số 569/QĐ-TTg), Chiến lược sở hữu trí tuệ đến năm 2030 (Quyết định số 1068/QĐ-TTg, được sửa đổi, bổ sung bởi "
-     "Quyết định số 1624/QĐ-TTg) và Kết luận số 51-KL/TW đều yêu cầu đẩy mạnh khai thác, thương mại hóa tài sản trí tuệ "
-     "hình thành từ nghiên cứu, trong đó trường đại học là một chủ thể tạo ra tài sản trí tuệ."),
+     "Về căn cứ chính sách, Chiến lược sở hữu trí tuệ đến năm 2030 (Quyết định số 1068/QĐ-TTg, được sửa đổi, bổ sung "
+     "bởi Quyết định số 1624/QĐ-TTg), Chiến lược phát triển khoa học, công nghệ và đổi mới sáng tạo đến năm 2030 (Quyết "
+     "định số 569/QĐ-TTg) và Kết luận số 51-KL/TW đều yêu cầu đẩy mạnh khai thác, thương mại hóa tài sản trí tuệ hình "
+     "thành từ nghiên cứu."),
     ("Về khung pháp lý chuyên ngành giai đoạn 2025 - 2026:",
-     "Về khung pháp lý, bốn nhóm quy định tác động trực tiếp đến các giải pháp:"),
+     "Về căn cứ pháp lý, các quy định mới đã phân tích ở Chương 1 tạo điều kiện trực tiếp cho các giải pháp: Luật số "
+     "93/2025/QH15 giao tổ chức chủ trì quyền sở hữu phần kết quả sử dụng ngân sách nhà nước và cho phép dùng quỹ phát "
+     "triển khoa học và công nghệ cho đăng ký, bảo hộ quyền sở hữu trí tuệ; Luật Giáo dục đại học số 125/2025/QH15 cho "
+     "phép thành lập doanh nghiệp khoa học và công nghệ; Nghị định số 100/2026/NĐ-CP yêu cầu lập Danh mục quyền sở hữu "
+     "trí tuệ; Thông tư số 83/2026/TT-BGDĐT yêu cầu có quy định về sở hữu trí tuệ và tính sáng chế, giải pháp hữu ích "
+     "với hệ số quy đổi cao."),
     ("Thứ nhất, Luật Khoa học, Công nghệ và Đổi mới sáng tạo số 93/2025/QH15 mang lại",
-     "Thứ nhất, Luật số 93/2025/QH15 giao tổ chức chủ trì quyền sở hữu phần kết quả tương ứng với kinh phí ngân sách "
-     "nhà nước (khoản 2 Điều 25), yêu cầu thưởng cho tác giả tối thiểu 30% lợi nhuận từ phần kết quả này (điểm a khoản "
-     "3 Điều 28) và cho phép dùng quỹ phát triển khoa học và công nghệ cho đăng ký, bảo hộ, quản lý, khai thác quyền sở "
-     "hữu trí tuệ (điểm b khoản 2 Điều 66)."),
-    ("Thứ hai, Luật Giáo dục đại học số 125/2025/QH15 tại Khoản 1 Điều 28",
-     "Thứ hai, khoản 1 Điều 28 Luật Giáo dục đại học số 125/2025/QH15 cho phép cơ sở giáo dục đại học thành lập doanh "
-     "nghiệp khoa học và công nghệ, doanh nghiệp quản lý tài sản trí tuệ."),
-    ("Thứ ba, Nghị định số 100/2026/NĐ-CP tại Điều 9a",
-     "Thứ ba, Điều 9a Nghị định số 65/2023/NĐ-CP, được bổ sung bởi Nghị định số 100/2026/NĐ-CP, yêu cầu chủ sở hữu lập "
-     "và cập nhật hằng năm Danh mục quyền sở hữu trí tuệ."),
-    ("Thứ tư, Thông tư số 83/2026/TT-BGDĐT (ban hành ngày 30/9/2026",
-     "Thứ tư, Thông tư số 83/2026/TT-BGDĐT yêu cầu cơ sở giáo dục đại học có quy định về sở hữu trí tuệ, liêm chính học "
-     "thuật (Tiêu chí 1.1) và tính sáng chế, giải pháp hữu ích với hệ số quy đổi cao trong kết quả khoa học, công nghệ "
-     "(Tiêu chí 6.2)."),
+     "Về căn cứ thực tiễn, Chương 2 xác định điểm nghẽn ở bước chuyển từ kết quả nghiên cứu sang đơn đăng ký: trong 9 "
+     "đề tài có sản phẩm thuộc nhóm sở hữu công nghiệp, mới có 1 đơn sáng chế. Bốn hạn chế đi kèm là kết quả có thể bảo "
+     "hộ chưa được chuyển thành đơn, quy chế nội bộ chưa đồng bộ, chưa có khai thác thương mại và quản lý còn phân tán. "
+     "Các giải pháp được thiết kế để xử lý trực tiếp các hạn chế này."),
+    ("Thứ hai, Luật Giáo dục đại học số 125/2025/QH15 tại Khoản 1 Điều 28", None),
+    ("Thứ ba, Nghị định số 100/2026/NĐ-CP tại Điều 9a", None),
+    ("Thứ tư, Thông tư số 83/2026/TT-BGDĐT (ban hành ngày 30/9/2026", None),
     ("Nhằm bảo đảm tính khoa học và thực tiễn, nhóm nghiên cứu tiến hành",
      "Để xác định hướng giải pháp, nhóm nghiên cứu tổng hợp các yếu tố bên trong và bên ngoài thành ma trận điểm mạnh, "
      "điểm yếu, cơ hội và thách thức tại Bảng 3.1."),
+    ("Từ ma trận phân tích tại Bảng 3.1, nhóm nghiên cứu xây dựng", None),
+    ("Bảng 3.2. Các phương án kết hợp từ ma trận", None),
+    ("(Nguồn: Nhóm nghiên cứu xây dựng từ Bảng 3.1)", None),
     # 3.1.3: bớt cụm từ khẩu hiệu
     ("Hệ thống giải pháp quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô được xây dựng trên bốn nguyên tắc",
      "Các giải pháp được xây dựng theo bốn nguyên tắc:"),
@@ -98,9 +102,9 @@ S2.DOAN_NGOAI += [
      "và Khởi nghiệp."),
     # 3.2.2
     ("Mục tiêu giải pháp: Từng bước khắc phục điểm nghẽn",
-     "Mục tiêu giải pháp: Khắc phục điểm nghẽn ở bước chuyển từ kết quả nghiên cứu sang đơn đăng ký; phấn đấu nâng tỷ "
-     "lệ nộp đơn trong nhóm đề tài có sản phẩm sở hữu công nghiệp lên trên 50% vào năm 2028, tương ứng 3 đến 5 đơn sáng "
-     "chế, giải pháp hữu ích mỗi năm; không để kết quả có thể bảo hộ bị công bố trước khi nộp đơn."),
+     "Mục tiêu giải pháp: Khắc phục điểm nghẽn ở bước chuyển từ kết quả nghiên cứu sang đơn đăng ký; nâng tỷ "
+     "lệ nộp đơn trong nhóm đề tài có sản phẩm sở hữu công nghiệp, phấn đấu đạt từ 2 đến 3 đơn sáng chế, giải pháp hữu "
+     "ích mỗi năm trong giai đoạn 2028 - 2030; không để kết quả có thể bảo hộ bị công bố trước khi nộp đơn."),
     ("Một là, ban hành Quy trình sàng lọc bảo hộ bắt buộc",
      "Một là, ban hành quy trình sàng lọc khả năng bảo hộ trước khi nghiệm thu và công bố, cụ thể hóa yêu cầu xin ý "
      "kiến trước khi bộc lộ tại Điều 10 Quyết định số 217/QĐ-ĐHTĐ. Báo cáo nghiệm thu, bản thảo bài báo có giải pháp "
@@ -168,7 +172,7 @@ S2.DOAN_NGOAI += [
      "dựng cơ sở dữ liệu, phối hợp đơn vị phụ trách công nghệ thông tin của Nhà trường."),
     # 3.3
     ("Để các giải pháp không dừng lại ở định hướng lý thuyết",
-     "Bảng 3.3 tóm tắt đơn vị chủ trì và kết quả cần đạt của từng giải pháp, gắn với hạn chế đã xác định tại Mục 2.3.2."),
+     "Bảng 3.2 tóm tắt đơn vị chủ trì và kết quả cần đạt của từng giải pháp, gắn với hạn chế đã xác định tại Mục 2.3.2."),
     ("Lý do lựa chọn đơn vị thí điểm: Viện Y - Dược là đơn vị nghiên cứu nòng cốt",
      "Lý do lựa chọn đơn vị thí điểm: Viện Y - Dược có 42 tiến sĩ và chủ trì 9 trên 11 đề tài cấp cơ sở có sản phẩm "
      "có thể bảo hộ (Bảng 2.4), chủ yếu về chiết xuất dược liệu và bào chế thuốc."),
@@ -181,20 +185,20 @@ S2.DOAN_NGOAI += [
     ("Giai đoạn 2 (Năm 2028 - 2029): Mở rộng toàn diện",
      "Giai đoạn 2 (Năm 2028 - 2029): Mở rộng áp dụng, tăng số đơn đăng ký và xúc tiến thương mại hóa."),
     ("Nội dung trọng tâm: Áp dụng bắt buộc quy trình sàng lọc",
-     "Nội dung trọng tâm: Phấn đấu áp dụng quy trình sàng lọc cho 100% đề tài cấp cơ sở; nộp từ 3 đến 5 đơn sáng chế, "
+     "Nội dung trọng tâm: Phấn đấu áp dụng quy trình sàng lọc cho 100% đề tài cấp cơ sở; nộp từ 2 đến 3 đơn sáng chế, "
      "giải pháp hữu ích mỗi năm; " + TPL + " xúc tiến đàm phán từ 1 đến 2 hợp đồng chuyển quyền sử dụng với doanh "
      "nghiệp."),
     ("Giai đoạn 3 (Năm 2030): Vận hành hệ sinh thái",
      "Giai đoạn 3 (Năm 2030): Đánh giá kết quả và nghiên cứu khả năng hình thành doanh nghiệp khởi nguồn công nghệ."),
     ("Nội dung trọng tâm: Thành lập và đưa vào vận hành ít nhất 1 doanh nghiệp",
-     "Nội dung trọng tâm: Đánh giá kết quả thực hiện các giải pháp theo Bảng 3.4; nghiên cứu khả năng hình thành doanh "
+     "Nội dung trọng tâm: Đánh giá kết quả thực hiện các giải pháp theo Bảng 3.3; nghiên cứu khả năng hình thành doanh "
      "nghiệp khởi nguồn công nghệ dựa trên tài sản trí tuệ của Viện Y - Dược khi đã có văn bằng bảo hộ và đối tác thị "
      "trường; dùng nguồn thu từ chuyển giao (nếu có) để tái đầu tư cho nghiên cứu."),
     ("Để đo lường khách quan tiến độ và hiệu quả",
      "Để theo dõi tiến độ và hiệu quả, nhóm nghiên cứu đề xuất bộ chỉ số phân tầng từ thể chế đến khai thác kinh tế "
-     "tại Bảng 3.4."),
+     "tại Bảng 3.3."),
     ("Bộ chỉ số tại Bảng 3.4 là công cụ điều hành then chốt",
-     "Bảng 3.4 giúp Ban Giám hiệu và Hội đồng trường theo dõi định kỳ tiến độ triển khai các giải pháp và điều chỉnh "
+     "Bảng 3.3 giúp Ban Giám hiệu và Hội đồng trường theo dõi định kỳ tiến độ triển khai các giải pháp và điều chỉnh "
      "việc phân bổ nguồn lực theo từng giai đoạn."),
     ("Chương 3 đã xây dựng một hệ thống giải pháp toàn diện",
      "Chương 3 đề xuất bốn nhóm giải pháp tương ứng với bốn hạn chế đã xác định ở Chương 2: nhận diện tài sản trí tuệ "
@@ -204,7 +208,7 @@ S2.DOAN_NGOAI += [
      "93/2025/QH15, Luật số 125/2025/QH15, Nghị định số 100/2026/NĐ-CP và Thông tư số 83/2026/TT-BGDĐT."),
     ("Kế hoạch tổ chức thực hiện với bước đi thí điểm thận trọng",
      "Việc tổ chức thực hiện bắt đầu bằng thí điểm tại Viện Y - Dược, triển khai theo ba giai đoạn 2026 - 2030 và được "
-     "theo dõi bằng bộ chỉ số tại Bảng 3.4. Kết quả thí điểm là căn cứ để điều chỉnh quy trình trước khi áp dụng cho "
+     "theo dõi bằng bộ chỉ số tại Bảng 3.3. Kết quả thí điểm là căn cứ để điều chỉnh quy trình trước khi áp dụng cho "
      "toàn trường."),
 ]
 
@@ -213,20 +217,19 @@ S2.MOT_PHAN += [
      "khả năng cân đối ngân sách của Nhà trường", "tránh các mô hình vượt quá khả năng tài chính và nhân lực của Nhà trường"),
     ("Đánh giá rút kinh nghiệm: Sau 12 tháng", "Phòng Quản lý Khoa học và Công nghệ", TPL),
     ("Quy mô và chỉ tiêu thí điểm: Lựa chọn từ 3 đến 5", "Quỹ Khoa học và Công nghệ", "Quỹ Phát triển khoa học và công nghệ"),
-    # Bảng 3.2
-    ("Tận dụng mạng lưới hợp tác doanh nghiệp sẵn có",
-     "thí điểm thành lập doanh nghiệp khởi nguồn công nghệ theo Khoản 1 Điều 28 Luật Giáo dục đại học số 125/2025/QH15",
-     "nghiên cứu khả năng hình thành doanh nghiệp khởi nguồn công nghệ khi đủ điều kiện"),
     # Bảng 3.4: "phấn đấu"
     ("Ban hành trước ngày 31/5/2027", "Đạt 100% giảng viên mới hàng năm", "Phấn đấu đạt 100% giảng viên mới hằng năm"),
     ("Đạt 100% đề tài cấp cơ sở từ năm 2027",
      "Đạt 100% đề tài cấp cơ sở từ năm 2027<br>Đạt 100% đề tài khối Y - Dược và Kỹ thuật<br>Tối đa không quá 15 ngày làm việc",
      "Phấn đấu đạt 100% đề tài cấp cơ sở từ năm 2027\nPhấn đấu đạt 100% đề tài khối Y - Dược và Kỹ thuật\n"
      "Không quá 15 ngày làm việc"),
+    ("Từ 02 đơn năm 2027", "Từ 02 đơn năm 2027; đạt 03 - 05 đơn/năm từ 2028",
+     "Phấn đấu 02 - 03 đơn/năm giai đoạn 2028 - 2030"),
     ("Từ 02 đơn năm 2027", "Đăng ký bảo hộ cho 100% giáo trình trọng điểm",
      "Phấn đấu đăng ký quyền tác giả cho 100% giáo trình trọng điểm"),
-    ("Tối thiểu 02 - 03 văn bằng/năm theo Kế hoạch 07", "Tối thiểu 02 - 03 văn bằng/năm",
-     "Phấn đấu 02 - 03 văn bằng/năm"),
+    ("Tối thiểu 02 - 03 văn bằng/năm theo Kế hoạch 07", "Tối thiểu 02 - 03 văn bằng/năm theo Kế hoạch 07",
+     "Phấn đấu có từ 02 - 03 văn bằng bảo hộ sở hữu công nghiệp được cấp trong giai đoạn đến năm 2030"),
+    ("Một là, tái cơ cấu định hướng danh mục", "tái cơ cấu", "điều chỉnh"),
     ("Ký tối thiểu 01 - 02 hợp đồng/năm từ 2028", "Bảo đảm tối thiểu 30% lợi nhuận sau thuế",
      "Tối thiểu 30% lợi nhuận đối với phần kết quả sử dụng ngân sách nhà nước"),
 ]
@@ -234,34 +237,23 @@ S2.MOT_PHAN += [
 # Bảng 3.1: viết lại bốn ô, nêu điểm mạnh, điểm yếu, không đưa tỷ lệ chi tiết
 S2.DOAN_CHUA += [
     ("S1. Ban hành quy định nội bộ từ sớm",
-     "S1. Có quy chế nội bộ về hoạt động khoa học công nghệ (Quyết định 213, năm 2021) và quản trị tài sản trí tuệ "
-     "(Quyết định 217, năm 2024).\n"
-     "S2. Năng lực nghiên cứu tăng nhanh: số bài báo năm 2025 gấp 7 lần năm 2021; 71 bài quốc tế có phân hạng.\n"
-     "S3. 11 đề tài cấp cơ sở có sản phẩm có thể bảo hộ, trong đó 9 đề tài thuộc Viện Y - Dược.\n"
-     "S4. Đã có 11 hồ sơ tài sản trí tuệ; 4 hồ sơ đã được cấp văn bằng, 1 đơn sáng chế đã được chấp nhận hợp lệ.\n"
-     "S5. Có nhiều kênh tài trợ nghiên cứu: đề tài cấp cơ sở, Quỹ Ngô Xuân Độ, Quỹ NAFOSTED."),
+     "S1. Đã có quy chế về hoạt động khoa học công nghệ (Quyết định 213) và quản trị tài sản trí tuệ (Quyết định 217).\n"
+     "S2. Năng lực nghiên cứu tăng nhanh: số bài báo năm 2025 gấp 7 lần năm 2021.\n"
+     "S3. Đã có sản phẩm có thể bảo hộ: 11 đề tài cấp cơ sở, 1 đơn sáng chế được chấp nhận hợp lệ."),
     ("W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp",
      "W1. Tỷ lệ chuyển hóa kết quả nghiên cứu thành đơn đăng ký sở hữu công nghiệp còn thấp.\n"
-     "W2. Quy chế nội bộ chưa thống nhất; mức trần 100 triệu đồng chưa phù hợp với Luật số 93/2025/QH15; chưa có quy "
-     "trình sàng lọc trước công bố.\n"
-     "W3. Chưa có đầu mối, nhân sự chuyên trách về sở hữu trí tuệ.\n"
-     "W4. Chưa có dòng dự toán riêng cho chi phí xác lập quyền; văn bằng bảo hộ chưa có mức thưởng bằng tiền.\n"
-     "W5. Dữ liệu quản lý phân tán; chưa có hoạt động khai thác thương mại phát sinh doanh thu."),
+     "W2. Chưa có quy trình sàng lọc trước công bố; quy chế nội bộ chưa thống nhất.\n"
+     "W3. Chưa có bộ phận chuyên trách về sở hữu trí tuệ; dữ liệu quản lý phân tán.\n"
+     "W4. Chưa có hoạt động thương mại hóa phát sinh doanh thu."),
     ("O1. Khung pháp luật mới trao quyền tự chủ",
-     "O1. Luật số 93/2025/QH15 giao tổ chức chủ trì quyền sở hữu phần kết quả sử dụng ngân sách nhà nước; Luật Giáo dục "
-     "đại học số 125/2025/QH15 cho phép thành lập doanh nghiệp khoa học và công nghệ.\n"
-     "O2. Kết luận 51-KL/TW và Quyết định 1624/QĐ-TTg yêu cầu đẩy mạnh khai thác, thương mại hóa tài sản trí tuệ.\n"
-     "O3. Thông tư 83/2026/TT-BGDĐT tính mỗi sáng chế bằng 5 và mỗi giải pháp hữu ích bằng 3 sản phẩm quy đổi.\n"
-     "O4. Chương trình thí điểm hỗ trợ xác định giá trị quyền sở hữu trí tuệ của cơ sở giáo dục đại học theo Quyết định "
-     "1624/QĐ-TTg.\n"
-     "O5. Các doanh nghiệp đồng sở hữu kiểu dáng là đối tác tiềm năng cho chuyển giao sản phẩm dược liệu."),
+     "O1. Luật số 93/2025/QH15 giao tổ chức chủ trì quyền sở hữu phần kết quả sử dụng ngân sách nhà nước; Luật số "
+     "125/2025/QH15 cho phép thành lập doanh nghiệp khoa học và công nghệ.\n"
+     "O2. Thông tư 83/2026/TT-BGDĐT tính sáng chế, giải pháp hữu ích với hệ số quy đổi cao.\n"
+     "O3. Chương trình thí điểm hỗ trợ xác định giá trị quyền sở hữu trí tuệ theo Quyết định 1624/QĐ-TTg."),
     ("T1. Áp lực tuân thủ kiểm định chất lượng",
-     "T1. Thông tư 83/2026/TT-BGDĐT yêu cầu có quy định về sở hữu trí tuệ, liêm chính học thuật và cập nhật dữ liệu lên "
-     "HEMIS.\n"
-     "T2. Áp lực công bố có thể dẫn đến bộc lộ kết quả trước khi nộp đơn, làm mất tính mới.\n"
-     "T3. Thủ tục xác lập quyền đối với sáng chế kéo dài; chi phí bảo hộ phát sinh trong suốt thời hạn bảo hộ.\n"
-     "T4. Khung pháp lý thay đổi nhanh, cần rà soát quy chế thường xuyên.\n"
-     "T5. Nguy cơ tranh chấp quyền giữa giảng viên, người học và doanh nghiệp cùng tham gia nghiên cứu."),
+     "T1. Áp lực công bố có thể dẫn đến bộc lộ kết quả trước khi nộp đơn, làm mất tính mới.\n"
+     "T2. Thủ tục xác lập quyền đối với sáng chế kéo dài; chi phí bảo hộ phát sinh trong suốt thời hạn bảo hộ.\n"
+     "T3. Nguy cơ tranh chấp quyền giữa giảng viên, người học và doanh nghiệp cùng tham gia nghiên cứu."),
 ]
 
 # Bảng 3.3 rút gọn: mỗi giải pháp một hạn chế được xử lý, đơn vị chủ trì và một đến hai kết quả chính
@@ -275,7 +267,7 @@ S2.BANG_THAY.append(dict(
          "Thuyết minh đề tài có mục dự kiến tài sản trí tuệ; tăng tỷ lệ đề tài có sản phẩm có thể bảo hộ"],
         ["3.2.2. Sàng lọc trước công bố và hỗ trợ nộp đơn", "Hạn chế thứ nhất, thứ hai",
          TPL + "; Bộ phận Pháp chế, Phòng Tài chính - Kế toán",
-         "Quy trình sàng lọc được ban hành; 3 đến 5 đơn sở hữu công nghiệp mỗi năm"],
+         "Quy trình sàng lọc được ban hành; 2 đến 3 đơn sở hữu công nghiệp mỗi năm giai đoạn 2028 - 2030"],
         ["3.2.3. Phân chia lợi ích và thương mại hóa", "Hạn chế thứ hai, thứ ba",
          TPL + ", Bộ phận Pháp chế; Phòng Tài chính - Kế toán",
          "Quy chế phân chia lợi ích sửa đổi; hợp đồng chuyển giao đầu tiên"],
