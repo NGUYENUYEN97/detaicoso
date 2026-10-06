@@ -59,7 +59,7 @@ BIEU_DO = {
     "Hình 2.8. Sản phẩm đề tài cấp cơ sở có tiềm năng": _h(13, 5),
     "Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường": _h(
         11, 6,
-        cot=["Loại hình", "Đã cấp văn bằng, giấy chứng nhận", "Chờ cấp bằng (theo sổ theo dõi)", "Đã nộp đơn"],
+        cot=["Loại hình", "Đã cấp văn bằng, giấy chứng nhận", "Chờ cấp bằng", "Đã nộp đơn"],
         nguon="Nguồn: Sổ theo dõi đơn nhãn hiệu, kiểu dáng công nghiệp, sáng chế và bảng thống kê văn bằng của "
               "Trường Đại học Thành Đô."),
 }
@@ -68,7 +68,7 @@ assert [d[1:] for d in BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của 
 # Nhãn hiệu Double2n: sổ theo dõi ghi Chờ cấp bằng; đơn sáng chế 1-2025-07378: đã nộp năm 2025
 # (dòng "Chấp nhận đơn hợp lệ" trong sổ không ghi số đơn nên không gắn với đơn này)
 BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"] = [
-    ["Quyền tác giả", 2, 0, 0], ["Nhãn hiệu", 2, 1, 0], ["Kiểu dáng công nghiệp", 0, 5, 0], ["Sáng chế", 0, 0, 1]]
+    ["Quyền tác giả", 2, 0, 0], ["Nhãn hiệu", 2, 1, 0], ["Kiểu dáng công nghiệp", 5, 0, 0], ["Sáng chế", 0, 0, 1]]
 
 SO_DO = {
     "Hình 2.3. Phân công đầu mối": ("Hình 2.1", SD.dau_moi),
@@ -321,6 +321,33 @@ T["232c"] = ("Thứ ba, chưa ghi nhận hoạt động khai thác thương mạ
              "cứu.")
 T["tk2"] = T["tk2"].replace("chưa có hợp đồng chuyển giao phát sinh doanh thu", "chưa ghi nhận hợp đồng chuyển giao phát sinh doanh thu")
 
+# --- Vòng đối chiếu lần 4: 5 kiểu dáng đã được cấp bằng năm 2024 (xác nhận của chủ nhiệm đề tài, số bằng
+#     3-00396xx-000 trong bảng thống kê văn bằng); phạm vi kinh phí 424,75 triệu; cách gọi nhân sự
+T["212a"] = ("Danh sách nhân sự năm 2026 có 252 người, trong đó 145 người giữ chức vụ giảng viên và 94 người có trình độ "
+             "tiến sĩ và tương đương (37,3%). Đội ngũ tiến sĩ tập trung tại Viện Y - Dược (42 người) và Viện Quản trị và "
+             "Công nghệ (29 người), như thể hiện tại Bảng 2.1. Đây là nguồn lực đủ điều kiện để hình thành tài sản trí "
+             "tuệ, nhất là trong lĩnh vực dược liệu và công nghệ.")
+T["213c"] = ("Theo danh mục đề tài cấp cơ sở, tổng các khoản kinh phí ghi cho 19 đề tài là 424,75 triệu đồng, không bao gồm "
+             "kinh phí tự tìm tài trợ và khoản đề nghị hỗ trợ thêm; 16 đề tài chỉ được quy đổi giờ nghiên cứu khoa học và 3 "
+             "đề tài tự tìm nguồn tài trợ (Hình 2.3). Năm 2021 chưa có đề tài được cấp kinh phí; từ năm 2022, kinh phí "
+             "hằng năm dao động từ 70 đến 145 triệu đồng và cao nhất vào năm 2025. Kinh phí bình quân của một đề tài được "
+             "cấp tăng từ 28,0 triệu đồng năm 2022 lên 36,25 triệu đồng năm 2025.")
+T["222a"] = ("Bảng 2.5 cho thấy Quyết định số 217/QĐ-ĐHTĐ đã liệt kê đầy đủ các nhóm đối tượng, kể cả bí mật thương mại, "
+             "kiểu dáng công nghiệp và thiết kế bố trí mạch tích hợp (Điều 3). Khoảng cách nằm ở thực tế xác lập: các văn "
+             "bằng đã được cấp là quyền tác giả đối với bộ biểu trưng, nhãn hiệu và kiểu dáng công nghiệp hình thành từ hợp "
+             "tác với doanh nghiệp, trong khi 8 sản phẩm có thể đăng ký giải pháp hữu ích hoặc sáng chế từ đề tài chưa được "
+             "nộp đơn.")
+T["222b"] = ("Tính đến hết năm 2025, Nhà trường có 11 hồ sơ tài sản trí tuệ (Bảng 2.6, Hình 2.6), trong đó 9 hồ sơ đã được "
+             "cấp văn bằng: 2 giấy chứng nhận quyền tác giả đối với bộ biểu trưng, 2 văn bằng nhãn hiệu Thanh do University, "
+             "Thado Edupark và 5 bằng độc quyền kiểu dáng công nghiệp bao bì sản phẩm thảo dược, đồng sở hữu với doanh "
+             "nghiệp, cấp năm 2024. Nhãn hiệu Double2n, đồng sở hữu với doanh nghiệp, đang chờ cấp bằng; đơn sáng chế số "
+             "1-2025-07378 về hợp chất từ lá Quế hoa đã được nộp năm 2025. Như vậy, các văn bằng đã có đều thuộc nhóm "
+             "thương hiệu và hợp tác doanh nghiệp; trong kỳ, Nhà trường chưa có bằng độc quyền sáng chế hoặc giải pháp hữu "
+             "ích nào từ kết quả đề tài.")
+T["231c"] = ("Ba là, công tác xác lập quyền đã có kết quả cụ thể: 9 trên 11 hồ sơ tài sản trí tuệ đã được cấp văn bằng, gồm "
+             "2 giấy chứng nhận quyền tác giả, 2 nhãn hiệu và 5 kiểu dáng công nghiệp đồng sở hữu với doanh nghiệp; lần đầu "
+             "tiên có đơn đăng ký sáng chế từ kết quả đề tài cấp cơ sở (đề tài 09-2025).")
+
 # Bảng 2.7 rút gọn: phạm vi áp dụng, tỷ lệ phân chia, điểm bất cập
 BANG27 = dict(
     dau="Văn bản, điều khoản",
@@ -363,7 +390,8 @@ DOAN = [
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ các danh mục thống kê sản phẩm khoa học của Phòng Khoa học Công nghệ. Tham luận "
      "hội thảo quốc gia không ghi năm nên chỉ ghi tổng của kỳ; đề tài cấp cơ sở tính theo năm ghi trong mã số đề tài (đề "
      "tài 14-2024 nghiệm thu năm 2025); đề tài cấp quốc gia tính theo năm phê duyệt kinh phí. Dòng tổng cộng là tổng số "
-     "bản ghi; danh mục bài báo trong nước có 3 bài được ghi lặp, tạo 4 bản ghi thừa)"),
+     "bản ghi; trong danh mục bài báo trong nước, 2 bài có thông tin xuất bản trùng nhau được ghi lặp 3 bản ghi, 1 bài "
+     "khác có thể trùng cần xác nhận)"),
     ("Theo số liệu Bảng 2.2 và Hình 2.1, số lượng sản phẩm", T["213b"]),
     ("Hoạt động nghiên cứu khoa học cấp cơ sở có sự chuyển biến căn bản", T["213c"]),
     ("Khung thể chế điều chỉnh hoạt động sáng tạo khoa học công nghệ", T["221a"]),
@@ -376,11 +404,11 @@ DOAN = [
     ("Bảng 2.5 đối sánh giữa quy định của Luật Sở hữu trí tuệ", T["222a"]),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ sổ theo dõi nhãn hiệu, kiểu dáng công nghiệp và thống kê văn bằng",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ sổ theo dõi đơn nhãn hiệu, kiểu dáng công nghiệp, sáng chế và bảng thống kê "
-     "văn bằng của Trường Đại học Thành Đô. Trạng thái ghi theo sổ theo dõi, chưa đối chiếu thông báo của Cục Sở hữu trí "
-     "tuệ. Hồ sơ số 12 nộp năm 2026, nằm ngoài kỳ đánh giá)"),
+     "văn bằng của Trường Đại học Thành Đô. Hồ sơ số 12 nộp năm 2026, nằm ngoài kỳ đánh giá)"),
     ("Theo Bảng 2.6 và Hình 2.7, tính đến hết năm 2025", T["222b"]),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục thuyết minh và quyết toán đề tài cấp cơ sở)",
-     "(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục đề tài cấp cơ sở giai đoạn 2021 - 2025. Năm tính theo mã số đề tài)"),
+     "(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục đề tài cấp cơ sở giai đoạn 2021 - 2025. Năm tính theo mã số đề tài; "
+     "kinh phí là số ghi trong danh mục, chưa đối chiếu chứng từ giải ngân, quyết toán)"),
     ("(Nguồn: Nhóm nghiên cứu phân loại từ 11 đề tài cấp cơ sở có sản phẩm ứng dụng)",
      "(Nguồn: Nhóm nghiên cứu phân loại từ Bảng 2.4)"),
     ("(Nguồn: Nhóm nghiên cứu mô hình hóa từ kết quả nghiệm thu 38 đề tài",
@@ -459,12 +487,16 @@ for hang, cu, moi in [
             O.append(("Loại hình sản phẩm khoa học", hang, c, a, b))
 O += [
     ("Số TT", 5, 5, "Đã nộp đơn, đang thẩm định", "Chờ cấp bằng"),
-    *[("Số TT", r, 5, "Chưa xác minh trạng thái", "Chờ cấp bằng") for r in range(6, 11)],
+    *[("Số TT", r, 5, "Chưa xác minh trạng thái", "Đã cấp bằng") for r in range(6, 11)],
+    *[("Số TT", r, 3, f"Đơn 3-2023-0284{r - 5}; Số {so}", f"Đơn 3-2023-0284{r - 5}; Bằng số {so}")
+      for r, so in zip(range(6, 11), ["3-0039693-000", "3-0039694-000", "3-0039902-000", "3-0039695-000",
+                                       "3-0039696-000"])],
     ("Số TT", 11, 5, "Đã nộp đơn, đang thẩm định hình thức", "Đã nộp đơn năm 2025"),
     ("Loại hình sản phẩm khoa học", 5, 0, "Sách chuyên khảo, tham khảo (ISBN)", "Sách, chương sách, tài liệu có ISBN"),
     ("Loại hình sản phẩm khoa học", 1, 0, "Bài báo khoa học trong nước", "Bài báo khoa học trong nước (số bản ghi)"),
     ("Nhóm quyền", 1, 3, "405 bài báo, 12 cuốn sách", "405 bản ghi bài báo; 12 sách, chương sách"),
-    ("Nhóm quyền", 7, 4, "5 hồ sơ có số hiệu văn bằng, trạng thái chờ xác minh", "5 hồ sơ đồng sở hữu, chờ cấp bằng"),
+    ("Nhóm quyền", 7, 4, "5 hồ sơ có số hiệu văn bằng, trạng thái chờ xác minh",
+     "Đã cấp 5 bằng độc quyền năm 2024, đồng sở hữu với doanh nghiệp"),
     ("Nhóm quyền", 8, 4, "Đã cấp 2 văn bằng bảo hộ; 01 đơn đang xử lý", "Đã cấp 2 văn bằng bảo hộ; 01 đơn chờ cấp bằng"),
 ]
 
