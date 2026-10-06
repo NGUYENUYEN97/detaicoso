@@ -98,10 +98,10 @@ class SoDo:
 # ---------------------------------------------------------------------------
 def dau_moi():
     """Hình 2.1. Phân công đầu mối quản lý quyền sở hữu trí tuệ (Điều 11, 13 QĐ 217; Điều 35 QĐ 213)."""
-    s = SoDo(15.5, 11.4)
-    s.hop(3.5, 0.05, 8.5, 1.45, ["Ban Giám hiệu", "Ký đơn đăng ký; quyết định tỷ lệ phân chia lợi ích"],
-          nen=XANH_DAM, vien=None, mau_chu="FFFFFF")
-    y2, h2 = 2.4, 3.0
+    s = SoDo(15.5, 9.2)
+    s.hop(3.5, 0.05, 8.5, 1.3, ["Ban Giám hiệu", "Ký đơn đăng ký; quyết định tỷ lệ phân chia lợi ích"],
+          nen=XANH_DAM, vien=None, mau_chu="FFFFFF", size=10)
+    y2, h2 = 2.0, 2.6
     hop2 = [
         (0.0, ["Phòng Khoa học công nghệ", "Quản lý, giám sát; quy trình, biểu mẫu khai báo; tiếp nhận, nộp đơn; "
                                            "hồ sơ theo dõi; xúc tiến thương mại hóa"]),
@@ -110,21 +110,21 @@ def dau_moi():
         (10.7, ["Phòng Tài chính - Kế toán", "Tham mưu tỷ lệ phân chia lợi ích từ khai thác tài sản trí tuệ"]),
     ]
     for x, dong in hop2:
-        s.hop(x, y2, 4.8, h2, dong, size=10)
-        s.mui_ten(7.75, 1.5, x + 2.4, y2)
-    y3, h3 = 6.45, 2.0
+        s.hop(x, y2, 4.8, h2, dong, size=9.5)
+        s.mui_ten(7.75, 1.35, x + 2.4, y2)
+    y3, h3 = 5.2, 1.7
     s.hop(0.0, y3, 15.5, h3, [
         "Các viện đào tạo, nghiên cứu",
         "Mỗi viện có Phòng Học vụ và Hợp tác đối ngoại, Phòng Công nghệ, Đổi mới sáng tạo và Khởi nghiệp. "
         "Yêu cầu ghi nhận tài sản trí tuệ mới phát sinh; phối hợp đăng ký bảo hộ và khai thác"],
-        nen=NGOC_NHAT, vien=NGOC, size=10)
+        nen=NGOC_NHAT, vien=NGOC, size=9.5)
     for x, _ in hop2:
         s.mui_ten(x + 2.4, y2 + h2, x + 2.4, y3, dau=True)
-    y4 = 9.35
-    s.hop(1.5, y4, 12.5, 1.9, [
+    y4 = 7.5
+    s.hop(1.5, y4, 12.5, 1.65, [
         "Tác giả: giảng viên, người học, cộng tác viên",
         "Khai báo kết quả; xin ý kiến Phòng Khoa học công nghệ trước khi bộc lộ công khai; giữ bí mật thông tin"],
-        nen=XAM_NHAT, vien=XAM, size=10)
+        nen=XAM_NHAT, vien=XAM, size=9.5)
     s.mui_ten(7.75, y3 + h3, 7.75, y4)
     return s
 

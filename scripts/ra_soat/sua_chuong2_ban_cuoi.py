@@ -62,13 +62,7 @@ BIEU_DO = {
         cot=["Loại hình", "Đã cấp văn bằng, giấy chứng nhận", "Chờ cấp bằng", "Đơn đã được chấp nhận hợp lệ"],
         nguon="Nguồn: Sổ theo dõi đơn nhãn hiệu, kiểu dáng công nghiệp, sáng chế và bảng thống kê văn bằng của "
               "Trường Đại học Thành Đô."),
-    "Hình 2.10. Tỷ lệ thực hiện so với chỉ tiêu": _h(15, 8),
 }
-NHAN_KH07 = ["Bài báo quốc tế", "Sách có mã ISBN", "Bài kỷ yếu hội thảo cấp Trường", "Bài báo trong nước",
-             "Đề tài cấp Bộ, Nhà nước", "Đề tài cấp cơ sở", "Tham luận hội thảo quốc tế", "Giáo trình, tài liệu",
-             "Chuyển giao công nghệ"]
-for _d, _n in zip(BIEU_DO["Hình 2.10. Tỷ lệ thực hiện so với chỉ tiêu"]["dong"], NHAN_KH07):
-    _d[0] = _n
 assert [d[1:] for d in BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"]] == \
     [[2, 0, 0], [2, 0, 1], [0, 5, 0], [0, 0, 1]]
 # Nhãn hiệu Double2n: sổ theo dõi ghi Chờ cấp bằng; đơn sáng chế 1-2025-07378: Chấp nhận đơn hợp lệ
@@ -78,9 +72,10 @@ BIEU_DO["Hình 2.7. Hồ sơ tài sản trí tuệ của Nhà trường"]["dong"
 SO_DO = {
     "Hình 2.3. Phân công đầu mối": ("Hình 2.1", SD.dau_moi),
     "Hình 2.9. Chuỗi chuyển hóa": ("Hình 2.7", SD.pheu),
-    "Hình 2.11. Chẩn đoán nguy cơ": ("Hình 2.9", SD.nguyen_nhan),
+    "Hình 2.11. Chẩn đoán nguy cơ": ("Hình 2.8", SD.nguyen_nhan),
 }
-BO_HINH = ["Hình 2.2. Mô phỏng phần dành cho tác giả", "Hình 2.6. Khả năng tính toán bộ tiêu chí"]
+BO_HINH = ["Hình 2.2. Mô phỏng phần dành cho tác giả", "Hình 2.6. Khả năng tính toán bộ tiêu chí",
+           "Hình 2.10. Tỷ lệ thực hiện so với chỉ tiêu"]
 
 PPR_HINH = ('<w:pPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:keepNext/>'
             '<w:spacing w:before="60" w:after="60" w:line="240" w:lineRule="auto"/><w:ind w:firstLine="0"/>'
@@ -88,7 +83,7 @@ PPR_HINH = ('<w:pPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/
 
 # Đánh số lại theo thứ tự xuất hiện
 DOI_SO = {
-    "Hình 2.10": "Hình 2.8", "Hình 2.11": "Hình 2.9",
+    "Hình 2.11": "Hình 2.8",
     "Hình 2.3": "Hình 2.1", "Hình 2.1": "Hình 2.2", "Hình 2.4": "Hình 2.3", "Hình 2.5": "Hình 2.4",
     "Hình 2.8": "Hình 2.5", "Hình 2.7": "Hình 2.6", "Hình 2.9": "Hình 2.7",
     "Bảng 2.4": "Bảng 2.3", "Bảng 2.7": "Bảng 2.4", "Bảng 2.3": "Bảng 2.7",
@@ -235,7 +230,7 @@ T["232c"] = ("Thứ ba, chưa có hoạt động khai thác thương mại phát
              "sử dụng hoặc chuyển giao công nghệ, chưa có doanh nghiệp khởi nguồn từ kết quả nghiên cứu.")
 T["232d"] = ("Thứ tư, mô hình quản lý phân tán, chưa có bộ phận và nhân sự chuyên trách; dữ liệu về tài sản trí tuệ nằm rải "
              "rác trong nhiều danh mục, chưa có cơ sở dữ liệu theo dõi vòng đời tài sản.")
-T["233a"] = "Các hạn chế trên xuất phát từ cả nguyên nhân khách quan và nguyên nhân chủ quan (Hình 2.9)."
+T["233a"] = "Các hạn chế trên xuất phát từ cả nguyên nhân khách quan và nguyên nhân chủ quan (Hình 2.8)."
 T["233b"] = ("Về nguyên nhân khách quan. Thứ nhất, thủ tục xác lập quyền đối với sáng chế kéo dài: theo Điều 110 và Điều 119 "
              "Luật Sở hữu trí tuệ, đơn sáng chế hợp lệ được công bố vào tháng thứ mười chín kể từ ngày nộp đơn, trừ khi có "
              "yêu cầu công bố sớm, và được thẩm định nội dung trong mười hai tháng kể từ ngày công bố hoặc ngày có yêu cầu "
@@ -262,14 +257,62 @@ T["tk2"] = ("Điểm nghẽn chính nằm ở khâu xác lập và khai thác: t
             "kéo dài, chi phí bảo hộ và thị trường chuyển giao công nghệ còn hạn chế. Đây là căn cứ để đề xuất giải pháp ở "
             "Chương 3.")
 
+
+# --- Vòng góp ý thứ hai: rút gọn 2.1.2, 2.2.3 (Bảng 2.7), 2.3.1; Mở đầu bớt số liệu
+T["212a"] = ("Năm 2026, Nhà trường có 252 nhân sự cơ hữu, trong đó 145 giảng viên và 94 người có trình độ tiến sĩ và tương "
+             "đương (37,3%). Đội ngũ tiến sĩ tập trung tại Viện Y - Dược (42 người) và Viện Quản trị và Công nghệ (29 "
+             "người), như thể hiện tại Bảng 2.1. Đây là nguồn lực đủ điều kiện để hình thành tài sản trí tuệ, nhất là trong "
+             "lĩnh vực dược liệu và công nghệ.")
+T["212d"] = ("Theo Điều 11, Điều 13 Quyết định số 217/QĐ-ĐHTĐ và Điều 35 Quyết định số 213/QĐ-ĐHTĐ, công tác quản lý quyền "
+             "sở hữu trí tuệ được phân công cho Phòng Khoa học công nghệ (đầu mối quản lý, tiếp nhận và nộp đơn, theo dõi "
+             "tài sản), Bộ phận Pháp chế (tư vấn pháp lý, thực hiện thủ tục xác lập quyền), Phòng Tài chính - Kế toán "
+             "(tham mưu phân chia lợi ích) và các viện (yêu cầu ghi nhận tài sản trí tuệ mới phát sinh), như thể hiện tại "
+             "Hình 2.1.")
+T["223b"] = ("Bảng 2.7 cho thấy quy định về phân chia lợi ích nằm ở ba văn bản nội bộ và chưa thống nhất với nhau. Điểm bất "
+             "cập rõ nhất là mức trần 100 triệu đồng tại điểm a khoản 4 Điều 36 Quyết định số 213/QĐ-ĐHTĐ: từ ngày "
+             "01/10/2025, điểm a khoản 3 Điều 28 Luật số 93/2025/QH15 yêu cầu thưởng cho tác giả tối thiểu 30% lợi nhuận "
+             "từ phần kết quả sử dụng ngân sách nhà nước, không đặt mức trần.")
+T["231d"] = ("Bốn là, các chỉ tiêu công bố khoa học của Kế hoạch số 07/KH-ĐHTĐ giai đoạn 2024 - 2025 đều đạt hoặc vượt kế "
+             "hoạch, trong khi chỉ tiêu chuyển giao công nghệ chưa phát sinh.")
+T["md1"] = ("Trường Đại học Thành Đô phát triển theo định hướng ứng dụng, với hoạt động nghiên cứu khoa học tăng nhanh trong "
+            "giai đoạn 2021 - 2025. Rà soát 38 đề tài cấp cơ sở của giai đoạn này cho thấy 11 đề tài có sản phẩm có thể "
+            "bảo hộ quyền sở hữu trí tuệ, trong đó 9 đề tài có sản phẩm thuộc nhóm sở hữu công nghiệp, chủ yếu trong lĩnh "
+            "vực dược liệu.")
+T["md2"] = ("Tuy nhiên, trong 9 đề tài này mới có 1 đề tài nộp đơn đăng ký sáng chế, và Nhà trường chưa có bằng độc quyền "
+            "sáng chế hay giải pháp hữu ích nào. Khoảng cách giữa năng lực tạo ra kết quả nghiên cứu và kết quả xác lập "
+            "quyền cho thấy vấn đề nằm ở khâu quản lý: dữ liệu về tài sản trí tuệ còn phân tán, việc phân công giữa các "
+            "đầu mối chưa gắn với một quy trình chung và chưa có quy trình sàng lọc khả năng bảo hộ trước khi công bố kết "
+            "quả nghiên cứu.")
+
+# Bảng 2.7 rút gọn: phạm vi áp dụng, tỷ lệ phân chia, điểm bất cập
+BANG27 = dict(
+    dau="Văn bản, điều khoản",
+    rong=[2000, 2100, 2550, 2420],
+    cot=["Văn bản", "Phạm vi áp dụng", "Tỷ lệ phân chia", "Điểm bất cập"],
+    dong=[
+        ["Quyết định 213, điểm a khoản 4 Điều 36", "Đề tài sử dụng ngân sách nhà nước",
+         "40% ngân sách nhà nước; 30% Nhà trường; 30% tác giả, tối đa 100 triệu đồng mỗi đề tài",
+         "Mức trần 100 triệu đồng chưa phù hợp yêu cầu tối thiểu 30% của Luật số 93/2025/QH15"],
+        ["Quyết định 213, điểm b khoản 4 Điều 36", "Tài sản trí tuệ thuộc sở hữu của Trường",
+         "Tác giả 30%; đơn vị có tác giả 20%; Quỹ nghiên cứu khoa học 50%",
+         "Chỉ áp dụng cho kinh phí chuyển giao; chưa quy định khi Trường tự sản xuất, kinh doanh hoặc góp vốn"],
+        ["Quyết định 217, Điều 13", "Tài sản trí tuệ thuộc sở hữu của Trường, khi không có thỏa thuận",
+         "Hiệu trưởng quyết định tỷ lệ", "Chưa có tỷ lệ cụ thể; chưa dẫn chiếu tỷ lệ tại Quyết định 213"],
+        ["Quy chế chi tiêu nội bộ 2026, mục 6.3.5.1", "Đề tài cấp cơ sở có đăng ký sở hữu trí tuệ",
+         "Trích 50% kinh phí chuyển giao công nghệ về Nhà trường", "Chưa quy định phần của tác giả"],
+        ["Luật số 93/2025/QH15, điểm a khoản 3 Điều 28 (đối chiếu)", "Phần kết quả sử dụng ngân sách nhà nước",
+         "Tác giả tối thiểu 30% lợi nhuận, không đặt mức trần", "Mốc đối chiếu cho điểm a Điều 36 Quyết định 213"],
+    ],
+)
+
 # (đầu đoạn gốc, văn bản mới); None = xóa cả đoạn
 DOAN = [
     ("Đánh giá thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô là nội dung", T["mo"]),
     ("Trường Đại học Thành Đô được thành lập theo Quyết định số 679", T["211"]),
     ("Với triết lý giáo dục \"Trí - Năng - Nhân - Hòa\"", None),
     ("Tính đến năm 2026, tổng số nhân sự cơ hữu", T["212a"]),
-    ("Số liệu Bảng 2.1 khẳng định nguồn nhân lực", T["212b"]),
-    ("Cơ cấu các đơn vị nghiên cứu và đào tạo của Nhà trường", T["212c"]),
+    ("Số liệu Bảng 2.1 khẳng định nguồn nhân lực", None),
+    ("Cơ cấu các đơn vị nghiên cứu và đào tạo của Nhà trường", None),
     ("Về mô hình quản lý quyền sở hữu trí tuệ, Nhà trường chưa thành lập", T["212d"]),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ Quyết định số 213/QĐ-ĐHTĐ và Quyết định số 217/QĐ-ĐHTĐ)",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ Điều 11, Điều 13 Quyết định số 217/QĐ-ĐHTĐ và Điều 35 Quyết định số "
@@ -303,6 +346,9 @@ DOAN = [
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ Bảng 2.4 và Bảng 2.6)"),
     ("Hình 2.9 mô hình hóa chuỗi chuyển hóa", T["222c"]),
     ("Hoạt động khai thác quyền sở hữu trí tuệ và thương mại hóa", T["223a"]),
+    ("(Nguồn: Nhóm nghiên cứu tổng hợp từ các văn bản nội bộ của Trường Đại học Thành Đô và văn bản quy phạm",
+     "(Nguồn: Nhóm nghiên cứu tổng hợp từ Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội "
+     "bộ năm 2026 và Luật số 93/2025/QH15)"),
     ("Bảng 2.3 tổng hợp các quy định về lợi ích của tác giả", T["223b"]),
     ("Điểm a Điều 36 quy định: tác giả được hưởng", None),
     ("Hình 2.2 mô phỏng tác động của hai cơ chế", None),
@@ -320,12 +366,17 @@ DOAN = [
     ("Các hạn chế nêu trên bắt nguồn từ cả nguyên nhân", T["233a"]),
     ("Về nguyên nhân khách quan: Thời gian thẩm định", T["233b"]),
     ("Về nguyên nhân chủ quan: Cơ chế động lực tài chính", T["233c"]),
-    ("Hình 2.11. Chẩn đoán nguy cơ", "Hình 2.9. Nguyên nhân của các hạn chế trong quản lý quyền sở hữu trí tuệ"),
+    ("Hình 2.11. Chẩn đoán nguy cơ", "Hình 2.8. Nguyên nhân của các hạn chế trong quản lý quyền sở hữu trí tuệ"),
     ("(Nguồn: Nhóm nghiên cứu mô hình hóa cơ chế xung đột",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ kết quả phân tích tại Mục 2.2)"),
     ("Hình 2.11 làm rõ chuỗi tác động tiêu cực", None),
     ("Nghiên cứu thực trạng quản lý quyền sở hữu trí tuệ tại Trường Đại học Thành Đô giai đoạn", T["tk1"]),
     ("Sự đối kháng giữa chính sách ưu tiên thưởng tiền mặt", T["tk2"]),
+]
+# Đoạn ngoài Chương 2 (Mở đầu)
+DOAN_NGOAI = [
+    ("Trường Đại học Thành Đô đang chuyển mình mạnh mẽ", T["md1"]),
+    ("Tuy nhiên, thực tiễn quản trị sở hữu trí tuệ tại Nhà trường đang bộc lộ", T["md2"]),
 ]
 # Đoạn chèn thêm sau đoạn (đầu đoạn gốc làm neo)
 CHEN = [
@@ -333,6 +384,18 @@ CHEN = [
 ]
 # Sửa một phần trong đoạn: (đầu đoạn gốc, chuỗi cũ, chuỗi mới)
 MOT_PHAN = [
+    # "hao hụt" -> tỷ lệ chuyển hóa còn thấp (Chương 3, Kết luận)
+    ("W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp (hao hụt 88,9%;",
+     "W1. Tỷ lệ chuyển hóa đề tài sang đơn bảo hộ còn thấp (hao hụt 88,9%; 6 đề tài giai đoạn 2021 - 2024 chưa nộp đơn)",
+     "W1. Tỷ lệ chuyển hóa từ kết quả nghiên cứu sang đơn đăng ký còn thấp (11,1%); 6 đề tài giai đoạn 2021 - 2024 "
+     "chưa nộp đơn"),
+    ("Xử lý Hạn chế 1 (hao hụt 88,9%)", "(hao hụt 88,9%)", "(tỷ lệ chuyển hóa sang đơn đăng ký còn thấp, 11,1%)"),
+    ("các hạn chế về tỷ lệ hao hụt chuyển hóa", "các hạn chế về tỷ lệ hao hụt chuyển hóa từ đề tài sang đơn đăng ký (88,9%)",
+     "các hạn chế về tỷ lệ chuyển hóa từ kết quả nghiên cứu sang đơn đăng ký còn thấp (11,1%)"),
+    # SWOT thống nhất với Chương 2
+    ("S2. Năng lực nghiên cứu tăng nhanh", "5/9 chỉ tiêu Kế hoạch 07 đạt hoặc vượt", "6/9 chỉ tiêu Kế hoạch 07 đạt hoặc vượt"),
+    ("S2. Năng lực nghiên cứu tăng nhanh", "1 đơn sáng chế Quế hoa đang trong giai đoạn thẩm định hình thức",
+     "1 đơn sáng chế Quế hoa đã được chấp nhận hợp lệ"),
     # Chương 3: dẫn chiếu tới các hình đã bỏ
     ("Xử lý Hạn chế 2 (bất cập mức trần", "Bảng 2.3 và Hình 2.2 cho thấy", "Bảng 2.7 và Mục 2.2.3 cho thấy"),
     ("Xử lý Hạn chế 3 (thiếu liên thông)", "Hình 2.6 có 7/16 tiêu chí khuyết trắng dữ liệu.",
@@ -359,16 +422,6 @@ O += [
     ("Số TT", 11, 5, "Đã nộp đơn, đang thẩm định hình thức", "Đã được chấp nhận hợp lệ"),
     ("Nhóm quyền", 7, 4, "5 hồ sơ có số hiệu văn bằng, trạng thái chờ xác minh", "5 hồ sơ đồng sở hữu, chờ cấp bằng"),
     ("Nhóm quyền", 8, 4, "Đã cấp 2 văn bằng bảo hộ; 01 đơn đang xử lý", "Đã cấp 2 văn bằng bảo hộ; 01 đơn chờ cấp bằng"),
-    ("Văn bản, điều khoản", 4, 0, "Quy chế chi tiêu nội bộ, Bảng 7 (2026)", "Quy chế chi tiêu nội bộ, mục 6.3.5.1 (2026)"),
-    ("Văn bản, điều khoản", 4, 4, "Đề tài cấp kinh phí tối đa 50 triệu đồng; nghiệm thu phải có đơn hoặc bằng",
-     "Đề tài cấp kinh phí tối đa 50 triệu đồng; nghiệm thu phải có chứng nhận đăng ký sở hữu trí tuệ thành công"),
-    ("Văn bản, điều khoản", 3, 2,
-     "Hiệu trưởng quyết định tỷ lệ cụ thể trên cơ sở tham mưu của Hội đồng và các phòng chức năng",
-     "Hiệu trưởng quyết định tỷ lệ sau khi có ý kiến tham mưu của Phòng Khoa học công nghệ, Bộ phận Pháp chế và "
-     "Phòng Tài chính - Kế toán"),
-    ("Văn bản, điều khoản", 7, 2,
-     "Thù lao trả cho tác giả theo thỏa thuận; nếu không thỏa thuận thì áp dụng mức tối thiểu luật định",
-     "Thù lao trả cho tác giả theo thỏa thuận; nếu không thỏa thuận thì áp dụng mức do luật quy định"),
 ]
 
 
@@ -377,6 +430,46 @@ O += [
 # ---------------------------------------------------------------------------
 def van_ban(p):
     return "".join(t.text or "" for r in p.findall(q("r")) for t in r.findall(q("t")))
+
+
+def chen_bang(ed, mau, cau_hinh):
+    """Chèn bảng mới (theo dõi thay đổi) ngay sau bảng mẫu, dùng lại định dạng ô của bảng mẫu."""
+    hang = mau.findall(q("tr"))
+    tc_dau, tc_than = hang[0].find(q("tc")), hang[1].find(q("tc"))
+    moi = etree.Element(q("tbl"))
+    moi.append(copy.deepcopy(mau.find(q("tblPr"))))
+    grid = etree.SubElement(moi, q("tblGrid"))
+    for w in cau_hinh["rong"]:
+        etree.SubElement(grid, q("gridCol")).set(q("w"), str(w))
+
+    def o(tc_mau, text, w):
+        tc = etree.Element(q("tc"))
+        tcpr = copy.deepcopy(tc_mau.find(q("tcPr")))
+        tcpr.find(q("tcW")).set(q("w"), str(w))
+        tc.append(tcpr)
+        p_mau = tc_mau.find(q("p"))
+        p = etree.SubElement(tc, q("p"))
+        p.append(copy.deepcopy(p_mau.find(q("pPr"))))
+        ed._danh_dau_doan(p, "ins")
+        r_mau = next(r for r in p_mau.findall(q("r")) if r.find(q("t")) is not None)
+        ins = ed._dau("ins")
+        p.append(ins)
+        r = etree.SubElement(ins, q("r"))
+        r.append(copy.deepcopy(r_mau.find(q("rPr"))))
+        t = etree.SubElement(r, q("t"))
+        t.text = text
+        return tc
+
+    for k, dong in enumerate([cau_hinh["cot"]] + cau_hinh["dong"]):
+        tr = etree.SubElement(moi, q("tr"))
+        trpr = etree.SubElement(tr, q("trPr"))
+        if k == 0:
+            etree.SubElement(trpr, q("tblHeader"))
+        trpr.append(ed._dau("ins"))
+        for text, w in zip(dong, cau_hinh["rong"]):
+            tr.append(o(tc_dau if k == 0 else tc_than, text, w))
+    mau.addnext(moi)
+    return moi
 
 
 def main():
@@ -414,7 +507,15 @@ def main():
     # 1. Giải quyết trước mọi phần tử đích (trước khi văn bản bị thay)
     dich_doan = [(tim(d), m) for d, m in DOAN]
     dich_chen = [(tim(d), ds) for d, ds in CHEN]
-    dich_mot_phan = [(tim(d, tat_ca_doan), c, m) for d, c, m in MOT_PHAN]
+    def tim_chua(neo):
+        hits = [p for p in tat_ca_doan if neo in van_ban(p)]
+        if len(hits) != 1:
+            raise ValueError(f"{len(hits)} đoạn chứa: {neo}")
+        return hits[0]
+
+    dich_mot_phan = [(tim_chua(d), c, m) for d, c, m in MOT_PHAN]
+    dich_ngoai = [(tim(d, tat_ca_doan), m) for d, m in DOAN_NGOAI]
+    bang27_cu = bang(BANG27["dau"])
     dich_o = []
     for o_dau, r, c, cu, moi in O:
         tc = bang(o_dau).findall(q("tr"))[r].findall(q("tc"))[c]
@@ -497,6 +598,11 @@ def main():
             ed._replace_in(p, van_ban(p), moi)
     for p, cu, moi in dich_mot_phan:
         ed._replace_in(p, cu, moi)
+    for p, moi in dich_ngoai:
+        ed._replace_in(p, van_ban(p), moi)
+    # Bảng 2.7: xóa bảng cũ, chèn bảng rút gọn ngay sau
+    chen_bang(ed, bang27_cu, BANG27)
+    ed.xoa_bang(bang27_cu)
 
     # 4. Đánh số lại hình, bảng từ Chương 2 đến hết văn bản
     pham_vi = [p for el in con[i2:] for p in ([el] if el.tag == q("p") else el.iter(q("p")))]
@@ -507,7 +613,7 @@ def main():
             while mau.search(van_ban(p)):
                 ed._replace_in(p, cu, DOI_SO[cu])
                 so_lan += 1
-    con_sot = [van_ban(p) for p in pham_vi if re.search(r"Hình 2\.(2|6)(?!\d)", van_ban(p))]
+    con_sot = [van_ban(p) for p in pham_vi if re.search(r"Hình 2\.(2|6|10)(?!\d)", van_ban(p))]
     if con_sot:
         print("CẢNH BÁO, còn dẫn chiếu hình đã bỏ:", con_sot)
 
