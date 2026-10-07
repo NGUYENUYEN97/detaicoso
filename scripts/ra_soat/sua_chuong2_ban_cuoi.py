@@ -368,6 +368,18 @@ T["213b"] = T["213b"].replace("Danh mục ghi nhận 405 bản ghi bài báo, g�
 T["231b"] = T["231b"].replace("lên 192 năm 2025", "lên 190 năm 2025")
 T["tk1"] = T["tk1"].replace("lên 192 (năm 2025)", "lên 190 (năm 2025)")
 
+# --- Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ (kèm Nghị quyết số 40/NQ-HĐT-ĐHTĐ ngày 27/5/2025 và quyết định
+#     ủy quyền cho Viện Nghiên cứu giáo dục và Chuyển giao tri thức điều hành): Điều 3, 9, 10 khớp số liệu báo cáo.
+#     Văn bản này dẫn Quyết định 679/QĐ-TTg ngày 27/5/2009.
+T["211"] = T["211"].replace("được thành lập năm 2009 theo Quyết định số 679/QĐ-TTg của Thủ tướng Chính phủ",
+                            "được thành lập theo Quyết định số 679/QĐ-TTg ngày 27/5/2009 của Thủ tướng Chính phủ")
+T["223b"] = ("Bảng 2.7 cho thấy quy định về phân chia lợi ích nằm ở bốn văn bản nội bộ và chưa thống nhất với nhau: tác giả "
+             "được 30% kinh phí chuyển giao theo điểm b khoản 4 Điều 36 Quyết định số 213/QĐ-ĐHTĐ, nhưng chỉ được 20% từ năm "
+             "thứ hai theo Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ. Điểm bất cập rõ nhất là mức trần 100 triệu đồng tại "
+             "điểm a khoản 4 Điều 36 Quyết định số 213/QĐ-ĐHTĐ: từ ngày 01/10/2025, điểm a khoản 3 Điều 28 Luật số "
+             "93/2025/QH15 yêu cầu thưởng cho tác giả tối thiểu 30% lợi nhuận từ phần kết quả sử dụng ngân sách nhà nước, "
+             "không đặt mức trần.")
+
 # Bảng 2.7 rút gọn: phạm vi áp dụng, tỷ lệ phân chia, điểm bất cập
 BANG27 = dict(
     dau="Văn bản, điều khoản",
@@ -384,6 +396,9 @@ BANG27 = dict(
          "Hiệu trưởng quyết định tỷ lệ", "Chưa có tỷ lệ cụ thể; chưa dẫn chiếu tỷ lệ tại Quyết định 213"],
         ["Quy chế chi tiêu nội bộ 2026, mục 6.3.5.1", "Đề tài cấp cơ sở có đăng ký sở hữu trí tuệ",
          "Trích 50% kinh phí chuyển giao công nghệ về Nhà trường", "Chưa quy định phần của tác giả"],
+        ["Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ, Điều 9", "Kết quả nghiên cứu ứng dụng do Quỹ tài trợ",
+         "Nghiệm thu năm đầu: tác giả 50%, Trường 50%; từ năm thứ hai: tác giả 20%, Trường 80%",
+         "Tỷ lệ cho tác giả từ năm thứ hai thấp hơn mức 30% tại điểm b Điều 36 Quyết định 213"],
         ["Luật số 93/2025/QH15, điểm a khoản 3 Điều 28 (đối chiếu)", "Phần kết quả sử dụng ngân sách nhà nước",
          "Tác giả tối thiểu 30% lợi nhuận, không đặt mức trần", "Mốc đối chiếu cho điểm a Điều 36 Quyết định 213"],
     ],
@@ -436,7 +451,11 @@ DOAN = [
     ("Hoạt động khai thác quyền sở hữu trí tuệ và thương mại hóa", T["223a"]),
     ("(Nguồn: Nhóm nghiên cứu tổng hợp từ các văn bản nội bộ của Trường Đại học Thành Đô và văn bản quy phạm",
      "(Nguồn: Nhóm nghiên cứu tổng hợp từ Quyết định số 213/QĐ-ĐHTĐ, Quyết định số 217/QĐ-ĐHTĐ, Quy chế chi tiêu nội "
-     "bộ năm 2026 và Luật số 93/2025/QH15)"),
+     "bộ năm 2026, Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ và Luật số 93/2025/QH15)"),
+    ("(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục đề tài cấp cơ sở, danh mục đề tài cấp quốc gia và Quyết định số 213",
+     "(Nguồn: Nhóm nghiên cứu tổng hợp từ danh mục đề tài cấp cơ sở, danh mục đề tài cấp quốc gia, Quyết định số "
+     "213/QĐ-ĐHTĐ và Điều lệ Quỹ Học bổng sau tiến sĩ Ngô Xuân Độ ban hành kèm theo Nghị quyết số 40/NQ-HĐT-ĐHTĐ ngày "
+     "27/5/2025)"),
     ("Bảng 2.3 tổng hợp các quy định về lợi ích của tác giả", T["223b"]),
     ("Điểm a Điều 36 quy định: tác giả được hưởng", None),
     ("Hình 2.2 mô phỏng tác động của hai cơ chế", None),
@@ -477,6 +496,7 @@ CHEN = [
 ]
 # Sửa một phần trong đoạn: (đầu đoạn gốc, chuỗi cũ, chuỗi mới)
 MOT_PHAN = [
+    ("Quyết định số 679/QĐ-TTg ngày 19 tháng 5 năm 2009", "ngày 19 tháng 5 năm 2009", "ngày 27 tháng 5 năm 2009"),
     ("năng lực nghiên cứu khoa học tăng trưởng vượt bậc với 582 sản phẩm",
      "năng lực nghiên cứu khoa học tăng trưởng vượt bậc với 582 sản phẩm (bài báo tăng gấp 7 lần)",
      "năng lực nghiên cứu khoa học tăng nhanh với 578 sản phẩm (số bài báo năm 2025 gấp 7 lần năm 2021)"),
@@ -514,6 +534,12 @@ for hang, cu, moi in [
         if a != b:
             O.append(("Loại hình sản phẩm khoa học", hang, c, a, b))
 O += [
+    ("Kênh tài trợ", 2, 2, "Khoản chi phí khác tối đa bằng 50% chi trực tiếp",
+     "Chi phí khác (xuất bản, đi lại, thiết bị, vật liệu) tối đa 50% chi trả trực tiếp cho nhà khoa học; chưa nêu riêng "
+     "chi phí đăng ký bảo hộ"),
+    ("Kênh tài trợ", 2, 3, "Quỹ học bổng sau tiến sĩ mang tính chất thí điểm hợp tác nghiên cứu đặc thù từ năm 2025",
+     "Thành lập năm 2025; Viện Nghiên cứu giáo dục và Chuyển giao tri thức được ủy quyền điều hành; Trường là đồng chủ "
+     "sở hữu văn bằng bảo hộ của sản phẩm do Quỹ tài trợ"),
     ("Số TT", 5, 5, "Đã nộp đơn, đang thẩm định", "Chờ cấp bằng"),
     *[("Số TT", r, 5, "Chưa xác minh trạng thái", "Đã cấp bằng") for r in range(6, 11)],
     *[("Số TT", r, 3, f"Đơn 3-2023-0284{r - 5}; Số {so}", f"Đơn 3-2023-0284{r - 5}; Bằng số {so}")
